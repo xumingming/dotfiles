@@ -1,3 +1,15 @@
 cljtags() {
-find . \! -name '.*' -name '*.clj' | xargs etags --regex='/[ \t\(]*def[a-z]* \([a-z-!]+\)/\1/' --regex='/[ \t\(]*ns \([a-z.]+\)/\1/'    
+  find . \! -name '.*' -name '*.clj' | xargs etags --regex='/[ \t\(]*def[a-z]* \([a-z-!]+\)/\1/' --regex='/[ \t\(]*ns \([a-z.]+\)/\1/'    
+}
+
+storm-post() {
+  mv ~/local/svn/storm/conf/defaults.yaml{,.bak}
+  mv ~/local/svn/storm/conf/storm.yaml{.bak,}
+}
+
+storm-pre() {
+  mv ~/local/svn/storm/conf/defaults.yaml{.bak,}
+  mv ~/local/svn/storm/conf/storm.yaml{,.bak}
+  cd ~/local/svn/storm
+  lein jar
 }
