@@ -13,3 +13,7 @@ storm-pre() {
   cd ~/local/svn/storm
   lein jar
 }
+
+storm-all() {
+    storm-pre && storm-post
+}
