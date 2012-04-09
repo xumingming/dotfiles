@@ -10,6 +10,10 @@ storm-post() {
 storm-pre() {
   mv ~/local/svn/storm/conf/defaults.yaml{.bak,}
   mv ~/local/svn/storm/conf/storm.yaml{,.bak}
+}
+
+storm-pre-jar() {
+  storm-pre
   cd ~/local/svn/storm
   lein jar
 }
