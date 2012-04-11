@@ -2,7 +2,7 @@
 (set-keyboard-coding-system 'utf-8)
 (set-clipboard-coding-system 'euc-cn)
 (set-terminal-coding-system 'utf-8)
-(set-buffer-file-coding-system 'euc-cn)
+(set-buffer-file-coding-system 'utf-8)
 (set-selection-coding-system 'euc-cn)
 (modify-coding-system-alist 'process "*" 'euc-cn)
 (setq default-process-coding-system 
@@ -50,3 +50,15 @@
 
 
 (global-set-key (kbd "TAB") 'auto-complete)
+(custom-set-variables
+  ;; custom-set-variables was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ '(bmkp-last-as-first-bookmark-file "~/.emacs.bmk"))
+(custom-set-faces
+  ;; custom-set-faces was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ )
