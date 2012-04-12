@@ -10,10 +10,32 @@ storm-post() {
 storm-pre() {
   mv ~/local/svn/storm/conf/defaults.yaml{.bak,}
   mv ~/local/svn/storm/conf/storm.yaml{,.bak}
+}
+
+storm-pre-jar() {
+  storm-pre
   cd ~/local/svn/storm
   lein jar
 }
 
 storm-all() {
-    storm-pre && storm-post
+    storm-pre-jar && storm-post
+}
+
+clean-storm-zk() {
+    rm -rf /tmp/zookeeper/*
+    rm -rf /mnt/storm/*
+}
+
+start-nimbus() {
+    /home/james/local/svn/storm/bin/storm nimbus
+}
+
+start-supervisor() {
+    /home/james/local/svn/storm/bin/storm supervisor    
+}
+
+
+start-ui() {
+    /home/james/local/svn/storm/bin/storm ui
 }
