@@ -42,7 +42,8 @@
 
 (require 'ac-slime)                                                                                                                   
 (add-hook 'slime-mode-hook 'set-up-slime-ac)                                                                                          
-(add-hook 'slime-repl-mode-hook 'set-up-slime-ac)                                                                                     
+(add-hook 'slime-repl-mode-hook 'set-up-slime-ac)
+(add-hook 'clojure-mode-hook (lambda () (paredit-mode +1))) 
 (eval-after-load "auto-complete"                                                                                                      
   '(add-to-list 'ac-modes 'slime-repl-mode)) 
 
@@ -54,6 +55,7 @@
   ;; custom-set-variables was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
+
   ;; If there is more than one, they won't work right.
  '(bmkp-last-as-first-bookmark-file "~/.emacs.bmk"))
 (custom-set-faces
