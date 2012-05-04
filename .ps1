@@ -1,4 +1,3 @@
-
 # Display ps1 with colorful pwd and git status
 # Acording to Jimmyxu .bashrc
 # Modified by Ranmocy
@@ -12,7 +11,7 @@ else
 fi
 
 function __repo () {
-    branch=$(type __git_ps1 &>/dev/null && __git_ps1 | sed -e "s/^ (//" -e "s/)$//")
+    branch=$(type __git_ps1 &>/dev/null && __git_ps1 | sed -e "s/^(//" -e "s/)$//")
     if [ "$branch" != "" ]; then
         vcs=git
     else
