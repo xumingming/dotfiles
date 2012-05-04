@@ -56,14 +56,6 @@ fcd() {
     cd `dirname $filename`
 }
 
-tsql() {
-    mysql -htest.ccbu.mysql.alibaba-inc.com -P3307 -utradescene -ptradescene123
-}
-
-dsql() {
-    mysql -hdev.ccbu.mysql.alibaba-inc.com -P3306 -utradescene -ptradescene123
-}
-
 jlog() {
     $1 /home/james/output/$2/logs/sys/webx/webx.log
 }
