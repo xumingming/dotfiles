@@ -39,3 +39,75 @@ start-supervisor() {
 start-ui() {
     /home/james/local/svn/storm/bin/storm ui
 }
+
+
+fvim() {
+    filename=`find . -name $1`
+    vim $filename
+}
+
+femacs() {
+    filename=`find . -name $1`
+    emacs $filename
+}
+fcd() {
+    filename=`find . -name $1`
+    echo $filename
+    cd `dirname $filename`
+}
+
+tsql() {
+    mysql -htest.ccbu.mysql.alibaba-inc.com -P3307 -utradescene -ptradescene123
+}
+
+dsql() {
+    mysql -hdev.ccbu.mysql.alibaba-inc.com -P3306 -utradescene -ptradescene123
+}
+
+jlog() {
+    $1 /home/james/output/$2/logs/sys/webx/webx.log
+}
+
+vlog() {
+    jlog vim `appname`
+}
+
+tlog() {
+    jlog "tail -f" `appname`
+}
+
+appname() {
+    curpath=`pwd`
+    curname=`basename $curpath | sed 's/_.*$//g'`
+    echo $curname
+}
+
+jmvn () {
+    echo "app name is `appname`"
+    mvn clean install -DuserProp=../antx_`appname`.properties
+}
+
+jstart() {
+    jmvn `appname` && ./deploy/target/web-deploy/bin/jbossctl.sh
+}
+
+hosts() {
+    hostsdir=/usr/alibaba/hostmanager/HostsManagerDir
+
+    if [ -z $1 ]; then
+	echo "hosts [ls|edit|hostsname]";
+    else
+        case $1 in
+            ls)
+               /bin/ls $hostsdir;;
+            edit)
+               vim $hostsdir/$2;;
+	    cat)
+               cat $hostsdir/$2;;
+            *)
+               cp $hostsdir/$1 /etc/hosts
+               head -n 2 /etc/hosts;;
+        esac
+    fi
+}
+
