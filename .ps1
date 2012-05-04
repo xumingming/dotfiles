@@ -3,6 +3,7 @@
 # Acording to Jimmyxu .bashrc
 # Modified by Ranmocy
 # --
+alias __git_ps1="git branch 2>/dev/null | grep '*' | sed 's/* \(.*\)/(\1)/'"
 
 if type -P tput &>/dev/null && tput setaf 1 &>/dev/null; then
     color_prompt=yes
@@ -10,7 +11,7 @@ else
     color_prompt=
 fi
 
-__repo () {
+function __repo () {
     branch=$(type __git_ps1 &>/dev/null && __git_ps1 | sed -e "s/^ (//" -e "s/)$//")
     if [ "$branch" != "" ]; then
         vcs=git
