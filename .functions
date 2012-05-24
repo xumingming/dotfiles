@@ -3,6 +3,7 @@ cljtags() {
 }
 
 storm-post() {
+  clean-storm-zk
   mv ~/local/svn/storm/conf/defaults.yaml{,.bak}
   mv ~/local/svn/storm/conf/storm.yaml{.bak,}
 }
@@ -25,6 +26,7 @@ storm-all() {
 clean-storm-zk() {
     rm -rf /tmp/zookeeper/*
     rm -rf /mnt/storm/*
+    rm -rf ~/local/svn/storm/logs/*
 }
 
 start-nimbus() {
@@ -84,7 +86,7 @@ jstart() {
 }
 
 hosts() {
-    hostsdir=/usr/alibaba/hostmanager/HostsManagerDir
+    hostsdir=/Users/xumingmingv/hosts
 
     if [ -z $1 ]; then
 	echo "hosts [ls|edit|hostsname]";

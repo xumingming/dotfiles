@@ -40,7 +40,7 @@
 (ac-config-default)
 
 
-(require 'ac-slime)                                                                                                                   
+;;(require 'ac-slime)                                                                                                                   
 (add-hook 'slime-mode-hook 'set-up-slime-ac)                                                                                          
 (add-hook 'slime-repl-mode-hook 'set-up-slime-ac)
 (add-hook 'clojure-mode-hook (lambda () (paredit-mode +1))) 
