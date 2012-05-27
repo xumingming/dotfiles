@@ -1,0 +1,2 @@
+export ZK_HOME=/usr/local/zookeeper
+export PATH=$PATH:$ZK_HOME/bin

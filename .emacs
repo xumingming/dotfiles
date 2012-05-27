@@ -11,7 +11,8 @@
 (setq-default tab-width 4)
 
 
-(add-to-list 'load-path (expand-file-name "/home/james/.emacs.d"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/weibo.emacs"))
 
 
 ; hook
@@ -40,7 +41,7 @@
 (ac-config-default)
 
 
-;;(require 'ac-slime)                                                                                                                   
+(require 'ac-slime)                                                                                                                   
 (add-hook 'slime-mode-hook 'set-up-slime-ac)                                                                                          
 (add-hook 'slime-repl-mode-hook 'set-up-slime-ac)
 (add-hook 'clojure-mode-hook (lambda () (paredit-mode +1))) 
@@ -64,3 +65,7 @@
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
  )
+
+
+;; weibo.emacs
+(require 'weibo)
