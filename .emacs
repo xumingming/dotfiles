@@ -35,7 +35,13 @@
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 
 (require 'color-theme)
-(color-theme-oswald)
+;;(color-theme-oswald)
+(color-theme-xp)
+;;(color-theme-gnome)
+;;(color-theme-gtk-ide)
+;;(color-theme-gnome2)
+
+
 
 (require 'auto-complete-config)
 (ac-config-default)
@@ -51,7 +57,7 @@
 (add-hook 'slime-mode-hook 'set-up-slime-ac)
 
 
-(global-set-key (kbd "TAB") 'auto-complete)
+;;(global-set-key (kbd "TAB") 'auto-complete)
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
@@ -69,3 +75,9 @@
 
 ;; weibo.emacs
 (require 'weibo)
+
+;; I prefer cmd key for meta
+(setq mac-option-key-is-meta nil)
+(setq mac-command-key-is-meta t)
+(setq mac-command-modifier 'meta)
+(setq mac-option-modifier nil)

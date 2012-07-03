@@ -30,18 +30,21 @@ clean-storm-zk() {
 }
 
 start-nimbus() {
-    /home/james/local/svn/storm/bin/storm nimbus
+    ~/local/svn/storm/bin/storm nimbus
 }
 
 start-supervisor() {
-    /home/james/local/svn/storm/bin/storm supervisor    
+    ~/local/svn/storm/bin/storm supervisor    
 }
 
 
 start-ui() {
-    /home/james/local/svn/storm/bin/storm ui
+    ~/local/svn/storm/bin/storm ui
 }
 
+submit-topology() {
+    ~/local/svn/storm/bin/storm jar ~/local/svn/storm-starter/storm-starter-0.0.1-SNAPSHOT.jar $1 $2
+}
 
 fvim() {
     filename=`find . -name $1`
