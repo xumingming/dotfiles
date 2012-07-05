@@ -12,8 +12,6 @@
 
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d"))
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/weibo.emacs"))
-
 
 ; hook
 (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
@@ -72,12 +70,20 @@
   ;; If there is more than one, they won't work right.
  )
 
+;; slime-repl syntax highlight
+(add-hook 'slime-repl-mode-hook
+          (defun clojure-mode-slime-font-lock ()
+            (require 'clojure-mode)
+            (let (font-lock-mode)
+              (clojure-mode-font-lock-setup))))
 
-;; weibo.emacs
-(require 'weibo)
+;;; I prefer cmd key for meta
+(setq mac-option-key-is-meta nil
+      mac-command-key-is-meta t
+      mac-command-modifier 'meta
+      mac-option-modifier 'none)
 
-;; I prefer cmd key for meta
-(setq mac-option-key-is-meta nil)
-(setq mac-command-key-is-meta t)
-(setq mac-command-modifier 'meta)
-(setq mac-option-modifier nil)
+    (setq mac-option-key-is-meta nil)
+    (setq mac-command-key-is-meta t)
+    (setq mac-command-modifier 'meta)
+    (setq mac-option-modifier nil)
