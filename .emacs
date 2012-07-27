@@ -12,6 +12,7 @@
 
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d"))
+(add-to-list 'load-path (expand-file-name "~/local/svn/emacs-color-theme-solarized"))
 
 ; hook
 (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
@@ -33,12 +34,13 @@
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 
 (require 'color-theme)
+(require 'color-theme-solarized)
+(color-theme-solarized-dark)
 ;;(color-theme-oswald)
-(color-theme-xp)
+;;(color-theme-xp)
 ;;(color-theme-gnome)
 ;;(color-theme-gtk-ide)
 ;;(color-theme-gnome2)
-
 
 
 (require 'auto-complete-config)
@@ -83,7 +85,15 @@
       mac-command-modifier 'meta
       mac-option-modifier 'none)
 
-    (setq mac-option-key-is-meta nil)
-    (setq mac-command-key-is-meta t)
-    (setq mac-command-modifier 'meta)
-    (setq mac-option-modifier nil)
+(define-key global-map "\C-xm" 'set-mark-command)
+
+
+;; put the backup file in seperate folder
+(setq
+   backup-by-copying t      ; don't clobber symlinks
+   backup-directory-alist
+    '(("." . "~/.saves"))    ; don't litter my fs tree
+   delete-old-versions t
+   kept-new-versions 6
+   kept-old-versions 2
+   version-control t)       ; use versioned backups

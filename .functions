@@ -25,7 +25,7 @@ storm-all() {
 
 clean-storm-zk() {
     rm -rf /tmp/zookeeper/*
-    rm -rf /mnt/storm/*
+    rm -rf ~/local/svn/storm/storm-local/*
     rm -rf ~/local/svn/storm/logs/*
 }
 
