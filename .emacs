@@ -97,3 +97,15 @@
    kept-new-versions 6
    kept-old-versions 2
    version-control t)       ; use versioned backups
+
+;; shell-mode
+(defun sh ()
+  (interactive)
+  (ansi-term "/bin/bash"))
+
+;; window-numbering
+;;(require 'window-number)
+(autoload 'window-number-mode "window-number" "..." t)
+(autoload 'window-number-meta-mode "window-number" "..." t)
+(window-number-mode 1)
+(window-number-meta-mode 1)
