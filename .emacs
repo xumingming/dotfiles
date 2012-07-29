@@ -109,3 +109,7 @@
 (autoload 'window-number-meta-mode "window-number" "..." t)
 (window-number-mode 1)
 (window-number-meta-mode 1)
+
+;; enable winner-mode
+(when (fboundp 'winner-mode)
+      (winner-mode 1))
