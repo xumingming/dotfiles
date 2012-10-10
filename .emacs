@@ -51,22 +51,6 @@
 (eval-after-load "auto-complete"                                                                                     '(add-to-list 'ac-modes 'slime-repl-mode)) 
 (add-hook 'slime-mode-hook 'set-up-slime-ac)
 
-
-;;(global-set-key (kbd "TAB") 'auto-complete)
-(custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-
-  ;; If there is more than one, they won't work right.
- '(bmkp-last-as-first-bookmark-file "~/.emacs.bmk"))
-(custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
- )
-
 ;; slime-repl syntax highlight
 (add-hook 'slime-repl-mode-hook
           (defun clojure-mode-slime-font-lock ()
@@ -74,14 +58,7 @@
             (let (font-lock-mode)
               (clojure-mode-font-lock-setup))))
 
-;;; I prefer cmd key for meta
-(setq mac-option-key-is-meta nil
-      mac-command-key-is-meta t
-      mac-command-modifier 'meta
-      mac-option-modifier 'none)
-
 (define-key global-map "\C-xm" 'set-mark-command)
-
 
 ;; put the backup file in seperate folder
 (setq
@@ -92,11 +69,6 @@
    kept-new-versions 6
    kept-old-versions 2
    version-control t)       ; use versioned backups
-
-;; shell-mode
-(defun sh ()
-  (interactive)
-  (ansi-term "/bin/bash"))
 
 ;; window-numbering
 ;;(require 'window-number)
