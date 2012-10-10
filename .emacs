@@ -34,9 +34,9 @@
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 
 (require 'color-theme)
-(require 'color-theme-solarized)
-(color-theme-solarized-dark)
-;;(color-theme-oswald)
+;(require 'color-theme-solarized)
+;(color-theme-solarized-dark)
+(color-theme-oswald)
 ;;(color-theme-xp)
 ;;(color-theme-gnome)
 ;;(color-theme-gtk-ide)
@@ -46,14 +46,9 @@
 (require 'auto-complete-config)
 (ac-config-default)
 
-
-(require 'ac-slime)                                                                                                                   
-(add-hook 'slime-mode-hook 'set-up-slime-ac)                                                                                          
-(add-hook 'slime-repl-mode-hook 'set-up-slime-ac)
+(require 'ac-slime)                                                                                                (add-hook 'slime-mode-hook 'set-up-slime-ac)                                                                       (add-hook 'slime-repl-mode-hook 'set-up-slime-ac)
 (add-hook 'clojure-mode-hook (lambda () (paredit-mode +1))) 
-(eval-after-load "auto-complete"                                                                                                      
-  '(add-to-list 'ac-modes 'slime-repl-mode)) 
-
+(eval-after-load "auto-complete"                                                                                     '(add-to-list 'ac-modes 'slime-repl-mode)) 
 (add-hook 'slime-mode-hook 'set-up-slime-ac)
 
 
@@ -113,3 +108,4 @@
 ;; enable winner-mode
 (when (fboundp 'winner-mode)
       (winner-mode 1))
+
