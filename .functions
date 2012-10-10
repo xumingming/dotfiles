@@ -81,15 +81,24 @@ appname() {
 
 jmvn () {
     echo "app name is `appname`"
-    mvn clean install -DuserProp=../antx_`appname`.properties
+    mvn clean install -DuserProp=../antx_`appname`.properties -Dmaven.test.skip=true
 }
 
 jstart() {
-    jmvn `appname` && ./deploy/target/web-deploy/bin/jbossctl.sh
+    jmvn `appname` && ./deploy/target/web-deploy/bin/jettyctl.sh run
 }
 
+jstart_center() {
+    jmvn `appname` && ./deploy/target/web-deploy/bin/start-service.sh
+}
+
+jstart_tc() {
+    jmvn `appname` && ./tradecenter.deploy/target/web-deploy/bin/start-service.sh
+}
+
+
 hosts() {
-    hostsdir=/Users/xumingmingv/hosts
+    hostsdir=/usr/alibaba/hostmanager/HostsManagerDir/
 
     if [ -z $1 ]; then
 	echo "hosts [ls|edit|hostsname]";
