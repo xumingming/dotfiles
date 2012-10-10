@@ -34,9 +34,9 @@
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 
 (require 'color-theme)
-(require 'color-theme-solarized)
-(color-theme-solarized-dark)
-;;(color-theme-oswald)
+;(require 'color-theme-solarized)
+;(color-theme-solarized-dark)
+(color-theme-oswald)
 ;;(color-theme-xp)
 ;;(color-theme-gnome)
 ;;(color-theme-gtk-ide)
@@ -46,14 +46,9 @@
 (require 'auto-complete-config)
 (ac-config-default)
 
-
-(require 'ac-slime)                                                                                                                   
-(add-hook 'slime-mode-hook 'set-up-slime-ac)                                                                                          
-(add-hook 'slime-repl-mode-hook 'set-up-slime-ac)
+(require 'ac-slime)                                                                                                (add-hook 'slime-mode-hook 'set-up-slime-ac)                                                                       (add-hook 'slime-repl-mode-hook 'set-up-slime-ac)
 (add-hook 'clojure-mode-hook (lambda () (paredit-mode +1))) 
-(eval-after-load "auto-complete"                                                                                                      
-  '(add-to-list 'ac-modes 'slime-repl-mode)) 
-
+(eval-after-load "auto-complete"                                                                                     '(add-to-list 'ac-modes 'slime-repl-mode)) 
 (add-hook 'slime-mode-hook 'set-up-slime-ac)
 
 
@@ -97,3 +92,20 @@
    kept-new-versions 6
    kept-old-versions 2
    version-control t)       ; use versioned backups
+
+;; shell-mode
+(defun sh ()
+  (interactive)
+  (ansi-term "/bin/bash"))
+
+;; window-numbering
+;;(require 'window-number)
+(autoload 'window-number-mode "window-number" "..." t)
+(autoload 'window-number-meta-mode "window-number" "..." t)
+(window-number-mode 1)
+(window-number-meta-mode 1)
+
+;; enable winner-mode
+(when (fboundp 'winner-mode)
+      (winner-mode 1))
+
