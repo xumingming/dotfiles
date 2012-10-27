@@ -1,554 +1,556 @@
-((("the" .
-   [1 0 0])
-  ("set" .
-   [1 0 0])
-  ("color-theme-hober" .
-   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("color-theme-billw" .
-   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("proj" .
-   [2 0 0 0])
-  ("all-fields" .
-   [2 0 0 0 0 0 0 0 0 0])
-  ("Fields." .
+((("StateSpec" .
+   [1 0 0 0 0 0 0 0 0])
+  ("storm.trident.state" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("IllegalArgumentException" .
+   [0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("thrown?" .
    [1 0 0 0 0 0 0])
-  ("color-theme-gnome" .
+  ("is" .
+   [1 0])
+  ("drpc" .
+   [1 0 0 0])
+  ("with-drpc" .
+   [1 0 0 0 0 0 0 0 0])
+  ("storm.trident.operation.builtin" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0])
+  (".partitionPersist" .
    [0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0])
-  ("task" .
-   [1 0 0 0])
-  ("worker-context" .
-   [2 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("task-ids" .
-   [4 0 0 0 0 0 0 0])
-  ("platform" .
-   [0 0 0 0 0 0 0 1])
-  ("platform-jars" .
-   [2 0 0 0 0 0 0 0 0 0 0 0 1])
-  ("supervisor-platform-jars-dir" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("supervisor" .
-   [1 0 0 0 0 0 0 0 0 0])
-  ("notebook-name" .
+  ("fields" .
+   [1 0 0 0 0 0])
+  ("storm.trident.testing" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("MemoryMapState$Factory" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1])
+  ("Split." .
+   [1 0 0 0 0 0])
+  ("with-topology" .
    [1 0 0 0 0 0 0 0 0 0 0 0 0])
-  (":title" .
-   [1 0 0 0 0 0])
-  ("get-note" .
-   [1 0 0 0 0 0 0 0])
-  ("notebook" .
-   [1 0 0 0 0 0 0 0])
-  ("retieve" .
-   [1 0 0 0 0 0 0])
-  ("note-title" .
-   [1 0 0 0 0 0 0 0 0 0])
-  ("remote" .
-   [7 0 0 0 0 0])
-  ("backtype.storm.testing.Foo" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0])
-  (":added" .
-   [7 0 0 0 0 1])
-  ("get-user-store" .
-   [0 0 0 0 0 0 0 0 0 0 1 0 0 0])
-  ("setq" .
-   [2 0 0 0])
-  ("System" .
-   [1 0 0 0 0 0])
-  (".submitTopology" .
-   [0 0 0 0 1 0 0 0 0 0 0 0 0 0 0])
-  ("delete" .
-   [1 0 0 0 0 0])
-  ("current-classpath" .
-   [0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0])
-  ("main-routes" .
-   [0 0 0 0 0 0 0 1 0 0 0])
-  ("main-page" .
-   [0 0 0 0 0 1 0 0 0])
-  ("GET" .
-   [1 0 0])
-  ("defroutes" .
+  ("t/with-local-cluster" .
+   [0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("character" .
    [1 0 0 0 0 0 0 0 0])
-  ("backtype.storm.ILocalCluster" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0])
-  (".getNimbus" .
-   [1 0 0 0 0 0 0 0 0 0])
-  ("cluster" .
-   [5 0 0 0 0 0 0])
-  ("AckFailMapTracker" .
-   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("testing" .
-   [1 0 0 0 0 0 0])
-  ("10" .
-   [1 0])
-  ("TOPOLOGY-MESSAGE-TIMEOUT-SECS" .
-   [0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("TOPOLOGY-NAME" .
-   [0 0 0 0 1 0 0 0 0 0 0 0 0])
-  ("storm-conf" .
-   [3 0 0 0 0 0 0 0 0 0])
-  ("Testing/submitLocalTopology" .
-   [0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("12" .
-   [1 0])
-  ("Testing/advanceClusterTime" .
-   [0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("ILocalCluster" .
-   [1 0 0 0 0 0 1 0 0 0 0 0 0])
-  ("this" .
+  ("line" .
    [1 0 0 0])
-  ("mk-stats-sampler" .
-   [0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("daemon" .
-   [0 0 0 0 0 1])
-  (".setDaemonConf" .
-   [1 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("MkClusterParam." .
-   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("MkClusterParam" .
-   [0 0 1 0 0 0 0 0 0 0 0 0 0 0])
-  ("mk-cluster-param" .
-   [0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0])
-  ("TOPOLOGY-ENABLE-MESSAGE-TIMEOUTS" .
-   [0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  (".put" .
-   [2 0 0 0])
-  ("Config." .
+  ("executor-id" .
+   [1 0 0 0 0 0 0 0 0 0 0])
+  ("component-id" .
+   [1 0 0 0 0 0 0 0 0 0 0 0])
+  ("bolt-names" .
+   [4 0 0 0 0 0 0 0 0 0])
+  (".name" .
+   [2 0 0 0 0])
+  (".build" .
+   [1 0 0 0 0 0])
+  ("bind" .
+   [4 0 0 0])
+  ("topo" .
+   [7 0 0 0])
+  ("print_usage" .
+   [1 0 0 0 0 0 0 0 0 0 0])
+  ("with-note-store" .
+   [0 0 0 0 0 0 0 0 0 2 0 0 0 0 0])
+  ("command-arr" .
+   [2 0 0 0 0 0 0 0 0 0 0])
+  ("command" .
    [2 0 0 0 0 0 0])
-  ("daemon-conf" .
-   [1 0 0 0 0 0 0 0 0 0 0])
-  ("daemons" .
-   [0 0 0 0 0 0 1])
-  ("Testing/withSimulatedTimeLocalCluster" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("backtype.storm.integration-test" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0])
-  ("identity-bolt" .
-   [1 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("check-arg" .
-   [1 0 0 0 0 0 0 0 0])
-  ("clj.guava.base" .
-   [1 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("handler" .
-   [1 0 0 0 0 0 0])
-  (":register-lock" .
-   [0 0 0 0 0 0 1 0 0 0 0 0 0 0])
-  (":dead" .
-   [1 0 0 0 0])
-  ("handlers" .
-   [2 0 0 0 0 0 0 0])
-  ("event-name" .
-   [2 0 0 0 0 0 0 0 0 0])
-  ("RuntimeException" .
-   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("instance?" .
-   [0 0 0 0 1 0 0 0 0])
-  ("exception" .
-   [3 0 0 0 0 0 0 0 0])
-  (":exception" .
-   [3 0 0 0 0 0 0 0 0 0])
-  ("mk-event-catcher" .
-   [0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0])
-  ("event-catcher" .
-   [0 0 0 0 0 0 0 1 0 1 0 0 0])
-  ("events" .
-   [5 0 0 0 0 0])
-  ("bus" .
-   [1 0 0])
-  ("--" .
-   [2 0])
-  (">commute</code>:</p>" .
-   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("class" .
-   [1 0 0 0 0])
-  ("IHello" .
-   [1 0 0 0 0 0])
-  ("msg" .
-   [1 0 0])
-  ("cljtest.core" .
-   [1 0 0 0 0 0 0 0 0 0 0 1])
-  ("clj-stacktrace.core" .
-   [0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("mk-event-class" .
-   [0 0 0 0 0 0 0 0 1 0 0 0 0 0])
-  ("true" .
-   [2 0 0 0])
-  ("Subscribe" .
-   [0 0 0 1 0 0 0 0 0])
-  ("event-handler" .
-   [1 0 0 0 0 0 0 1 0 0 0 0 0])
-  ("handle" .
-   [1 0 0 0 0 0])
-  ("EventHandler" .
-   [1 0 0 0 0 0 0 0 0 0 0 0])
-  ("eventbus" .
-   [3 0 0 0 0 0 0 0])
-  ("Event" .
-   [4 0 0 0 0])
-  ("event-class" .
-   [5 0 0 0 0 1 2 0 0 0 0])
-  ("event-type->event-class" .
-   [0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0])
-  ("if" .
-   [2 0])
-  ("event-type" .
-   [5 0 0 0 0 0 0 0 0 0])
-  ("event" .
-   [5 0 0 0 0])
-  ("defprotocol" .
-   [0 0 0 0 0 0 2 0 0 0 0])
-  (":author" .
-   [1 0 0 0 0 0 0])
-  (":doc" .
-   [1 0 0 0])
-  ("search" .
-   [7 0 0 0 0 0])
-  ("do-calc" .
-   [1 0 0 0 0 0 0])
-  ("amacro" .
-   [1 0 0 0 0 0])
-  ("mkClusterParam" .
-   [0 0 0 0 0 0 1 0 0 0 0 0 0 0])
-  ("with-local-cluster" .
-   [2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("with-cluster-macro" .
-   [0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0])
-  ("afn" .
-   [1 0 0])
-  ("color-theme-solarized-dark" .
-   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("none" .
-   [1 0 0 0])
-  ("def" .
-   [16 0 0])
-  ("init" .
-   [1 0 0 0])
-  (":init" .
-   [1 0 0 0 0])
-  ("java.net.URLClassLoader" .
-   [0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0])
-  (":extends" .
-   [1 0 0 0 0 0 0 0])
-  (":prefix" .
-   [1 0 0 0 0 0 0])
-  (":name" .
-   [2 0 0 0 0])
-  ("backtype.storm.classloader.UserClassLoader" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("range" .
-   [3 0 0 0 0])
-  ("partition-fixed" .
-   [2 0 0 0 0 2 1 0 0 0 0 0 0 0 0])
-  ("use" .
-   [8 0 0])
-  ("alist" .
-   [2 0 0 0 0])
-  ("ele" .
-   [1 0 0])
-  ("test-name" .
-   [1 0 0 0 0 0 0 0 0])
-  ("string" .
-   [1 0 0 0 0 0])
-  ("java-parser-test" .
-   [0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0])
-  ("macroexpand" .
-   [0 0 0 0 0 0 0 0 0 0 1])
-  ("user" .
-   [1 0 0 0])
-  ("log-message" .
-   [7 0 0 0 0 0 1 0 1 0 0])
-  ("conf" .
-   [3 0 0 0])
-  ("STORM-CLUSTER-MODE" .
-   [0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0])
-  ("storm-home" .
+  ("config-str" .
    [1 0 0 0 0 0 0 0 0 0])
-  ("System/getProperty" .
-   [1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0])
-  ("uberjar-url" .
-   [0 0 0 0 0 0 0 1 0 0 0])
-  ("uberjar-path" .
-   [1 0 0 0 0 0 0 0 0 0 0 0])
-  ("storm-deps" .
-   [16 0 0 0 0 0 0 0 0 0])
-  ("ClassLoader" .
-   [1 0 0 0 0 0 0 0 0 0 0])
-  ("server-classloader" .
-   [0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0])
-  ("cal-storm-deps" .
-   [1 0 0 0 1 0 0 1 0 1 0 0 0 0])
-  (":import" .
-   [6 0 0 0 0 0 0])
-  ("backtype.storm." .
-   [0 0 0 0 0 0 0 0 1 0 0 0 0 0 0])
-  ("backtype.storm.utils" .
-   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("Utils" .
-   [1 0 0 0 0])
-  ("mk-remote-server-classloader" .
-   [0 0 0 0 0 0 0 0 0 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("mk-local-user-classloader" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0])
-  (":use" .
-   [6 0 0 0])
-  ("backtype.storm.starter" .
-   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  (":only" .
-   [2 0 0 0 0])
-  ("mk-local-server-classloader" .
-   [0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("server-dep-paths" .
-   [2 0 0 0 0 0 0 0 1 0 2 0 1 1 0 0])
-  ("backtype.storm.log" .
-   [0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 1])
-  ("log" .
-   [2 0 0])
-  ("jar-name->path" .
-   [1 0 0 0 1 0 0 0 0 1 0 0 0 0])
-  ("amap" .
+  ("clj-yaml" .
+   [0 0 0 1 0 0 0 0])
+  ("note" .
    [4 0 0 0])
-  ("filter" .
-   [3 0 0 0 0 0])
-  ("aset" .
-   [1 0 0 0])
-  ("[" .
-   [1])
-  ("fn" .
-   [1 0])
-  ("user-dep-paths" .
-   [0 0 0 0 0 0 1 0 2 0 0 0 0 0])
-  ("classpath" .
-   [6 0 0 0 0 0 0 0 0])
-  ("set/difference" .
-   [0 0 0 0 0 0 0 0 1 0 0 0 0 0])
-  (":require" .
-   [2 0 0 1 0 2 0 0])
-  (":as" .
-   [5 0 0])
-  ("not-nil?" .
-   [1 0 0 0 0 0 0 0])
-  ("add-to-list" .
-   [1 0 0 0 0 0 0 0 0 0 0])
-  ("load-path" .
-   [1 0 0 0 0 0 0 0 0])
-  ("expand-file-name" .
-   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("require" .
-   [3 0 0 0 0 0 0])
-  ("color-theme-solarized" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0])
-  ("reduce" .
-   [4 0 0 0 0 0])
-  ("clojure.repl" .
-   [2 0 0 0 0 0 0 0 0 0 0 0])
-  ("inc" .
-   [1 0 0])
-  ("apply" .
-   [1 0 0 0 0])
-  ("doc" .
-   [4 0 0])
-  ("partition" .
-   [2 0 0 0 0 0 0 0 0])
-  ("repeat" .
-   [6 0 0 0 0 0])
-  ("defn" .
-   [4 0 1 1])
-  ("concat" .
-   [1 0 0 0 0 0])
-  ("[nil]" .
-   [1 0 0 0 0])
-  ("window" .
-   [4 0 0 0 0 0])
-  ("map" .
-   [11 0 0])
-  ("vector" .
-   [8 0 0 0 0 0])
-  ("or" .
-   [4 0])
-  ("cell" .
-   [9 0 0 0])
-  ("[1]" .
-   [2 0 0])
-  ("[2]" .
-   [2 0 0])
-  ("[3]" .
-   [2 0 0])
-  ("source" .
-   [2 0 0 0 0 0])
-  ("[1" .
-   [2 0])
-  ("[[left" .
-   [1 0 0 0 0 0])
-  ("right]]" .
-   [1 0 0 0 0 0 0])
-  ("left" .
-   [1 0 0 0])
-  ("right" .
-   [1 0 0 0 0])
-  ("[[1" .
-   [1 0 0])
-  ("[4" .
-   [1 0])
-  ("backup" .
-   [1 0 0 0 0 0])
-  ("file" .
-   [1 0 0 0])
-  ("in" .
-   [1 0])
-  (":static" .
-   [1 0 0 0 0 0 0])
-  ("backtype.storm.testing" .
-   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
-  ("void" .
-   [2 0 0 0])
-  ("TestJob" .
-   [1 0 0 0 0 1 0])
-  ("code" .
-   [3 0 0 0])
-  ("with-simulated-time" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
-  (".run" .
-   [1 0 0 0])
-  ("Runnable" .
-   [1 0 0 0 0 0 0 0])
-  ("gh-cn-top-user.worker" .
-   [0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("search-user-in" .
-   [0 0 0 0 0 0 1 0 0 0 0 0 0 0])
-  ("count" .
+  ("false" .
    [2 0 0 0 0])
-  ("first" .
-   [3 0 0 0 0])
-  ("slurp" .
-   [2 0 0 0 0])
-  ("http" .
-   [1 0 0 0])
-  ("-Dfile.encoding" .
-   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("utf8" .
-   [1 0 0 0])
-  ("clj.guava.eventbus" .
-   [0 0 0 0 4 1 0 0 0 0 0 0 0 0 0 0 0 1])
-  ("clojure.test" .
-   [1 0 0 0 0 0 0 0 0 0 0 0])
-  ("deftest" .
-   [3 0 0 0 0 0 0])
-  ("register!" .
-   [6 0 0 0 0 0 0 0 1])
-  ("post!" .
-   [6 0 0 0 0])
-  ("EventBus" .
-   [1 0 0 0 0 0 0 0])
-  ("->" .
-   [2 0])
-  ("hello" .
-   [4 0 0 0 0])
-  ("println" .
+  ("dev-token" .
+   [0 0 0 0 2 0 1 0 0])
+  ("guid" .
+   [8 0 0 0])
+  ("get-note-store" .
+   [0 0 0 0 0 0 0 0 3 0 0 0 0 0])
+  ("note-store" .
+   [6 0 0 0 0 0 0 1 0 3])
+  ("letfn" .
+   [0 0 1 0 0])
+  (".remove" .
    [1 0 0 0 0 0 0])
-  ("ns-publics" .
-   [0 0 0 0 0 2 0 0 0 0])
-  ("sh" .
-   [1 0])
-  ("window-number" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 1])
-  ("args" .
-   [4 0 0 0])
-  ("to" .
-   [1 0])
-  ("topology" .
-   [1 0 0 0 0 0 0 0])
-  ("main_class" .
-   [1 0 0 0 0 0 0 0 0 0])
-  ("platform-jars-dir" .
-   [0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("read-storm-config" .
-   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("filename" .
-   [1 0 0 0 0 0 0 0])
-  ("nimbus" .
+  (":let" .
+   [1 0 0 0])
+  ("clojure.string" .
+   [3 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("backtype.storm" .
+   [1 0 0 0 0 0 1 1 0 0 0 0 0 0])
+  ("jarfiles" .
+   [4 0 0 0 0 0 0 0])
+  ("remove" .
    [1 0 0 0 0 0])
   ("jarfile" .
    [7 0 0 0 0 0 0])
-  ("remove" .
+  ("nimbus" .
    [1 0 0 0 0 0])
-  ("jarfiles" .
-   [4 0 0 0 0 0 0 0])
-  ("backtype.storm" .
-   [1 0 0 0 0 0 1 1 0 0 0 0 0 0])
-  ("clojure.string" .
-   [3 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  (":let" .
-   [1 0 0 0])
-  (".remove" .
-   [1 0 0 0 0 0 0])
-  ("letfn" .
-   [0 0 1 0 0])
-  ("note-store" .
-   [6 0 0 0 0 0 0 1 0 3])
-  ("get-note-store" .
-   [0 0 0 0 0 0 0 0 3 0 0 0 0 0])
-  ("guid" .
-   [8 0 0 0])
-  ("dev-token" .
-   [0 0 0 0 2 0 1 0 0])
-  ("false" .
-   [2 0 0 0 0])
-  ("note" .
-   [4 0 0 0])
-  ("clj-yaml" .
-   [0 0 0 1 0 0 0 0])
-  ("config-str" .
+  ("filename" .
+   [1 0 0 0 0 0 0 0])
+  ("read-storm-config" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("platform-jars-dir" .
+   [0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("main_class" .
    [1 0 0 0 0 0 0 0 0 0])
-  ("command" .
-   [2 0 0 0 0 0 0])
-  ("command-arr" .
-   [2 0 0 0 0 0 0 0 0 0 0])
-  ("with-note-store" .
-   [0 0 0 0 0 0 0 0 0 2 0 0 0 0 0])
-  ("print_usage" .
-   [1 0 0 0 0 0 0 0 0 0 0])
-  ("topo" .
-   [7 0 0 0])
-  ("bind" .
-   [4 0 0 0])
-  (".build" .
-   [1 0 0 0 0 0])
-  (".name" .
-   [2 0 0 0 0])
-  ("bolt-names" .
-   [4 0 0 0 0 0 0 0 0 0])
-  ("component-id" .
-   [1 0 0 0 0 0 0 0 0 0 0 0])
-  ("executor-id" .
-   [1 0 0 0 0 0 0 0 0 0 0])
-  ("line" .
-   [1 0 0 0])
-  ("character" .
-   [1 0 0 0 0 0 0 0 0])
-  ("t/with-local-cluster" .
-   [0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("with-topology" .
-   [1 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("Split." .
-   [1 0 0 0 0 0])
-  ("MemoryMapState$Factory" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1])
-  ("storm.trident.testing" .
-   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("fields" .
-   [1 0 0 0 0 0])
-  (".partitionPersist" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0])
-  ("storm.trident.operation.builtin" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("with-drpc" .
-   [1 0 0 0 0 0 0 0 0])
-  ("drpc" .
-   [1 0 0 0])
-  ("is" .
+  ("topology" .
+   [1 0 0 0 0 0 0 0])
+  ("to" .
    [1 0])
-  ("thrown?" .
+  ("args" .
+   [4 0 0 0])
+  ("window-number" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("sh" .
+   [1 0])
+  ("ns-publics" .
+   [0 0 0 0 0 2 0 0 0 0])
+  ("println" .
    [1 0 0 0 0 0 0])
-  ("IllegalArgumentException" .
-   [0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("storm.trident.state" .
-   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("StateSpec" .
-   [1 0 0 0 0 0 0 0 0])))
+  ("hello" .
+   [4 0 0 0 0])
+  ("->" .
+   [2 0])
+  ("EventBus" .
+   [1 0 0 0 0 0 0 0])
+  ("post!" .
+   [6 0 0 0 0])
+  ("register!" .
+   [6 0 0 0 0 0 0 0 1])
+  ("deftest" .
+   [3 0 0 0 0 0 0])
+  ("clojure.test" .
+   [1 0 0 0 0 0 0 0 0 0 0 0])
+  ("clj.guava.eventbus" .
+   [0 0 0 0 4 1 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("utf8" .
+   [1 0 0 0])
+  ("-Dfile.encoding" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("http" .
+   [1 0 0 0])
+  ("slurp" .
+   [2 0 0 0 0])
+  ("first" .
+   [3 0 0 0 0])
+  ("count" .
+   [2 0 0 0 0])
+  ("search-user-in" .
+   [0 0 0 0 0 0 1 0 0 0 0 0 0 0])
+  ("gh-cn-top-user.worker" .
+   [0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("Runnable" .
+   [1 0 0 0 0 0 0 0])
+  (".run" .
+   [1 0 0 0])
+  ("with-simulated-time" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("code" .
+   [3 0 0 0])
+  ("TestJob" .
+   [1 0 0 0 0 1 0])
+  ("void" .
+   [2 0 0 0])
+  ("backtype.storm.testing" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  (":static" .
+   [1 0 0 0 0 0 0])
+  ("in" .
+   [1 0])
+  ("file" .
+   [1 0 0 0])
+  ("backup" .
+   [1 0 0 0 0 0])
+  ("[4" .
+   [1 0])
+  ("[[1" .
+   [1 0 0])
+  ("right" .
+   [1 0 0 0 0])
+  ("left" .
+   [1 0 0 0])
+  ("right]]" .
+   [1 0 0 0 0 0 0])
+  ("[[left" .
+   [1 0 0 0 0 0])
+  ("[1" .
+   [2 0])
+  ("source" .
+   [2 0 0 0 0 0])
+  ("[3]" .
+   [2 0 0])
+  ("[2]" .
+   [2 0 0])
+  ("[1]" .
+   [2 0 0])
+  ("cell" .
+   [9 0 0 0])
+  ("or" .
+   [4 0])
+  ("vector" .
+   [8 0 0 0 0 0])
+  ("map" .
+   [11 0 0])
+  ("window" .
+   [4 0 0 0 0 0])
+  ("[nil]" .
+   [1 0 0 0 0])
+  ("concat" .
+   [1 0 0 0 0 0])
+  ("defn" .
+   [4 0 1 1])
+  ("repeat" .
+   [6 0 0 0 0 0])
+  ("partition" .
+   [2 0 0 0 0 0 0 0 0])
+  ("doc" .
+   [4 0 0])
+  ("apply" .
+   [1 0 0 0 0])
+  ("inc" .
+   [1 0 0])
+  ("clojure.repl" .
+   [2 0 0 0 0 0 0 0 0 0 0 0])
+  ("reduce" .
+   [4 0 0 0 0 0])
+  ("color-theme-solarized" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0])
+  ("require" .
+   [4 0 0 0 0 0 0])
+  ("expand-file-name" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("load-path" .
+   [1 0 0 0 0 0 0 0 0])
+  ("add-to-list" .
+   [1 0 0 0 0 0 0 0 0 0 0])
+  ("not-nil?" .
+   [1 0 0 0 0 0 0 0])
+  (":as" .
+   [5 0 0])
+  (":require" .
+   [2 0 0 1 0 2 0 0])
+  ("set/difference" .
+   [0 0 0 0 0 0 0 0 1 0 0 0 0 0])
+  ("classpath" .
+   [6 0 0 0 0 0 0 0 0])
+  ("user-dep-paths" .
+   [0 0 0 0 0 0 1 0 2 0 0 0 0 0])
+  ("fn" .
+   [1 0])
+  ("[" .
+   [1])
+  ("aset" .
+   [1 0 0 0])
+  ("filter" .
+   [3 0 0 0 0 0])
+  ("amap" .
+   [4 0 0 0])
+  ("jar-name->path" .
+   [1 0 0 0 1 0 0 0 0 1 0 0 0 0])
+  ("log" .
+   [2 0 0])
+  ("backtype.storm.log" .
+   [0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 1])
+  ("server-dep-paths" .
+   [2 0 0 0 0 0 0 0 1 0 2 0 1 1 0 0])
+  ("mk-local-server-classloader" .
+   [0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  (":only" .
+   [2 0 0 0 0])
+  ("backtype.storm.starter" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  (":use" .
+   [6 0 0 0])
+  ("mk-local-user-classloader" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0])
+  ("mk-remote-server-classloader" .
+   [0 0 0 0 0 0 0 0 0 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("Utils" .
+   [1 0 0 0 0])
+  ("backtype.storm.utils" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("backtype.storm." .
+   [0 0 0 0 0 0 0 0 1 0 0 0 0 0 0])
+  (":import" .
+   [6 0 0 0 0 0 0])
+  ("cal-storm-deps" .
+   [1 0 0 0 1 0 0 1 0 1 0 0 0 0])
+  ("server-classloader" .
+   [0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0])
+  ("ClassLoader" .
+   [1 0 0 0 0 0 0 0 0 0 0])
+  ("storm-deps" .
+   [16 0 0 0 0 0 0 0 0 0])
+  ("uberjar-path" .
+   [1 0 0 0 0 0 0 0 0 0 0 0])
+  ("uberjar-url" .
+   [0 0 0 0 0 0 0 1 0 0 0])
+  ("System/getProperty" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0])
+  ("storm-home" .
+   [1 0 0 0 0 0 0 0 0 0])
+  ("STORM-CLUSTER-MODE" .
+   [0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0])
+  ("conf" .
+   [3 0 0 0])
+  ("log-message" .
+   [7 0 0 0 0 0 1 0 1 0 0])
+  ("user" .
+   [1 0 0 0])
+  ("macroexpand" .
+   [0 0 0 0 0 0 0 0 0 0 1])
+  ("java-parser-test" .
+   [0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0])
+  ("string" .
+   [1 0 0 0 0 0])
+  ("test-name" .
+   [1 0 0 0 0 0 0 0 0])
+  ("ele" .
+   [1 0 0])
+  ("alist" .
+   [2 0 0 0 0])
+  ("use" .
+   [8 0 0])
+  ("partition-fixed" .
+   [2 0 0 0 0 2 1 0 0 0 0 0 0 0 0])
+  ("range" .
+   [3 0 0 0 0])
+  ("backtype.storm.classloader.UserClassLoader" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  (":name" .
+   [2 0 0 0 0])
+  (":prefix" .
+   [1 0 0 0 0 0 0])
+  (":extends" .
+   [1 0 0 0 0 0 0 0])
+  ("java.net.URLClassLoader" .
+   [0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0])
+  (":init" .
+   [1 0 0 0 0])
+  ("init" .
+   [1 0 0 0])
+  ("def" .
+   [16 0 0])
+  ("none" .
+   [1 0 0 0])
+  ("color-theme-solarized-dark" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("afn" .
+   [1 0 0])
+  ("with-cluster-macro" .
+   [0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0])
+  ("with-local-cluster" .
+   [2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("mkClusterParam" .
+   [0 0 0 0 0 0 1 0 0 0 0 0 0 0])
+  ("amacro" .
+   [1 0 0 0 0 0])
+  ("do-calc" .
+   [1 0 0 0 0 0 0])
+  ("search" .
+   [7 0 0 0 0 0])
+  (":doc" .
+   [1 0 0 0])
+  (":author" .
+   [1 0 0 0 0 0 0])
+  ("defprotocol" .
+   [0 0 0 0 0 0 2 0 0 0 0])
+  ("event" .
+   [5 0 0 0 0])
+  ("event-type" .
+   [5 0 0 0 0 0 0 0 0 0])
+  ("if" .
+   [2 0])
+  ("event-type->event-class" .
+   [0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0])
+  ("event-class" .
+   [5 0 0 0 0 1 2 0 0 0 0])
+  ("Event" .
+   [4 0 0 0 0])
+  ("eventbus" .
+   [3 0 0 0 0 0 0 0])
+  ("EventHandler" .
+   [1 0 0 0 0 0 0 0 0 0 0 0])
+  ("handle" .
+   [1 0 0 0 0 0])
+  ("event-handler" .
+   [1 0 0 0 0 0 0 1 0 0 0 0 0])
+  ("Subscribe" .
+   [0 0 0 1 0 0 0 0 0])
+  ("true" .
+   [2 0 0 0])
+  ("mk-event-class" .
+   [0 0 0 0 0 0 0 0 1 0 0 0 0 0])
+  ("clj-stacktrace.core" .
+   [0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("cljtest.core" .
+   [1 0 0 0 0 0 0 0 0 0 0 1])
+  ("msg" .
+   [1 0 0])
+  ("IHello" .
+   [1 0 0 0 0 0])
+  ("class" .
+   [1 0 0 0 0])
+  (">commute</code>:</p>" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("--" .
+   [2 0])
+  ("bus" .
+   [1 0 0])
+  ("events" .
+   [5 0 0 0 0 0])
+  ("event-catcher" .
+   [0 0 0 0 0 0 0 1 0 1 0 0 0])
+  ("mk-event-catcher" .
+   [0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0])
+  (":exception" .
+   [3 0 0 0 0 0 0 0 0 0])
+  ("exception" .
+   [3 0 0 0 0 0 0 0 0])
+  ("instance?" .
+   [0 0 0 0 1 0 0 0 0])
+  ("RuntimeException" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("event-name" .
+   [2 0 0 0 0 0 0 0 0 0])
+  ("handlers" .
+   [2 0 0 0 0 0 0 0])
+  (":dead" .
+   [1 0 0 0 0])
+  (":register-lock" .
+   [0 0 0 0 0 0 1 0 0 0 0 0 0 0])
+  ("handler" .
+   [1 0 0 0 0 0 0])
+  ("clj.guava.base" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("check-arg" .
+   [1 0 0 0 0 0 0 0 0])
+  ("identity-bolt" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("backtype.storm.integration-test" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0])
+  ("Testing/withSimulatedTimeLocalCluster" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("daemons" .
+   [0 0 0 0 0 0 1])
+  ("daemon-conf" .
+   [1 0 0 0 0 0 0 0 0 0 0])
+  ("Config." .
+   [2 0 0 0 0 0 0])
+  (".put" .
+   [2 0 0 0])
+  ("TOPOLOGY-ENABLE-MESSAGE-TIMEOUTS" .
+   [0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("mk-cluster-param" .
+   [0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0])
+  ("MkClusterParam" .
+   [0 0 1 0 0 0 0 0 0 0 0 0 0 0])
+  ("MkClusterParam." .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  (".setDaemonConf" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("daemon" .
+   [0 0 0 0 0 1])
+  ("mk-stats-sampler" .
+   [0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("this" .
+   [1 0 0 0])
+  ("ILocalCluster" .
+   [1 0 0 0 0 0 1 0 0 0 0 0 0])
+  ("Testing/advanceClusterTime" .
+   [0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("12" .
+   [1 0])
+  ("Testing/submitLocalTopology" .
+   [0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("storm-conf" .
+   [3 0 0 0 0 0 0 0 0 0])
+  ("TOPOLOGY-NAME" .
+   [0 0 0 0 1 0 0 0 0 0 0 0 0])
+  ("TOPOLOGY-MESSAGE-TIMEOUT-SECS" .
+   [0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("10" .
+   [1 0])
+  ("testing" .
+   [1 0 0 0 0 0 0])
+  ("AckFailMapTracker" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("cluster" .
+   [5 0 0 0 0 0 0])
+  (".getNimbus" .
+   [1 0 0 0 0 0 0 0 0 0])
+  ("backtype.storm.ILocalCluster" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0])
+  ("defroutes" .
+   [1 0 0 0 0 0 0 0 0])
+  ("GET" .
+   [1 0 0])
+  ("main-page" .
+   [0 0 0 0 0 1 0 0 0])
+  ("main-routes" .
+   [0 0 0 0 0 0 0 1 0 0 0])
+  ("current-classpath" .
+   [0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0])
+  ("delete" .
+   [1 0 0 0 0 0])
+  (".submitTopology" .
+   [0 0 0 0 1 0 0 0 0 0 0 0 0 0 0])
+  ("System" .
+   [1 0 0 0 0 0])
+  ("setq" .
+   [2 0 0 0])
+  ("get-user-store" .
+   [0 0 0 0 0 0 0 0 0 0 1 0 0 0])
+  (":added" .
+   [7 0 0 0 0 1])
+  ("backtype.storm.testing.Foo" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0])
+  ("remote" .
+   [7 0 0 0 0 0])
+  ("note-title" .
+   [1 0 0 0 0 0 0 0 0 0])
+  ("retieve" .
+   [1 0 0 0 0 0 0])
+  ("notebook" .
+   [1 0 0 0 0 0 0 0])
+  ("get-note" .
+   [1 0 0 0 0 0 0 0])
+  (":title" .
+   [1 0 0 0 0 0])
+  ("notebook-name" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("supervisor" .
+   [1 0 0 0 0 0 0 0 0 0])
+  ("supervisor-platform-jars-dir" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("platform-jars" .
+   [2 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("platform" .
+   [0 0 0 0 0 0 0 1])
+  ("task-ids" .
+   [4 0 0 0 0 0 0 0])
+  ("worker-context" .
+   [2 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("task" .
+   [1 0 0 0])
+  ("color-theme-gnome" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0])
+  ("Fields." .
+   [1 0 0 0 0 0 0])
+  ("all-fields" .
+   [2 0 0 0 0 0 0 0 0 0])
+  ("proj" .
+   [2 0 0 0])
+  ("color-theme-billw" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("color-theme-hober" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("set" .
+   [1 0 0])
+  ("the" .
+   [1 0 0])
+  ("yasnippet" .
+   [0 0 0 1 0 0 0 0 0])))
