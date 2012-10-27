@@ -16,7 +16,7 @@
 
 ; hook
 (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
-(global-linum-mode)
+;;(global-linum-mode)
 
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
@@ -36,7 +36,7 @@
 (require 'color-theme)
 ;(require 'color-theme-solarized)
 ;(color-theme-solarized-dark)
-(color-theme-oswald)
+;(color-theme-oswald)
 ;;(color-theme-xp)
 ;;(color-theme-gnome)
 ;;(color-theme-gtk-ide)
@@ -81,3 +81,6 @@
 (when (fboundp 'winner-mode)
       (winner-mode 1))
 
+;; disable the line-wrap character
+;; http://emacswiki.org/emacs/LineWrap
+(set-display-table-slot standard-display-table 'wrap ?\ )
