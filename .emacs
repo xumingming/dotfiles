@@ -84,3 +84,8 @@
 ;; disable the line-wrap character
 ;; http://emacswiki.org/emacs/LineWrap
 (set-display-table-slot standard-display-table 'wrap ?\ )
+
+;; ido mode
+(ido-mode t)
+(setq ido-enable-flex-matching t) ; fuzzy matching is a must have
+(setq ido-enable-last-directory-history nil) ; forget latest selected directory names
