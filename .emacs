@@ -96,3 +96,9 @@
 
 ;; Delete trailing whitespaces
 (add-hook 'before-save-hook (lambda () (delete-trailing-whitespace)))
+
+;; spaces instead of tabs
+(setq-default indent-tabs-mode nil)
+
+;; if there is a tab, make it size of 4 spaces
+(setq-default tab-width 4)
