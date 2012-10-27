@@ -5,7 +5,7 @@
 (set-buffer-file-coding-system 'euc-cn)
 (set-selection-coding-system 'euc-cn)
 (modify-coding-system-alist 'process "*" 'utf-8)
-(setq default-process-coding-system 
+(setq default-process-coding-system
             '(euc-cn . euc-cn))
 (setq-default pathname-coding-system 'utf-8)
 (setq-default tab-width 4)
@@ -34,10 +34,9 @@
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 
 (require 'color-theme)
-;(require 'color-theme-solarized)
 ;(color-theme-solarized-dark)
 ;(color-theme-oswald)
-;;(color-theme-xp)
+(color-theme-xp)
 ;;(color-theme-gnome)
 ;;(color-theme-gtk-ide)
 ;;(color-theme-gnome2)
@@ -47,8 +46,8 @@
 (ac-config-default)
 
 (require 'ac-slime)                                                                                                (add-hook 'slime-mode-hook 'set-up-slime-ac)                                                                       (add-hook 'slime-repl-mode-hook 'set-up-slime-ac)
-(add-hook 'clojure-mode-hook (lambda () (paredit-mode +1))) 
-(eval-after-load "auto-complete"                                                                                     '(add-to-list 'ac-modes 'slime-repl-mode)) 
+(add-hook 'clojure-mode-hook (lambda () (paredit-mode +1)))
+(eval-after-load "auto-complete"                                                                                     '(add-to-list 'ac-modes 'slime-repl-mode))
 (add-hook 'slime-mode-hook 'set-up-slime-ac)
 
 ;; slime-repl syntax highlight
@@ -89,3 +88,15 @@
 (ido-mode t)
 (setq ido-enable-flex-matching t) ; fuzzy matching is a must have
 (setq ido-enable-last-directory-history nil) ; forget latest selected directory names
+
+;; Dont show startup screen
+(setq inhibit-startup-message t)
+
+;; "y or n" instead of "yes or no"
+(fset 'yes-or-no-p 'y-or-n-p)
+
+;; Highlight matching parentsis
+(show-paren-mode t)
+
+;; Delete trailing whitespaces
+(add-hook 'before-save-hook (lambda () (delete-trailing-whitespace)))
