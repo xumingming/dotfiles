@@ -1,3 +1,4 @@
+;; encoding settings
 (set-language-environment 'utf-8)
 (set-keyboard-coding-system 'utf-8)
 (set-clipboard-coding-system 'euc-cn)
@@ -10,9 +11,7 @@
 (setq-default pathname-coding-system 'utf-8)
 (setq-default tab-width 4)
 
-
 (add-to-list 'load-path (expand-file-name "~/.emacs.d"))
-(add-to-list 'load-path (expand-file-name "~/local/svn/emacs-color-theme-solarized"))
 
 ; hook
 (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
@@ -34,20 +33,16 @@
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 
 (require 'color-theme)
-;(color-theme-solarized-dark)
-;(color-theme-oswald)
-(color-theme-xp)
-;;(color-theme-gnome)
-;;(color-theme-gtk-ide)
-;;(color-theme-gnome2)
-
+(color-theme-billw)
 
 (require 'auto-complete-config)
 (ac-config-default)
 
-(require 'ac-slime)                                                                                                (add-hook 'slime-mode-hook 'set-up-slime-ac)                                                                       (add-hook 'slime-repl-mode-hook 'set-up-slime-ac)
+(require 'ac-slime)
+(add-hook 'slime-mode-hook 'set-up-slime-ac)
+(add-hook 'slime-repl-mode-hook 'set-up-slime-ac)
 (add-hook 'clojure-mode-hook (lambda () (paredit-mode +1)))
-(eval-after-load "auto-complete"                                                                                     '(add-to-list 'ac-modes 'slime-repl-mode))
+(eval-after-load "auto-complete" '(add-to-list 'ac-modes 'slime-repl-mode))
 (add-hook 'slime-mode-hook 'set-up-slime-ac)
 
 ;; slime-repl syntax highlight
@@ -57,6 +52,7 @@
             (let (font-lock-mode)
               (clojure-mode-font-lock-setup))))
 
+;; change the "Mark Set" command to use Ctrl+x M
 (define-key global-map "\C-xm" 'set-mark-command)
 
 ;; put the backup file in seperate folder
