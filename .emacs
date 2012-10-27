@@ -9,17 +9,13 @@
 (setq default-process-coding-system
             '(euc-cn . euc-cn))
 (setq-default pathname-coding-system 'utf-8)
-(setq-default tab-width 4)
+
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d"))
 
 ; hook
 (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
 ;;(global-linum-mode)
-
-(setq-default indent-tabs-mode nil)
-(setq-default tab-width 4)
-
 
 ;;; This was installed by package-install.el.
 ;;; This provides support for the package system and
@@ -102,3 +98,8 @@
 
 ;; if there is a tab, make it size of 4 spaces
 (setq-default tab-width 4)
+
+
+;; set the dir for yasnippet
+(setq yas-snippet-dirs
+      '("~/.emacs.d/snippets/clojure"))
