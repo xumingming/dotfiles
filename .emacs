@@ -149,5 +149,5 @@ Display the results in a hyperlinked *compilation* buffer."
 ;; dont popup error buffer
 (setq nrepl-popup-stacktraces nil)
 ;;
-(add-to-list 'same-window-buffer-names "*nrepl*")
+;;(add-to-list 'same-window-buffer-names "*nrepl*")
 ;; ==== nrepl END   ====
