@@ -151,3 +151,13 @@ Display the results in a hyperlinked *compilation* buffer."
 ;;
 ;;(add-to-list 'same-window-buffer-names "*nrepl*")
 ;; ==== nrepl END   ====
+
+;; ==== markdown BEGIN ====
+(add-to-list 'auto-mode-alist '("\\.markdown$" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
+
+(eval-after-load 'markdown-mode
+  '(progn
+     (define-key markdown-mode-map (kbd "C-c C-v") 'markdown-preview)
+     ))
+;; ==== markdown END   ====
