@@ -109,7 +109,7 @@
       '("~/.emacs.d/snippets/clojure-mode"))
 
 ;; set font size
-(set-default-font "Consolas-16")
+(set-default-font "Monaco-18")
 
 ;; ====  kibit related config BEGIN ====
 ;; Teach compile the syntax of the kibit output
@@ -126,3 +126,16 @@ Display the results in a hyperlinked *compilation* buffer."
   (interactive)
   (compile "lein kibit"))
 ;; ====  kibit related config END   ====
+
+
+;; ==== org-mode BEGIN ====
+(require 'org-install)
+(add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
+(define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map "\C-ca" 'org-agenda)
+(setq org-log-done t)
+
+(setq org-agenda-files (list "~/org/book/home.org"
+                             "~/org/book/work.org"
+                             "~/org/book/emacsbook.org"))
+;; ==== org-mode END   ====
