@@ -139,3 +139,15 @@ Display the results in a hyperlinked *compilation* buffer."
                              "~/org/book/work.org"
                              "~/org/book/emacsbook.org"))
 ;; ==== org-mode END   ====
+
+
+;; ==== nrepl BEGIN ====
+(require 'nrepl)
+;; enable the eldoc mode for clojure buffers
+(add-hook 'nrepl-interaction-mode-hook
+  'nrepl-turn-on-eldoc-mode)
+;; dont popup error buffer
+(setq nrepl-popup-stacktraces nil)
+;;
+(add-to-list 'same-window-buffer-names "*nrepl*")
+;; ==== nrepl END   ====
