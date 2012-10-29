@@ -1,7 +1,3 @@
-cljtags() {
-  find . \! -name '.*' -name '*.clj' | xargs etags --regex='/[ \t\(]*def[a-z]* \([a-z-!]+\)/\1/' --regex='/[ \t\(]*ns \([a-z.]+\)/\1/'
-}
-
 storm-post() {
   clean-storm-zk
   mv ~/local/svn/storm/conf/defaults.yaml{,.bak}
