@@ -104,7 +104,7 @@
 (add-to-list 'load-path
               "~/.emacs.d/vendor/yasnippet")
 (require 'yasnippet)
-(yas-global-mode 1)
+;;(yas-global-mode 1)
 (setq yas-snippet-dirs
       '("~/.emacs.d/snippets/clojure-mode"))
 
