@@ -1,5 +1,5 @@
 cljtags() {
-  find . \! -name '.*' -name '*.clj' | xargs etags --regex='/[ \t\(]*def[a-z]* \([a-z-!]+\)/\1/' --regex='/[ \t\(]*ns \([a-z.]+\)/\1/'    
+  find . \! -name '.*' -name '*.clj' | xargs etags --regex='/[ \t\(]*def[a-z]* \([a-z-!]+\)/\1/' --regex='/[ \t\(]*ns \([a-z.]+\)/\1/'
 }
 
 storm-post() {
@@ -34,7 +34,7 @@ start-nimbus() {
 }
 
 start-supervisor() {
-    ~/local/svn/storm/bin/storm supervisor    
+    ~/local/svn/storm/bin/storm supervisor
 }
 
 
@@ -98,7 +98,7 @@ jstart_tc() {
 
 
 hosts() {
-    hostsdir=/usr/alibaba/hostmanager/HostsManagerDir/
+    hostsdir=~/.hosts
 
     if [ -z $1 ]; then
 	echo "hosts [ls|edit|hostsname]";
@@ -107,11 +107,14 @@ hosts() {
             ls)
                /bin/ls $hostsdir;;
             edit)
-               vim $hostsdir/$2;;
-	    cat)
+               emacs $hostsdir/$2
+               hosts $2;;
+            cat)
                cat $hostsdir/$2;;
             *)
                cp $hostsdir/$1 /etc/hosts
+               # show the first two lines of the
+               # the hosts -- to check everything is right
                head -n 2 /etc/hosts;;
         esac
     fi
