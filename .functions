@@ -58,7 +58,7 @@ fcd() {
 }
 
 jlog() {
-    $1 /home/james/output/$2/logs/sys/webx/webx.log
+    $1 ~/output/$2/logs/sys/webx/webx.log
 }
 
 vlog() {
@@ -80,16 +80,28 @@ jmvn () {
     mvn clean install -DuserProp=../antx_`appname`.properties -Dmaven.test.skip=true
 }
 
+jrun() {
+    ./deploy/target/web-deploy/bin/jettyctl.sh run
+}
+
+jrun_center() {
+    ./deploy/target/web-deploy/bin/start-service.sh
+}
+
+jrun_tc() {
+    ./tradecenter.deploy/target/web-deploy/bin/start-service.sh
+}
+
 jstart() {
-    jmvn `appname` && ./deploy/target/web-deploy/bin/jettyctl.sh run
+    jmvn `appname` && jrun
 }
 
 jstart_center() {
-    jmvn `appname` && ./deploy/target/web-deploy/bin/start-service.sh
+    jmvn `appname` && jrun_center
 }
 
 jstart_tc() {
-    jmvn `appname` && ./tradecenter.deploy/target/web-deploy/bin/start-service.sh
+    jmvn `appname` && jrun_tc
 }
 
 
