@@ -12,6 +12,7 @@
 
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/weibo.emacs"))
 
 ; hook
 (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
@@ -168,3 +169,7 @@ Display the results in a hyperlinked *compilation* buffer."
 (workgroups-mode 1)
 (wg-load "~/.emacs.d/workgroups")
 ;; ==== workgroup END   ====
+
+;; ==== weibo BEGIN ====
+(require 'weibo)
+;; ==== weibo END   ====
