@@ -92,7 +92,7 @@
 (show-paren-mode t)
 
 ;; Delete trailing whitespaces
-(add-hook 'before-save-hook (lambda () (delete-trailing-whitespace)))
+;;(add-hook 'before-save-hook (lambda () (delete-trailing-whitespace)))
 
 ;; spaces instead of tabs
 (setq-default indent-tabs-mode nil)
