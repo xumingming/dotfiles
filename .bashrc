@@ -36,7 +36,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-alias serve='python -m SimpleHTTPServer 8080'
+alias serve='python -m SimpleHTTPServer 9999'
 
 export SVN_EDITOR=vim
 
