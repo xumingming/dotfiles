@@ -164,10 +164,10 @@ Display the results in a hyperlinked *compilation* buffer."
 ;; ==== markdown END   ====
 
 ;; ==== workgroup BEGIN ====
-(require 'workgroups)
-(setq wg-prefix-key (kbd "C-c w"))
-(workgroups-mode 1)
-(wg-load "~/.emacs.d/workgroups")
+;;(require 'workgroups)
+;;(setq wg-prefix-key (kbd "C-c w"))
+;;(workgroups-mode 1)
+;;(wg-load "~/.emacs.d/workgroups")
 ;; ==== workgroup END   ====
 
 ;; ==== weibo BEGIN ====
