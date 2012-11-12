@@ -2,3 +2,4 @@ export ZK_HOME=/usr/local/zookeeper
 export PATH=$PATH:$ZK_HOME/bin
 export CLASSPATH=$CLASSPATH:~/local/svn/clj.debug/src/
 export DISPLAY=:0.0
+export MAIN_HOST=10.16.24.39
