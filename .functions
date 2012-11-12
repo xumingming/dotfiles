@@ -77,7 +77,7 @@ appname() {
 
 jmvn () {
     echo "app name is `appname`"
-    mvn clean install -DuserProp=../antx_`appname`.properties -Dmaven.test.skip=true
+    mvn install -DuserProp=../antx_`appname`.properties -Dmaven.test.skip=true -DskipValidation=true
 }
 
 jrun() {
@@ -128,3 +128,6 @@ hosts() {
     fi
 }
 
+wtp() {
+    mvn -Dwtpversion=2.0 eclipse:eclipse -DdownloadSources=true -DdownloadJavadocs=true
+}
