@@ -40,7 +40,8 @@
 10.20.141.149 medal-test.china.alibaba.com #4100
 10.249.200.45 gw-test.open.china.alibaba.com
 #style
-10.20.141.5 style.china.alibaba.com #80
+#10.20.141.5 style.china.alibaba.com #80
+10.16.24.23 style.china.alibaba.com
 #memberweb
 10.20.141.88 member-test.china.alibaba.com #54200
 #magma
@@ -152,8 +153,8 @@
 #trading
 10.20.172.42    trading-test.china.alibaba.com #9100
 #cambell
-#10.20.172.72    e56-test.china.alibaba.com    tradeconfig-test.china.alibaba.com #57100
-127.0.0.1    e56-test.china.alibaba.com    tradeconfig-test.china.alibaba.com #57100
+10.20.172.72    e56-test.china.alibaba.com    tradeconfig-test.china.alibaba.com #57100
+#127.0.0.1    e56-test.china.alibaba.com    tradeconfig-test.china.alibaba.com #57100
 #tradebops
 10.20.172.32    tradebops-test.alibaba-inc.com #32100
 #luna
