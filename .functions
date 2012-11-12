@@ -131,3 +131,7 @@ hosts() {
 wtp() {
     mvn -Dwtpversion=2.0 eclipse:eclipse -DdownloadSources=true -DdownloadJavadocs=true
 }
+
+ssh_to_main() {
+    ssh james@$MAIN_HOST
+}
