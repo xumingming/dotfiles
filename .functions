@@ -135,3 +135,10 @@ wtp() {
 ssh_to_main() {
     ssh james@$MAIN_HOST
 }
+alias stm=ssh_to_main
+
+gen_antx() {
+    echo "app name is $appname"
+    appname="`appname`"
+    cat ~/.antx/antx_$appname.properties | sed "s/USER_NAME/$LOGNAME/g;s@USER_HOME@$HOME@g;s@PROJECT_HOME@`pwd`@g"
+}
