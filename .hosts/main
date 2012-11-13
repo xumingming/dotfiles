@@ -1,5 +1,5 @@
 ###### LOCAL ######
-10.16.24.39 xumingmingv-air alibaba-james localhost
+127.0.0.1 xumingmingv-air alibaba-james localhost
 10.20.141.4 public.dns
 10.20.141.6 autotest.dns
 10.20.141.8 yufabu.dns
