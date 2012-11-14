@@ -1,0 +1,79 @@
+elog() {
+    emacs ~/output/`appname`/logs/sys/webx/webx.log
+}
+
+tlog() {
+    tail -f ~/output/`appname`/logs/sys/webx/webx.log
+}
+
+appname() {
+    curpath=`pwd`
+    curname=`basename $curpath | sed 's/_.*$//g'`
+    echo $curname
+}
+
+jmvn () {
+    echo "app name is `appname`"
+    mvn clean install -DuserProp=../antx_`appname`.properties -Dmaven.test.skip=true -DskipValidation=true
+}
+
+jrun() {
+    ./deploy/target/web-deploy/bin/jettyctl.sh run
+}
+
+jrun_center() {
+    ./deploy/target/web-deploy/bin/start-service.sh
+}
+
+jrun_tc() {
+    ./tradecenter.deploy/target/web-deploy/bin/start-service.sh
+}
+
+jstart() {
+    jmvn `appname` && jrun
+}
+
+jstart_center() {
+    jmvn `appname` && jrun_center
+}
+
+jstart_tc() {
+    jmvn `appname` && jrun_tc
+}
+
+hosts() {
+    hostsdir=~/.hosts
+
+    if [ -z $1 ]; then
+	echo "hosts [ls|edit|hostsname]";
+    else
+        case $1 in
+            ls)
+               /bin/ls $hostsdir;;
+            edit)
+               emacs $hostsdir/$2
+               hosts $2;;
+            cat)
+               cat $hostsdir/$2;;
+            *)
+               cp $hostsdir/$1 /etc/hosts
+               # show the first two lines of the
+               # the hosts -- to check everything is right
+               head -n 2 /etc/hosts;;
+        esac
+    fi
+}
+
+ssh_to_main() {
+    ssh james@$MAIN_HOST
+}
+alias stm=ssh_to_main
+
+gen_antx() {
+    echo "app name is $appname"
+    appname="`appname`"
+    fullpath=`pwd`
+    dir=`dirname $fullpath`
+    echo "Generating antx file to $dir/antx_$appname.properties"
+    cat ~/.antx/antx_$appname.properties | sed "s/USER_NAME/$LOGNAME/g;s@USER_HOME@$HOME@g;s@PROJECT_HOME@`pwd`@g" > $dir/antx_$appname.properties
+}
