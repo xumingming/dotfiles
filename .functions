@@ -51,22 +51,12 @@ femacs() {
     filename=`find . -name $1`
     emacs $filename
 }
-fcd() {
-    filename=`find . -name $1`
-    echo $filename
-    cd `dirname $filename`
-}
-
-jlog() {
-    $1 ~/output/$2/logs/sys/webx/webx.log
-}
-
-vlog() {
-    jlog vim `appname`
+elog() {
+    emacs ~/output/`appname`/logs/sys/webx/webx.log
 }
 
 tlog() {
-    jlog "tail -f" `appname`
+    tail -f ~/output/`appname`/logs/sys/webx/webx.log
 }
 
 appname() {
@@ -77,7 +67,7 @@ appname() {
 
 jmvn () {
     echo "app name is `appname`"
-    mvn install -DuserProp=../antx_`appname`.properties -Dmaven.test.skip=true -DskipValidation=true
+    mvn clean install -DuserProp=../antx_`appname`.properties -Dmaven.test.skip=true -DskipValidation=true
 }
 
 jrun() {
@@ -104,7 +94,6 @@ jstart_tc() {
     jmvn `appname` && jrun_tc
 }
 
-
 hosts() {
     hostsdir=~/.hosts
 
@@ -126,10 +115,6 @@ hosts() {
                head -n 2 /etc/hosts;;
         esac
     fi
-}
-
-wtp() {
-    mvn -Dwtpversion=2.0 eclipse:eclipse -DdownloadSources=true -DdownloadJavadocs=true
 }
 
 ssh_to_main() {
