@@ -140,5 +140,8 @@ alias stm=ssh_to_main
 gen_antx() {
     echo "app name is $appname"
     appname="`appname`"
-    cat ~/.antx/antx_$appname.properties | sed "s/USER_NAME/$LOGNAME/g;s@USER_HOME@$HOME@g;s@PROJECT_HOME@`pwd`@g"
+    fullpath=`pwd`
+    dir=`dirname $fullpath`
+    echo "Generating antx file to $dir/antx_$appname.properties"
+    cat ~/.antx/antx_$appname.properties | sed "s/USER_NAME/$LOGNAME/g;s@USER_HOME@$HOME@g;s@PROJECT_HOME@`pwd`@g" > $dir/antx_$appname.properties
 }
