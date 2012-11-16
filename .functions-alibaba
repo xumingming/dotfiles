@@ -17,6 +17,11 @@ jmvn () {
     mvn clean install -DuserProp=../antx_`appname`.properties -Dmaven.test.skip=true -DskipValidation=true
 }
 
+jmvno() {
+    echo "app name is `appname`"
+    mvn clean install -DuserProp=../antx_`appname`.properties -Dmaven.test.skip=true -DskipValidation=true -o
+}
+
 jrun() {
     ./deploy/target/web-deploy/bin/jettyctl.sh run
 }

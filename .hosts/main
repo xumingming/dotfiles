@@ -42,6 +42,7 @@
 #style
 #10.20.141.5 style.china.alibaba.com #80
 10.16.24.23 style.china.alibaba.com
+#10.20.141.141 style.china.alibaba.com
 #memberweb
 10.20.141.88 member-test.china.alibaba.com #54200
 #magma
@@ -151,7 +152,8 @@
 #tpbops
 10.20.141.164   tpbops-test.b2b.alibaba-inc.com #65100
 #trading
-10.16.24.39    trading-test.china.alibaba.com #9100
+#10.16.24.39    trading-test.china.alibaba.com #9100
+10.20.172.42   trading-test.china.alibaba.com #9100
 #cambell
 10.20.172.72    e56-test.china.alibaba.com    tradeconfig-test.china.alibaba.com #57100
 #10.16.24.39    e56-test.china.alibaba.com    tradeconfig-test.china.alibaba.com #57100
@@ -278,5 +280,5 @@
 10.232.16.8 commonconfig.config-host.taobao.com
 10.232.16.8 commonconfig.taobao.net
 10.20.172.12 xsptest65.cn.alibaba.com
-10.16.24.39 purchase-test.china.alibaba.com
+10.20.156.66 purchase-test.china.alibaba.com
 10.16.24.39 order.china.alibaba.com

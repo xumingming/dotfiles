@@ -41,7 +41,7 @@
 10.249.200.45 gw-test.open.china.alibaba.com
 #style
 #10.20.141.5 style.china.alibaba.com #80
-10.16.24.23 style.china.alibaba.com
+10.20.141.141 style.china.alibaba.com
 #memberweb
 10.20.141.88 member-test.china.alibaba.com #54200
 #magma
