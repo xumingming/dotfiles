@@ -4,5 +4,9 @@ femacs() {
     emacs $filename
 }
 
+switch-m2-settings() {
+  cp ~/local/svn/dotfiles/.m2settings/settings-$1.xml ~/.m2/settings.xml
+}
+
 . ~/local/svn/dotfiles/.functions-storm
 . ~/local/svn/dotfiles/.functions-alibaba

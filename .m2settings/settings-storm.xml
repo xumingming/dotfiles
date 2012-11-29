@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<settings>
+  <profiles>
+        <profile>
+           <id>storm</id>
+           <repositories>
+             <repository>
+               <id>clojars.org</id>
+               <url>http://clojars.org/repo</url>
+             </repository>
+           </repositories>
+        </profile>
+  </profiles>
+
+
+  <activeProfiles>
+     <activeProfile>storm</activeProfile>
+  </activeProfiles>
+</settings>
