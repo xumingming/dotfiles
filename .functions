@@ -9,7 +9,7 @@ switch-m2-settings() {
 }
 
 jkill() {
-  jps -v | grep marketingcenter | awk '{print $1}' | xargs kill -9
+  jps -v | grep $1 | awk '{print $1}' | xargs kill -9
 }
 
 . ~/local/svn/dotfiles/.functions-storm
