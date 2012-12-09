@@ -1,3 +1,4 @@
+#!/bin/bash
 
 femacs() {
     filename=`find . -name $1`
@@ -12,5 +13,5 @@ jkill() {
   jps -v | grep $1 | awk '{print $1}' | xargs kill -9
 }
 
-. ~/local/svn/dotfiles/.functions-storm.sh
-. ~/local/svn/dotfiles/.functions-alibaba.sh
+. ~/local/svn/dotfiles/.functions-storm
+. ~/local/svn/dotfiles/.functions-alibaba
