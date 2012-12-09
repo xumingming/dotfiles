@@ -30,7 +30,7 @@
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 
 (require 'color-theme)
-(color-theme-hober)
+(color-theme-shaman)
 
 (require 'auto-complete-config)
 (ac-config-default)
