@@ -13,6 +13,7 @@
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/weibo.emacs"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/emacs-color-theme-solarized"))
 
 ; hook
 (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
@@ -30,7 +31,8 @@
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 
 (require 'color-theme)
-(color-theme-shaman)
+(require 'color-theme-solarized)
+(color-theme-solarized-dark)
 
 (require 'auto-complete-config)
 (ac-config-default)
