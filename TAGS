@@ -1,0 +1,2078 @@
+
+../ali-trunk/marketing_center/dal/src/main/java/com/alibaba/china/marketingcenter/dal/favorite/cache/KVFavoritesCountDAO.java,1197
+public class KVFavoritesCountDAO 25,981
+    private static final Logger  LOGGER KVFavoritesCountDAO.LOGGER27,1046
+    private static final String  KEY_SEPARATOR KVFavoritesCountDAO.KEY_SEPARATOR29,1148
+    private static final int     DEFAULT_VALUE KVFavoritesCountDAO.DEFAULT_VALUE32,1221
+    private FavoritesCountDAO    innerFavirotesCountDAO;KVFavoritesCountDAO.innerFavirotesCountDAO34,1274
+    private PlainCounterTemplate favoritesCountKV;KVFavoritesCountDAO.favoritesCountKV36,1332
+    public void setInnerFavirotesCountDAO(KVFavoritesCountDAO.setInnerFavirotesCountDAO38,1384
+    public void setFavoritesCountKV(KVFavoritesCountDAO.setFavoritesCountKV42,1539
+    public FavoritesCountDO getFavoritesCount(KVFavoritesCountDAO.getFavoritesCount46,1673
+    public List<FavoritesCountDO> getListOfFavoritesCount(KVFavoritesCountDAO.getListOfFavoritesCount68,2480
+    public void insert(KVFavoritesCountDAO.insert72,2678
+    public int update(KVFavoritesCountDAO.update78,2863
+    private void putInCache(KVFavoritesCountDAO.putInCache87,3140
+    private String getKey(KVFavoritesCountDAO.getKey97,3449
+    private String getKey(KVFavoritesCountDAO.getKey109,3809
+
+../ali-trunk/marketing_center/dal/src/main/java/com/alibaba/china/marketingcenter/dal/favorite/daointerface/FavoritesCountDAO.java,43
+public interface FavoritesCountDAO 19,691
+
+../ali-trunk/marketing_center/dal/src/main/java/com/alibaba/china/marketingcenter/dal/favorite/daointerface/FavoritesDAO.java,38
+public interface FavoritesDAO 24,996
+
+../ali-trunk/marketing_center/dal/src/main/java/com/alibaba/china/marketingcenter/dal/favorite/daointerface/FavoritesTagDAO.java,41
+public interface FavoritesTagDAO 19,710
+
+../ali-trunk/marketing_center/dal/src/main/java/com/alibaba/china/marketingcenter/dal/favorite/daointerface/FavoritesTagRelDAO.java,44
+public interface FavoritesTagRelDAO 20,783
+
+../ali-trunk/marketing_center/dal/src/main/java/com/alibaba/china/marketingcenter/dal/favorite/dataobject/FavoritesCountDO.java,1410
+public class FavoritesCountDO 19,624
+    private static final long serialVersionUID FavoritesCountDO.serialVersionUID21,672
+    private Long              id;FavoritesCountDO.id22,743
+    private String            contentType;FavoritesCountDO.contentType23,819
+    private Long              contentId;FavoritesCountDO.contentId24,907
+    private int               collectedCount;FavoritesCountDO.collectedCount25,993
+    private Date              gmtCreate;FavoritesCountDO.gmtCreate26,1085
+    private Date              gmtModified;FavoritesCountDO.gmtModified27,1167
+    public Long getId(FavoritesCountDO.getId32,1298
+    public void setId(FavoritesCountDO.setId39,1397
+    public String getContentType(FavoritesCountDO.getContentType46,1506
+    public void setContentType(FavoritesCountDO.setContentType53,1643
+    public Long getContentId(FavoritesCountDO.getContentId60,1788
+    public void setContentId(FavoritesCountDO.setContentId67,1915
+    public int getCollectedCount(FavoritesCountDO.getCollectedCount74,2055
+    public void setCollectedCount(FavoritesCountDO.setCollectedCount81,2201
+    public Date getGmtCreate(FavoritesCountDO.getGmtCreate88,2355
+    public void setGmtCreate(FavoritesCountDO.setGmtCreate95,2482
+    public Date getGmtModified(FavoritesCountDO.getGmtModified102,2619
+    public void setGmtModified(FavoritesCountDO.setGmtModified109,2754
+
+../ali-trunk/marketing_center/dal/src/main/java/com/alibaba/china/marketingcenter/dal/favorite/dataobject/FavoritesDO.java,1068
+public class FavoritesDO 21,808
+    private static final long serialVersionUID FavoritesDO.serialVersionUID23,851
+    private Long              id;FavoritesDO.id24,921
+    private String            memberId;FavoritesDO.memberId25,996
+    private String            contentType;FavoritesDO.contentType26,1075
+    private Long              contentId;FavoritesDO.contentId27,1162
+    private Date              gmtCreate;FavoritesDO.gmtCreate28,1247
+    public Long getContentId(FavoritesDO.getContentId30,1329
+    public void setContentId(FavoritesDO.setContentId34,1395
+    public String getContentType(FavoritesDO.getContentType38,1485
+    public void setContentType(FavoritesDO.setContentType42,1557
+    public Date getGmtCreate(FavoritesDO.getGmtCreate46,1657
+    public void setGmtCreate(FavoritesDO.setGmtCreate50,1723
+    public Long getId(FavoritesDO.getId54,1813
+    public void setId(FavoritesDO.setId58,1865
+    public String getMemberId(FavoritesDO.getMemberId62,1927
+    public void setMemberId(FavoritesDO.setMemberId66,1993
+
+../ali-trunk/marketing_center/dal/src/main/java/com/alibaba/china/marketingcenter/dal/favorite/dataobject/FavoritesTagDO.java,1530
+public class FavoritesTagDO 17,605
+    private static final long serialVersionUID FavoritesTagDO.serialVersionUID19,653
+    private Long              id;FavoritesTagDO.id21,728
+    private int               tagCount;FavoritesTagDO.tagCount25,807
+    private String            memberId;FavoritesTagDO.memberId30,883
+    private String            contentType;FavoritesTagDO.contentType34,995
+    private String            tagName;FavoritesTagDO.tagName38,1074
+    private Date              gmtCreate;FavoritesTagDO.gmtCreate39,1114
+    private Date              gmtModified;FavoritesTagDO.gmtModified40,1156
+    public Long getId(FavoritesTagDO.getId45,1243
+    public void setId(FavoritesTagDO.setId52,1349
+    public int getTagCount(FavoritesTagDO.getTagCount59,1462
+    public void setTagCount(FavoritesTagDO.setTagCount66,1591
+    public String getMemberId(FavoritesTagDO.getMemberId73,1727
+    public void setMemberId(FavoritesTagDO.setMemberId80,1859
+    public String getContentType(FavoritesTagDO.getContentType87,2001
+    public void setContentType(FavoritesTagDO.setContentType94,2145
+    public String getTagName(FavoritesTagDO.getTagName101,2295
+    public void setTagName(FavoritesTagDO.setTagName108,2423
+    public Date getGmtCreate(FavoritesTagDO.getGmtCreate115,2559
+    public void setGmtCreate(FavoritesTagDO.setGmtCreate122,2693
+    public Date getGmtModified(FavoritesTagDO.getGmtModified129,2837
+    public void setGmtModified(FavoritesTagDO.setGmtModified136,2979
+
+../ali-trunk/marketing_center/dal/src/main/java/com/alibaba/china/marketingcenter/dal/favorite/dataobject/FavoritesTagRelDO.java,1589
+public class FavoritesTagRelDO 18,595
+    private static final long serialVersionUID FavoritesTagRelDO.serialVersionUID23,668
+    private Long              id;FavoritesTagRelDO.id24,740
+    private Long              tagId;FavoritesTagRelDO.tagId25,774
+    private String            memberId;FavoritesTagRelDO.memberId26,811
+    private String            contentType;FavoritesTagRelDO.contentType27,892
+    private Long              contentId;FavoritesTagRelDO.contentId28,981
+    private Date              gmtCreate;FavoritesTagRelDO.gmtCreate29,1068
+    private Date              gmtModified;FavoritesTagRelDO.gmtModified30,1109
+    public Long getId(FavoritesTagRelDO.getId35,1191
+    public void setId(FavoritesTagRelDO.setId42,1290
+    public String getMemberId(FavoritesTagRelDO.getMemberId49,1396
+    public void setMemberId(FavoritesTagRelDO.setMemberId56,1521
+    public String getContentType(FavoritesTagRelDO.getContentType63,1656
+    public void setContentType(FavoritesTagRelDO.setContentType70,1793
+    public Long getContentId(FavoritesTagRelDO.getContentId77,1938
+    public void setContentId(FavoritesTagRelDO.setContentId84,2065
+    public Long getTagId(FavoritesTagRelDO.getTagId91,2196
+    public void setTagId(FavoritesTagRelDO.setTagId98,2307
+    public Date getGmtCreate(FavoritesTagRelDO.getGmtCreate105,2426
+    public void setGmtCreate(FavoritesTagRelDO.setGmtCreate112,2553
+    public Date getGmtModified(FavoritesTagRelDO.getGmtModified119,2690
+    public void setGmtModified(FavoritesTagRelDO.setGmtModified126,2825
+
+../ali-trunk/marketing_center/dal/src/main/java/com/alibaba/china/marketingcenter/dal/favorite/ibatis/IBatisFavoritesCountDAO.java,382
+public class IBatisFavoritesCountDAO 24,911
+    public List<FavoritesCountDO> getListOfFavoritesCount(IBatisFavoritesCountDAO.getListOfFavoritesCount33,1260
+    public FavoritesCountDO getFavoritesCount(IBatisFavoritesCountDAO.getFavoritesCount52,2091
+    public void insert(IBatisFavoritesCountDAO.insert68,2677
+    public int update(IBatisFavoritesCountDAO.update78,3028
+
+../ali-trunk/marketing_center/dal/src/main/java/com/alibaba/china/marketingcenter/dal/favorite/ibatis/IBatisFavoritesDAO.java,939
+public class IBatisFavoritesDAO 31,1298
+    private static final int MAX_SIZE IBatisFavoritesDAO.MAX_SIZE36,1420
+    public void insert(IBatisFavoritesDAO.insert44,1614
+    public int delete(IBatisFavoritesDAO.delete59,2089
+    public int batchDelete(IBatisFavoritesDAO.batchDelete68,2419
+    public int countFavoritesByType(IBatisFavoritesDAO.countFavoritesByType91,3183
+    public List<Long> getLessListOfFavoritesByType(IBatisFavoritesDAO.getLessListOfFavoritesByType102,3555
+    public PageList getPageListOfFavoritesByType(IBatisFavoritesDAO.getPageListOfFavoritesByType121,4254
+    public boolean checkExistsForContentId(IBatisFavoritesDAO.checkExistsForContentId179,5905
+    public List<FavoritesDO> getList(IBatisFavoritesDAO.getList196,6575
+    public List<Long> getListByMember(IBatisFavoritesDAO.getListByMember214,7324
+    public List<String> getListByContent(IBatisFavoritesDAO.getListByContent225,7790
+
+../ali-trunk/marketing_center/dal/src/main/java/com/alibaba/china/marketingcenter/dal/favorite/ibatis/IBatisFavoritesTagDAO.java,440
+public class IBatisFavoritesTagDAO 24,959
+    public Long insert(IBatisFavoritesTagDAO.insert32,1267
+    public List<FavoritesTagDO> getFavoritesTagDO(IBatisFavoritesTagDAO.getFavoritesTagDO43,1656
+    public int delete(IBatisFavoritesTagDAO.delete60,2335
+    public int update(IBatisFavoritesTagDAO.update70,2677
+    public List<FavoritesTagDO> getFavoritesTagDOListByIds(IBatisFavoritesTagDAO.getFavoritesTagDOListByIds85,3061
+
+../ali-trunk/marketing_center/dal/src/main/java/com/alibaba/china/marketingcenter/dal/favorite/ibatis/IBatisFavoritesTagRelDAO.java,544
+public class IBatisFavoritesTagRelDAO 24,934
+    public List<FavoritesTagRelDO> getListByContentIds(IBatisFavoritesTagRelDAO.getListByContentIds32,1234
+    public int countFavorites(IBatisFavoritesTagRelDAO.countFavorites51,2013
+    public List<Long> getPagedContentIds(IBatisFavoritesTagRelDAO.getPagedContentIds69,2700
+    public Long insert(IBatisFavoritesTagRelDAO.insert93,3763
+    public int delete(IBatisFavoritesTagRelDAO.delete103,4132
+    public int deleteByContentIds(IBatisFavoritesTagRelDAO.deleteByContentIds116,4703
+
+../ali-trunk/marketing_center/dal/src/main/java/com/alibaba/china/marketingcenter/dal/favorite/param/QueryParam.java,2984
+public class QueryParam 19,750
+    private static final long serialVersionUID QueryParam.serialVersionUID21,801
+    private String            memberId;QueryParam.memberId22,872
+    private long              userId;QueryParam.userId23,952
+    private String            contentType;QueryParam.contentType24,1036
+    private Long              contentId;QueryParam.contentId25,1124
+    private List<Long>        contentIds;QueryParam.contentIds26,1210
+    private String            keywords;QueryParam.keywords27,1302
+    private int               start;QueryParam.start28,1388
+    private int               pageIndex;QueryParam.pageIndex29,1480
+    private int               pageSize;QueryParam.pageSize30,1568
+    private int               size;QueryParam.size31,1662
+    private int               countInType;QueryParam.countInType32,1756
+    private String            queryType;QueryParam.queryType33,1848
+    private Long              tagId;QueryParam.tagId34,1944
+    private String            retType;QueryParam.retType35,2028
+    private String            sellerMemberId;QueryParam.sellerMemberId36,2122
+    public Long getTagId(QueryParam.getTagId38,2217
+    public void setTagId(QueryParam.setTagId42,2275
+    public Long getContentId(QueryParam.getContentId46,2349
+    public void setContentId(QueryParam.setContentId50,2415
+    public List<Long> getContentIds(QueryParam.getContentIds54,2505
+    public void setContentIds(QueryParam.setContentIds58,2579
+    public String getContentType(QueryParam.getContentType62,2679
+    public void setContentType(QueryParam.setContentType66,2751
+    public int getCountInType(QueryParam.getCountInType70,2851
+    public void setCountInType(QueryParam.setCountInType74,2920
+    public String getKeywords(QueryParam.getKeywords78,3017
+    public void setKeywords(QueryParam.setKeywords82,3083
+    public String getMemberId(QueryParam.getMemberId86,3171
+    public void setMemberId(QueryParam.setMemberId90,3237
+    public int getPageIndex(QueryParam.getPageIndex94,3325
+    public void setPageIndex(QueryParam.setPageIndex98,3390
+    public int getPageSize(QueryParam.getPageSize102,3479
+    public void setPageSize(QueryParam.setPageSize106,3542
+    public String getQueryType(QueryParam.getQueryType110,3627
+    public void setQueryType(QueryParam.setQueryType114,3695
+    public int getSize(QueryParam.getSize118,3787
+    public void setSize(QueryParam.setSize122,3842
+    public int getStart(QueryParam.getStart126,3911
+    public void setStart(QueryParam.setStart130,3968
+    public String getRetType(QueryParam.getRetType134,4041
+    public void setRetType(QueryParam.setRetType138,4105
+    public String getSellerMemberId(QueryParam.getSellerMemberId142,4189
+    public void setSellerMemberId(QueryParam.setSellerMemberId146,4267
+    public long getUserId(QueryParam.getUserId150,4379
+    public void setUserId(QueryParam.setUserId154,4439
+
+../ali-trunk/marketing_center/dal/src/main/java/com/alibaba/china/marketingcenter/dal/marketing/daointerface/MarketingActivityDAO.java,46
+public interface MarketingActivityDAO 18,752
+
+../ali-trunk/marketing_center/dal/src/main/java/com/alibaba/china/marketingcenter/dal/marketing/daointerface/MarketingDetailDAO.java,43
+public interface MarketingDetailDAO 8,280
+
+../ali-trunk/marketing_center/dal/src/main/java/com/alibaba/china/marketingcenter/dal/marketing/daointerface/MarketingToolDAO.java,42
+public interface MarketingToolDAO 14,488
+
+../ali-trunk/marketing_center/dal/src/main/java/com/alibaba/china/marketingcenter/dal/marketing/dataobject/MarketingActivityDO.java,4992
+public class MarketingActivityDO 13,305
+    private static final long       serialVersionUID MarketingActivityDO.serialVersionUID15,367
+    private long                    id;MarketingActivityDO.id18,473
+    private Date                    gmtCreate;MarketingActivityDO.gmtCreate21,541
+    private Date                    gmtModified;MarketingActivityDO.gmtModified24,616
+    private Long                    creatorId;MarketingActivityDO.creatorId27,691
+    private String                  creatorMemberId;MarketingActivityDO.creatorMemberId30,764
+    private Long                    toolId;MarketingActivityDO.toolId33,843
+    private String                  toolCode;MarketingActivityDO.toolCode36,915
+    private Long                    activityId;MarketingActivityDO.activityId39,987
+    private String                  status;MarketingActivityDO.status42,1063
+    private String                  shopPromotionInfo;MarketingActivityDO.shopPromotionInfo45,1135
+    private String                  activityName;MarketingActivityDO.activityName48,1218
+    private Integer                 participateRange;MarketingActivityDO.participateRange51,1336
+    private String                  rangeContent;MarketingActivityDO.rangeContent54,1482
+    private String                  areaExclude;MarketingActivityDO.areaExclude57,1596
+    private String                  description;MarketingActivityDO.description60,1673
+    private List<MarketingDetailDO> marketingDetails;MarketingActivityDO.marketingDetails63,1746
+    private String activityType;MarketingActivityDO.activityType66,1838
+    private Date                    gmtStartTime;MarketingActivityDO.gmtStartTime69,1902
+    private Date                    gmtEndTime;MarketingActivityDO.gmtEndTime72,1980
+    private Long                    promotionSearchType;MarketingActivityDO.promotionSearchType75,2066
+    public long getId(MarketingActivityDO.getId77,2130
+    public void setId(MarketingActivityDO.setId81,2186
+    public Date getGmtCreate(MarketingActivityDO.getGmtCreate85,2252
+    public void setGmtCreate(MarketingActivityDO.setGmtCreate89,2322
+    public Date getGmtModified(MarketingActivityDO.getGmtModified93,2416
+    public void setGmtModified(MarketingActivityDO.setGmtModified97,2490
+    public Long getToolId(MarketingActivityDO.getToolId101,2592
+    public void setToolId(MarketingActivityDO.setToolId105,2656
+    public Long getActivityId(MarketingActivityDO.getActivityId109,2738
+    public void setActivityId(MarketingActivityDO.setActivityId113,2810
+    public String getStatus(MarketingActivityDO.getStatus117,2908
+    public void setStatus(MarketingActivityDO.setStatus121,2974
+    public String getShopPromotionInfo(MarketingActivityDO.getShopPromotionInfo125,3058
+    public void setShopPromotionInfo(MarketingActivityDO.setShopPromotionInfo129,3146
+    public String getActivityName(MarketingActivityDO.getActivityName133,3274
+    public void setActivityName(MarketingActivityDO.setActivityName137,3352
+    public Long getCreatorId(MarketingActivityDO.getCreatorId141,3460
+    public void setCreatorId(MarketingActivityDO.setCreatorId145,3530
+    public String getCreatorMemberId(MarketingActivityDO.getCreatorMemberId149,3624
+    public void setCreatorMemberId(MarketingActivityDO.setCreatorMemberId153,3708
+    public List<MarketingDetailDO> getMarketingDetails(MarketingActivityDO.getMarketingDetails157,3828
+    public void setMarketingDetails(MarketingActivityDO.setMarketingDetails164,4051
+    public String getToolCode(MarketingActivityDO.getToolCode168,4192
+    public void setToolCode(MarketingActivityDO.setToolCode172,4262
+    public String getActivityType(MarketingActivityDO.getActivityType176,4354
+    public void setActivityType(MarketingActivityDO.setActivityType180,4432
+    public Integer getParticipateRange(MarketingActivityDO.getParticipateRange184,4540
+    public void setParticipateRange(MarketingActivityDO.setParticipateRange188,4627
+    public String getRangeContent(MarketingActivityDO.getRangeContent192,4752
+    public void setRangeContent(MarketingActivityDO.setRangeContent196,4830
+    public String getAreaExclude(MarketingActivityDO.getAreaExclude200,4938
+    public void setAreaExclude(MarketingActivityDO.setAreaExclude204,5014
+    public String getDescription(MarketingActivityDO.getDescription208,5118
+    public void setDescription(MarketingActivityDO.setDescription212,5194
+    public Date getGmtStartTime(MarketingActivityDO.getGmtStartTime216,5302
+    public void setGmtStartTime(MarketingActivityDO.setGmtStartTime220,5378
+    public Date getGmtEndTime(MarketingActivityDO.getGmtEndTime224,5488
+    public void setGmtEndTime(MarketingActivityDO.setGmtEndTime228,5560
+    public Long getPromotionSearchType(MarketingActivityDO.getPromotionSearchType232,5658
+    public void setPromotionSearchType(MarketingActivityDO.setPromotionSearchType236,5748
+
+../ali-trunk/marketing_center/dal/src/main/java/com/alibaba/china/marketingcenter/dal/marketing/dataobject/MarketingDetailDO.java,2589
+public class MarketingDetailDO 11,250
+    private static final long serialVersionUID MarketingDetailDO.serialVersionUID13,310
+    private long              id;MarketingDetailDO.id16,410
+    private Date              gmtCreate;MarketingDetailDO.gmtCreate19,472
+    private Date              gmtModified;MarketingDetailDO.gmtModified22,541
+    private Long              detailId;MarketingDetailDO.detailId25,610
+    private String            participateMemberId;MarketingDetailDO.participateMemberId27,676
+    private Long              participateId;MarketingDetailDO.participateId30,755
+    private Long              participateType;MarketingDetailDO.participateType33,826
+    private Long              activityId;MarketingDetailDO.activityId36,905
+    private Long              toolId;MarketingDetailDO.toolId39,973
+    private String            toolCode;MarketingDetailDO.toolCode42,1039
+    private String            promotionInfo;MarketingDetailDO.promotionInfo45,1107
+    public Long getDetailId(MarketingDetailDO.getDetailId47,1155
+    public void setDetailId(MarketingDetailDO.setDetailId51,1223
+    public long getId(MarketingDetailDO.getId55,1313
+    public void setId(MarketingDetailDO.setId59,1369
+    public Date getGmtCreate(MarketingDetailDO.getGmtCreate63,1435
+    public void setGmtCreate(MarketingDetailDO.setGmtCreate67,1505
+    public Date getGmtModified(MarketingDetailDO.getGmtModified71,1599
+    public void setGmtModified(MarketingDetailDO.setGmtModified75,1673
+    public String getParticipateMemberId(MarketingDetailDO.getParticipateMemberId79,1775
+    public void setParticipateMemberId(MarketingDetailDO.setParticipateMemberId83,1867
+    public Long getParticipateId(MarketingDetailDO.getParticipateId87,2003
+    public void setParticipateId(MarketingDetailDO.setParticipateId91,2081
+    public Long getParticipateType(MarketingDetailDO.getParticipateType95,2191
+    public void setParticipateType(MarketingDetailDO.setParticipateType99,2273
+    public Long getActivityId(MarketingDetailDO.getActivityId103,2391
+    public void setActivityId(MarketingDetailDO.setActivityId107,2463
+    public Long getToolId(MarketingDetailDO.getToolId111,2561
+    public void setToolId(MarketingDetailDO.setToolId115,2625
+    public String getToolCode(MarketingDetailDO.getToolCode119,2707
+    public void setToolCode(MarketingDetailDO.setToolCode123,2777
+    public String getPromotionInfo(MarketingDetailDO.getPromotionInfo127,2869
+    public void setPromotionInfo(MarketingDetailDO.setPromotionInfo131,2949
+
+../ali-trunk/marketing_center/dal/src/main/java/com/alibaba/china/marketingcenter/dal/marketing/dataobject/MarketingToolDO.java,1553
+public class MarketingToolDO 11,248
+    private static final long serialVersionUID MarketingToolDO.serialVersionUID13,306
+    private long              id;MarketingToolDO.id16,405
+    private Date              gmtCreate;MarketingToolDO.gmtCreate19,467
+    private Date              gmtModified;MarketingToolDO.gmtModified22,536
+    private String            toolCode;MarketingToolDO.toolCode25,607
+    private Long              toolId;MarketingToolDO.toolId28,673
+    private String            status;MarketingToolDO.status31,755
+    private Integer ordered;MarketingToolDO.ordered38,881
+    public long getId(MarketingToolDO.getId40,913
+    public void setId(MarketingToolDO.setId44,969
+    public Date getGmtCreate(MarketingToolDO.getGmtCreate48,1035
+    public void setGmtCreate(MarketingToolDO.setGmtCreate52,1105
+    public Date getGmtModified(MarketingToolDO.getGmtModified56,1199
+    public void setGmtModified(MarketingToolDO.setGmtModified60,1273
+    public String getToolCode(MarketingToolDO.getToolCode64,1375
+    public void setToolCode(MarketingToolDO.setToolCode68,1445
+    public Long getToolId(MarketingToolDO.getToolId72,1537
+    public void setToolId(MarketingToolDO.setToolId76,1601
+    public String getStatus(MarketingToolDO.getStatus80,1683
+    public void setStatus(MarketingToolDO.setStatus84,1749
+    public Integer getOrdered(MarketingToolDO.getOrdered88,1833
+    public void setOrdered(MarketingToolDO.setOrdered92,1902
+    public String toString(MarketingToolDO.toString97,2006
+
+../ali-trunk/marketing_center/dal/src/main/java/com/alibaba/china/marketingcenter/dal/marketing/ibatis/IBatisMarketingActivityDAOAdapter.java,5433
+public class IBatisMarketingActivityDAOAdapter 14,711
+    private String               tairEnabled;IBatisMarketingActivityDAOAdapter.tairEnabled17,820
+    private MarketingActivityDAO activityDAOAdpater;IBatisMarketingActivityDAOAdapter.activityDAOAdpater20,890
+    private MarketingActivityDAO marketingActivityDAOWithoutTair;IBatisMarketingActivityDAOAdapter.marketingActivityDAOWithoutTair23,987
+    private MarketingActivityDAO marketingActivityDAOWithTair;IBatisMarketingActivityDAOAdapter.marketingActivityDAOWithTair26,1095
+    public void init(IBatisMarketingActivityDAOAdapter.init28,1161
+    public Long insertMarketingActivity(IBatisMarketingActivityDAOAdapter.insertMarketingActivity43,1708
+    public void batchInsertMarketingActivity(IBatisMarketingActivityDAOAdapter.batchInsertMarketingActivity53,2078
+    public List<MarketingActivityDO> findMarketingActivityBy(IBatisMarketingActivityDAOAdapter.findMarketingActivityBy63,2480
+    public List<MarketingActivityDO> findMarketingActivityBy(IBatisMarketingActivityDAOAdapter.findMarketingActivityBy73,2923
+    public List<MarketingActivityDO> findMarketingActivityBy(IBatisMarketingActivityDAOAdapter.findMarketingActivityBy83,3370
+    public List<MarketingActivityDO> findMarketingActivityWithDetailBy(IBatisMarketingActivityDAOAdapter.findMarketingActivityWithDetailBy94,3900
+    public List<MarketingActivityDO> findMarketingActivityWithDetailBy(IBatisMarketingActivityDAOAdapter.findMarketingActivityWithDetailBy104,4334
+    public List<MarketingActivityDO> findMarketingActivityBy(IBatisMarketingActivityDAOAdapter.findMarketingActivityBy114,4744
+    public List<MarketingActivityDO> findMarketingActivityBySellerId(IBatisMarketingActivityDAOAdapter.findMarketingActivityBySellerId125,5265
+    public List<MarketingActivityDO> findMarketingActivityWithDetailBy(IBatisMarketingActivityDAOAdapter.findMarketingActivityWithDetailBy136,5798
+    public List<MarketingActivityDO> findMarketingActivityWithDetailBySellerId(IBatisMarketingActivityDAOAdapter.findMarketingActivityWithDetailBySellerId145,6240
+    public List<MarketingActivityDO> findMarketingActivityByParticipate(IBatisMarketingActivityDAOAdapter.findMarketingActivityByParticipate155,6687
+    public List<MarketingActivityDO> findMarketingActivityByParticipate(IBatisMarketingActivityDAOAdapter.findMarketingActivityByParticipate165,7148
+    public List<MarketingActivityDO> findMarketingActivityByParticipateWithDetail(IBatisMarketingActivityDAOAdapter.findMarketingActivityByParticipateWithDetail174,7599
+    public List<MarketingActivityDO> findMarketingActivityByParticipateWithDetail(IBatisMarketingActivityDAOAdapter.findMarketingActivityByParticipateWithDetail185,8167
+    public int countMarketingActivityByParticipateWithDetail(IBatisMarketingActivityDAOAdapter.countMarketingActivityByParticipateWithDetail191,8618
+    public List<MarketingActivityDO> findMarketingActivityByParticipateWithDetail(IBatisMarketingActivityDAOAdapter.findMarketingActivityByParticipateWithDetail200,9068
+    public List<MarketingActivityDO> findMarketingActivityByParticipate(IBatisMarketingActivityDAOAdapter.findMarketingActivityByParticipate211,9645
+    public List<MarketingActivityDO> findMarketingActivityByParticipateBySellerId(IBatisMarketingActivityDAOAdapter.findMarketingActivityByParticipateBySellerId221,10177
+    public List<MarketingActivityDO> findMarketingActivityByParticipateWithDetail(IBatisMarketingActivityDAOAdapter.findMarketingActivityByParticipateWithDetail231,10737
+    public List<MarketingActivityDO> findMarketingActivityByParticipateWithDetailBySellerId(IBatisMarketingActivityDAOAdapter.findMarketingActivityByParticipateWithDetailBySellerId242,11311
+    public List<MarketingActivityDO> findMarketingActivityBy(IBatisMarketingActivityDAOAdapter.findMarketingActivityBy255,12162
+    public int countMarketingActivityBy(IBatisMarketingActivityDAOAdapter.countMarketingActivityBy259,12350
+    public List<MarketingActivityDO> findMarketingActivityWithDetailBy(IBatisMarketingActivityDAOAdapter.findMarketingActivityWithDetailBy269,12789
+    public int updateMarketingActivity(IBatisMarketingActivityDAOAdapter.updateMarketingActivity279,13259
+    public int updateMarketingActivityStatus(IBatisMarketingActivityDAOAdapter.updateMarketingActivityStatus283,13428
+    public String getTairEnabled(IBatisMarketingActivityDAOAdapter.getTairEnabled287,13624
+    public void setTairEnabled(IBatisMarketingActivityDAOAdapter.setTairEnabled291,13700
+    public MarketingActivityDAO getActivityDAOAdpater(IBatisMarketingActivityDAOAdapter.getActivityDAOAdpater295,13804
+    public void setActivityDAOAdpater(IBatisMarketingActivityDAOAdapter.setActivityDAOAdpater299,13908
+    public void setMarketingActivityDAOWithoutTair(IBatisMarketingActivityDAOAdapter.setMarketingActivityDAOWithoutTair303,14054
+    public void setMarketingActivityDAOWithTair(IBatisMarketingActivityDAOAdapter.setMarketingActivityDAOWithTair307,14252
+    public MarketingActivityDO querySingleMarketingActivity(IBatisMarketingActivityDAOAdapter.querySingleMarketingActivity312,14453
+    public List<MarketingActivityDO> getPageListOfMarketingActivity(IBatisMarketingActivityDAOAdapter.getPageListOfMarketingActivity317,14709
+    public int updateMarketingActivityById(IBatisMarketingActivityDAOAdapter.updateMarketingActivityById322,15036
+
+../ali-trunk/marketing_center/dal/src/main/java/com/alibaba/china/marketingcenter/dal/marketing/ibatis/IBatisMarketingActivityDAOImpl.java,4129
+public class IBatisMarketingActivityDAOImpl 23,1069
+    public Long insertMarketingActivity(IBatisMarketingActivityDAOImpl.insertMarketingActivity31,1436
+    public void batchInsertMarketingActivity(IBatisMarketingActivityDAOImpl.batchInsertMarketingActivity41,1837
+    public List<MarketingActivityDO> findMarketingActivityBy(IBatisMarketingActivityDAOImpl.findMarketingActivityBy65,2696
+    public List<MarketingActivityDO> findMarketingActivityBy(IBatisMarketingActivityDAOImpl.findMarketingActivityBy80,3352
+    public List<MarketingActivityDO> findMarketingActivityBy(IBatisMarketingActivityDAOImpl.findMarketingActivityBy98,4219
+    public int countMarketingActivityBy(IBatisMarketingActivityDAOImpl.countMarketingActivityBy102,4436
+    public int updateMarketingActivity(IBatisMarketingActivityDAOImpl.updateMarketingActivity113,4968
+    public int updateMarketingActivityStatus(IBatisMarketingActivityDAOImpl.updateMarketingActivityStatus122,5319
+    public List<MarketingActivityDO> findMarketingActivityWithDetailBy(IBatisMarketingActivityDAOImpl.findMarketingActivityWithDetailBy137,5944
+    public List<MarketingActivityDO> findMarketingActivityWithDetailBy(IBatisMarketingActivityDAOImpl.findMarketingActivityWithDetailBy152,6628
+    public List<MarketingActivityDO> findMarketingActivityByParticipate(IBatisMarketingActivityDAOImpl.findMarketingActivityByParticipate169,7397
+    public List<MarketingActivityDO> findMarketingActivityByParticipate(IBatisMarketingActivityDAOImpl.findMarketingActivityByParticipate185,8168
+    public List<MarketingActivityDO> findMarketingActivityWithDetailBy(IBatisMarketingActivityDAOImpl.findMarketingActivityWithDetailBy202,9080
+    public List<MarketingActivityDO> findMarketingActivityByParticipateWithDetail(IBatisMarketingActivityDAOImpl.findMarketingActivityByParticipateWithDetail212,9579
+    public List<MarketingActivityDO> findMarketingActivityByParticipateWithDetail(IBatisMarketingActivityDAOImpl.findMarketingActivityByParticipateWithDetail228,10459
+    public List<MarketingActivityDO> findMarketingActivityBy(IBatisMarketingActivityDAOImpl.findMarketingActivityBy246,11416
+    public List<MarketingActivityDO> findMarketingActivityWithDetailBy(IBatisMarketingActivityDAOImpl.findMarketingActivityWithDetailBy264,12178
+    public List<MarketingActivityDO> findMarketingActivityBySellerId(IBatisMarketingActivityDAOImpl.findMarketingActivityBySellerId279,12840
+    public List<MarketingActivityDO> findMarketingActivityWithDetailBySellerId(IBatisMarketingActivityDAOImpl.findMarketingActivityWithDetailBySellerId296,13650
+    public List<MarketingActivityDO> findMarketingActivityByParticipate(IBatisMarketingActivityDAOImpl.findMarketingActivityByParticipate313,14391
+    public List<MarketingActivityDO> findMarketingActivityByParticipateWithDetail(IBatisMarketingActivityDAOImpl.findMarketingActivityByParticipateWithDetail328,15158
+    public int countMarketingActivityByParticipateWithDetail(IBatisMarketingActivityDAOImpl.countMarketingActivityByParticipateWithDetail341,15892
+    public List<MarketingActivityDO> findMarketingActivityByParticipateBySellerId(IBatisMarketingActivityDAOImpl.findMarketingActivityByParticipateBySellerId353,16560
+    public List<MarketingActivityDO> findMarketingActivityByParticipateWithDetailBySellerId(IBatisMarketingActivityDAOImpl.findMarketingActivityByParticipateWithDetailBySellerId371,17508
+    public List<MarketingActivityDO> findMarketingActivityBy(IBatisMarketingActivityDAOImpl.findMarketingActivityBy395,18698
+    public List<MarketingActivityDO> findMarketingActivityByParticipateWithDetail(IBatisMarketingActivityDAOImpl.findMarketingActivityByParticipateWithDetail415,19605
+    public MarketingActivityDO querySingleMarketingActivity(IBatisMarketingActivityDAOImpl.querySingleMarketingActivity433,20477
+    public List<MarketingActivityDO> getPageListOfMarketingActivity(IBatisMarketingActivityDAOImpl.getPageListOfMarketingActivity446,21065
+    public int updateMarketingActivityById(IBatisMarketingActivityDAOImpl.updateMarketingActivityById458,21520
+
+../ali-trunk/marketing_center/dal/src/main/java/com/alibaba/china/marketingcenter/dal/marketing/ibatis/IBatisMarketingActivityDAOTairImpl.java,5130
+public class IBatisMarketingActivityDAOTairImpl 27,1288
+    private MarketingTairManager marketingTairManager;IBatisMarketingActivityDAOTairImpl.marketingTairManager31,1446
+    private int                  area;IBatisMarketingActivityDAOTairImpl.area34,1541
+    private int                  expireTime;IBatisMarketingActivityDAOTairImpl.expireTime37,1614
+    public Long insertMarketingActivity(IBatisMarketingActivityDAOTairImpl.insertMarketingActivity45,1917
+    public void batchInsertMarketingActivity(IBatisMarketingActivityDAOTairImpl.batchInsertMarketingActivity64,2866
+    public List<MarketingActivityDO> findMarketingActivityBy(IBatisMarketingActivityDAOTairImpl.findMarketingActivityBy88,3762
+    public List<MarketingActivityDO> findMarketingActivityBy(IBatisMarketingActivityDAOTairImpl.findMarketingActivityBy103,4418
+    public List<MarketingActivityDO> findMarketingActivityBy(IBatisMarketingActivityDAOTairImpl.findMarketingActivityBy121,5285
+    public int countMarketingActivityBy(IBatisMarketingActivityDAOTairImpl.countMarketingActivityBy126,5527
+    public int updateMarketingActivity(IBatisMarketingActivityDAOTairImpl.updateMarketingActivity137,6059
+    public int updateMarketingActivityStatus(IBatisMarketingActivityDAOTairImpl.updateMarketingActivityStatus159,7267
+    public List<MarketingActivityDO> findMarketingActivityWithDetailBy(IBatisMarketingActivityDAOTairImpl.findMarketingActivityWithDetailBy189,8903
+    public List<MarketingActivityDO> findMarketingActivityWithDetailBy(IBatisMarketingActivityDAOTairImpl.findMarketingActivityWithDetailBy204,9587
+    public List<MarketingActivityDO> findMarketingActivityByParticipate(IBatisMarketingActivityDAOTairImpl.findMarketingActivityByParticipate221,10356
+    public List<MarketingActivityDO> findMarketingActivityByParticipate(IBatisMarketingActivityDAOTairImpl.findMarketingActivityByParticipate237,11127
+    public List<MarketingActivityDO> findMarketingActivityWithDetailBy(IBatisMarketingActivityDAOTairImpl.findMarketingActivityWithDetailBy254,12039
+    public List<MarketingActivityDO> findMarketingActivityByParticipateWithDetail(IBatisMarketingActivityDAOTairImpl.findMarketingActivityByParticipateWithDetail264,12538
+    public List<MarketingActivityDO> findMarketingActivityByParticipateWithDetail(IBatisMarketingActivityDAOTairImpl.findMarketingActivityByParticipateWithDetail280,13418
+    public List<MarketingActivityDO> findMarketingActivityBy(IBatisMarketingActivityDAOTairImpl.findMarketingActivityBy298,14375
+    public List<MarketingActivityDO> findMarketingActivityWithDetailBy(IBatisMarketingActivityDAOTairImpl.findMarketingActivityWithDetailBy327,15946
+    public List<MarketingActivityDO> findMarketingActivityBySellerId(IBatisMarketingActivityDAOTairImpl.findMarketingActivityBySellerId341,16572
+    public List<MarketingActivityDO> findMarketingActivityWithDetailBySellerId(IBatisMarketingActivityDAOTairImpl.findMarketingActivityWithDetailBySellerId353,17219
+    public List<MarketingActivityDO> findMarketingActivityByParticipate(IBatisMarketingActivityDAOTairImpl.findMarketingActivityByParticipate370,17960
+    public List<MarketingActivityDO> findMarketingActivityByParticipateWithDetail(IBatisMarketingActivityDAOTairImpl.findMarketingActivityByParticipateWithDetail396,19490
+    public int countMarketingActivityByParticipateWithDetail(IBatisMarketingActivityDAOTairImpl.countMarketingActivityByParticipateWithDetail420,21008
+    public List<MarketingActivityDO> findMarketingActivityByParticipateBySellerId(IBatisMarketingActivityDAOTairImpl.findMarketingActivityByParticipateBySellerId432,21676
+    public List<MarketingActivityDO> findMarketingActivityByParticipateWithDetailBySellerId(IBatisMarketingActivityDAOTairImpl.findMarketingActivityByParticipateWithDetailBySellerId448,22586
+    private List<MarketingActivityDO> findMarketingActivityBySellerIdsFromTair(IBatisMarketingActivityDAOTairImpl.findMarketingActivityBySellerIdsFromTair467,23462
+    public List<MarketingActivityDO> findMarketingActivityBy(IBatisMarketingActivityDAOTairImpl.findMarketingActivityBy541,27025
+    public List<MarketingActivityDO> findMarketingActivityByParticipateWithDetail(IBatisMarketingActivityDAOTairImpl.findMarketingActivityByParticipateWithDetail572,28751
+    public MarketingActivityDO querySingleMarketingActivity(IBatisMarketingActivityDAOTairImpl.querySingleMarketingActivity602,30469
+    public MarketingTairManager getMarketingTairManager(IBatisMarketingActivityDAOTairImpl.getMarketingTairManager609,30905
+    public void setMarketingTairManager(IBatisMarketingActivityDAOTairImpl.setMarketingTairManager613,31013
+    public void setArea(IBatisMarketingActivityDAOTairImpl.setArea617,31167
+    public void setExpireTime(IBatisMarketingActivityDAOTairImpl.setExpireTime621,31240
+    public List<MarketingActivityDO> getPageListOfMarketingActivity(IBatisMarketingActivityDAOTairImpl.getPageListOfMarketingActivity627,31463
+    public int updateMarketingActivityById(IBatisMarketingActivityDAOTairImpl.updateMarketingActivityById632,31824
+
+../ali-trunk/marketing_center/dal/src/main/java/com/alibaba/china/marketingcenter/dal/marketing/ibatis/IBatisMarketingDetailDAOAdpater.java,1420
+public class IBatisMarketingDetailDAOAdpater 9,363
+    private String             tairEnabled;IBatisMarketingDetailDAOAdpater.tairEnabled12,468
+    private MarketingDetailDAO detailDAOAdpater;IBatisMarketingDetailDAOAdpater.detailDAOAdpater15,536
+    private MarketingDetailDAO marketingDetailDAOWithoutTair;IBatisMarketingDetailDAOAdpater.marketingDetailDAOWithoutTair18,629
+    private MarketingDetailDAO marketingDetailDAOWithTair;IBatisMarketingDetailDAOAdpater.marketingDetailDAOWithTair21,733
+    public void init(IBatisMarketingDetailDAOAdpater.init23,795
+    public void insertMarketingDetail(IBatisMarketingDetailDAOAdpater.insertMarketingDetail38,1328
+    public void batchInsertMarketingDetail(IBatisMarketingDetailDAOAdpater.batchInsertMarketingDetail48,1675
+    public int deleteMarketingDetail(IBatisMarketingDetailDAOAdpater.deleteMarketingDetail51,1852
+    public MarketingDetailDO findMarketingDetail(IBatisMarketingDetailDAOAdpater.findMarketingDetail55,2013
+    public void setTairEnabled(IBatisMarketingDetailDAOAdpater.setTairEnabled59,2213
+    public void setDetailDAOAdpater(IBatisMarketingDetailDAOAdpater.setDetailDAOAdpater63,2317
+    public void setMarketingDetailDAOWithoutTair(IBatisMarketingDetailDAOAdpater.setMarketingDetailDAOWithoutTair67,2453
+    public void setMarketingDetailDAOWithTair(IBatisMarketingDetailDAOAdpater.setMarketingDetailDAOWithTair71,2641
+
+../ali-trunk/marketing_center/dal/src/main/java/com/alibaba/china/marketingcenter/dal/marketing/ibatis/IBatisMarketingDetailDAOImpl.java,460
+public class IBatisMarketingDetailDAOImpl 15,669
+    public void insertMarketingDetail(IBatisMarketingDetailDAOImpl.insertMarketingDetail23,1026
+    public void batchInsertMarketingDetail(IBatisMarketingDetailDAOImpl.batchInsertMarketingDetail33,1399
+    public MarketingDetailDO findMarketingDetail(IBatisMarketingDetailDAOImpl.findMarketingDetail55,2228
+    public int deleteMarketingDetail(IBatisMarketingDetailDAOImpl.deleteMarketingDetail64,2687
+
+../ali-trunk/marketing_center/dal/src/main/java/com/alibaba/china/marketingcenter/dal/marketing/ibatis/IBatisMarketingDetailDAOTairImpl.java,1159
+public class IBatisMarketingDetailDAOTairImpl 21,954
+    private MarketingTairManager marketingTairManager;IBatisMarketingDetailDAOTairImpl.marketingTairManager25,1108
+    private int                  area;IBatisMarketingDetailDAOTairImpl.area28,1203
+    private int                  expireTime;IBatisMarketingDetailDAOTairImpl.expireTime31,1276
+    public void insertMarketingDetail(IBatisMarketingDetailDAOTairImpl.insertMarketingDetail39,1573
+    public void batchInsertMarketingDetail(IBatisMarketingDetailDAOTairImpl.batchInsertMarketingDetail56,2517
+    public MarketingDetailDO findMarketingDetail(IBatisMarketingDetailDAOTairImpl.findMarketingDetail91,4191
+    public int deleteMarketingDetail(IBatisMarketingDetailDAOTairImpl.deleteMarketingDetail110,5193
+    private String createActivityDetailKey(IBatisMarketingDetailDAOTairImpl.createActivityDetailKey129,6242
+    public void setMarketingTairManager(IBatisMarketingDetailDAOTairImpl.setMarketingTairManager133,6424
+    public void setArea(IBatisMarketingDetailDAOTairImpl.setArea137,6578
+    public void setExpireTime(IBatisMarketingDetailDAOTairImpl.setExpireTime141,6651
+
+../ali-trunk/marketing_center/dal/src/main/java/com/alibaba/china/marketingcenter/dal/marketing/ibatis/IBatisMarketingToolDAOImpl.java,631
+public class IBatisMarketingToolDAOImpl 15,690
+    public void insertMarkertingTool(IBatisMarketingToolDAOImpl.insertMarkertingTool23,996
+    @SuppressWarnings(IBatisMarketingToolDAOImpl.@SuppressWarnings39,1668
+    public MarketingToolDO findEnalbeMarketingTool(IBatisMarketingToolDAOImpl.findEnalbeMarketingTool53,2309
+    public List<MarketingToolDO> findMarketingToolBy(IBatisMarketingToolDAOImpl.findMarketingToolBy66,2906
+    public boolean updateMarketingToolBy(IBatisMarketingToolDAOImpl.updateMarketingToolBy76,3327
+    public boolean deleteMarketingTool(IBatisMarketingToolDAOImpl.deleteMarketingTool85,3702
+
+../ali-trunk/marketing_center/dal/src/main/java/com/alibaba/china/marketingcenter/dal/marketing/param/BaseMarketingActivityDAOParam.java,2867
+public class BaseMarketingActivityDAOParam 10,222
+    protected Long   creatorId;BaseMarketingActivityDAOParam.creatorId13,293
+    protected String creatorMemberId;BaseMarketingActivityDAOParam.creatorMemberId16,351
+    protected Long   toolId;BaseMarketingActivityDAOParam.toolId19,415
+    protected String toolCode;BaseMarketingActivityDAOParam.toolCode22,472
+    protected Long   activityId;BaseMarketingActivityDAOParam.activityId25,529
+    protected String currentStatus;BaseMarketingActivityDAOParam.currentStatus28,594
+    protected String status;BaseMarketingActivityDAOParam.status31,658
+    protected List<String> statusList;BaseMarketingActivityDAOParam.statusList33,694
+    protected String participateMemberId;BaseMarketingActivityDAOParam.participateMemberId36,761
+    protected Long   participateId;BaseMarketingActivityDAOParam.participateId39,831
+    protected String activityType;BaseMarketingActivityDAOParam.activityType42,891
+    public String getParticipateMemberId(BaseMarketingActivityDAOParam.getParticipateMemberId44,933
+    public void setParticipateMemberId(BaseMarketingActivityDAOParam.setParticipateMemberId48,1025
+    public Long getParticipateId(BaseMarketingActivityDAOParam.getParticipateId52,1161
+    public void setParticipateId(BaseMarketingActivityDAOParam.setParticipateId56,1239
+    public Long getCreatorId(BaseMarketingActivityDAOParam.getCreatorId60,1349
+    public void setCreatorId(BaseMarketingActivityDAOParam.setCreatorId64,1419
+    public String getCreatorMemberId(BaseMarketingActivityDAOParam.getCreatorMemberId68,1513
+    public void setCreatorMemberId(BaseMarketingActivityDAOParam.setCreatorMemberId72,1597
+    public Long getToolId(BaseMarketingActivityDAOParam.getToolId76,1717
+    public void setToolId(BaseMarketingActivityDAOParam.setToolId80,1781
+    public Long getActivityId(BaseMarketingActivityDAOParam.getActivityId84,1863
+    public void setActivityId(BaseMarketingActivityDAOParam.setActivityId88,1935
+    public String getCurrentStatus(BaseMarketingActivityDAOParam.getCurrentStatus92,2033
+    public void setCurrentStatus(BaseMarketingActivityDAOParam.setCurrentStatus96,2113
+    public String getStatus(BaseMarketingActivityDAOParam.getStatus100,2225
+    public void setStatus(BaseMarketingActivityDAOParam.setStatus104,2291
+    public String getToolCode(BaseMarketingActivityDAOParam.getToolCode108,2375
+    public void setToolCode(BaseMarketingActivityDAOParam.setToolCode112,2445
+    public String getActivityType(BaseMarketingActivityDAOParam.getActivityType116,2537
+    public void setActivityType(BaseMarketingActivityDAOParam.setActivityType120,2615
+    public List<String> getStatusList(BaseMarketingActivityDAOParam.getStatusList124,2727
+    public void setStatusList(BaseMarketingActivityDAOParam.setStatusList128,2811
+
+../ali-trunk/marketing_center/dal/src/main/java/com/alibaba/china/marketingcenter/dal/marketing/param/MarketingActivityDAOQueryParam.java,1604
+public class MarketingActivityDAOQueryParam 11,254
+    private List<String> participateMemberIds;MarketingActivityDAOQueryParam.participateMemberIds14,372
+    private List<String> creatorMemberIds;MarketingActivityDAOQueryParam.creatorMemberIds17,453
+    private List<Long>   participateIds;MarketingActivityDAOQueryParam.participateIds20,524
+    private List<Long>   creatorIds;MarketingActivityDAOQueryParam.creatorIds23,593
+    public void appendCreatorId(MarketingActivityDAOQueryParam.appendCreatorId25,633
+    public void appendCreatorMemberId(MarketingActivityDAOQueryParam.appendCreatorMemberId29,734
+    public void appendParticipateId(MarketingActivityDAOQueryParam.appendParticipateId33,861
+    public void appendParticipateMemberId(MarketingActivityDAOQueryParam.appendParticipateMemberId37,978
+    public List<String> getParticipateMemberIds(MarketingActivityDAOQueryParam.getParticipateMemberIds41,1121
+    public void setParticipateMemberIds(MarketingActivityDAOQueryParam.setParticipateMemberIds48,1338
+    public List<String> getCreatorMemberIds(MarketingActivityDAOQueryParam.getCreatorMemberIds52,1484
+    public void setCreatorMemberIds(MarketingActivityDAOQueryParam.setCreatorMemberIds59,1685
+    public List<Long> getParticipateIds(MarketingActivityDAOQueryParam.getParticipateIds63,1815
+    public void setParticipateIds(MarketingActivityDAOQueryParam.setParticipateIds70,2004
+    public List<Long> getCreatorIds(MarketingActivityDAOQueryParam.getCreatorIds74,2124
+    public void setCreatorIds(MarketingActivityDAOQueryParam.setCreatorIds81,2297
+
+../ali-trunk/marketing_center/dal/src/main/java/com/alibaba/china/marketingcenter/dal/marketing/param/MarketingActivityDAOUpdateParam.java,2549
+public class MarketingActivityDAOUpdateParam 10,229
+    private String  shopPromotionTemplate;MarketingActivityDAOUpdateParam.shopPromotionTemplate13,344
+    private String  name;MarketingActivityDAOUpdateParam.name16,411
+    private Integer participateRange;MarketingActivityDAOUpdateParam.participateRange21,517
+    private String  rangeContent;MarketingActivityDAOUpdateParam.rangeContent29,754
+    private String  areaExclude;MarketingActivityDAOUpdateParam.areaExclude37,960
+    private String  description;MarketingActivityDAOUpdateParam.description45,1129
+    private Date                    gmtStartTime;MarketingActivityDAOUpdateParam.gmtStartTime48,1194
+    private Date                    gmtEndTime;MarketingActivityDAOUpdateParam.gmtEndTime51,1272
+    private Long                    promotionSearchType;MarketingActivityDAOUpdateParam.promotionSearchType54,1358
+    public String getName(MarketingActivityDAOUpdateParam.getName56,1418
+    public void setName(MarketingActivityDAOUpdateParam.setName60,1480
+    public String getShopPromotionTemplate(MarketingActivityDAOUpdateParam.getShopPromotionTemplate64,1556
+    public void setShopPromotionTemplate(MarketingActivityDAOUpdateParam.setShopPromotionTemplate68,1652
+    public Integer getParticipateRange(MarketingActivityDAOUpdateParam.getParticipateRange72,1796
+    public void setParticipateRange(MarketingActivityDAOUpdateParam.setParticipateRange76,1883
+    public String getRangeContent(MarketingActivityDAOUpdateParam.getRangeContent80,2008
+    public void setRangeContent(MarketingActivityDAOUpdateParam.setRangeContent84,2086
+    public String getAreaExclude(MarketingActivityDAOUpdateParam.getAreaExclude88,2194
+    public void setAreaExclude(MarketingActivityDAOUpdateParam.setAreaExclude92,2270
+    public String getDescription(MarketingActivityDAOUpdateParam.getDescription96,2374
+    public void setDescription(MarketingActivityDAOUpdateParam.setDescription100,2450
+    public Date getGmtStartTime(MarketingActivityDAOUpdateParam.getGmtStartTime105,2560
+    public void setGmtStartTime(MarketingActivityDAOUpdateParam.setGmtStartTime110,2642
+    public Date getGmtEndTime(MarketingActivityDAOUpdateParam.getGmtEndTime115,2754
+    public void setGmtEndTime(MarketingActivityDAOUpdateParam.setGmtEndTime120,2832
+    public Long getPromotionSearchType(MarketingActivityDAOUpdateParam.getPromotionSearchType125,2936
+    public void setPromotionSearchType(MarketingActivityDAOUpdateParam.setPromotionSearchType130,3032
+
+../ali-trunk/marketing_center/dal/src/main/java/com/alibaba/china/marketingcenter/dal/marketing/param/MarketingActivityDataFixedParam.java,1675
+public class MarketingActivityDataFixedParam 18,595
+    private static final long serialVersionUID MarketingActivityDataFixedParam.serialVersionUID20,669
+    private int               start;MarketingActivityDataFixedParam.start21,742
+    private int               end;MarketingActivityDataFixedParam.end22,836
+    private Date              gmtStartTime;MarketingActivityDataFixedParam.gmtStartTime23,930
+    private Date              gmtEndTime;MarketingActivityDataFixedParam.gmtEndTime24,975
+    private Long              promotionSearchType;MarketingActivityDataFixedParam.promotionSearchType25,1018
+    private Long              id;MarketingActivityDataFixedParam.id26,1070
+    public int getStart(MarketingActivityDataFixedParam.getStart28,1158
+    public void setStart(MarketingActivityDataFixedParam.setStart32,1219
+    public Date getGmtStartTime(MarketingActivityDataFixedParam.getGmtStartTime36,1296
+    public void setGmtStartTime(MarketingActivityDataFixedParam.setGmtStartTime40,1372
+    public Date getGmtEndTime(MarketingActivityDataFixedParam.getGmtEndTime44,1478
+    public void setGmtEndTime(MarketingActivityDataFixedParam.setGmtEndTime48,1550
+    public Long getPromotionSearchType(MarketingActivityDataFixedParam.getPromotionSearchType52,1648
+    public void setPromotionSearchType(MarketingActivityDataFixedParam.setPromotionSearchType56,1738
+    public Long getId(MarketingActivityDataFixedParam.getId60,1872
+    public void setId(MarketingActivityDataFixedParam.setId64,1928
+    public int getEnd(MarketingActivityDataFixedParam.getEnd68,1994
+    public void setEnd(MarketingActivityDataFixedParam.setEnd72,2051
+
+../ali-trunk/marketing_center/dal/src/main/java/com/alibaba/china/marketingcenter/dal/marketing/param/MarketingActivityStatusUpdateParam.java,1909
+public class MarketingActivityStatusUpdateParam 17,648
+    private static final long serialVersionUID MarketingActivityStatusUpdateParam.serialVersionUID18,723
+    private Long         creatorId;MarketingActivityStatusUpdateParam.creatorId24,901
+    private String       creatorMemberId;MarketingActivityStatusUpdateParam.creatorMemberId28,984
+    private String       toolCode;MarketingActivityStatusUpdateParam.toolCode32,1075
+    private Long         activityId;MarketingActivityStatusUpdateParam.activityId36,1151
+    private List<String> currentStatusList;MarketingActivityStatusUpdateParam.currentStatusList40,1230
+    private String       status;MarketingActivityStatusUpdateParam.status46,1376
+    public void appendCurrentStatus(MarketingActivityStatusUpdateParam.appendCurrentStatus53,1486
+    public Long getCreatorId(MarketingActivityStatusUpdateParam.getCreatorId60,1704
+    public void setCreatorId(MarketingActivityStatusUpdateParam.setCreatorId64,1774
+    public String getCreatorMemberId(MarketingActivityStatusUpdateParam.getCreatorMemberId68,1868
+    public void setCreatorMemberId(MarketingActivityStatusUpdateParam.setCreatorMemberId72,1952
+    public Long getActivityId(MarketingActivityStatusUpdateParam.getActivityId76,2072
+    public void setActivityId(MarketingActivityStatusUpdateParam.setActivityId80,2144
+    public List<String> getCurrentStatusList(MarketingActivityStatusUpdateParam.getCurrentStatusList84,2242
+    public void setCurrentStatusList(MarketingActivityStatusUpdateParam.setCurrentStatusList88,2336
+    public String getStatus(MarketingActivityStatusUpdateParam.getStatus92,2470
+    public void setStatus(MarketingActivityStatusUpdateParam.setStatus96,2536
+    public String getToolCode(MarketingActivityStatusUpdateParam.getToolCode100,2624
+    public void setToolCode(MarketingActivityStatusUpdateParam.setToolCode104,2698
+
+../ali-trunk/marketing_center/dal/src/main/java/com/alibaba/china/marketingcenter/dal/marketing/param/MarketingDetailDAODeleteParam.java,1406
+public class MarketingDetailDAODeleteParam 15,580
+    private static final long serialVersionUID MarketingDetailDAODeleteParam.serialVersionUID17,652
+    private String            toolCode;MarketingDetailDAODeleteParam.toolCode21,764
+    private Long              toolId;MarketingDetailDAODeleteParam.toolId25,838
+    private Long              activityId;MarketingDetailDAODeleteParam.activityId30,912
+    private Long              detailId;MarketingDetailDAODeleteParam.detailId35,994
+    private Long              participateId;MarketingDetailDAODeleteParam.participateId40,1076
+    public String getToolCode(MarketingDetailDAODeleteParam.getToolCode42,1124
+    public void setToolCode(MarketingDetailDAODeleteParam.setToolCode46,1194
+    public Long getToolId(MarketingDetailDAODeleteParam.getToolId50,1286
+    public void setToolId(MarketingDetailDAODeleteParam.setToolId54,1350
+    public Long getActivityId(MarketingDetailDAODeleteParam.getActivityId58,1432
+    public void setActivityId(MarketingDetailDAODeleteParam.setActivityId62,1504
+    public Long getDetailId(MarketingDetailDAODeleteParam.getDetailId66,1602
+    public void setDetailId(MarketingDetailDAODeleteParam.setDetailId70,1670
+    public Long getParticipateId(MarketingDetailDAODeleteParam.getParticipateId74,1760
+    public void setParticipateId(MarketingDetailDAODeleteParam.setParticipateId78,1838
+
+../ali-trunk/marketing_center/dal/src/main/java/com/alibaba/china/marketingcenter/dal/marketing/param/MarketingDetailDAOQueryParam.java,696
+public class MarketingDetailDAOQueryParam 3,66
+    private Long detailId;MarketingDetailDAOQueryParam.detailId6,175
+    private Long participateType;MarketingDetailDAOQueryParam.participateType9,228
+    public Long getDetailId(MarketingDetailDAOQueryParam.getDetailId11,265
+    public void setDetailId(MarketingDetailDAOQueryParam.setDetailId15,333
+    public Long getParticipateType(MarketingDetailDAOQueryParam.getParticipateType19,423
+    public void setParticipateType(MarketingDetailDAOQueryParam.setParticipateType23,505
+    public String getToolCode(MarketingDetailDAOQueryParam.getToolCode27,623
+    public void setToolCode(MarketingDetailDAOQueryParam.setToolCode31,693
+
+../ali-trunk/marketing_center/dal/src/main/java/com/alibaba/china/marketingcenter/dal/marketing/param/MarketingDetailDAOUpdateParam.java,551
+public class MarketingDetailDAOUpdateParam 3,66
+    private Long   detailId;MarketingDetailDAOUpdateParam.detailId6,176
+    private Long   participateType;MarketingDetailDAOUpdateParam.participateType9,231
+    public Long getDetailId(MarketingDetailDAOUpdateParam.getDetailId11,270
+    public void setDetailId(MarketingDetailDAOUpdateParam.setDetailId15,338
+    public Long getParticipateType(MarketingDetailDAOUpdateParam.getParticipateType19,428
+    public void setParticipateType(MarketingDetailDAOUpdateParam.setParticipateType23,510
+
+../ali-trunk/marketing_center/dal/src/main/java/com/alibaba/china/marketingcenter/dal/marketing/param/MarketingToolDAOQueryParam.java,1330
+public class MarketingToolDAOQueryParam 8,186
+    private Long    id;MarketingToolDAOQueryParam.id11,256
+    private String  toolCode;MarketingToolDAOQueryParam.toolCode14,308
+    private Long    toolId;MarketingToolDAOQueryParam.toolId17,364
+    private String  status;MarketingToolDAOQueryParam.status20,420
+    private Boolean orderBy;MarketingToolDAOQueryParam.orderBy23,476
+    private Integer ordered;MarketingToolDAOQueryParam.ordered30,593
+    public Boolean getOrderBy(MarketingToolDAOQueryParam.getOrderBy32,625
+    public void setOrderBy(MarketingToolDAOQueryParam.setOrderBy36,694
+    public String getToolCode(MarketingToolDAOQueryParam.getToolCode40,783
+    public void setToolCode(MarketingToolDAOQueryParam.setToolCode44,853
+    public Long getToolId(MarketingToolDAOQueryParam.getToolId48,945
+    public void setToolId(MarketingToolDAOQueryParam.setToolId52,1009
+    public String getStatus(MarketingToolDAOQueryParam.getStatus56,1091
+    public void setStatus(MarketingToolDAOQueryParam.setStatus60,1157
+    public Long getId(MarketingToolDAOQueryParam.getId64,1241
+    public void setId(MarketingToolDAOQueryParam.setId68,1297
+    public Integer getOrdered(MarketingToolDAOQueryParam.getOrdered72,1363
+    public void setOrdered(MarketingToolDAOQueryParam.setOrdered76,1432
+
+../ali-trunk/marketing_center/dal/src/main/java/com/alibaba/china/marketingcenter/dal/marketing/param/MarketingToolDAOUpdateParam.java,1182
+public class MarketingToolDAOUpdateParam 3,66
+    private Long   toolId;MarketingToolDAOUpdateParam.toolId6,135
+    private String toolCode;MarketingToolDAOUpdateParam.toolCode9,190
+    private String status;MarketingToolDAOUpdateParam.status12,247
+    private String currentStatus;MarketingToolDAOUpdateParam.currentStatus15,306
+    private Integer ordered;MarketingToolDAOUpdateParam.ordered22,428
+    public Long getToolId(MarketingToolDAOUpdateParam.getToolId24,460
+    public void setToolId(MarketingToolDAOUpdateParam.setToolId28,524
+    public String getToolCode(MarketingToolDAOUpdateParam.getToolCode32,606
+    public void setToolCode(MarketingToolDAOUpdateParam.setToolCode36,676
+    public String getStatus(MarketingToolDAOUpdateParam.getStatus40,768
+    public void setStatus(MarketingToolDAOUpdateParam.setStatus44,834
+    public String getCurrentStatus(MarketingToolDAOUpdateParam.getCurrentStatus48,918
+    public void setCurrentStatus(MarketingToolDAOUpdateParam.setCurrentStatus52,998
+    public Integer getOrdered(MarketingToolDAOUpdateParam.getOrdered56,1110
+    public void setOrdered(MarketingToolDAOUpdateParam.setOrdered60,1179
+
+../ali-trunk/marketing_center/dal/src/main/java/com/alibaba/china/marketingcenter/dal/marketing/tair/MarketingTairManager.java,93
+public interface MarketingTairManager 7,144
+    public Map<MarketingTairManager.Map24,517
+
+../ali-trunk/marketing_center/dal/src/main/java/com/alibaba/china/marketingcenter/dal/marketing/tair/MarketingTairManagerImpl.java,923
+public class MarketingTairManagerImpl 16,437
+    private final static Logger LOGGER MarketingTairManagerImpl.LOGGER18,512
+    private static final int    TAIR_VALUE_VERSION MarketingTairManagerImpl.TAIR_VALUE_VERSION21,656
+    private TairManager         tairManager;MarketingTairManagerImpl.tairManager23,715
+    public void setTairManager(MarketingTairManagerImpl.setTairManager25,763
+    public Object get(MarketingTairManagerImpl.get36,1014
+    public Map<Object,MarketingTairManagerImpl.Object64,2223
+    public Map<Object, Object> mget(MarketingTairManagerImpl.mget64,2223
+    public boolean invalid(MarketingTairManagerImpl.invalid99,3675
+    public boolean put(MarketingTairManagerImpl.put131,4907
+    public boolean put(MarketingTairManagerImpl.put157,5908
+    public boolean delete(MarketingTairManagerImpl.delete184,6959
+    public boolean delete(MarketingTairManagerImpl.delete207,7806
+
+../ali-trunk/marketing_center/dal/src/main/java/com/alibaba/china/marketingcenter/dal/marketing/tair/TairKeyUtil.java,668
+public class TairKeyUtil 8,180
+    private static final String QUERY_ONLY_ACTIVITY_TAIR_KEY_PREFIX TairKeyUtil.QUERY_ONLY_ACTIVITY_TAIR_KEY_PREFIX11,244
+    private static final String QUERY_ACTIVITY_WITH_DETAIL_TAIR_KEY_PREFIX TairKeyUtil.QUERY_ACTIVITY_WITH_DETAIL_TAIR_KEY_PREFIX14,374
+    public static String queryActivityWithDetailKeyBy(TairKeyUtil.queryActivityWithDetailKeyBy24,612
+    public static String queryActivityWithDetailKeyBy(TairKeyUtil.queryActivityWithDetailKeyBy35,964
+    public static String queryActivityKeyBy(TairKeyUtil.queryActivityKeyBy47,1295
+    public static String queryActivityKeyBy(TairKeyUtil.queryActivityKeyBy58,1609
+
+../ali-trunk/marketing_center/dal/src/test/java/com/alibaba/china/marketingcenter/dal/favorite/daointerface/FavoritesCountDAOTest.java,338
+public class FavoritesCountDAOTest 31,1167
+    private FavoritesCountDAO favoritesCountDAO;FavoritesCountDAOTest.favoritesCountDAO33,1244
+    @DbFit(FavoritesCountDAOTest.@DbFit39,1358
+    @DbFit(FavoritesCountDAOTest.@DbFit59,2040
+    @DbFit(FavoritesCountDAOTest.@DbFit90,3149
+    @DbFit(FavoritesCountDAOTest.@DbFit105,3689
+
+../ali-trunk/marketing_center/dal/src/test/java/com/alibaba/china/marketingcenter/dal/favorite/daointerface/FavoritesDAOTest.java,562
+public class FavoritesDAOTest 33,1277
+    private FavoritesDAO favoritesDAO;FavoritesDAOTest.favoritesDAO35,1349
+    @DbFit(FavoritesDAOTest.@DbFit41,1449
+    @DbFit(FavoritesDAOTest.@DbFit64,2238
+    @DbFit(FavoritesDAOTest.@DbFit82,2768
+    @DbFit(FavoritesDAOTest.@DbFit98,3274
+    @DbFit(FavoritesDAOTest.@DbFit113,3798
+    @DbFit(FavoritesDAOTest.@DbFit133,4526
+    @DbFit(FavoritesDAOTest.@DbFit152,5157
+    @DbFit(FavoritesDAOTest.@DbFit182,6185
+    @DbFit(FavoritesDAOTest.@DbFit198,6752
+    @DbFit(FavoritesDAOTest.@DbFit212,7174
+
+../ali-trunk/marketing_center/dal/src/test/java/com/alibaba/china/marketingcenter/dal/favorite/daointerface/FavoritesTagDAOTest.java,367
+public class FavoritesTagDAOTest 31,1161
+    private FavoritesTagDAO favoritesTagDAO;FavoritesTagDAOTest.favoritesTagDAO33,1236
+    @DbFit(FavoritesTagDAOTest.@DbFit39,1352
+    @DbFit(FavoritesTagDAOTest.@DbFit56,1912
+    @DbFit(FavoritesTagDAOTest.@DbFit72,2485
+    @DbFit(FavoritesTagDAOTest.@DbFit87,2944
+    @DbFit(FavoritesTagDAOTest.@DbFit101,3332
+
+../ali-trunk/marketing_center/dal/src/test/java/com/alibaba/china/marketingcenter/dal/favorite/daointerface/FavoritesTagRelDAOTest.java,448
+public class FavoritesTagRelDAOTest 31,1170
+    private FavoritesTagRelDAO favoritesTagRelDAO;FavoritesTagRelDAOTest.favoritesTagRelDAO33,1248
+    @DbFit(FavoritesTagRelDAOTest.@DbFit39,1393
+    @DbFit(FavoritesTagRelDAOTest.@DbFit56,1986
+    @DbFit(FavoritesTagRelDAOTest.@DbFit70,2400
+    @DbFit(FavoritesTagRelDAOTest.@DbFit86,3007
+    @DbFit(FavoritesTagRelDAOTest.@DbFit109,3850
+    @DbFit(FavoritesTagRelDAOTest.@DbFit131,4592
+
+../ali-trunk/marketing_center/dal/src/test/java/com/alibaba/china/marketingcenter/dal/marketing/daointerface/test/BaseMarketingTest.java,39
+public class BaseMarketingTest 12,371
+
+../ali-trunk/marketing_center/dal/src/test/java/com/alibaba/china/marketingcenter/dal/marketing/daointerface/test/MarketingActivityDAOTest.java,1434
+public class MarketingActivityDAOTest 22,893
+    private MarketingActivityDAO marketingActivityDAO;MarketingActivityDAOTest.marketingActivityDAO25,985
+    public void testInsertMarketingActivity(MarketingActivityDAOTest.testInsertMarketingActivity28,1054
+    @DbFit(MarketingActivityDAOTest.@DbFit51,2037
+    @DbFit(MarketingActivityDAOTest.@DbFit64,2618
+    @DbFit(MarketingActivityDAOTest.@DbFit77,3188
+    @DbFit(MarketingActivityDAOTest.@DbFit92,3875
+    @DbFit(MarketingActivityDAOTest.@DbFit107,4562
+    @DbFit(MarketingActivityDAOTest.@DbFit130,5516
+    @DbFit(MarketingActivityDAOTest.@DbFit156,6798
+    @DbFit(MarketingActivityDAOTest.@DbFit174,7827
+    @DbFit(MarketingActivityDAOTest.@DbFit192,8853
+    @DbFit(MarketingActivityDAOTest.@DbFit213,9962
+    @DbFit(MarketingActivityDAOTest.@DbFit234,11062
+    @DbFit(MarketingActivityDAOTest.@DbFit252,12089
+    @DbFit(MarketingActivityDAOTest.@DbFit274,13250
+    @DbFit(MarketingActivityDAOTest.@DbFit296,14426
+    @DbFit(MarketingActivityDAOTest.@DbFit310,15146
+    @DbFit(MarketingActivityDAOTest.@DbFit324,15870
+    @DbFit(MarketingActivityDAOTest.@DbFit340,16722
+    @DbFit(MarketingActivityDAOTest.@DbFit356,17593
+    @DbFit(MarketingActivityDAOTest.@DbFit370,18339
+    @DbFit(MarketingActivityDAOTest.@DbFit385,19223
+    @DbFit(MarketingActivityDAOTest.@DbFit409,20288
+    @DbFit(MarketingActivityDAOTest.@DbFit425,21003
+
+../ali-trunk/marketing_center/dal/src/test/java/com/alibaba/china/marketingcenter/dal/marketing/daointerface/test/MarketingDetailDAOTest.java,353
+public class MarketingDetailDAOTest 12,405
+    private MarketingDetailDAO marketingDetailDAO;MarketingDetailDAOTest.marketingDetailDAO15,495
+    public void testInsertMarketingDetail(MarketingDetailDAOTest.testInsertMarketingDetail18,564
+    public void testBatchInsertMarketingDetail(MarketingDetailDAOTest.testBatchInsertMarketingDetail37,1341
+
+../ali-trunk/marketing_center/dal/src/test/java/com/alibaba/china/marketingcenter/dal/marketing/daointerface/test/MarketingToolDAOTest.java,470
+public class MarketingToolDAOTest 19,721
+    private MarketingToolDAO marketingToolDAO;MarketingToolDAOTest.marketingToolDAO22,809
+    public void testInsertMarkertingTool(MarketingToolDAOTest.testInsertMarkertingTool25,870
+    @DbFit(MarketingToolDAOTest.@DbFit42,1434
+    @DbFit(MarketingToolDAOTest.@DbFit55,1884
+    @DbFit(MarketingToolDAOTest.@DbFit77,2767
+    @DbFit(MarketingToolDAOTest.@DbFit97,3547
+    @DbFit(MarketingToolDAOTest.@DbFit105,3792
+
+../ali-trunk/marketing_center/dal/src/test/java/com/alibaba/china/marketingcenter/dal/marketing/daointerface/util/ObjectSizer.java,534
+public final class ObjectSizer 3,78
+    public static void main(ObjectSizer.main8,242
+    public static long getObjectSize(ObjectSizer.getObjectSize25,1037
+    private static int  fSAMPLE_SIZE ObjectSizer.fSAMPLE_SIZE60,2304
+    private static long fSLEEP_INTERVAL ObjectSizer.fSLEEP_INTERVAL61,2352
+    private static long getMemoryUse(ObjectSizer.getMemoryUse63,2402
+    private static void putOutTheGarbage(ObjectSizer.putOutTheGarbage73,2685
+    private static void collectGarbage(ObjectSizer.collectGarbage78,2794
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/common/consts/FavoritesConstant.java,1173
+public class FavoritesConstant 14,569
+    public static final String TAG_SEPARATOR FavoritesConstant.TAG_SEPARATOR19,643
+    public static final int    TAG_COUNT FavoritesConstant.TAG_COUNT24,749
+    public static final int    DEFAULT_PAGE_SIZE FavoritesConstant.DEFAULT_PAGE_SIZE29,859
+    public static final int    MAX_NUMBER_OF_TYPE FavoritesConstant.MAX_NUMBER_OF_TYPE34,982
+    public static final int    MAX_NUMBER_TO_SEARCH FavoritesConstant.MAX_NUMBER_TO_SEARCH39,1102
+    public static final int    MAX_NEW_TAGS FavoritesConstant.MAX_NEW_TAGS44,1218
+    public static final String OFFER_TYPE_SALE FavoritesConstant.OFFER_TYPE_SALE47,1304
+    public static final String OFFER_TYPE_BUY FavoritesConstant.OFFER_TYPE_BUY48,1372
+    public static final String CONTENT_TYPE_OFFER_SALE FavoritesConstant.CONTENT_TYPE_OFFER_SALE53,1489
+    public static final String CONTENT_TYPE_OFFER_BUY FavoritesConstant.CONTENT_TYPE_OFFER_BUY58,1613
+    public static final String CONTENT_TYPE_COMPANY FavoritesConstant.CONTENT_TYPE_COMPANY63,1732
+    public static final String CONTENT_TYPE_TRADE_COMPANY FavoritesConstant.CONTENT_TYPE_TRADE_COMPANY68,1854
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/common/consts/LoggerConstants.java,479
+public class LoggerConstants 3,60
+    public static final String MARKETING_TOOL_LOG LoggerConstants.MARKETING_TOOL_LOG8,133
+    public static final String MARKETING_ACTIVITY_LOG LoggerConstants.MARKETING_ACTIVITY_LOG13,251
+    public static final String PROMOTION_DISPLAY_LOG LoggerConstants.PROMOTION_DISPLAY_LOG18,379
+    public static final String UMP_LOG LoggerConstants.UMP_LOG23,495
+    public static final String VALIDATE_LOG LoggerConstants.VALIDATE_LOG28,599
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/common/consts/MarketingConstants.java,248
+public class MarketingConstants 14,516
+    public static final String DEFAULT_DESCRIPTION MarketingConstants.DEFAULT_DESCRIPTION18,685
+    public static final String MARKETING_CENTER_APP_NAME MarketingConstants.MARKETING_CENTER_APP_NAME22,802
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/common/consts/PurchaseConstant.java,448
+public class PurchaseConstant 13,522
+    public static final int    FORMAL_MAX_CARGO_COUNT PurchaseConstant.FORMAL_MAX_CARGO_COUNT16,600
+    public static final int    TEMP_MAX_CARGO_COUNT PurchaseConstant.TEMP_MAX_CARGO_COUNT19,722
+    public static final long   TB_CART_SUB_TYPE_CN PurchaseConstant.TB_CART_SUB_TYPE_CN22,844
+    public static final String TB_CART_PURCHASE_CLIENT_NAME PurchaseConstant.TB_CART_PURCHASE_CLIENT_NAME25,965
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/common/DragoonMonitorServiceImpl.java,766
+public class DragoonMonitorServiceImpl 16,386
+    private static final Logger logger DragoonMonitorServiceImpl.logger18,428
+    private String              dragoonAppName;DragoonMonitorServiceImpl.dragoonAppName20,548
+    private boolean             dragoonNeedStart DragoonMonitorServiceImpl.dragoonNeedStart22,628
+    private static String       DOBBO_SERVICE_SERVER_POSRT DragoonMonitorServiceImpl.DOBBO_SERVICE_SERVER_POSRT24,696
+    public void setDragoonNeedStart(DragoonMonitorServiceImpl.setDragoonNeedStart30,857
+    public void setDragoonAppName(DragoonMonitorServiceImpl.setDragoonAppName34,978
+    public void init(DragoonMonitorServiceImpl.init38,1090
+    private String getInstanceName(DragoonMonitorServiceImpl.getInstanceName48,1398
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/common/util/ConvertUtil.java,929
+public class ConvertUtil 34,1408
+    private ConvertUtil(ConvertUtil.ConvertUtil36,1438
+    public static List<CartExDO> convertCartExDOs(ConvertUtil.convertCartExDOs39,1475
+    public static List<CargoModel> convertCargoModels(ConvertUtil.convertCargoModels87,3728
+    public static CargoModel convertCargoModel(ConvertUtil.convertCargoModel101,4148
+    public static List<CargoModel> convertCargoModel(ConvertUtil.convertCargoModel126,5261
+    public static SpecInfoModel convertSkuSpecModel(ConvertUtil.convertSkuSpecModel155,6488
+    public static CargoParam convertCargoParam(ConvertUtil.convertCargoParam172,7152
+    public static List<CargoParam> convertCargoParam(ConvertUtil.convertCargoParam207,8552
+    public static boolean isMember(ConvertUtil.isMember218,8910
+    public static boolean isAnonymous(ConvertUtil.isAnonymous222,9016
+    public static boolean isValid(ConvertUtil.isValid226,9118
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/common/util/OfferUtil.java,697
+public class OfferUtil 15,431
+    private static final String SKUCODE_SEPARATOR OfferUtil.SKUCODE_SEPARATOR18,484
+    public static boolean isExpired(OfferUtil.isExpired27,639
+    public static boolean isAutoExpired(OfferUtil.isAutoExpired40,1034
+    public static boolean isPublishedOffer(OfferUtil.isPublishedOffer60,1572
+    public static boolean isOfferHasOrder(OfferUtil.isOfferHasOrder70,1826
+    public static boolean isAegisTrade(OfferUtil.isAegisTrade80,2065
+    public static String genSkuCode(OfferUtil.genSkuCode94,2417
+    public static String genSkuCode(OfferUtil.genSkuCode110,2856
+    public static SkuSpecModel getSkuSpecModel(OfferUtil.getSkuSpecModel124,3245
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/common/util/ParamUtils.java,428
+public class ParamUtils 16,500
+    public static final ParamKeyValue createParamKeyValue(ParamUtils.createParamKeyValue18,527
+    public static class ParamKeyValue ParamUtils.ParamKeyValue27,734
+        private ParamKeyValue(ParamUtils.ParamKeyValue.ParamKeyValue29,775
+        public ParamKeyValue append(ParamUtils.ParamKeyValue.append41,1088
+        public String toString(ParamUtils.ParamKeyValue.toString47,1256
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/common/util/SphUtil.java,221
+public class SphUtil 12,287
+    private SphUtil(SphUtil.SphUtil14,313
+    public static Sph shopPromotionSph SphUtil.shopPromotionSph18,420
+    public static Sph marketingDetailSph SphUtil.marketingDetailSph21,605
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/common/util/TairUtil.java,174
+public class TairUtil 14,488
+    public static String createUserKey(TairUtil.createUserKey22,640
+    public static String createCookieKey(TairUtil.createCookieKey34,952
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/common/util/TypeConvertUtil.java,771
+public class TypeConvertUtil 13,283
+    private TypeConvertUtil(TypeConvertUtil.TypeConvertUtil15,317
+    private static String DEFAULT_SEPERATOR TypeConvertUtil.DEFAULT_SEPERATOR18,358
+    public static String getListAsString(TypeConvertUtil.getListAsString26,568
+    public static String getListAsString(TypeConvertUtil.getListAsString37,878
+    public static String getArrayAsString(TypeConvertUtil.getArrayAsString59,1500
+    public static String getArrayAsString(TypeConvertUtil.getArrayAsString70,1811
+    public static Map<String,TypeConvertUtil.String93,2412
+    public static Map<String, Object> convertObjectAsMap(TypeConvertUtil.convertObjectAsMap93,2412
+    public static int[] longListToIntArray(TypeConvertUtil.longListToIntArray113,3098
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/exception/ServiceExceptionFactory.java,632
+public class ServiceExceptionFactory 14,433
+    private static final String        UNKOWN_ERROR_MESSAGE ServiceExceptionFactory.UNKOWN_ERROR_MESSAGE16,473
+    private ValidationService          validationService;ServiceExceptionFactory.validationService21,584
+    public void validateParam(ServiceExceptionFactory.validateParam32,835
+    public void validateFavoriteParam(ServiceExceptionFactory.validateFavoriteParam48,1318
+    public ServiceException createServiceException(ServiceExceptionFactory.createServiceException65,1940
+    public void setValidationService(ServiceExceptionFactory.setValidationService72,2289
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/handler/PurchaseServiceAddCargoAfterExecutionHandler.java,418
+public class PurchaseServiceAddCargoAfterExecutionHandler 26,1124
+    private InvocationStatsComponent invocationStatsComponent;PurchaseServiceAddCargoAfterExecutionHandler.invocationStatsComponent31,1254
+    public void handle(PurchaseServiceAddCargoAfterExecutionHandler.handle39,1532
+    public void setInvocationStatsComponent(PurchaseServiceAddCargoAfterExecutionHandler.setInvocationStatsComponent57,2563
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/check/ServiceCheckerImpl.java,97
+public class ServiceCheckerImpl 6,184
+    public boolean check(ServiceCheckerImpl.check12,356
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/favorite/bo/FavoritesBO.java,1902
+public class FavoritesBO 42,1860
+    private static final Logger  log FavoritesBO.log44,1888
+    private static final Pattern HTML_ELEMENT FavoritesBO.HTML_ELEMENT46,1981
+    private FavoritesCountDAO    favoritesCountDAO;FavoritesBO.favoritesCountDAO48,2058
+    private FavoritesTagDAO      favoritesTagDAO;FavoritesBO.favoritesTagDAO49,2110
+    private FavoritesTagRelDAO   favoritesTagRelDAO;FavoritesBO.favoritesTagRelDAO50,2160
+    private SearchBO             searchBO;FavoritesBO.searchBO51,2213
+    public Set<FavoritesTagDO> addNewTag(FavoritesBO.addNewTag63,2598
+    public void addNewFavorites(FavoritesBO.addNewFavorites110,4491
+    public void removeFavoritesTag(FavoritesBO.removeFavoritesTag137,5454
+    public void removeFavorites(FavoritesBO.removeFavorites170,6863
+    public List getSearchList(FavoritesBO.getSearchList191,7630
+    public List<FavoritesTagDO> modifyFavoritesTag(FavoritesBO.modifyFavoritesTag222,8881
+    private List<String> deletedTags(FavoritesBO.deletedTags274,11245
+    private List<String> addedTags(FavoritesBO.addedTags278,11367
+    private List<String> reservedTag(FavoritesBO.reservedTag282,11487
+    private List<String> tagsMinus(FavoritesBO.tagsMinus291,11868
+    private String[] tagLengthLimit(FavoritesBO.tagLengthLimit321,12990
+    private String[] removeDuplicate(FavoritesBO.removeDuplicate339,13511
+    private String[] filterHtmlTag(FavoritesBO.filterHtmlTag364,14163
+    private String[] arrayLength(FavoritesBO.arrayLength386,14739
+    private String[] arrayMinus(FavoritesBO.arrayMinus399,15048
+    public void setFavoritesCountDAO(FavoritesBO.setFavoritesCountDAO420,15654
+    public void setSearchBO(FavoritesBO.setSearchBO424,15789
+    public void setFavoritesTagDAO(FavoritesBO.setFavoritesTagDAO428,15879
+    public void setFavoritesTagRelDAO(FavoritesBO.setFavoritesTagRelDAO432,16004
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/favorite/bo/SearchBO.java,808
+public class SearchBO 29,1283
+    private OfferSearch   offerSearch;SearchBO.offerSearch31,1308
+    private CompanySearch companySearch;SearchBO.companySearch32,1347
+    public List getOfferList(SearchBO.getOfferList42,1586
+    public List getLatestOffersByMemberId(SearchBO.getLatestOffersByMemberId64,2351
+    public Map getOfferList(SearchBO.getOfferList84,3022
+    public List getOfferByCategory(SearchBO.getOfferByCategory115,3987
+    public List getCompanyList(SearchBO.getCompanyList143,4859
+    public CompanySearchResult getCompanyListByMember(SearchBO.getCompanyListByMember169,5601
+    public Map getCompanyList(SearchBO.getCompanyList190,6322
+    public void setOfferSearch(SearchBO.setOfferSearch218,7258
+    public void setCompanySearch(SearchBO.setCompanySearch222,7363
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/favorite/FavoriteReadServiceImpl.java,2379
+public class FavoriteReadServiceImpl 47,2372
+    private static final Logger     logger FavoriteReadServiceImpl.logger49,2445
+    private FavoritesDAO            favoritesDAO;FavoriteReadServiceImpl.favoritesDAO51,2540
+    private FavoritesCountDAO       favoritesCountDAO;FavoriteReadServiceImpl.favoritesCountDAO52,2591
+    private ServiceExceptionFactory serviceExceptionFactory;FavoriteReadServiceImpl.serviceExceptionFactory53,2647
+    private FavoritesTagDAO         favoritesTagDAO;FavoriteReadServiceImpl.favoritesTagDAO54,2709
+    private FavoritesTagRelDAO      favoritesTagRelDAO;FavoriteReadServiceImpl.favoritesTagRelDAO55,2763
+    private FavoritesBO             favoritesBO;FavoriteReadServiceImpl.favoritesBO56,2820
+    public ListResult<FavoriteModel> queryFavoritesListResult(FavoriteReadServiceImpl.queryFavoritesListResult60,2923
+    public List<FavoritesTagModel> queryFavoritesTagModelList(FavoriteReadServiceImpl.queryFavoritesTagModelList194,9868
+    public List<FavoriteCountModel> queryFavoriteCountModelList(FavoriteReadServiceImpl.queryFavoriteCountModelList218,10972
+    public Set<String> getCollectedMemberListByMember(FavoriteReadServiceImpl.getCollectedMemberListByMember258,12797
+    public int queryCollectedCount(FavoriteReadServiceImpl.queryCollectedCount336,16190
+    public Set<String> getCollectedMemberListByContent(FavoriteReadServiceImpl.getCollectedMemberListByContent361,17153
+    private QueryParam queryFavoriteParamToQueryParam(FavoriteReadServiceImpl.queryFavoriteParamToQueryParam399,18664
+    private void validateContenId(FavoriteReadServiceImpl.validateContenId408,19059
+    private void validateMemberId(FavoriteReadServiceImpl.validateMemberId414,19289
+    private void validateContentType(FavoriteReadServiceImpl.validateContentType420,19541
+    public void setFavoritesDAO(FavoriteReadServiceImpl.setFavoritesDAO427,19872
+    public void setFavoritesCountDAO(FavoriteReadServiceImpl.setFavoritesCountDAO431,19986
+    public void setServiceExceptionFactory(FavoriteReadServiceImpl.setServiceExceptionFactory435,20125
+    public void setFavoritesTagDAO(FavoriteReadServiceImpl.setFavoritesTagDAO439,20294
+    public void setFavoritesTagRelDAO(FavoriteReadServiceImpl.setFavoritesTagRelDAO443,20423
+    public void setFavoritesBO(FavoriteReadServiceImpl.setFavoritesBO447,20567
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/favorite/FavoriteWriteServiceImpl.java,2621
+public class FavoriteWriteServiceImpl 46,2474
+    private static final Logger     logger FavoriteWriteServiceImpl.logger48,2549
+    private FavoritesBO             favoritesBO;FavoriteWriteServiceImpl.favoritesBO49,2642
+    private FavoritesDAO            favoritesDAO;FavoriteWriteServiceImpl.favoritesDAO50,2692
+    private TransactionTemplate     transactionTemplate;FavoriteWriteServiceImpl.transactionTemplate51,2743
+    private FavoritesTagDAO         favoritesTagDAO;FavoriteWriteServiceImpl.favoritesTagDAO52,2801
+    private FavoritesTagRelDAO      favoritesTagRelDAO;FavoriteWriteServiceImpl.favoritesTagRelDAO53,2855
+    private ServiceExceptionFactory serviceExceptionFactory;FavoriteWriteServiceImpl.serviceExceptionFactory54,2912
+    private PurchaseActionService   purchaseActionService;FavoriteWriteServiceImpl.purchaseActionService55,2974
+    private MemberReadService       memberReadService;FavoriteWriteServiceImpl.memberReadService56,3034
+    public void handleFavoriteTag(FavoriteWriteServiceImpl.handleFavoriteTag59,3107
+    @SuppressWarnings(FavoriteWriteServiceImpl.@SuppressWarnings110,5671
+    public void deleteFavoriteItem(FavoriteWriteServiceImpl.deleteFavoriteItem156,7666
+    private void checkFavoritesFull(FavoriteWriteServiceImpl.checkFavoritesFull183,8717
+    private void doAdd(FavoriteWriteServiceImpl.doAdd200,9239
+    private void recordAddFavoriteAction(FavoriteWriteServiceImpl.recordAddFavoriteAction212,9512
+    private void batchDelete(FavoriteWriteServiceImpl.batchDelete243,11049
+    private QueryParam addFavoriteItemParamToQueryParam(FavoriteWriteServiceImpl.addFavoriteItemParamToQueryParam262,11679
+    private void validateContentType(FavoriteWriteServiceImpl.validateContentType271,12049
+    protected void throwInvalidError(FavoriteWriteServiceImpl.throwInvalidError285,12475
+    public void setFavoritesBO(FavoriteWriteServiceImpl.setFavoritesBO298,13029
+    public void setFavoritesDAO(FavoriteWriteServiceImpl.setFavoritesDAO302,13138
+    public void setTransactionTemplate(FavoriteWriteServiceImpl.setTransactionTemplate306,13252
+    public void setFavoritesTagDAO(FavoriteWriteServiceImpl.setFavoritesTagDAO310,13401
+    public void setFavoritesTagRelDAO(FavoriteWriteServiceImpl.setFavoritesTagRelDAO314,13530
+    public void setServiceExceptionFactory(FavoriteWriteServiceImpl.setServiceExceptionFactory318,13674
+    public void setPurchaseActionService(FavoriteWriteServiceImpl.setPurchaseActionService322,13843
+    public void setMemberReadService(FavoriteWriteServiceImpl.setMemberReadService326,14002
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/favorite/util/FavoriteUtil.java,488
+public class FavoriteUtil 23,1028
+    public static boolean isValidContentType(FavoriteUtil.isValidContentType30,1159
+    public static FavoriteModel favoritesDOToFavoriteModel(FavoriteUtil.favoritesDOToFavoriteModel39,1545
+    public static FavoritesTagModel favoritesTagDOToFavoriteTagModel(FavoriteUtil.favoritesTagDOToFavoriteTagModel58,2243
+    public static FavoriteCountModel favoritesCountDOToFavoritesCountModel(FavoriteUtil.favoritesCountDOToFavoritesCountModel79,3073
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/marketing/BaseActivityService.java,196
+public abstract class BaseActivityService 11,470
+    protected ProcessResult doProcess(BaseActivityService.doProcess13,517
+    protected void doRollback(BaseActivityService.doRollback41,1467
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/marketing/bo/MemberActivityTagBO.java,407
+public class MemberActivityTagBO 26,1109
+    private static final Logger log MemberActivityTagBO.log27,1145
+    private MemberMorganBO       memberMorganBO;MemberActivityTagBO.memberMorganBO30,1246
+    public boolean updateMemberActivityTag(MemberActivityTagBO.updateMemberActivityTag42,1575
+    public int checkAndRemoveMemberActivityTag(MemberActivityTagBO.checkAndRemoveMemberActivityTag58,2214
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/marketing/core/impl/BaseMarketingCoreServiceImpl.java,2912
+public class BaseMarketingCoreServiceImpl 32,1472
+    protected static final Logger         umpLog BaseMarketingCoreServiceImpl.umpLog35,1575
+    protected MarketingToolDAO            marketingToolDAO;BaseMarketingCoreServiceImpl.marketingToolDAO39,1722
+    protected TransactionTemplate         transactionTemplate;BaseMarketingCoreServiceImpl.transactionTemplate42,1800
+    protected InternalMarketingBuilder    umpMarketingBuilder;BaseMarketingCoreServiceImpl.umpMarketingBuilder44,1866
+    protected MetaDefReadServiceHsfClient umpMetaDefReadServiceHsfClient;BaseMarketingCoreServiceImpl.umpMetaDefReadServiceHsfClient46,1932
+    protected MarketingToolTopService     umpMarketingToolTopService;BaseMarketingCoreServiceImpl.umpMarketingToolTopService48,2009
+    protected MarketingActivityTopService umpMarketingActivityTopService;BaseMarketingCoreServiceImpl.umpMarketingActivityTopService50,2082
+    protected MarketingInnerWriteService  umpMarketingInnerWriteService;BaseMarketingCoreServiceImpl.umpMarketingInnerWriteService52,2159
+    protected MarketingTairManager        marketingTairManager;BaseMarketingCoreServiceImpl.marketingTairManager55,2262
+    protected int                         area;BaseMarketingCoreServiceImpl.area58,2366
+    public MarketingTool queryEnableAndOrderedTool(BaseMarketingCoreServiceImpl.queryEnableAndOrderedTool66,2611
+    public MarketingTool queryTool(BaseMarketingCoreServiceImpl.queryTool83,3181
+    public MarketingActivity queryActivity(BaseMarketingCoreServiceImpl.queryActivity110,4356
+    protected boolean check(BaseMarketingCoreServiceImpl.check141,5719
+    protected boolean check(BaseMarketingCoreServiceImpl.check156,6036
+    protected boolean check(BaseMarketingCoreServiceImpl.check172,6423
+    protected boolean check(BaseMarketingCoreServiceImpl.check194,7001
+    protected boolean check(BaseMarketingCoreServiceImpl.check215,7552
+    protected boolean check(BaseMarketingCoreServiceImpl.check236,8075
+    protected boolean check(BaseMarketingCoreServiceImpl.check258,8630
+    protected boolean check(BaseMarketingCoreServiceImpl.check281,9269
+    protected boolean check(BaseMarketingCoreServiceImpl.check302,9867
+    public void setUmpMetaDefReadServiceHsfClient(BaseMarketingCoreServiceImpl.setUmpMetaDefReadServiceHsfClient311,10199
+    public void setUmpMarketingBuilder(BaseMarketingCoreServiceImpl.setUmpMarketingBuilder315,10400
+    public void setUmpMarketingToolTopService(BaseMarketingCoreServiceImpl.setUmpMarketingToolTopService319,10554
+    public void setUmpMarketingActivityTopService(BaseMarketingCoreServiceImpl.setUmpMarketingActivityTopService323,10735
+    public void setUmpMarketingInnerWriteService(BaseMarketingCoreServiceImpl.setUmpMarketingInnerWriteService327,10936
+    public void setMarketingTairManager(BaseMarketingCoreServiceImpl.setMarketingTairManager331,11132
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/marketing/core/impl/MjjMarketingToolCreateService.java,1015
+public class MjjMarketingToolCreateService 37,1669
+    private static final Logger         LOGGER MjjMarketingToolCreateService.LOGGER38,1753
+    private InternalMarketingBuilder    umpMarketingBuilder;MjjMarketingToolCreateService.umpMarketingBuilder41,1881
+    private MetaDefReadServiceHsfClient metaDefReadServiceHsfClient;MjjMarketingToolCreateService.metaDefReadServiceHsfClient44,1960
+    private String                      name;MjjMarketingToolCreateService.name49,2073
+    private String                      description;MjjMarketingToolCreateService.description53,2161
+    public MarketingTool createMarketingTool(MjjMarketingToolCreateService.createMarketingTool55,2221
+    public String getName(MjjMarketingToolCreateService.getName114,6658
+    public void setName(MjjMarketingToolCreateService.setName118,6720
+    public String getDescription(MjjMarketingToolCreateService.getDescription122,6796
+    public void setDescription(MjjMarketingToolCreateService.setDescription126,6872
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/marketing/core/impl/MyhMarketingToolCreateService.java,1019
+public class MyhMarketingToolCreateService 35,1663
+    private static final Logger         LOGGER MyhMarketingToolCreateService.LOGGER37,1749
+    private InternalMarketingBuilder    umpMarketingBuilder;MyhMarketingToolCreateService.umpMarketingBuilder40,1877
+    private MetaDefReadServiceHsfClient metaDefReadServiceHsfClient;MyhMarketingToolCreateService.metaDefReadServiceHsfClient43,1956
+    private String                      name;MyhMarketingToolCreateService.name48,2069
+    private String                      description;MyhMarketingToolCreateService.description52,2157
+    public MarketingTool createMarketingTool(MyhMarketingToolCreateService.createMarketingTool54,2213
+    public String getName(MyhMarketingToolCreateService.getName150,10700
+    public void setName(MyhMarketingToolCreateService.setName154,10762
+    public String getDescription(MyhMarketingToolCreateService.getDescription158,10838
+    public void setDescription(MyhMarketingToolCreateService.setDescription162,10914
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/marketing/core/impl/UmpMarketingActivityCoreServiceImpl.java,1258
+public class UmpMarketingActivityCoreServiceImpl 21,761
+    private UmpMarketingToolCoreService marketingToolCoreService;UmpMarketingActivityCoreServiceImpl.marketingToolCoreService24,910
+    public MarketingActivity createActivity(UmpMarketingActivityCoreServiceImpl.createActivity32,1192
+    public MarketingActivity parseAsMarketingActivity(UmpMarketingActivityCoreServiceImpl.parseAsMarketingActivity46,1620
+    public List<String> queryActivitiesAsJson(UmpMarketingActivityCoreServiceImpl.queryActivitiesAsJson62,2191
+    public List<MarketingActivity> queryActivities(UmpMarketingActivityCoreServiceImpl.queryActivities88,3565
+    public boolean deleteActivity(UmpMarketingActivityCoreServiceImpl.deleteActivity127,5583
+    public boolean updateActivity(UmpMarketingActivityCoreServiceImpl.updateActivity154,6848
+    public Long uploadActivity(UmpMarketingActivityCoreServiceImpl.uploadActivity190,8598
+    public boolean addActivityRange(UmpMarketingActivityCoreServiceImpl.addActivityRange218,10048
+    public boolean removeActivityRange(UmpMarketingActivityCoreServiceImpl.removeActivityRange237,11134
+    public boolean changeMarketingActivityStatus(UmpMarketingActivityCoreServiceImpl.changeMarketingActivityStatus261,12464
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/marketing/core/impl/UmpMarketingDetailCoreServiceImpl.java,883
+public class UmpMarketingDetailCoreServiceImpl 22,805
+    private UmpMarketingActivityCoreService marketingActivityCoreService;UmpMarketingDetailCoreServiceImpl.marketingActivityCoreService25,950
+    public MarketingDetail createDetail(UmpMarketingDetailCoreServiceImpl.createDetail33,1240
+    public MarketingDetail createDetail(UmpMarketingDetailCoreServiceImpl.createDetail48,1703
+    public MarketingDetail queryDetail(UmpMarketingDetailCoreServiceImpl.queryDetail69,2430
+    public boolean deleteDetail(UmpMarketingDetailCoreServiceImpl.deleteDetail96,3463
+    public boolean updateDetailActivity(UmpMarketingDetailCoreServiceImpl.updateDetailActivity129,4893
+    public Long uploadDetail(UmpMarketingDetailCoreServiceImpl.uploadDetail158,6306
+    public List<MarketingDetail> findMarketingDetails(UmpMarketingDetailCoreServiceImpl.findMarketingDetails192,7854
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/marketing/core/impl/UmpMarketingToolCoreServiceImpl.java,783
+public class UmpMarketingToolCoreServiceImpl 26,1085
+    private static final Logger toolLog UmpMarketingToolCoreServiceImpl.toolLog27,1209
+    public Long uploadTool(UmpMarketingToolCoreServiceImpl.uploadTool35,1520
+    public String queryToolAsJson(UmpMarketingToolCoreServiceImpl.queryToolAsJson56,2301
+    public String queryToolAsJson(UmpMarketingToolCoreServiceImpl.queryToolAsJson75,2887
+    public List<MarketingTool> getTools(UmpMarketingToolCoreServiceImpl.getTools101,3945
+    public boolean deleteTool(UmpMarketingToolCoreServiceImpl.deleteTool125,4896
+    public Long updateMarketingTool(UmpMarketingToolCoreServiceImpl.updateMarketingTool139,5422
+    public MarketingToolDO queryMarketingTool(UmpMarketingToolCoreServiceImpl.queryMarketingTool197,7958
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/marketing/core/impl/YpmjjMarketingToolCreateService.java,871
+public class YpmjjMarketingToolCreateService 42,1692
+    private static final Logger         LOGGER YpmjjMarketingToolCreateService.LOGGER44,1778
+    private InternalMarketingBuilder    umpMarketingBuilder;YpmjjMarketingToolCreateService.umpMarketingBuilder47,1903
+    private MetaDefReadServiceHsfClient metaDefReadServiceHsfClient;YpmjjMarketingToolCreateService.metaDefReadServiceHsfClient50,1979
+    private String                      name;YpmjjMarketingToolCreateService.name55,2087
+    private String                      description;YpmjjMarketingToolCreateService.description59,2171
+    public MarketingTool createMarketingTool(YpmjjMarketingToolCreateService.createMarketingTool66,2393
+    public void setName(YpmjjMarketingToolCreateService.setName135,7756
+    public void setDescription(YpmjjMarketingToolCreateService.setDescription139,7828
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/marketing/core/MarketingBuildingBlock.java,575
+public class MarketingBuildingBlock 19,827
+    private InternalMarketingBuilder    umpMarketingBuilder;MarketingBuildingBlock.umpMarketingBuilder21,868
+    private MetaDefReadServiceHsfClient metaDefReadServiceHsfClient;MarketingBuildingBlock.metaDefReadServiceHsfClient23,932
+    public MetaData<TargetDef> getTargetDef(MarketingBuildingBlock.getTargetDef31,1111
+    public void setUmpMarketingBuilder(MarketingBuildingBlock.setUmpMarketingBuilder38,1549
+    public void setMetaDefReadServiceHsfClient(MarketingBuildingBlock.setMetaDefReadServiceHsfClient42,1703
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/marketing/core/MarketingToolCreateService.java,52
+public interface MarketingToolCreateService 16,597
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/marketing/core/UmpMarketingActivityCoreService.java,57
+public interface UmpMarketingActivityCoreService 13,332
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/marketing/core/UmpMarketingCoreService.java,49
+public interface UmpMarketingCoreService 11,294
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/marketing/core/UmpMarketingDetailCoreService.java,55
+public interface UmpMarketingDetailCoreService 13,336
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/marketing/core/UmpMarketingToolCoreService.java,53
+public interface UmpMarketingToolCoreService 13,360
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/marketing/filter/impl/CbuQueryActivityFilterImpl.java,295
+public class CbuQueryActivityFilterImpl 23,1156
+    private final static Logger  LOGGER CbuQueryActivityFilterImpl.LOGGER25,1253
+    public boolean canFilter(CbuQueryActivityFilterImpl.canFilter30,1467
+    public List<MarketingActivityModel> query(CbuQueryActivityFilterImpl.query38,1665
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/marketing/filter/impl/QueryNormalActivityFilterImpl.java,307
+public class QueryNormalActivityFilterImpl 22,1040
+    private final static Logger  LOGGER QueryNormalActivityFilterImpl.LOGGER24,1140
+    public boolean canFilter(QueryNormalActivityFilterImpl.canFilter29,1354
+    public List<MarketingActivityModel> query(QueryNormalActivityFilterImpl.query33,1457
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/marketing/filter/impl/QuerySingleActivityFilterImpl.java,307
+public class QuerySingleActivityFilterImpl 25,1088
+    private final static Logger  LOGGER QuerySingleActivityFilterImpl.LOGGER27,1194
+    public boolean canFilter(QuerySingleActivityFilterImpl.canFilter32,1408
+    public List<MarketingActivityModel> query(QuerySingleActivityFilterImpl.query40,1612
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/marketing/filter/impl/UmpQueryActivityFilterImpl.java,574
+public class UmpQueryActivityFilterImpl 27,1132
+    private final static Logger             LOGGER UmpQueryActivityFilterImpl.LOGGER29,1229
+    private UmpMarketingActivityCoreService marketingActivityCoreService;UmpQueryActivityFilterImpl.marketingActivityCoreService32,1365
+    private UmpMarketingToolCoreService     marketingToolCoreService;UmpQueryActivityFilterImpl.marketingToolCoreService35,1457
+    public boolean canFilter(UmpQueryActivityFilterImpl.canFilter37,1530
+    public List<MarketingActivityModel> query(UmpQueryActivityFilterImpl.query46,1845
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/marketing/filter/QueryFilter.java,49
+public interface QueryFilter<QueryFilter13,344
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/marketing/internal/ActivityTemplateBean.java,2927
+public class ActivityTemplateBean 12,271
+    private String                     activityName;ActivityTemplateBean.activityName15,331
+    private Map<ActivityTemplateBean.Map18,470
+    private Map<String, List<String>>  detailDisplayTemplate;ActivityTemplateBean.detailDisplayTemplate18,470
+    private Map<ActivityTemplateBean.Map21,616
+    private Map<String, List<String>>  tradeDisplayTemplate;ActivityTemplateBean.tradeDisplayTemplate21,616
+    private Date                       startTime;ActivityTemplateBean.startTime24,705
+    private Date                       endTime;ActivityTemplateBean.endTime27,783
+    private List<ParameterDefinerBean> parameters;ActivityTemplateBean.parameters30,859
+    private String                     description;ActivityTemplateBean.description33,934
+    private Integer                    fpt;ActivityTemplateBean.fpt36,1058
+    public ActivityTemplateBean(ActivityTemplateBean.ActivityTemplateBean38,1105
+    public ActivityTemplateBean(ActivityTemplateBean.ActivityTemplateBean42,1152
+    public ActivityTemplateBean(ActivityTemplateBean.ActivityTemplateBean47,1371
+    public ActivityTemplateBean(ActivityTemplateBean.ActivityTemplateBean54,1732
+    public ActivityTemplateBean(ActivityTemplateBean.ActivityTemplateBean62,2110
+    public void appendParameter(ActivityTemplateBean.appendParameter68,2472
+    public String getActivityName(ActivityTemplateBean.getActivityName76,2742
+    public void setActivityName(ActivityTemplateBean.setActivityName80,2820
+    public Date getStartTime(ActivityTemplateBean.getStartTime84,2928
+    public void setStartTime(ActivityTemplateBean.setStartTime88,2998
+    public Date getEndTime(ActivityTemplateBean.getEndTime92,3092
+    public void setEndTime(ActivityTemplateBean.setEndTime96,3158
+    public List<ParameterDefinerBean> getParameters(ActivityTemplateBean.getParameters100,3244
+    public void setParameters(ActivityTemplateBean.setParameters104,3338
+    public String toJSON(ActivityTemplateBean.toJSON108,3458
+    public String toString(ActivityTemplateBean.toString112,3538
+    public Map<ActivityTemplateBean.Map116,3637
+    public Map<String, List<String>> getDetailDisplayTemplate(ActivityTemplateBean.getDetailDisplayTemplate116,3637
+    public void setDetailDisplayTemplate(ActivityTemplateBean.setDetailDisplayTemplate120,3752
+    public Map<ActivityTemplateBean.Map124,3915
+    public Map<String, List<String>> getTradeDisplayTemplate(ActivityTemplateBean.getTradeDisplayTemplate124,3915
+    public void setTradeDisplayTemplate(ActivityTemplateBean.setTradeDisplayTemplate128,4028
+    public String getDescription(ActivityTemplateBean.getDescription132,4187
+    public void setDescription(ActivityTemplateBean.setDescription136,4263
+    public Integer getFpt(ActivityTemplateBean.getFpt140,4367
+    public void setFpt(ActivityTemplateBean.setFpt144,4428
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/marketing/internal/MarketingActivityBean.java,3188
+public class MarketingActivityBean 14,453
+    private Long    creatorId;MarketingActivityBean.creatorId17,512
+    private String  toolCode;MarketingActivityBean.toolCode20,571
+    private Long    toolId;MarketingActivityBean.toolId23,627
+    private Long    activityId;MarketingActivityBean.activityId26,677
+    private String  displayTemplateJson;MarketingActivityBean.displayTemplateJson29,733
+    private String  rangContent;MarketingActivityBean.rangContent32,834
+    private Integer participateRange;MarketingActivityBean.participateRange35,931
+    private String  areaExcludeJson;MarketingActivityBean.areaExcludeJson38,999
+    private Date    startTime;MarketingActivityBean.startTime41,1064
+    private Date    endTime;MarketingActivityBean.endTime44,1123
+    private String  activityName;MarketingActivityBean.activityName47,1176
+    private String  description;MarketingActivityBean.description50,1234
+    public Long getCreatorId(MarketingActivityBean.getCreatorId52,1270
+    public void setCreatorId(MarketingActivityBean.setCreatorId56,1340
+    public MarketingActivityBean(MarketingActivityBean.MarketingActivityBean60,1434
+    public Long getToolId(MarketingActivityBean.getToolId64,1482
+    public void setToolId(MarketingActivityBean.setToolId68,1546
+    public Long getActivityId(MarketingActivityBean.getActivityId72,1628
+    public void setActivityId(MarketingActivityBean.setActivityId76,1700
+    public String getDisplayTemplateJson(MarketingActivityBean.getDisplayTemplateJson80,1798
+    public void setDisplayTemplateJson(MarketingActivityBean.setDisplayTemplateJson84,1890
+    public ActivityTemplateBean toPromotionDisplayTemplateBean(MarketingActivityBean.toPromotionDisplayTemplateBean88,2026
+    public String toAreaExcludeString(MarketingActivityBean.toAreaExcludeString96,2269
+    public String getToolCode(MarketingActivityBean.getToolCode118,3185
+    public void setToolCode(MarketingActivityBean.setToolCode122,3255
+    public Integer getParticipateRange(MarketingActivityBean.getParticipateRange126,3347
+    public void setParticipateRange(MarketingActivityBean.setParticipateRange130,3434
+    public String getAreaExcludeJson(MarketingActivityBean.getAreaExcludeJson134,3559
+    public void setAreaExcludeJson(MarketingActivityBean.setAreaExcludeJson138,3643
+    public String getRangContent(MarketingActivityBean.getRangContent142,3763
+    public void setRangContent(MarketingActivityBean.setRangContent146,3839
+    public Date getStartTime(MarketingActivityBean.getStartTime150,3943
+    public void setStartTime(MarketingActivityBean.setStartTime154,4013
+    public Date getEndTime(MarketingActivityBean.getEndTime158,4107
+    public void setEndTime(MarketingActivityBean.setEndTime162,4173
+    public String getActivityName(MarketingActivityBean.getActivityName166,4259
+    public void setActivityName(MarketingActivityBean.setActivityName170,4337
+    public String getDescription(MarketingActivityBean.getDescription174,4445
+    public void setDescription(MarketingActivityBean.setDescription178,4521
+    public String toString(MarketingActivityBean.toString182,4625
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/marketing/internal/ParameterDefinerBean.java,775
+public class ParameterDefinerBean 8,191
+    private String paramId;ParameterDefinerBean.paramId11,249
+    private Object value;ParameterDefinerBean.value14,299
+    private String desc;ParameterDefinerBean.desc17,349
+    public ParameterDefinerBean(ParameterDefinerBean.ParameterDefinerBean19,377
+    public ParameterDefinerBean(ParameterDefinerBean.ParameterDefinerBean23,424
+    public String getParamId(ParameterDefinerBean.getParamId29,599
+    public void setParamId(ParameterDefinerBean.setParamId33,667
+    public Object getValue(ParameterDefinerBean.getValue37,755
+    public void setValue(ParameterDefinerBean.setValue41,819
+    public String getDesc(ParameterDefinerBean.getDesc45,899
+    public void setDesc(ParameterDefinerBean.setDesc49,961
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/marketing/internal/PromotionDisplayInternalService.java,1539
+public class PromotionDisplayInternalService 26,1053
+    private final static Logger LOGGER PromotionDisplayInternalService.LOGGER28,1103
+    private static final String DESCRIPTION_UNKOWN PromotionDisplayInternalService.DESCRIPTION_UNKOWN31,1248
+    private String              areaExcludePrefix;PromotionDisplayInternalService.areaExcludePrefix34,1361
+    private String              areaExcludeSuffix;PromotionDisplayInternalService.areaExcludeSuffix37,1454
+    private PromotionDisplayDetailResult convert(PromotionDisplayInternalService.convert43,1579
+    private List<String> parsePromotionTemplate(PromotionDisplayInternalService.parsePromotionTemplate101,4890
+    public Map<PromotionDisplayInternalService.Map161,7459
+    public Map<Long, List<PromotionDisplayDetailResult>> queryMarketingActivity(PromotionDisplayInternalService.queryMarketingActivity161,7459
+    public Map<PromotionDisplayInternalService.Map203,9478
+    public Map<Long, List<MarketingActivityBean>> assembleSellerMarketingActivity(PromotionDisplayInternalService.assembleSellerMarketingActivity203,9478
+    public Map<PromotionDisplayInternalService.Map303,15112
+    public Map<Long, List<MarketingActivityBean>> mergeSellerCreateOrParticipateActivity(PromotionDisplayInternalService.mergeSellerCreateOrParticipateActivity303,15112
+    public void setAreaExcludePrefix(PromotionDisplayInternalService.setAreaExcludePrefix328,16384
+    public void setAreaExcludeSuffix(PromotionDisplayInternalService.setAreaExcludeSuffix332,16512
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/marketing/MarketingActivityDataFixedServiceImpl.java,410
+public class MarketingActivityDataFixedServiceImpl 30,1457
+    private MarketingActivityDAO marketingActivityDAO;MarketingActivityDataFixedServiceImpl.marketingActivityDAO34,1601
+    public String fixedMarketingActivityData(MarketingActivityDataFixedServiceImpl.fixedMarketingActivityData39,1698
+    public Long setPromotionSearchType(MarketingActivityDataFixedServiceImpl.setPromotionSearchType88,4665
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/marketing/MarketingActvityServiceImpl.java,3310
+public class MarketingActvityServiceImpl 38,2017
+    private final static Logger                            LOGGER MarketingActvityServiceImpl.LOGGER40,2126
+    private ParametersValidator                            parametersValidator;MarketingActvityServiceImpl.parametersValidator43,2277
+    private ServiceExceptionFactory                        serviceExceptionFactory;MarketingActvityServiceImpl.serviceExceptionFactory46,2375
+    private List<QueryFilter<MarketingActivityQueryParam>> queryFilters;MarketingActvityServiceImpl.queryFilters49,2493
+    private QueryFilter<MarketingActivityQueryParam>       queryNormalFilter;MarketingActvityServiceImpl.queryNormalFilter52,2606
+    private QueryFilter<SingleMarketingActivityQueryParam> singleQueryActivityFilter;MarketingActvityServiceImpl.singleQueryActivityFilter55,2750
+    private List<Processor>                                createProcessors;MarketingActvityServiceImpl.createProcessors58,2866
+    private List<Processor>                                updateProcessors;MarketingActvityServiceImpl.updateProcessors61,2973
+    private List<Processor>                                deleteProcessors;MarketingActvityServiceImpl.deleteProcessors64,3080
+    private UmpMarketingActivityCoreService                marketingActivityCoreService;MarketingActvityServiceImpl.marketingActivityCoreService67,3175
+    private List<Processor>                                freezeProcessors;MarketingActvityServiceImpl.freezeProcessors70,3294
+    public List<MarketingActivityModel> queryMarketingActivity(MarketingActvityServiceImpl.queryMarketingActivity78,3589
+    public MarketingActivityModel querySingleMarketingActivity(MarketingActvityServiceImpl.querySingleMarketingActivity108,4889
+    public List<MarketingActivityModel> queryNormalMarketingActivity(MarketingActvityServiceImpl.queryNormalMarketingActivity134,6088
+    public long saveMarketingActivity(MarketingActvityServiceImpl.saveMarketingActivity165,7607
+    public boolean updateMarketingActivity(MarketingActvityServiceImpl.updateMarketingActivity205,9171
+    public boolean cancelMarketingActivity(MarketingActvityServiceImpl.cancelMarketingActivity238,10573
+    public boolean freezeMarketingActivity(MarketingActvityServiceImpl.freezeMarketingActivity266,11776
+    private boolean freezeOrDeleteMarketingActivity(MarketingActvityServiceImpl.freezeOrDeleteMarketingActivity296,12858
+    public boolean addActivityRange(MarketingActvityServiceImpl.addActivityRange313,13687
+    public boolean removeActivityRange(MarketingActvityServiceImpl.removeActivityRange328,14568
+    public void setQueryFilters(MarketingActvityServiceImpl.setQueryFilters339,15476
+    public void setQueryNormalFilter(MarketingActvityServiceImpl.setQueryNormalFilter343,15624
+    public void setCreateProcessors(MarketingActvityServiceImpl.setCreateProcessors347,15786
+    public void setDeleteProcessors(MarketingActvityServiceImpl.setDeleteProcessors351,15919
+    public void setUpdateProcessors(MarketingActvityServiceImpl.setUpdateProcessors355,16052
+    public void setFreezeProcessors(MarketingActvityServiceImpl.setFreezeProcessors359,16185
+    public void setSingleQueryActivityFilter(MarketingActvityServiceImpl.setSingleQueryActivityFilter363,16318
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/marketing/MarketingDetailServiceImpl.java,1593
+public class MarketingDetailServiceImpl 42,2257
+    private final static Logger             LOGGER MarketingDetailServiceImpl.LOGGER44,2336
+    private UmpMarketingToolCoreService     marketingToolCoreService;MarketingDetailServiceImpl.marketingToolCoreService47,2472
+    private ParametersValidator             parametersValidator;MarketingDetailServiceImpl.parametersValidator50,2560
+    private MemberActivityTagBO             memberActivityTagBO;MarketingDetailServiceImpl.memberActivityTagBO56,2754
+    private UmpMarketingActivityCoreService marketingActivityCoreService;MarketingDetailServiceImpl.marketingActivityCoreService59,2837
+    private UmpMarketingDetailCoreService   marketingDetailCoreService;MarketingDetailServiceImpl.marketingDetailCoreService62,2929
+    private ServiceExceptionFactory         serviceExceptionFactory;MarketingDetailServiceImpl.serviceExceptionFactory65,3019
+    public Map<MarketingDetailServiceImpl.Map73,3301
+    public Map<Long, List<MarketingActivityModel>> queryMarketingDetail(MarketingDetailServiceImpl.queryMarketingDetail73,3301
+    public Long saveMarketingDetail(MarketingDetailServiceImpl.saveMarketingDetail91,4021
+    private Map<MarketingDetailServiceImpl.Map176,9469
+    private Map<Long, List<MarketingActivityModel>> preparedMarketingActivities(MarketingDetailServiceImpl.preparedMarketingActivities176,9469
+    private MarketingDetailDO convert2DetailDO(MarketingDetailServiceImpl.convert2DetailDO186,9943
+    public boolean removeMarketingDetail(MarketingDetailServiceImpl.removeMarketingDetail215,11606
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/marketing/MarketingTagServiceImpl.java,753
+public class MarketingTagServiceImpl 41,1674
+    private static final Logger     log MarketingTagServiceImpl.log46,1772
+    private TagReadService          tagReadService;MarketingTagServiceImpl.tagReadService51,1911
+    private TagWriteService         tagWriteService;MarketingTagServiceImpl.tagWriteService56,2012
+    private ServiceExceptionFactory serviceExceptionFactory;MarketingTagServiceImpl.serviceExceptionFactory61,2120
+    public Boolean putTag(MarketingTagServiceImpl.putTag68,2347
+    public Boolean removeTag(MarketingTagServiceImpl.removeTag99,3665
+    public Boolean containsTag(MarketingTagServiceImpl.containsTag137,5408
+    public List<TagModel> findAllTagByUserId(MarketingTagServiceImpl.findAllTagByUserId174,7112
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/marketing/MarketingToolServiceImpl.java,1606
+public class MarketingToolServiceImpl 39,1924
+    private final static Logger         LOGGER MarketingToolServiceImpl.LOGGER41,1999
+    private MarketingToolDAO            marketingToolDAO;MarketingToolServiceImpl.marketingToolDAO45,2155
+    protected MarketingToolTopService   umpMarketingToolTopService;MarketingToolServiceImpl.umpMarketingToolTopService48,2231
+    protected InternalMarketingBuilder  umpMarketingBuilder;MarketingToolServiceImpl.umpMarketingBuilder51,2317
+    private UmpMarketingToolCoreService marketingToolCoreService;MarketingToolServiceImpl.marketingToolCoreService54,2396
+    private ServiceExceptionFactory     serviceExceptionFactory;MarketingToolServiceImpl.serviceExceptionFactory57,2480
+    private Map<MarketingToolServiceImpl.Map61,2606
+    private Map<ToolCodeEnum, MarketingToolCreateService> toolCreatorMap;MarketingToolServiceImpl.toolCreatorMap61,2606
+    public Long addMarketingTool(MarketingToolServiceImpl.addMarketingTool63,2683
+    public MarketingToolModel queryEnableMarketingTool(MarketingToolServiceImpl.queryEnableMarketingTool100,4433
+    public MarketingToolModel queryEnableMarketingTool(MarketingToolServiceImpl.queryEnableMarketingTool123,5563
+    public List<MarketingToolModel> queryMarketingTools(MarketingToolServiceImpl.queryMarketingTools151,6858
+    public Long updateMarketingTool(MarketingToolServiceImpl.updateMarketingTool191,8822
+    public boolean deleteMarketingTool(MarketingToolServiceImpl.deleteMarketingTool219,10175
+    public void setToolCreatorMap(MarketingToolServiceImpl.setToolCreatorMap239,10948
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/marketing/message/impl/MarketingMessageParamTransformerImpl.java,678
+public class MarketingMessageParamTransformerImpl 20,1071
+    private static final Logger msgLog MarketingMessageParamTransformerImpl.msgLog22,1170
+    public UserBehaviorMessage toMarketingActivityMessage(MarketingMessageParamTransformerImpl.toMarketingActivityMessage30,1535
+    public UserBehaviorMessage toMarketingActivityMessage(MarketingMessageParamTransformerImpl.toMarketingActivityMessage64,3509
+    public UserBehaviorMessage toMarketingActivityMessage(MarketingMessageParamTransformerImpl.toMarketingActivityMessage119,6765
+    public UserBehaviorMessage toMarketingActivityMessage(MarketingMessageParamTransformerImpl.toMarketingActivityMessage174,10018
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/marketing/message/impl/MarketingMessageSenderImpl.java,662
+public class MarketingMessageSenderImpl 19,1019
+    private MarketingMessageTransfer    marketingMessageTransfer;MarketingMessageSenderImpl.marketingMessageTransfer22,1113
+    private MarketingMessageParamTransformer marketingMessageParamTransformer;MarketingMessageSenderImpl.marketingMessageParamTransformer25,1197
+    public boolean createActivity(MarketingMessageSenderImpl.createActivity33,1540
+    public boolean updateActivity(MarketingMessageSenderImpl.updateActivity44,2065
+    public boolean freezeActivity(MarketingMessageSenderImpl.freezeActivity55,2590
+    public boolean deleteActivity(MarketingMessageSenderImpl.deleteActivity66,3115
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/marketing/message/impl/MarketingMessageTransferImpl.java,847
+public class MarketingMessageTransferImpl 12,468
+    private static final Logger msgLog MarketingMessageTransferImpl.msgLog17,625
+    private Map<MarketingMessageTransferImpl.Map22,748
+    private Map<String, String> config;MarketingMessageTransferImpl.config22,748
+    public boolean sendMessage(MarketingMessageTransferImpl.sendMessage30,929
+    private void logSuccessMsg(MarketingMessageTransferImpl.logSuccessMsg53,1535
+    private void logErrorMsg(MarketingMessageTransferImpl.logErrorMsg69,2019
+    private boolean sendMessageToVirtualTopic(MarketingMessageTransferImpl.sendMessageToVirtualTopic85,2488
+    public void setConfig(MarketingMessageTransferImpl.setConfig98,2991
+    public Map<MarketingMessageTransferImpl.Map102,3088
+    public Map<String, String> getConfig(MarketingMessageTransferImpl.getConfig102,3088
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/marketing/message/MarketingMessageParamTransformer.java,57
+public interface MarketingMessageParamTransformer 9,539
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/marketing/message/MarketingMessageSender.java,48
+public interface MarketingMessageSender 13,604
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/marketing/message/MarketingMessageTransfer.java,50
+public interface MarketingMessageTransfer 15,591
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/marketing/message/param/ActivityCreateMessageParam.java,941
+public class ActivityCreateMessageParam 11,343
+    private UserBehaviorEnum       behavior ActivityCreateMessageParam.behavior14,417
+    private MarketingActivityParam createParam;ActivityCreateMessageParam.createParam17,573
+    private Long                   activityId;ActivityCreateMessageParam.activityId20,647
+    public ActivityCreateMessageParam(ActivityCreateMessageParam.ActivityCreateMessageParam22,697
+    public ActivityCreateMessageParam(ActivityCreateMessageParam.ActivityCreateMessageParam25,748
+    public MarketingActivityParam getCreateParam(ActivityCreateMessageParam.getCreateParam30,930
+    public void setCreateParam(ActivityCreateMessageParam.setCreateParam34,1022
+    public Long getActivityId(ActivityCreateMessageParam.getActivityId38,1142
+    public void setActivityId(ActivityCreateMessageParam.setActivityId42,1214
+    public String getBehavior(ActivityCreateMessageParam.getBehavior46,1312
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/marketing/message/param/ActivityDeleteMessageParam.java,981
+public class ActivityDeleteMessageParam 12,431
+    private UserBehaviorEnum             behavior ActivityDeleteMessageParam.behavior17,519
+    private MarketingActivityUpdateParam deleteParam;ActivityDeleteMessageParam.deleteParam22,697
+    private MarketingActivityDO          activityDO;ActivityDeleteMessageParam.activityDO27,851
+    public ActivityDeleteMessageParam(ActivityDeleteMessageParam.ActivityDeleteMessageParam29,907
+    public ActivityDeleteMessageParam(ActivityDeleteMessageParam.ActivityDeleteMessageParam32,958
+    public MarketingActivityUpdateParam getDeleteParam(ActivityDeleteMessageParam.getDeleteParam37,1161
+    public void setDeleteParam(ActivityDeleteMessageParam.setDeleteParam41,1259
+    public MarketingActivityDO getActivityDO(ActivityDeleteMessageParam.getActivityDO45,1385
+    public void setActivityDO(ActivityDeleteMessageParam.setActivityDO49,1472
+    public String getBehavior(ActivityDeleteMessageParam.getBehavior53,1585
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/marketing/message/param/ActivityFreezeMessageParam.java,981
+public class ActivityFreezeMessageParam 12,431
+    private UserBehaviorEnum             behavior ActivityFreezeMessageParam.behavior17,519
+    private MarketingActivityFreezeParam freezeParam;ActivityFreezeMessageParam.freezeParam22,697
+    private MarketingActivityDO          activityDO;ActivityFreezeMessageParam.activityDO27,851
+    public ActivityFreezeMessageParam(ActivityFreezeMessageParam.ActivityFreezeMessageParam29,907
+    public ActivityFreezeMessageParam(ActivityFreezeMessageParam.ActivityFreezeMessageParam32,958
+    public MarketingActivityDO getActivityDO(ActivityFreezeMessageParam.getActivityDO37,1161
+    public void setActivityDO(ActivityFreezeMessageParam.setActivityDO41,1248
+    public String getBehavior(ActivityFreezeMessageParam.getBehavior45,1361
+    public MarketingActivityFreezeParam getFreezeParam(ActivityFreezeMessageParam.getFreezeParam49,1445
+    public void setFreezeParam(ActivityFreezeMessageParam.setFreezeParam53,1543
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/marketing/message/param/ActivityUpdateMessageParam.java,981
+public class ActivityUpdateMessageParam 12,436
+    private UserBehaviorEnum             behavior ActivityUpdateMessageParam.behavior17,524
+    private MarketingActivityUpdateParam updateParam;ActivityUpdateMessageParam.updateParam22,702
+    private MarketingActivityDO          activityDO;ActivityUpdateMessageParam.activityDO27,856
+    public ActivityUpdateMessageParam(ActivityUpdateMessageParam.ActivityUpdateMessageParam29,912
+    public ActivityUpdateMessageParam(ActivityUpdateMessageParam.ActivityUpdateMessageParam32,963
+    public MarketingActivityUpdateParam getUpdateParam(ActivityUpdateMessageParam.getUpdateParam37,1166
+    public void setUpdateParam(ActivityUpdateMessageParam.setUpdateParam41,1264
+    public MarketingActivityDO getActivityDO(ActivityUpdateMessageParam.getActivityDO45,1390
+    public void setActivityDO(ActivityUpdateMessageParam.setActivityDO49,1477
+    public String getBehavior(ActivityUpdateMessageParam.getBehavior53,1590
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/marketing/MetaDefReadServiceProxyImpl.java,876
+public class MetaDefReadServiceProxyImpl 17,494
+    private MetaDefReadServiceHsfClient umpMetaDefReadServiceHsfClient;MetaDefReadServiceProxyImpl.umpMetaDefReadServiceHsfClient20,590
+    public ResultSupport<List<MetaDef>> getAllMetaDef(MetaDefReadServiceProxyImpl.getAllMetaDef22,665
+    public <Meta extends MetaDef> ResultSupport<Meta> getMetaDef(MetaDefReadServiceProxyImpl.getMetaDef26,826
+    public <Meta extends MetaDef> ResultSupport<Meta> getMetaDef(MetaDefReadServiceProxyImpl.getMetaDef30,975
+    public <Meta extends MetaDef> ResultSupport<List<Meta>> getMetaDefListByType(MetaDefReadServiceProxyImpl.getMetaDefListByType34,1134
+    public ResultSupport<Boolean> checkMetaIdAvailable(MetaDefReadServiceProxyImpl.checkMetaIdAvailable38,1353
+    public ResultSupport<List<MetaDef>> getMetaDefByIds(MetaDefReadServiceProxyImpl.getMetaDefByIds42,1512
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/marketing/processor/impl/AbstractBaseProcessor.java,1045
+public abstract class AbstractBaseProcessor 11,560
+    protected BaseMarketingParam activityParam;AbstractBaseProcessor.activityParam13,630
+    protected ProcessResult      processResult;AbstractBaseProcessor.processResult15,681
+    protected ProcessContext     context;AbstractBaseProcessor.context17,732
+    public boolean canProcess(AbstractBaseProcessor.canProcess19,777
+    public ProcessContext getContext(AbstractBaseProcessor.getContext24,877
+    public void setContext(AbstractBaseProcessor.setContext28,953
+    public BaseMarketingParam getActivityParam(AbstractBaseProcessor.getActivityParam32,1049
+    public ProcessResult getProcessResult(AbstractBaseProcessor.getProcessResult36,1141
+    public void checkStatusMustIn(AbstractBaseProcessor.checkStatusMustIn52,1499
+    public void setActivityParam(AbstractBaseProcessor.setActivityParam65,1964
+    public void setProcessResult(AbstractBaseProcessor.setProcessResult69,2088
+    public void setResultInContext(AbstractBaseProcessor.setResultInContext73,2207
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/marketing/processor/impl/ActivityCreateProcessorImpl.java,1373
+public class ActivityCreateProcessorImpl 48,2708
+    private final static Logger             activityLog ActivityCreateProcessorImpl.activityLog50,2805
+    private TransactionTemplate             transactionTemplate;ActivityCreateProcessorImpl.transactionTemplate59,3172
+    private UmpMarketingToolCoreService     marketingToolCoreService;ActivityCreateProcessorImpl.marketingToolCoreService62,3255
+    private UmpMarketingActivityCoreService marketingActivityCoreService;ActivityCreateProcessorImpl.marketingActivityCoreService65,3343
+    private UmpMarketingDetailCoreService   marketingDetailCoreService;ActivityCreateProcessorImpl.marketingDetailCoreService68,3435
+    private MarketingMessageSender          marketingMessageSender;ActivityCreateProcessorImpl.marketingMessageSender71,3525
+    private MarketingBuildingBlock          marketingBuildingBlock;ActivityCreateProcessorImpl.marketingBuildingBlock74,3611
+    public ProcessResult process(ActivityCreateProcessorImpl.process76,3682
+    public boolean rollback(ActivityCreateProcessorImpl.rollback176,8666
+    private void saveMarketingActivityAndDetail(ActivityCreateProcessorImpl.saveMarketingActivityAndDetail206,9727
+    private void checkCountLimit(ActivityCreateProcessorImpl.checkCountLimit237,11053
+    private void sendMessage(ActivityCreateProcessorImpl.sendMessage259,12143
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/marketing/processor/impl/ActivityDeleteProcessorImpl.java,546
+public class ActivityDeleteProcessorImpl 24,1461
+    private UmpMarketingActivityCoreService marketingActivityCoreService;ActivityDeleteProcessorImpl.marketingActivityCoreService30,1688
+    private MarketingMessageSender          marketingMessageSender;ActivityDeleteProcessorImpl.marketingMessageSender33,1784
+    public ProcessResult process(ActivityDeleteProcessorImpl.process35,1859
+    public boolean rollback(ActivityDeleteProcessorImpl.rollback74,3871
+    private void sendMessage(ActivityDeleteProcessorImpl.sendMessage84,4089
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/marketing/processor/impl/ActivityFreezeProcessorImpl.java,546
+public class ActivityFreezeProcessorImpl 30,1691
+    private UmpMarketingActivityCoreService marketingActivityCoreService;ActivityFreezeProcessorImpl.marketingActivityCoreService36,1918
+    private MarketingMessageSender          marketingMessageSender;ActivityFreezeProcessorImpl.marketingMessageSender39,2010
+    public ProcessResult process(ActivityFreezeProcessorImpl.process41,2081
+    public boolean rollback(ActivityFreezeProcessorImpl.rollback86,4480
+    private void sendMessage(ActivityFreezeProcessorImpl.sendMessage95,4661
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/marketing/processor/impl/ActivityUpdateProcessorImpl.java,1022
+public class ActivityUpdateProcessorImpl 34,1978
+    private UmpMarketingToolCoreService     marketingToolCoreService;ActivityUpdateProcessorImpl.marketingToolCoreService40,2205
+    private UmpMarketingActivityCoreService marketingActivityCoreService;ActivityUpdateProcessorImpl.marketingActivityCoreService43,2293
+    private Processor                       deleteActivityProcessor;ActivityUpdateProcessorImpl.deleteActivityProcessor46,2385
+    private Processor                       createActivityProcessor;ActivityUpdateProcessorImpl.createActivityProcessor49,2472
+    private MarketingMessageSender          marketingMessageSender;ActivityUpdateProcessorImpl.marketingMessageSender52,2559
+    public ProcessResult process(ActivityUpdateProcessorImpl.process54,2630
+    private void updateActivity(ActivityUpdateProcessorImpl.updateActivity108,5546
+    private void sendMessage(ActivityUpdateProcessorImpl.sendMessage154,8089
+    public boolean rollback(ActivityUpdateProcessorImpl.rollback159,8374
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/marketing/processor/impl/MemberTagProcessorImpl.java,454
+public class MemberTagProcessorImpl 13,637
+    private MemberActivityTagBO  memberActivityTagBO;MemberTagProcessorImpl.memberActivityTagBO16,744
+    public boolean canProcess(MemberTagProcessorImpl.canProcess18,801
+    public ProcessResult process(MemberTagProcessorImpl.process26,1004
+    private ProcessResult processMemberTag(MemberTagProcessorImpl.processMemberTag43,1665
+    public boolean rollback(MemberTagProcessorImpl.rollback64,2552
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/marketing/processor/ProcessContext.java,908
+public class ProcessContext 13,291
+    private List<Processor>     processorStack ProcessContext.processorStack16,345
+    private List<ProcessResult> resultStack ProcessContext.resultStack19,448
+    private Map<ProcessContext.Map22,559
+    private Map<String, String> attributes ProcessContext.attributes22,559
+    public void pushResult(ProcessContext.pushResult24,642
+    public ProcessResult popResult(ProcessContext.popResult28,740
+    public boolean hasResult(ProcessContext.hasResult32,828
+    public void pushProcessor(ProcessContext.pushProcessor36,911
+    public Processor popProcessor(ProcessContext.popProcessor40,1017
+    public boolean hasProcessor(ProcessContext.hasProcessor44,1107
+    public void putAttribute(ProcessContext.putAttribute48,1196
+    public String getAttribute(ProcessContext.getAttribute52,1300
+    public void release(ProcessContext.release59,1441
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/marketing/processor/Processor.java,521
+public interface Processor 11,315
+    static String UMP_MARKETING_ACTIVITY_CREATOR_ID Processor.UMP_MARKETING_ACTIVITY_CREATOR_ID14,377
+    static String UMP_MARKETING_ACTIVITY_ID Processor.UMP_MARKETING_ACTIVITY_ID17,501
+    static String UMP_MARKETING_DETAIL_ID Processor.UMP_MARKETING_DETAIL_ID20,617
+    static String UMP_MARKETING_ACTIVITY_UPDATE_RESULT Processor.UMP_MARKETING_ACTIVITY_UPDATE_RESULT23,737
+    static String UMP_MARKETING_REMOVE_MEMBER_TAG Processor.UMP_MARKETING_REMOVE_MEMBER_TAG26,868
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/marketing/processor/ProcessResult.java,799
+public class ProcessResult 11,233
+    public ProcessResult(ProcessResult.ProcessResult13,265
+    public ProcessResult(ProcessResult.ProcessResult17,305
+    public ProcessResult(ProcessResult.ProcessResult21,391
+    private boolean             success;ProcessResult.success25,495
+    private Map<ProcessResult.Map27,539
+    private Map<String, Object> result;ProcessResult.result27,539
+    public Map<ProcessResult.Map29,582
+    public Map<String, Object> getAttributes(ProcessResult.getAttributes29,582
+    public void put(ProcessResult.put36,760
+    public void remove(ProcessResult.remove40,860
+    public boolean isSuccess(ProcessResult.isSuccess44,945
+    public void setSuccess(ProcessResult.setSuccess48,1013
+    public String toString(ProcessResult.toString52,1102
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/marketing/PromotionDisplayServiceImpl.java,986
+public class PromotionDisplayServiceImpl 34,1686
+    private final static Logger             LOGGER PromotionDisplayServiceImpl.LOGGER36,1767
+    private ParametersValidator             parametersValidator;PromotionDisplayServiceImpl.parametersValidator42,2017
+    private PromotionDisplayInternalService promotionDisplayInternalService;PromotionDisplayServiceImpl.promotionDisplayInternalService45,2100
+    private MemberMorganBO                  memberMorganBO;PromotionDisplayServiceImpl.memberMorganBO48,2195
+    public PromotionDisplayModel displayPromotion4Advertisement(PromotionDisplayServiceImpl.displayPromotion4Advertisement56,2482
+    private PromotionDisplayQueryParam checkAndPreparedDisplayParam(PromotionDisplayServiceImpl.checkAndPreparedDisplayParam133,6691
+    private Map<PromotionDisplayServiceImpl.Map173,8669
+    private Map<Long, List<MarketingActivityBean>> preparedDisplayPromotion(PromotionDisplayServiceImpl.preparedDisplayPromotion173,8669
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/marketing/PurchaseActionServiceImpl.java,759
+public class PurchaseActionServiceImpl 27,1044
+    private MarketingTairManager ldbTairManager;PurchaseActionServiceImpl.ldbTairManager28,1118
+    private int area;PurchaseActionServiceImpl.area29,1167
+    public boolean create(PurchaseActionServiceImpl.create31,1194
+    public PurchaseActionModel query(PurchaseActionServiceImpl.query42,1688
+    public static String getTairKey(PurchaseActionServiceImpl.getTairKey84,3395
+    public int getArea(PurchaseActionServiceImpl.getArea88,3556
+    public void setArea(PurchaseActionServiceImpl.setArea92,3615
+    public MarketingTairManager getLdbTairManager(PurchaseActionServiceImpl.getLdbTairManager96,3688
+    public void setLdbTairManager(PurchaseActionServiceImpl.setLdbTairManager100,3784
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/marketing/util/AreaExcludeUtil.java,189
+public class AreaExcludeUtil 17,670
+    public static AreaExclude jsonToModel(AreaExcludeUtil.jsonToModel25,794
+    public static String modelToJson(AreaExcludeUtil.modelToJson38,1089
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/marketing/util/MarketingActivityConvertor.java,1305
+public class MarketingActivityConvertor 34,1833
+    private MarketingActivityConvertor(MarketingActivityConvertor.MarketingActivityConvertor36,1878
+    public static MarketingActivityModel convert2ActivityModel(MarketingActivityConvertor.convert2ActivityModel39,1930
+    public static void parseParameterValue(MarketingActivityConvertor.parseParameterValue97,4978
+    public static MarketingActivity assignMarketingActivity(MarketingActivityConvertor.assignMarketingActivity175,9155
+    private static ParticipateRange getUmpParticipateRange(MarketingActivityConvertor.getUmpParticipateRange217,10974
+    public static MarketingActivity assignMarketingActivity(MarketingActivityConvertor.assignMarketingActivity237,11709
+    private static String parseDisplayInfo(MarketingActivityConvertor.parseDisplayInfo273,13345
+    public static MarketingDetail assignMarketingDetail(MarketingActivityConvertor.assignMarketingDetail304,14740
+    public static MarketingDetail assignMarketingDetail(MarketingActivityConvertor.assignMarketingDetail314,15286
+    public static MarketingActivityParam convert2MarktingActivityParam(MarketingActivityConvertor.convert2MarktingActivityParam324,15816
+    public static Short convertStatus2Short(MarketingActivityConvertor.convertStatus2Short363,18665
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/marketing/util/MarketingActivityUtil.java,450
+public class MarketingActivityUtil 9,269
+    public static boolean isRunningMarketingActivity(MarketingActivityUtil.isRunningMarketingActivity18,464
+    public static boolean isRunningMarketingActivity(MarketingActivityUtil.isRunningMarketingActivity54,1649
+    public static boolean isRunningMarketingActivity(MarketingActivityUtil.isRunningMarketingActivity86,2623
+    public static boolean isDigits(MarketingActivityUtil.isDigits121,3654
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/marketing/util/MarketingToolUtil.java,134
+public class MarketingToolUtil 17,687
+    public static MarketingToolModel convertDo2Model(MarketingToolUtil.convertDo2Model18,721
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/marketing/util/Param2DaoConvertor.java,1194
+public class Param2DaoConvertor 24,1418
+    public static MarketingActivityDAOQueryParam convert2DaoQueryPram(Param2DaoConvertor.convert2DaoQueryPram32,1562
+    public static MarketingActivityDAOQueryParam convert2DaoQueryPramFreen(Param2DaoConvertor.convert2DaoQueryPramFreen49,2365
+    public static MarketingActivityDO convert2DaoActivityDO(Param2DaoConvertor.convert2DaoActivityDO73,3418
+    public static MarketingActivityDAOQueryParam convert2DaoQueryPram(Param2DaoConvertor.convert2DaoQueryPram157,8290
+    public static MarketingActivityDAOQueryParam convert2DaoQueryPram(Param2DaoConvertor.convert2DaoQueryPram177,9219
+    public static MarketingActivityDAOUpdateParam convert2DaoUpdatePram(Param2DaoConvertor.convert2DaoUpdatePram200,10337
+    public static MarketingActivityStatusUpdateParam convert2DaoActivityStatusUpdatePram(Param2DaoConvertor.convert2DaoActivityStatusUpdatePram270,13867
+    public static MarketingActivityStatusUpdateParam convert2DaoActivityStatusFreezePram(Param2DaoConvertor.convert2DaoActivityStatusFreezePram294,14909
+    public static MarketingActivityDAOQueryParam convert2DaoQueryPram(Param2DaoConvertor.convert2DaoQueryPram319,15967
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/purchase/bo/impl/PurchaseBOImpl.java,1396
+public class PurchaseBOImpl 51,2293
+    private static final Logger          tairLog PurchaseBOImpl.tairLog53,2348
+    private static final Logger          sysLog PurchaseBOImpl.sysLog54,2472
+    protected CartSubBizServiceApiClient cartServiceClient;PurchaseBOImpl.cartServiceClient56,2614
+    private MarketingTairManager         marketingTairManager;PurchaseBOImpl.marketingTairManager57,2675
+    public PurchaseModel addCargo(PurchaseBOImpl.addCargo64,2953
+    public PurchaseModel queryCargos(PurchaseBOImpl.queryCargos133,6516
+    public void updateCargo(PurchaseBOImpl.updateCargo198,9776
+    public Result deleteCargos(PurchaseBOImpl.deleteCargos234,11848
+    private void deleteTairBuild(PurchaseBOImpl.deleteTairBuild287,14337
+    public PurchaseModel mergeCargo(PurchaseBOImpl.mergeCargo304,15425
+    private void deleteTair(PurchaseBOImpl.deleteTair363,18185
+    public CartSubBizServiceApiClient getCartServiceClient(PurchaseBOImpl.getCartServiceClient372,18539
+    public void setCartServiceClient(PurchaseBOImpl.setCartServiceClient376,18647
+    public void setTairPropertyMap(PurchaseBOImpl.setTairPropertyMap380,18795
+    public void setMarketingTairManager(PurchaseBOImpl.setMarketingTairManager384,18984
+	public PurchaseModel addCargo(PurchaseBOImpl.addCargo389,19150
+	private List<CartExDO> getCartExDOs(PurchaseBOImpl.getCartExDOs445,22205
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/purchase/bo/MemberBO.java,850
+public class MemberBO 20,478
+    private MemberMorganBO   memberMorganBO;MemberBO.memberMorganBO23,521
+    private static final int MEMBER_NUM_LIMIT MemberBO.MEMBER_NUM_LIMIT24,567
+    public MemberModel getMemberByMemberId(MemberBO.getMemberByMemberId32,720
+    public long getUserIdByMemberId(MemberBO.getUserIdByMemberId40,980
+    public MemberModel getMemberByUserId(MemberBO.getMemberByUserId44,1115
+    public Map<MemberBO.Map49,1308
+    public Map<Long, String> getMemberIdsByUserIds(MemberBO.getMemberIdsByUserIds49,1308
+    public String getMemberIdByUserId(MemberBO.getMemberIdByUserId53,1458
+    public Map<MemberBO.Map57,1585
+    public Map<Long, MemberModel> listMember(MemberBO.listMember57,1585
+	public Map<String,MemberBO.String109,3663
+	public Map<String, MemberModel> findMember(MemberBO.findMember109,3663
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/purchase/bo/MemberPartnerBO.java,1340
+public class MemberPartnerBO 21,560
+    private static final Log log MemberPartnerBO.log23,592
+    private PartnerService   partnerService;MemberPartnerBO.partnerService24,669
+    private MemberBO memberBO;MemberPartnerBO.memberBO25,714
+    public PartnerRelationModel getPartner(MemberPartnerBO.getPartner33,857
+    public PartnerRelationModel getPartner(MemberPartnerBO.getPartner49,1321
+    public PartnerRelationModel getPartner(MemberPartnerBO.getPartner66,1765
+    public Map<MemberPartnerBO.Map83,2344
+    public Map<String, PartnerRelationModel> getPartnerMap(MemberPartnerBO.getPartnerMap83,2344
+    public boolean isOrdered(MemberPartnerBO.isOrdered102,2874
+    public boolean isOrdered(MemberPartnerBO.isOrdered127,3632
+    public Map<MemberPartnerBO.Map166,5100
+    public Map<String, PartnerRelationModel> getPartnerMap(MemberPartnerBO.getPartnerMap166,5100
+    public Map<MemberPartnerBO.Map178,5390
+    public Map<Long, PartnerRelationModel> getPartnerMap(MemberPartnerBO.getPartnerMap178,5390
+    public void setPartnerService(MemberPartnerBO.setPartnerService212,6914
+    public MemberBO getMemberBO(MemberPartnerBO.getMemberBO217,7039
+    public void setMemberBO(MemberPartnerBO.setMemberBO222,7112
+    public PartnerService getPartnerService(MemberPartnerBO.getPartnerService227,7207
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/purchase/bo/PurchaseBO.java,36
+public interface PurchaseBO 25,959
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/purchase/bo/ViewCacheBO.java,585
+public class ViewCacheBO 17,512
+    public final static String CATEGORY_FLAG ViewCacheBO.CATEGORY_FLAG19,542
+    private ViewCacheService viewCacheService;ViewCacheBO.viewCacheService20,598
+    public Set<Long> getVirtualCategory(ViewCacheBO.getVirtualCategory27,716
+    public boolean isVirtualCategory(ViewCacheBO.isVirtualCategory54,1808
+    private ViewCache getViewCache(ViewCacheBO.getViewCache62,2063
+    public ViewCacheService getViewCacheService(ViewCacheBO.getViewCacheService66,2161
+    public void setViewCacheService(ViewCacheBO.setViewCacheService70,2257
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/purchase/PurchaseServiceImpl.java,2586
+public class PurchaseServiceImpl 49,2411
+    private static final Logger             log PurchaseServiceImpl.log51,2476
+    private PurchaseBO                      purchaseBO;PurchaseServiceImpl.purchaseBO53,2595
+    private ServiceExceptionFactory         serviceExceptionFactory;PurchaseServiceImpl.serviceExceptionFactory55,2667
+    private MemberBO                        memberBO;PurchaseServiceImpl.memberBO57,2752
+    private MemberPartnerBO               memberPartnerBO;PurchaseServiceImpl.memberPartnerBO59,2822
+    private PurchaseActionService         purchaseActionService;PurchaseServiceImpl.purchaseActionService61,2897
+    private OfferQueryService<OfferModel> offerQueryService;PurchaseServiceImpl.offerQueryService63,2978
+    private static final int                NUM_LIMIT PurchaseServiceImpl.NUM_LIMIT64,3040
+    private ViewCacheBO                     viewCacheBO;PurchaseServiceImpl.viewCacheBO66,3116
+    @Enhancement(PurchaseServiceImpl.@Enhancement68,3176
+    public PurchaseModel addCargo(PurchaseServiceImpl.addCargo105,4932
+    private String getOfferIdStr(PurchaseServiceImpl.getOfferIdStr137,6583
+    @Enhancement(PurchaseServiceImpl.@Enhancement151,6987
+    @Enhancement(PurchaseServiceImpl.@Enhancement162,7475
+    @Enhancement(PurchaseServiceImpl.@Enhancement171,7880
+    public OfferModel findOfferWithSpecIds(PurchaseServiceImpl.findOfferWithSpecIds186,8362
+	private Map<Long,PurchaseServiceImpl.Long199,8799
+	private Map<Long,OfferModel> findOffer(PurchaseServiceImpl.findOffer199,8799
+	private List<String> getSellerUserIds(PurchaseServiceImpl.getSellerUserIds235,10217
+    protected Map<PurchaseServiceImpl.Map250,10667
+    protected Map<Long, OfferModel> findOfferByIds(PurchaseServiceImpl.findOfferByIds250,10667
+    public PurchaseModel mergeCargo(PurchaseServiceImpl.mergeCargo288,12279
+    protected Map<PurchaseServiceImpl.Map297,12618
+    protected Map<Long, OfferModel> findOfferByIds(PurchaseServiceImpl.findOfferByIds297,12618
+    private void checkCargoCanAdd(PurchaseServiceImpl.checkCargoCanAdd310,13001
+    private void batchCheckCargoCanAdd(PurchaseServiceImpl.batchCheckCargoCanAdd357,15347
+    private boolean offerCanTrade(PurchaseServiceImpl.offerCanTrade376,16372
+    private void updatePurchaseDateTime(PurchaseServiceImpl.updatePurchaseDateTime392,16827
+    private boolean isValidBuildCargoParam(PurchaseServiceImpl.isValidBuildCargoParam407,17610
+    private void validateUserIdAndCookieValueParam(PurchaseServiceImpl.validateUserIdAndCookieValueParam419,18065
+
+../ali-trunk/marketing_center/service/src/main/java/com/alibaba/china/marketingcenter/service/validator/ParametersValidator.java,1108
+public class ParametersValidator 25,1180
+    private final static Logger validateLog ParametersValidator.validateLog27,1218
+    public void checkBaseMarketingActivityParams(ParametersValidator.checkBaseMarketingActivityParams36,1473
+    public void checkMarketingActivityParam(ParametersValidator.checkMarketingActivityParam59,2253
+    public void checkMarketingActivityUpdateParam(ParametersValidator.checkMarketingActivityUpdateParam98,3810
+    public void checkMarketingActivityDeleteParam(ParametersValidator.checkMarketingActivityDeleteParam133,5137
+    public void checkMarketingActivityFreezeParam(ParametersValidator.checkMarketingActivityFreezeParam152,5789
+    public void checkMarketingActivityQueryParam(ParametersValidator.checkMarketingActivityQueryParam171,6442
+    public void checkMarketingDetailParam(ParametersValidator.checkMarketingDetailParam188,6980
+    public void checkMarketingDetailQueryParam(ParametersValidator.checkMarketingDetailQueryParam217,7997
+    public void checkPromotionDisplayQueryParam(ParametersValidator.checkPromotionDisplayQueryParam230,8564
+
+../ali-trunk/marketing_center/service/src/test/java/com/alibaba/china/marketingcenter/common/ClassAliasInfo.java,132
+public class ClassAliasInfo 13,481
+    Class<?> clazz;ClassAliasInfo.clazz15,512
+    String   alias;ClassAliasInfo.alias16,532
+
+../ali-trunk/marketing_center/service/src/test/java/com/alibaba/china/marketingcenter/common/PropertyConvert.java,247
+public class PropertyConvert 21,591
+    static String convert(PropertyConvert.convert23,623
+    public static String convertClass(PropertyConvert.convertClass39,1121
+    public static String upperOneChar(PropertyConvert.upperOneChar55,1639
+
+../ali-trunk/marketing_center/service/src/test/java/com/alibaba/china/marketingcenter/common/PropertyConvertMain.java,1072
+public class PropertyConvertMain 22,702
+    private static final long serialVersionUID PropertyConvertMain.serialVersionUID24,753
+    private JLabel            fromClassLabel;PropertyConvertMain.fromClassLabel25,825
+    private JTextField        fromClassName;PropertyConvertMain.fromClassName26,871
+    private JLabel            fromClassLabelAlias;PropertyConvertMain.fromClassLabelAlias27,916
+    private JTextField        fromClassNameAlias;PropertyConvertMain.fromClassNameAlias28,967
+    private JLabel            toClassLabel;PropertyConvertMain.toClassLabel29,1017
+    private JTextField        toClassName;PropertyConvertMain.toClassName30,1061
+    private JLabel            toClassLabelAlias;PropertyConvertMain.toClassLabelAlias31,1104
+    private JTextField        toClassNameAlias;PropertyConvertMain.toClassNameAlias32,1153
+    private JButton           button;PropertyConvertMain.button33,1201
+    public PropertyConvertMain(PropertyConvertMain.PropertyConvertMain35,1240
+    public static void main(PropertyConvertMain.main86,3110
+
+../ali-trunk/marketing_center/service/src/test/java/com/alibaba/china/marketingcenter/hsftest/TagReadServiceNoRunTest.java,266
+public class TagReadServiceNoRunTest 29,1075
+    private TagReadService tagReadService;TagReadServiceNoRunTest.tagReadService37,1300
+    public void create(TagReadServiceNoRunTest.create40,1354
+    public void contains(TagReadServiceNoRunTest.contains45,1450
+
+../ali-trunk/marketing_center/service/src/test/java/com/alibaba/china/marketingcenter/hsftest/TagWriteServiceNoRunTest.java,326
+public class TagWriteServiceNoRunTest 22,871
+    private TagWriteService tagWriteService;TagWriteServiceNoRunTest.tagWriteService30,1117
+    public void create(TagWriteServiceNoRunTest.create33,1173
+    public void put(TagWriteServiceNoRunTest.put38,1270
+    public void remove(TagWriteServiceNoRunTest.remove45,1474
+
+../ali-trunk/marketing_center/service/src/test/java/com/alibaba/china/marketingcenter/service/favorite/bo/FavoritesBOTest.java,599
+public class FavoritesBOTest 38,1708
+    private FavoritesBO favoritesBO;FavoritesBOTest.favoritesBO40,1779
+    private FavoritesTagDAO favoritesTagDAO;FavoritesBOTest.favoritesTagDAO43,1846
+    private FavoritesCountDAO favoritesCountDAO;FavoritesBOTest.favoritesCountDAO46,1921
+    private FavoritesTagRelDAO favoritesTagRelDAO;FavoritesBOTest.favoritesTagRelDAO49,2000
+    @DbFit(FavoritesBOTest.@DbFit52,2065
+    @DbFit(FavoritesBOTest.@DbFit83,3375
+    @DbFit(FavoritesBOTest.@DbFit107,4316
+    @DbFit(FavoritesBOTest.@DbFit128,5241
+    @DbFit(FavoritesBOTest.@DbFit148,6014
+
+../ali-trunk/marketing_center/service/src/test/java/com/alibaba/china/marketingcenter/service/favorite/FavoriteReadServiceTest.java,535
+public class FavoriteReadServiceTest 45,1962
+    private FavoriteReadService favoriteReadService;FavoriteReadServiceTest.favoriteReadService47,2041
+    private SearchBO searchBO;FavoriteReadServiceTest.searchBO51,2134
+    @DbFit(FavoriteReadServiceTest.@DbFit54,2183
+    @DbFit(FavoriteReadServiceTest.@DbFit121,5975
+    @DbFit(FavoriteReadServiceTest.@DbFit146,6958
+    @DbFit(FavoriteReadServiceTest.@DbFit182,8341
+    @DbFit(FavoriteReadServiceTest.@DbFit218,9806
+    @DbFit(FavoriteReadServiceTest.@DbFit251,10933
+
+../ali-trunk/marketing_center/service/src/test/java/com/alibaba/china/marketingcenter/service/favorite/FavoriteWriteServiceTest.java,870
+public class FavoriteWriteServiceTest 52,2553
+    private FavoriteWriteService favoriteWriteService;FavoriteWriteServiceTest.favoriteWriteService54,2633
+    private FavoritesDAO favoritesDAO;FavoriteWriteServiceTest.favoritesDAO57,2718
+    private FavoritesTagDAO favoritesTagDAO;FavoriteWriteServiceTest.favoritesTagDAO60,2787
+    private FavoritesCountDAO favoritesCountDAO;FavoriteWriteServiceTest.favoritesCountDAO63,2862
+    private FavoritesTagRelDAO favoritesTagRelDAO;FavoriteWriteServiceTest.favoritesTagRelDAO66,2941
+    private SearchBO searchBO;FavoriteWriteServiceTest.searchBO70,3032
+    private MemberReadService memberReadService;FavoriteWriteServiceTest.memberReadService74,3103
+    @DbFit(FavoriteWriteServiceTest.@DbFit77,3166
+    @DbFit(FavoriteWriteServiceTest.@DbFit153,6465
+    @DbFit(FavoriteWriteServiceTest.@DbFit252,10232
+
+../ali-trunk/marketing_center/service/src/test/java/com/alibaba/china/marketingcenter/service/favorite/util/FavoriteUtilTest.java,125
+public class FavoriteUtilTest 19,624
+    public void testIsValidContentType(FavoriteUtilTest.testIsValidContentType22,686
+
+../ali-trunk/marketing_center/service/src/test/java/com/alibaba/china/marketingcenter/service/marketing/test/BaseActivitySeviceTest.java,2232
+public class BaseActivitySeviceTest 30,1636
+    protected MetaDefReadServiceHsfClient     metaDefReadServiceHsfClient;BaseActivitySeviceTest.metaDefReadServiceHsfClient34,1734
+    protected MarketingToolTopService         umpMarketingToolTopService;BaseActivitySeviceTest.umpMarketingToolTopService38,1845
+    protected MarketingActivityTopService     umpMarketingActivityTopService;BaseActivitySeviceTest.umpMarketingActivityTopService42,1955
+    protected MarketingInnerWriteService      umpMarketingInnerWriteService;BaseActivitySeviceTest.umpMarketingInnerWriteService46,2069
+    protected MarketingTairManager            marketingTairManager;BaseActivitySeviceTest.marketingTairManager50,2182
+    protected MarketingBuildingBlock          marketingBuildingBlock;BaseActivitySeviceTest.marketingBuildingBlock54,2286
+    protected MarketingMessageSender          marketingMessageSender;BaseActivitySeviceTest.marketingMessageSender58,2392
+    protected MemberMorganBO                  memberMorganBO;BaseActivitySeviceTest.memberMorganBO62,2498
+    protected UmpMarketingToolCoreService     marketingToolCoreService;BaseActivitySeviceTest.marketingToolCoreService66,2596
+    protected UmpMarketingActivityCoreService marketingActivityCoreService;BaseActivitySeviceTest.marketingActivityCoreService70,2704
+    protected UmpMarketingDetailCoreService   marketingDetailCoreService;BaseActivitySeviceTest.marketingDetailCoreService74,2816
+    public void mockQueryTool(BaseActivitySeviceTest.mockQueryTool77,2912
+    public void mockCreateDetail(BaseActivitySeviceTest.mockCreateDetail88,3221
+    public void mockUploadDetail(BaseActivitySeviceTest.mockUploadDetail105,3775
+    public void mockUploadActivity(BaseActivitySeviceTest.mockUploadActivity122,4294
+    public void mockQueryMarketingTool(BaseActivitySeviceTest.mockQueryMarketingTool139,4823
+    public void mockQuerygActivity(BaseActivitySeviceTest.mockQuerygActivity159,5500
+    public void mockUpdateActivity(BaseActivitySeviceTest.mockUpdateActivity178,6103
+    public void mockDeleteActivity(BaseActivitySeviceTest.mockDeleteActivity197,6715
+    public void mockCreateActivity(BaseActivitySeviceTest.mockCreateActivity215,7198
+
+../ali-trunk/marketing_center/service/src/test/java/com/alibaba/china/marketingcenter/service/marketing/test/BaseServiceTest.java,86
+public class BaseServiceTest 8,285
+    public void test(BaseServiceTest.test11,346
+
+../ali-trunk/marketing_center/service/src/test/java/com/alibaba/china/marketingcenter/service/marketing/test/MarketingActivityServiceTest.java,757
+public class MarketingActivityServiceTest 24,931
+    private MarketingActvityService marketingActivityService;MarketingActivityServiceTest.marketingActivityService27,1032
+    @DbFit(MarketingActivityServiceTest.@DbFit30,1108
+    @DbFit(MarketingActivityServiceTest.@DbFit55,2186
+    public void testSaveMarketingActvity_seller(MarketingActivityServiceTest.testSaveMarketingActvity_seller80,3220
+    public void testSaveMarketingActvity_operator(MarketingActivityServiceTest.testSaveMarketingActvity_operator122,5244
+    @DbFit(MarketingActivityServiceTest.@DbFit173,7589
+    @DbFit(MarketingActivityServiceTest.@DbFit207,9073
+    @DbFit(MarketingActivityServiceTest.@DbFit239,10459
+    @DbFit(MarketingActivityServiceTest.@DbFit264,11410
+
+../ali-trunk/marketing_center/service/src/test/java/com/alibaba/china/marketingcenter/service/marketing/test/MarketingDetailServiceTest.java,326
+public class MarketingDetailServiceTest 14,459
+    private MarketingDetailService  marketingDetailService;MarketingDetailServiceTest.marketingDetailService17,558
+    @DbFit(MarketingDetailServiceTest.@DbFit20,632
+    @DbFit(MarketingDetailServiceTest.@DbFit35,1256
+    @DbFit(MarketingDetailServiceTest.@DbFit51,1941
+
+../ali-trunk/marketing_center/service/src/test/java/com/alibaba/china/marketingcenter/service/marketing/test/mock/MockMarketingActivity.java,3239
+public class MockMarketingActivity 12,370
+    private Long          activityId;MockMarketingActivity.activityId14,439
+    private String        name;MockMarketingActivity.name16,480
+    private String        description;MockMarketingActivity.description18,515
+    private Date          startTime;MockMarketingActivity.startTime20,557
+    private Date          endTime;MockMarketingActivity.endTime22,597
+    private MarketingTool marketingTool;MockMarketingActivity.marketingTool24,635
+    public MockMarketingActivity(MockMarketingActivity.MockMarketingActivity26,679
+    public MockMarketingActivity(MockMarketingActivity.MockMarketingActivity29,725
+    public MockMarketingActivity(MockMarketingActivity.MockMarketingActivity37,1026
+    public void MockMarketingActivity.void43,1306
+    public void undefine(MockMarketingActivity.undefine47,1373
+    public Collection<ParameterValue> getMustDefineParameters(MockMarketingActivity.getMustDefineParameters51,1428
+    public Collection<ParameterValue> getDefinedParameters(MockMarketingActivity.getDefinedParameters56,1528
+    public Collection<ParameterValue> getDefinableParameters(MockMarketingActivity.getDefinableParameters61,1625
+    public boolean isAllDefined(MockMarketingActivity.isAllDefined66,1724
+    public MarketingTool getMarketingTool(MockMarketingActivity.getMarketingTool71,1795
+    public Long getActivityId(MockMarketingActivity.getActivityId75,1887
+    public String getName(MockMarketingActivity.getName79,1964
+    public String getDescription(MockMarketingActivity.getDescription84,2033
+    public ActivityType getType(MockMarketingActivity.getType89,2116
+    public ParticipateRange getParticipateRange(MockMarketingActivity.getParticipateRange94,2186
+    public Date getStartTime(MockMarketingActivity.getStartTime99,2272
+    public Date getEndTime(MockMarketingActivity.getEndTime104,2349
+    public ActivityStatus getStatus(MockMarketingActivity.getStatus109,2422
+    public MetaData<TargetDef> getTargetMeta(MockMarketingActivity.getTargetMeta114,2496
+    public MarketingActivity setName(MockMarketingActivity.setName119,2579
+    public MarketingActivity setDescription(MockMarketingActivity.setDescription124,2665
+    public MarketingActivity setType(MockMarketingActivity.setType129,2765
+    public MarketingActivity setParticipateRange(MockMarketingActivity.setParticipateRange134,2857
+    public MarketingActivity setStartTime(MockMarketingActivity.setStartTime139,2977
+    public MarketingActivity setEndTime(MockMarketingActivity.setEndTime144,3071
+    public MarketingActivity setStatus(MockMarketingActivity.setStatus149,3161
+    public Short getOptions(MockMarketingActivity.getOptions154,3259
+    public MarketingActivity setTargetMeta(MockMarketingActivity.setTargetMeta159,3325
+    public MarketingActivity setOneOffPromotion(MockMarketingActivity.setOneOffPromotion164,3432
+    public boolean isOneOffPromotion(MockMarketingActivity.isOneOffPromotion169,3543
+    public MarketingActivity setMultipleLayerPromotion(MockMarketingActivity.setMultipleLayerPromotion174,3619
+    public boolean isMultipleLayerPromotion(MockMarketingActivity.isMultipleLayerPromotion179,3744
+
+../ali-trunk/marketing_center/service/src/test/java/com/alibaba/china/marketingcenter/service/marketing/test/mock/MockMarketingDetail.java,1411
+public class MockMarketingDetail 10,283
+    public void MockMarketingDetail.void13,363
+    public void undefine(MockMarketingDetail.undefine18,445
+    public Collection<ParameterValue> getMustDefineParameters(MockMarketingDetail.getMustDefineParameters23,515
+    public Collection<ParameterValue> getDefinedParameters(MockMarketingDetail.getDefinedParameters29,630
+    public Collection<ParameterValue> getDefinableParameters(MockMarketingDetail.getDefinableParameters35,742
+    public boolean isAllDefined(MockMarketingDetail.isAllDefined41,856
+    public MarketingActivity getMarketingActivity(MockMarketingDetail.getMarketingActivity47,942
+    public Long getDetailId(MockMarketingDetail.getDetailId53,1045
+    public Date getStartTime(MockMarketingDetail.getStartTime59,1126
+    public Date getEndTime(MockMarketingDetail.getEndTime65,1208
+    public DetailStatus getStatus(MockMarketingDetail.getStatus71,1288
+    public MarketingDetail setStartTime(MockMarketingDetail.setStartTime76,1373
+    public MarketingDetail setEndTime(MockMarketingDetail.setEndTime81,1478
+    public MarketingDetail setStatus(MockMarketingDetail.setStatus86,1579
+    public void setRange(MockMarketingDetail.setRange92,1688
+    public ParticipateType getParticipateType(MockMarketingDetail.getParticipateType97,1795
+    public Long getParticipateId(MockMarketingDetail.getParticipateId103,1894
+
+../ali-trunk/marketing_center/service/src/test/java/com/alibaba/china/marketingcenter/service/marketing/test/mock/MockMarketingTool.java,1772
+public class MockMarketingTool 9,239
+    private Long   toolId;MockMarketingTool.toolId11,300
+    private String toolCode;MockMarketingTool.toolCode13,330
+    public MockMarketingTool(MockMarketingTool.MockMarketingTool15,362
+    public MockMarketingTool(MockMarketingTool.MockMarketingTool19,406
+    public Long getToolId(MockMarketingTool.getToolId24,542
+    public String getName(MockMarketingTool.getName28,611
+    public String getToolCode(MockMarketingTool.getToolCode32,673
+    public String getDescription(MockMarketingTool.getDescription36,743
+    public String getProviderKey(MockMarketingTool.getProviderKey40,812
+    public ToolType getType(MockMarketingTool.getType44,881
+    public PrivilegeType getPrivilege(MockMarketingTool.getPrivilege48,945
+    public OrderType getOrderType(MockMarketingTool.getOrderType52,1019
+    public Date getStartTime(MockMarketingTool.getStartTime56,1089
+    public Date getEndTime(MockMarketingTool.getEndTime60,1154
+    public MetaData<ActionDef> getOperationMeta(MockMarketingTool.getOperationMeta64,1217
+    public MarketingTool setName(MockMarketingTool.setName68,1301
+    public MarketingTool setToolCode(MockMarketingTool.setToolCode72,1381
+    public MarketingTool setDescription(MockMarketingTool.setDescription76,1469
+    public MarketingTool setType(MockMarketingTool.setType80,1563
+    public MarketingTool setPrivilege(MockMarketingTool.setPrivilege84,1645
+    public MarketingTool setOrderType(MockMarketingTool.setOrderType88,1742
+    public MarketingTool setStartTime(MockMarketingTool.setStartTime92,1835
+    public MarketingTool setEndTime(MockMarketingTool.setEndTime96,1923
+    public MarketingTool setOperationMeta(MockMarketingTool.setOperationMeta100,2007
+
+../ali-trunk/marketing_center/service/src/test/java/com/alibaba/china/marketingcenter/service/marketing/test/PromotionDisplayServiceTest.java,1390
+public class PromotionDisplayServiceTest 24,956
+    private MarketingActvityService  marketingActivityService;PromotionDisplayServiceTest.marketingActivityService27,1056
+    private PromotionDisplayService  promotionDisplayService;PromotionDisplayServiceTest.promotionDisplayService30,1145
+    private MemberMorganBO           memberMorganBO;PromotionDisplayServiceTest.memberMorganBO34,1243
+    public void mockMemberMorganBO(PromotionDisplayServiceTest.mockMemberMorganBO37,1318
+    @DbFit(PromotionDisplayServiceTest.@DbFit57,1889
+    @DbFit(PromotionDisplayServiceTest.@DbFit113,4175
+    @DbFit(PromotionDisplayServiceTest.@DbFit146,5602
+    private MarketingActivityUpdateParam createMarketingActivityUpdateParam_umpseller001(PromotionDisplayServiceTest.createMarketingActivityUpdateParam_umpseller001180,7106
+    private MarketingActivityUpdateParam createMarketingActivityUpdateParam_umpyy001_umpseller001_1(PromotionDisplayServiceTest.createMarketingActivityUpdateParam_umpyy001_umpseller001_1205,8292
+    private MarketingActivityUpdateParam createMarketingActivityUpdateParam_umpyy001_umpseller001_2(PromotionDisplayServiceTest.createMarketingActivityUpdateParam_umpyy001_umpseller001_2226,9276
+    private MarketingActivityUpdateParam createMarketingActivityUpdateParam_seller(PromotionDisplayServiceTest.createMarketingActivityUpdateParam_seller247,10260
+
+../ali-trunk/marketing_center/service/src/test/java/com/alibaba/china/marketingcenter/service/marketing/test/PurchaseActionServiceTest.java,465
+public class PurchaseActionServiceTest 36,1324
+    private PurchaseActionService purchaseActionService;PurchaseActionServiceTest.purchaseActionService38,1411
+    private MarketingTairManager ldbTairManager;PurchaseActionServiceTest.ldbTairManager41,1499
+    public void mock(PurchaseActionServiceTest.mock44,1571
+    public void testCreate(PurchaseActionServiceTest.testCreate75,2719
+    public void testQuery PurchaseActionServiceTest.testQuery117,4039
+
+../ali-trunk/marketing_center/service/src/test/java/com/alibaba/china/marketingcenter/service/purchase/bo/test/PurchaseBoImplTest.java,1946
+public class PurchaseBoImplTest 51,2062
+    private PurchaseBOImpl             purchaseBO;PurchaseBoImplTest.purchaseBO54,2135
+    private CartSubBizServiceApiClient cartServiceClient;PurchaseBoImplTest.cartServiceClient57,2217
+    private MarketingTairManager       marketingTairManager;PurchaseBoImplTest.marketingTairManager60,2306
+    private final static String        TEST_COOKIE_VALUE PurchaseBoImplTest.TEST_COOKIE_VALUE62,2368
+    private final static long          TEST_USER_ID PurchaseBoImplTest.TEST_USER_ID63,2477
+    private final static String        TEST_SELLER_MEMBER_ID PurchaseBoImplTest.TEST_SELLER_MEMBER_ID64,2556
+    private final static CartExDO      TEST_ANONYMOUS_NORMAL_CARTEXDO PurchaseBoImplTest.TEST_ANONYMOUS_NORMAL_CARTEXDO65,2636
+    private final static CartExDO      TEST_ANONYMOUS_SKU_CARTEXDO PurchaseBoImplTest.TEST_ANONYMOUS_SKU_CARTEXDO66,2740
+    public void testDeleteCargos(PurchaseBoImplTest.testDeleteCargos77,3142
+    public void testDeleteCargos() throws ServiceException, CartException PurchaseBoImplTest.CartException77,3142
+    public void testQueryCargos(PurchaseBoImplTest.testQueryCargos145,5670
+    private static CartExDO buildAnonymousNormalCartExDO(PurchaseBoImplTest.buildAnonymousNormalCartExDO238,9721
+    private static CartExDO buildAnonymousSkuCartExDO(PurchaseBoImplTest.buildAnonymousSkuCartExDO252,10258
+    private static SpecInfoModel buildTestSpecInfoModel(PurchaseBoImplTest.buildTestSpecInfoModel266,10838
+    private static CartExDO buildMemberNormalCartExDO(PurchaseBoImplTest.buildMemberNormalCartExDO288,11433
+    private static CartExDO buildMemberSkuCartExDO(PurchaseBoImplTest.buildMemberSkuCartExDO301,11930
+    public void testUpdateCargo(PurchaseBoImplTest.testUpdateCargo319,12637
+    public void testAddCargo(PurchaseBoImplTest.testAddCargo360,14003
+    public void testMergeCargo(PurchaseBoImplTest.testMergeCargo455,17156
+
+../ali-trunk/marketing_center/service/src/test/java/com/alibaba/china/marketingcenter/service/purchase/PurchaseServiceNoRunTest.java,267
+public class PurchaseServiceNoRunTest 23,1009
+    private PurchaseService purchaseService;PurchaseServiceNoRunTest.purchaseService26,1088
+    public void create(PurchaseServiceNoRunTest.create29,1144
+    public void query(PurchaseServiceNoRunTest.query34,1241
