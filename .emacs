@@ -175,3 +175,7 @@ Display the results in a hyperlinked *compilation* buffer."
 ;; ==== weibo BEGIN ====
 (require 'weibo)
 ;; ==== weibo END   ====
+
+;; ==== TAG BEGIN ====
+(setq tags-file-name "~/local/svn/dotfiles/TAGS")
+;; ==== TAG END   ====
