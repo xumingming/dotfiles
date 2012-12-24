@@ -13,5 +13,9 @@ jkill() {
   jps -v | grep $1 | awk '{print $1}' | xargs kill -9
 }
 
+gen-etags() {
+  find . -name "*.java" -print | etags --append --member --output=$HOME/local/svn/dotfiles/TAGS -
+}
+
 . ~/local/svn/dotfiles/.functions-storm
 . ~/local/svn/dotfiles/.functions-alibaba
