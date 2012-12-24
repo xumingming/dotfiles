@@ -59,6 +59,6 @@ export LSCOLORS=ExFxCxDxBxegedabagacad
 export PATH=$PATH:/opt/local/bin
 export JAVA_HOME=$(/usr/libexec/java_home)
 export JAVA_OPTS="-Dfile.encoding=utf-8"
-. ~/.functions
-. ~/.ps1
-. ~/.exports
+. ~/local/svn/dotfiles/functions
+. ~/local/svn/dotfiles/.ps1
+. ~/local/svn/dotfiles/.exports
