@@ -57,7 +57,7 @@ fi
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 export PATH=$PATH:/opt/local/bin
-export JAVA_HOME=$(/usr/libexec/java_home)
+export JAVA_HOME=/usr/alibaba/java
 export JAVA_OPTS="-Dfile.encoding=utf-8"
 . ~/local/svn/dotfiles/.functions
 . ~/local/svn/dotfiles/.ps1
