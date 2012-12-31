@@ -3,12 +3,6 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-# don't put duplicate lines in the history. See bash(1) for more options
-# don't overwrite GNU Midnight Commander's setting of `ignorespace'.
-export HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
-# ... or force ignoredups and ignorespace
-export HISTCONTROL=ignoreboth
-
 # append to the history file, don't overwrite it
 shopt -s histappend
 
@@ -38,7 +32,7 @@ fi
 
 alias serve='python -m SimpleHTTPServer 9999'
 
-export SVN_EDITOR=vim
+
 
 # Enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -47,18 +41,6 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
-# Add the ~/bin directory to the path.  This allows you to install simple
-# binaries by simply moving them into ~/bin.
-if [ -d $HOME/bin ]; then
-	PATH="$HOME/bin:$PATH"
-	export PATH
-fi
-
-export CLICOLOR=1
-export LSCOLORS=ExFxCxDxBxegedabagacad
-export PATH=$PATH:/opt/local/bin
-export JAVA_HOME=/usr/alibaba/java
-export JAVA_OPTS="-Dfile.encoding=utf-8"
 . ~/local/svn/dotfiles/.functions
 . ~/local/svn/dotfiles/.ps1
 . ~/local/svn/dotfiles/.exports

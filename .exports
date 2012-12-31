@@ -1,5 +1,24 @@
 #!/bin/bash
 
+# don't put duplicate lines in the history. See bash(1) for more options
+# don't overwrite GNU Midnight Commander's setting of `ignorespace'.
+export HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
+# ... or force ignoredups and ignorespace
+export HISTCONTROL=ignoreboth
+
+export SVN_EDITOR=vim
+# Add the ~/bin directory to the path.  This allows you to install simple
+# binaries by simply moving them into ~/bin.
+if [ -d $HOME/bin ]; then
+	PATH="$HOME/bin:$PATH"
+	export PATH
+fi
+export CLICOLOR=1
+export LSCOLORS=ExFxCxDxBxegedabagacad
+export PATH=$PATH:/opt/local/bin
+export JAVA_HOME=/usr/alibaba/java
+export JAVA_OPTS="-Dfile.encoding=utf-8"
+
 export ZK_HOME=/usr/local/zookeeper
 export BOOST_HOME=~/local/svn/boost
 export PATH=$PATH:$ZK_HOME/bin:$BOOST_HOME
