@@ -194,3 +194,9 @@ Display the results in a hyperlinked *compilation* buffer."
 
 ;; enable linum-mode
 (linum-mode)
+
+;;; set command key as meta
+(setq mac-option-key-is-meta nil
+      mac-command-key-is-meta t
+      mac-command-modifier 'meta
+      mac-option-modifier 'none)
