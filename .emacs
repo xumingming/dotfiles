@@ -193,7 +193,7 @@ Display the results in a hyperlinked *compilation* buffer."
  )
 
 ;; enable linum-mode
-(linum-mode)
+(global-linum-mode)
 
 ;;; set command key as meta
 (setq mac-option-key-is-meta nil
