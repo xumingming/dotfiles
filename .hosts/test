@@ -1,5 +1,5 @@
-BU-QA public env dns ######
-127.0.0.1 localhost xumingmingv-air alibaba-james
+###### CBU-QA public env dns ######
+10.20.168.98 cbu.perf.b2b.alibaba-inc.com
 10.20.141.4 public.dns
 10.20.141.6 autotest.dns
 10.20.141.8 yufabu.dns
@@ -7,71 +7,80 @@ BU-QA public env dns ######
 10.20.146.86 zhugan.rpm
 10.20.141.4 www.ibatis.com
 
+#CBU mock
+10.20.168.48 mock.alibaba-inc.com
+
+#ocean
+10.20.172.18 open-test.china.alibaba.com
+
 #out_site
 10.20.36.248 miaopi-test.china.alibaba.com
-10.20.141.54 saas.china.alibaba.com saas-test.china.alibaba.com
+10.20.143.68 saas.china.alibaba.com saas-test.china.alibaba.com
 10.20.135.5     sso.alibaba-inc.com
-10.2.226.114    crm.alisoft.com alisoft.alibaba.com mycrm.crm.alisoft.com service.alisoft.com
-10.20.135.230   api.p4p.alibaba.com file.p4p.alibaba.com
+10.2.226.114 	crm.alisoft.com alisoft.alibaba.com mycrm.crm.alisoft.com service.alisoft.com
+10.20.135.230 	api.p4p.alibaba.com file.p4p.alibaba.com
 10.20.150.95  bp.p4p.alibaba.com
 10.20.150.96  bss.p4p.alibaba-inc.com
-10.20.159.90    eden.vip.xyi.cn.alidc.net eden.vip.jyl.itbu.alidc.net #80
-10.20.131.42    api.eden.alibaba.com #1080
-10.20.162.59    udb.vip.xyi.cn.alidc.net #8080
-10.232.15.152   fenxiao.taobao.net
-10.20.141.162 test.corp.china.alibaba.com
+10.20.159.90	eden.vip.xyi.cn.alidc.net eden.vip.jyl.itbu.alidc.net #80
+10.20.131.42 	api.eden.alibaba.com #1080
+10.20.162.59 	udb.vip.xyi.cn.alidc.net #8080
+10.20.141.162 test.corp.china.alibaba.com 
 10.20.141.52 vas-test.china.alibaba.com #24100
-10.20.174.119   offercobar-test.china.alibaba.com   #8066
-10.20.141.149   brmmscobar-test.china.alibaba.com   #8066
-10.20.141.152   partnercobar-test.china.alibaba.com #8066
-#10.20.141.150  pc2-test.china.alibaba.com  #8088
-10.20.141.151   test.img.china.alibaba.com test.i00.c.aliimg.com test.i01.c.aliimg.com test.i02.c.aliimg.com test.i03.c.aliimg.com test.i04.c.aliimg.com test.i05.c.aliimg.com test.i06.c.aliimg.com #80
+#10.20.174.119	offercobar-test.china.alibaba.com	#8066
+10.20.141.149	brmmscobar-test.china.alibaba.com	#8066
+10.20.141.152	partnercobar-test.china.alibaba.com	#8066
+#10.20.141.150	pc2-test.china.alibaba.com	#8088
+10.20.141.151	test.img.china.alibaba.com test.i00.c.aliimg.com test.i01.c.aliimg.com test.i02.c.aliimg.com test.i03.c.aliimg.com test.i04.c.aliimg.com test.i05.c.aliimg.com test.i06.c.aliimg.com #80
 10.20.162.59 udb-test.china.alibaba.com #8080
 10.20.159.90       eden-test.china.alibaba.com #80
-10.20.141.153   aranda-test.china.alibaba.com   #8080aranda1.0.0
-10.20.141.151   aranda2-test.china.alibaba.com  #8080aranda1.2.0
+10.20.141.153	aranda-test.china.alibaba.com	#8080aranda1.0.0
+10.20.141.151	aranda2-test.china.alibaba.com	#8080aranda1.2.0
 10.20.141.147 checkcode-test.china.alibaba.com #8888
 #END_GROUP_CUSTOMER
 
-# cbu app public env
-#brand
-10.20.172.23 bmall-test.china.alibaba.com  bmall-test.alibaba-inc.com #7001
+# cbu app public env 
+#brand  
+10.20.172.25 bmall-test.china.alibaba.com  bmall-test.alibaba-inc.com #7001
 #medal
 10.20.141.149 medal-test.china.alibaba.com #4100
-10.249.200.45 gw-test.open.china.alibaba.com
+10.249.200.45 gw-test.open.china.alibaba.com 
 #style
-10.20.141.5 style.china.alibaba.com #80
+10.20.141.162 style.china.alibaba.com  style.c.aliimg.com
+#10.20.141.5 style.china.alibaba.com #80
 #memberweb
 10.20.141.88 member-test.china.alibaba.com #54200
 #magma
 10.20.172.72    magma-test.china.alibaba.com #15100
 #credit
-10.20.172.27    credit-test.alibaba-inc.com #34100
-10.20.172.10    avatar-test.b2b.alibaba-inc.com
+10.20.141.160	credit-test.alibaba-inc.com #34100
+10.20.172.10	avatar-test.b2b.alibaba-inc.com 
 #levit
-10.20.141.164   levit-test.china.alibaba.com #33100
-10.20.172.22    rate-test.china.alibaba.com
-10.20.172.37    picman-test.china.alibaba.com
-#rcc
-10.20.172.67    rcc-test.b2b.alibaba-inc.com #60100
+10.20.141.164	levit-test.china.alibaba.com #33100
+10.20.172.22	rate-test.china.alibaba.com
+10.20.172.37	picman-test.china.alibaba.com 
+#rcc 
+10.20.172.67	rcc-test.b2b.alibaba-inc.com #60100
 #
-10.20.172.36    renmai-test.china.alibaba.com renmai.china.alibaba.com
+10.20.172.36	renmai-test.china.alibaba.com renmai.china.alibaba.com
 #bizblog
-10.20.172.37    blog-test.china.alibaba.com profile-test.china.alibaba.com #8100
+10.20.172.37	blog-test.china.alibaba.com profile-test.china.alibaba.com #8100
+#cms_dynamic
+10.20.141.19  dcms-test.cn.alibaba.com #10100
 #cms
-10.20.172.47    cms-test.cn.alibaba-inc.com #14100
+10.20.172.47	cms-test.cn.alibaba-inc.com #14100
 #myhome
-10.20.172.32    myhome-test.china.alibaba.com #17100
+10.20.172.32	myhome-test.china.alibaba.com #17100
 #gonglue
-10.20.172.37    gonglue-test.china.alibaba.com #18002
-#laputa
-10.20.172.14    laputa-test.china.alibaba.com indetail.china.alibaba.com detail.china.alibaba.com detailpreview.china.alibaba.com #53100
+10.20.172.37	gonglue-test.china.alibaba.com #18002
+#caputa
+#10.20.172.14	laputa-test.china.alibaba.com indetail-test.china.alibaba.com    detail-test.china.alibaba.com detailpreview-test.china.alibaba.com #53100
+10.20.172.14    laputa-test.china.alibaba.com detail.china.alibaba.com detail.china.alibaba.com detailpreview.china.alibaba.com #53100
 #themis
 10.20.141.160 themis-test.china.alibaba.com #6100
 #aop_app
 10.20.141.153 open.china.alibaba.com
 #kylin port 4100
-10.20.172.12    esite.china.alibaba.com company.china.alibaba.com  #port 4100
+10.20.172.12	esite.china.alibaba.com company.china.alibaba.com  #port 4100
 10.20.172.12 www.autotest2236.cn www.autotest717.cn www.autotest2202.cn www.autotest2204.cn
 10.20.172.12 autotest2064.cn.alibaba.com www.autotest2064.cn autotest2094.cn.alibaba.com www.autotest2094.cn www.autotest873.cn autotest873.cn.alibaba.com
 10.20.172.12 zhoulihuo008.cn.alibaba.com www.zhoulihuo008.cn autotest2303.cn.alibaba.com www.autotest2303.cn
@@ -105,7 +114,7 @@ BU-QA public env dns ######
 10.20.172.12 www.autotest2212.cn www.autotest2203.cn www.autotest2211.cn
 10.20.172.12 www.autotest2609.cn www.autotest2608.cn www.autotest2610.cn
 10.20.172.12 autotest2057.cn.alibaba.com autotest2087.cn.alibaba.com autotest2097.cn.alibaba.com autotest2058.cn.alibaba.com autotest2709.cn.alibaba.com autotest2712.cn.alibaba.com
-10.20.172.12 autotest2151.cn.alibaba.com
+10.20.172.12 autotest2151.cn.alibaba.com 
 10.20.172.12 autotestfavt002.cn.alibaba.com
 10.20.172.12 autotest2192.cn.alibaba.com www.autotest2192.cn autotest2188.cn.alibaba.com
 10.20.172.12 autotest2380.cn.alibaba.com www.autotest2380.cn www.autotest2188.cn
@@ -118,67 +127,77 @@ BU-QA public env dns ######
 10.20.172.12 autotest3208.cn.alibaba.com autotest3209.cn.alibaba.com autotest3210.cn.alibaba.com
 10.20.172.12 autotest3249.cn.alibaba.com
 10.20.172.12 autotest3193.cn.alibaba.com autotest3192.cn.alibaba.com
-10.20.172.12 autotest3459.cn.alibaba.com autotest3460.cn.alibaba.com
+10.20.172.12 autotest3459.cn.alibaba.com autotest3460.cn.alibaba.com 
 10.20.172.12 autotest3491.cn.alibaba.com
 10.20.172.12 *.cn.alibaba.com
+10.20.172.12 shop1346948417404.cn.alibaba.com 
 
 #company_bops
-10.20.172.12    companybops-test.alibaba-inc.com #64100
+10.20.172.12	companybops-test.alibaba-inc.com #64100
 #forum
-10.20.172.2     forum-test.china.alibaba.com wealth-test.china.alibaba.com #6100
-10.20.172.42    info-test.china.alibaba.com bops-test.info.china.alibaba.com
-10.20.172.37    open-test.info.china.alibaba.com
+10.20.172.2 	forum-test.china.alibaba.com wealth-test.china.alibaba.com #6100
+10.20.172.42	info-test.china.alibaba.com bops-test.info.china.alibaba.com 
+10.20.172.37	open-test.info.china.alibaba.com
 #exodus2
-10.20.172.72    china.alibaba.com exodus2.china.alibaba.com upload.china.alibaba.com redirect.china.alibaba.com #2100
-10.20.172.2 partner-test.china.alibaba.com #54100
-10.20.141.87    gene-test.china.alibaba.com spu-test.china.alibaba.com #
-10.20.141.54   xtool-test.alibaba-inc.com #
-10.20.172.4 bopstest.alibaba-inc.com
-#work
-10.20.172.32    work-test.china.alibaba.com menu-test.china.alibaba.com #25100
+10.20.172.72  exodus2.china.alibaba.com upload.china.alibaba.com redirect.china.alibaba.com #2100
+10.20.172.2	partner-test.china.alibaba.com #54100
+10.20.141.87	gene-test.china.alibaba.com spu-test.china.alibaba.com #
+10.20.141.54    xtool-test.alibaba-inc.com  #11100
+10.20.172.4	bopstest.alibaba-inc.com
+#work 
+10.20.172.32 work.china.alibaba.com	work-test.china.alibaba.com menu-test.china.alibaba.com #25100
 #athena
-10.20.141.166   test.athena.china.alibaba.com
+10.20.141.166	test.athena.china.alibaba.com
 #vaspool
-10.20.141.52    vas-test.china.alibaba.com #24100
+10.20.141.52	vas-test.china.alibaba.com #24100
 #vasbops
-10.20.172.22    test.vas-bops.b2b.alibaba-inc.com #20100
-10.20.141.52    view-test.tpsc.alibaba.com
+10.20.172.22	test.vas-bops.b2b.alibaba-inc.com #20100
+10.20.141.52	view-test.tpsc.alibaba.com 
 #tpbops
-10.20.141.164   tpbops-test.b2b.alibaba-inc.com #65100
+10.20.141.164	tpbops-test.b2b.alibaba-inc.com #65100 
 #trading
-10.20.172.42    trading-test.china.alibaba.com #9100
+10.20.172.42	trading-test.china.alibaba.com #9100
 #cambell
-10.20.172.72    e56-test.china.alibaba.com    tradeconfig-test.china.alibaba.com #57100
+10.20.172.72   tradeconfig-test.china.alibaba.com #57100
+#alp_e56
+10.20.172.45   e56-test.china.alibaba.com  #9100
 #tradebops
-10.20.172.32    tradebops-test.alibaba-inc.com #32100
+10.20.172.32	tradebops-test.alibaba-inc.com #32100
+#hudong
+10.20.141.139 hudong-test.china.alibaba.com #4100
 #luna
-10.20.172.17    luna-test.china.alibaba.com #37100
-10.20.141.102   bizmail.china.alibaba.com
+10.20.172.17	luna-test.china.alibaba.com #37100
+10.20.141.102 	bizmail.china.alibaba.com
 #cnlogin
-10.20.172.7 loginchina-test.alibaba.com   pass.pass-test.alibaba.com b2bsync.daily.taobao.netpass.pass-test.alibaba.com b2bsync.daily.taobao.net  # http 3100 https 3300
+10.20.172.7	loginchina-test.alibaba.com   pass.pass-test.alibaba.com b2bsync.daily.taobao.net  # http 3100 https 3300
 #alp_web
 10.20.141.166 56-test.china.alibaba.com #7100
-10.20.141.91 down-test.china.alibaba.com #63100
+10.20.141.91 down-test.china.alibaba.com #80
 10.20.141.91 down.china.alibaba.com
 10.20.141.91 sdown.china.alibaba.com
-10.20.141.91 download-test.china.alibaba.com
-
+10.20.141.91 download-test.china.alibaba.com 
+10.20.172.25 media.china.alibaba.com
 10.20.172.24 edison.b2b.alibaba-inc.com #9000
 10.20.172.52  elf-test.china.alibaba-inc.com  #41100
 10.20.172.30  libra-test.alibaba-inc.com  #5100
 10.20.172.4  idata-test.alibaba-inc.com  #7100
-10.20.172.2 ww1.china.alibaba.com ww2.china.alibaba.com ww3.china.alibaba.com ww4.china.alibaba.com
+10.20.172.2 ww1.china.alibaba.com ww2.china.alibaba.com ww3.china.alibaba.com ww4.china.alibaba.com 
 10.20.141.5 webww-test.china.alibaba.com #51100
+#widgetconse
+10.20.141.89 widget-test.alibaba-inc.com
+
 #bing
 10.20.172.12 bing-test.china.alibaba.com #7100
 #themis
-10.20.172.27 chengxin-test.china.alibaba.com
+10.20.172.35 chengxin-test.china.alibaba.com
 #oop
 10.20.172.7 pc-test.china.alibaba.com #50100
+#paytest
+10.20.143.111 paytest15.alibaba.com 
 #offerweb
 10.20.141.164 offerweb.china.alibaba.com offer-test.china.alibaba.com #2100
 10.20.165.19     billing.alibaba.com
-10.20.165.19   billing.vip.jyl.itbu.alidc.net
+10.20.165.19   billing.vip.jyl.itbu.alidc.net 
 #cnwholesale
 10.20.172.52 wholesale-test.china.alibaba.com #9100
 #circle
@@ -191,12 +210,12 @@ BU-QA public env dns ######
 #10.20.172.20  wpstatic-test.china.alibaba.com
 10.20.141.18 wpstatic.china.alibaba.com #80
 #ursa
-10.20.172.63 design.china.alibaba.com   #8100
+10.20.172.63 design.china.alibaba.com sitestore.china.alibaba.com  #8100
 
-10.20.172.47  zhuli.china.alibaba.com
-10.20.172.68    itradeinf.china.alibaba.com
-10.20.172.68    pm.china.alibaba.com
-10.20.172.48     js.pm.china.alibaba.com
+10.20.172.47  zhuli.china.alibaba.com 
+10.20.172.68    itradeinf.china.alibaba.com       
+10.20.172.68    pm.china.alibaba.com   
+10.20.172.48     js.pm.china.alibaba.com 
 10.20.172.69 site-test.china.alibaba.com
 10.20.141.85 site.china.alibaba.com #9100
 10.20.172.42 gears-test.alibaba-inc.com
@@ -208,25 +227,26 @@ BU-QA public env dns ######
 10.20.141.166 tpscservice-test.china.alibaba.com
 #
 # cbu platform service
-10.20.141.150   dubbo-test.china.alibaba.com    #9090
+10.20.141.150	dubbo-test.china.alibaba.com	#9090
 10.20.141.169   dubbo-autotest.china.alibaba.com  #9090
 10.20.141.150   dubbo-public.china.alibaba.com  #9090
-10.20.153.30    napoli-test.china.alibaba.com #80
-10.20.141.150   offercobar-test.china.alibaba.com   #8066
-10.20.141.149   brmmscobar-test.china.alibaba.com   #8066
-10.20.141.152   partnercobar-test.china.alibaba.com #8066
-10.20.141.150   pc2-test.alibaba.com    #8088
-10.20.141.151   test.img.china.alibaba.com  #80
-10.20.162.59 udb-test.china.alibaba.com #8080
-10.20.159.90       eden-test.china.alibaba.com #80
-10.20.141.153   aranda-test.china.alibaba.com   #8080aranda1.0.0
-10.20.141.151   aranda2-test.china.alibaba.com  #8080aranda1.2.0
-10.20.141.147   checkcode-test.china.alibaba.com #8888
-10.20.141.57    tpolps-test.china.alibaba.com peixun-test.china.alibaba.com #4050
+10.20.153.30	napoli-test.china.alibaba.com #80
+10.20.141.150	offercobar-test.china.alibaba.com	#8066
+10.20.141.149	brmmscobar-test.china.alibaba.com	#8066
+10.20.141.152	partnercobar-test.china.alibaba.com	#8066
+10.20.141.150	pc2-test.alibaba.com	#8088
+10.20.141.151	test.img.china.alibaba.com  #80
+10.20.141.147 	checkcode-test.china.alibaba.com #8888
+10.20.141.57	tpolps-test.china.alibaba.com peixun-test.china.alibaba.com #4050
 10.253.66.191 b2b.alipay.net
 10.253.5.52 b2b.biz.alipay.net
-#10.20.141.137  nakara-test.china.alibaba.com
-10.20.153.168 nakara-test.china.alibaba.com
+10.20.141.233 bacardi.alitest.net
+10.20.143.205 survey.alitest.net
+10.20.143.205 martini.alitest.net
+10.20.143.205 360.alitest.net
+10.20.143.205 eve.alitest.net nirvana.alitest.net crm-dev.alibaba-inc.com
+#10.20.141.137  nakara-test.china.alibaba.com 
+10.20.153.168 nakara-test.china.alibaba.com 
 10.20.172.33 u-test.alibaba.com #28500
 10.20.141.148 pay-test.china.alibaba.com
 10.20.143.89 marketing-test.china.alibaba.com
@@ -234,7 +254,7 @@ BU-QA public env dns ######
 10.20.141.149:60001,10.20.141.149:60002
 
 #gege hudson
-10.20.149.14    dev.ccbu.mysql.alibaba-inc.com  #3306
+10.20.149.14	dev.ccbu.mysql.alibaba-inc.com  #3306
 
 10.232.133.38 beta.banner.alimama.com bannermaker
 10.20.150.127 gears-dev.alibaba-inc.com #5100
@@ -252,7 +272,7 @@ BU-QA public env dns ######
 10.20.141.16    laputa-perf.china.alibaba.com indetail-perf.china.alibaba.com detail-perf.china.alibaba.com preview-perf.china.alibaba.com #53100
 10.20.172.60    vas-perf.china.alibaba.com              #24100
 
-#perf-service
+#perf-service   
 10.20.141.33    authcenter                      #20891
 10.20.172.35    tradecenter                     #6110,6120
 10.20.172.74    offer                           #22110,22120
@@ -268,3 +288,34 @@ BU-QA public env dns ######
 10.20.159.72    pc2-perf.alibaba.com              #baza:12000,12001
 10.20.159.85    offercobar-perf.china.alibaba.com       #8066
 10.20.159.71    partnercobar-perf.china.alibaba.com     #8066
+
+10.232.16.30 diamondserver.tbsite.net
+10.232.16.30 commonconfig.config-host.taobao.com
+10.232.16.30 commonconfig.taobao.net 
+10.20.172.45 purchase-test.china.alibaba.com
+#right_bops
+10.20.141.2 rights-test.alibaba-inc.com #6100 
+
+#rights
+10.20.141.5 rights-test.china.alibaba.com #10100
+
+
+#bighead 
+10.232.18.145 login.daily.taobao.net
+10.232.18.45 jump.daily.taobao.net
+
+#mag
+10.20.141.161  filesite.china.alibaba.com
+
+10.232.10.204  reg.daily.taobao.net
+110.75.14.170 reg.taobao.com 
+
+#rac
+10.20.172.43 rac.alibaba-inc.com
+
+#kehu
+10.20.141.89 kehu-test.china.alibaba.com #8100
+
+10.20.136.195  svn.alibaba-inc.com
+10.20.159.20   dzone.alibaba-inc.com
+172.22.58.234   buc.vip.xyi.cn.alidc.net buc.alibaba-inc.com

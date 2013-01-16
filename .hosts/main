@@ -42,7 +42,7 @@
 #style
 #10.20.141.5 style.china.alibaba.com #80
 #10.16.24.23 style.china.alibaba.com
-10.20.172.53 style.china.alibaba.com
+10.20.141.162 style.china.alibaba.com  style.c.aliimg.com
 #10.20.141.141 style.china.alibaba.com
 #memberweb
 10.20.141.88 member-test.china.alibaba.com #54200
@@ -56,6 +56,7 @@
 #10.20.172.22    rate-test.china.alibaba.com
 #10.20.156.66    rate-test.china.alibaba.com
 10.20.141.167 rate-test.china.alibaba.com
+#10.20.172.12
 10.20.172.12 lhxsell.cn.alibaba.com xumm.cn.alibaba.com 
 10.20.172.37    picman-test.china.alibaba.com
 #rcc
@@ -71,7 +72,7 @@
 #gonglue
 10.20.172.37    gonglue-test.china.alibaba.com #18002
 #laputa
-10.20.172.14    laputa-test.china.alibaba.com indetail.china.alibaba.com detail.china.alibaba.com detailpreview.china.alibaba.com #53100
+10.20.172.41    laputa-test.china.alibaba.com indetail.china.alibaba.com detail.china.alibaba.com detailpreview.china.alibaba.com #53100
 #themis
 10.20.141.160 themis-test.china.alibaba.com #6100
 #aop_app
@@ -143,9 +144,9 @@
 #work
 10.20.172.32    work-test.china.alibaba.com menu-test.china.alibaba.com #25100
 #athena
-#10.20.141.166   test.athena.china.alibaba.com
+10.20.141.166   test.athena.china.alibaba.com
 #10.20.141.158 test.athena.china.alibaba.com
-10.16.24.39 test.athena.china.alibaba.com
+#10.16.24.39 test.athena.china.alibaba.com
 
 #10.16.24.39 test.athena.china.alibaba.com
 #vaspool
@@ -156,11 +157,11 @@
 #tpbops
 10.20.141.164   tpbops-test.b2b.alibaba-inc.com #65100
 #trading
-10.16.24.39    trading-test.china.alibaba.com #9100
-#10.20.172.42   trading-test.china.alibaba.com #9100
+#10.16.24.39    trading-test.china.alibaba.com #9100
+10.20.172.42   trading-test.china.alibaba.com #9100
 #cambell
-10.20.172.45    e56-test.china.alibaba.com    tradeconfig-test.china.alibaba.com #57100
-#10.16.24.39    e56-test.china.alibaba.com    tradeconfig-test.china.alibaba.com #57100
+#10.20.172.45    e56-test.china.alibaba.com    tradeconfig-test.china.alibaba.com #57100
+10.16.24.39    e56-test.china.alibaba.com    tradeconfig-test.china.alibaba.com #57100
 #tradebops
 10.20.172.32    tradebops-test.alibaba-inc.com #32100
 #luna
@@ -282,7 +283,7 @@
 10.20.159.71    partnercobar-perf.china.alibaba.com     #8066
 
 10.20.172.12 xsptest65.cn.alibaba.com
-10.16.24.39 purchase-test.china.alibaba.com
+10.20.172.45 purchase-test.china.alibaba.com
 10.16.24.39 order.china.alibaba.com
 
 10.232.16.30 diamondserver.tbsite.net
