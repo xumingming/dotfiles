@@ -1,3 +1,16 @@
+;; emacs 24 does not have this function
+;; so we define it ourself
+(defun plist-to-alist (the-plist)
+  (defun get-tuple-from-plist (the-plist)
+    (when the-plist
+      (cons (car the-plist) (cadr the-plist))))
+
+  (let ((alist '()))
+    (while the-plist
+      (add-to-list 'alist (get-tuple-from-plist the-plist))
+      (setq the-plist (cddr the-plist)))
+  alist))
+
 ;; encoding settings
 (set-language-environment 'utf-8)
 (set-keyboard-coding-system 'utf-8)
@@ -13,7 +26,9 @@
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/weibo.emacs"))
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/emacs-color-theme-solarized"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/erc-hl-nicks"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/powerline"))
+;;(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/emacs-color-theme-solarized"))
 
 ; hook
 (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
@@ -31,8 +46,22 @@
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 
 (require 'color-theme)
-(require 'color-theme-solarized)
-(color-theme-solarized-dark)
+;;(color-theme-montz)
+;;(color-theme-xp)
+;;(color-theme-rotor)
+;;(color-theme-gnome2)
+;;(color-theme-marine)
+
+;; GOOD
+;;(color-theme-andreas)
+
+;;(color-theme-katester)
+;;(color-theme-high-contrast)
+(color-theme-vim-colors)
+
+;; this one is yellow!
+;;(color-theme-wheat)
+
 
 (require 'auto-complete-config)
 (ac-config-default)
@@ -112,7 +141,7 @@
       '("~/.emacs.d/snippets/clojure-mode"))
 
 ;; set font size
-(set-default-font "Monaco-14")
+(set-default-font "Monaco-12")
 
 ;; ====  kibit related config BEGIN ====
 ;; Teach compile the syntax of the kibit output
@@ -200,3 +229,10 @@ Display the results in a hyperlinked *compilation* buffer."
       mac-command-key-is-meta t
       mac-command-modifier 'meta
       mac-option-modifier 'none)
+
+;; ERC hightlight nicks
+(require 'erc-hl-nicks)
+
+;; powerline
+(require 'powerline)
+(powerline-default)
