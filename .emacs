@@ -239,3 +239,7 @@ Display the results in a hyperlinked *compilation* buffer."
 ;; powerline
 (require 'powerline)
 (powerline-default)
+
+;; column highlight
+(require 'col-highlight)
+(column-highlight-mode 1)
