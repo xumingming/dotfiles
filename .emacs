@@ -57,7 +57,10 @@
 
 ;;(color-theme-katester)
 ;;(color-theme-high-contrast)
-(color-theme-vim-colors)
+;;(color-theme-vim-colors)
+;;(color-theme-charcoal-black)
+;;(color-theme-tty-dark)
+(color-theme-wheat)
 
 ;; this one is yellow!
 ;;(color-theme-wheat)
@@ -141,7 +144,7 @@
       '("~/.emacs.d/snippets/clojure-mode"))
 
 ;; set font size
-(set-default-font "Monaco-12")
+(set-default-font "Monaco-14")
 
 ;; ====  kibit related config BEGIN ====
 ;; Teach compile the syntax of the kibit output
