@@ -10,7 +10,7 @@ hosts() {
             ls)
                /bin/ls $hostsdir;;
             edit)
-               emacs $hostsdir/$2
+               vim $hostsdir/$2
                hosts $2;;
             cat)
                cat $hostsdir/$2;;
