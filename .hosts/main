@@ -123,6 +123,7 @@
 10.20.172.12 *.cn.alibaba.com
 10.20.172.12 autotest3204.cn.alibaba.com autotest3205.cn.alibaba.com autotest3206.cn.alibaba.com autotest3207.cn.alibaba.com
 10.20.172.12 autotest3208.cn.alibaba.com autotest3209.cn.alibaba.com autotest3210.cn.alibaba.com
+10.20.172.12 zwjwpjiaoyi0003.cn.alibaba.com
 10.20.172.12 autotest3249.cn.alibaba.com
 10.20.172.12 autotest3193.cn.alibaba.com autotest3192.cn.alibaba.com
 10.20.172.12 autotest3459.cn.alibaba.com autotest3460.cn.alibaba.com
@@ -283,7 +284,8 @@
 10.20.159.71    partnercobar-perf.china.alibaba.com     #8066
 
 10.20.172.12 xsptest65.cn.alibaba.com
-10.20.172.45 purchase-test.china.alibaba.com
+#10.20.172.45 purchase-test.china.alibaba.com
+10.16.24.39  purchase-test.china.alibaba.com
 10.16.24.39 order.china.alibaba.com
 
 10.232.16.30 diamondserver.tbsite.net
