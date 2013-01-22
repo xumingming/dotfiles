@@ -60,7 +60,7 @@
 ;;(color-theme-vim-colors)
 ;;(color-theme-charcoal-black)
 ;;(color-theme-tty-dark)
-(color-theme-wheat)
+(color-theme-taming-mr-arneson)
 
 ;; this one is yellow!
 ;;(color-theme-wheat)
@@ -241,5 +241,6 @@ Display the results in a hyperlinked *compilation* buffer."
 (powerline-default)
 
 ;; column highlight
-(require 'col-highlight)
-(column-highlight-mode 1)
+;;(require 'col-highlight)
+;;(column-highlight-mode 1)
+
