@@ -45,25 +45,12 @@
   (package-initialize))
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 
-(require 'color-theme)
-;;(color-theme-montz)
-;;(color-theme-xp)
-;;(color-theme-rotor)
-;;(color-theme-gnome2)
-;;(color-theme-marine)
+;; for emacs23
+;;(require 'color-theme)
+;;(color-theme-euphoria)
 
-;; GOOD
-;;(color-theme-andreas)
-
-;;(color-theme-katester)
-;;(color-theme-high-contrast)
-;;(color-theme-vim-colors)
-;;(color-theme-charcoal-black)
-;;(color-theme-tty-dark)
-(color-theme-taming-mr-arneson)
-
-;; this one is yellow!
-;;(color-theme-wheat)
+;; for emacs24
+(load-theme 'misterioso)
 
 
 (require 'auto-complete-config)
@@ -244,3 +231,8 @@ Display the results in a hyperlinked *compilation* buffer."
 ;;(require 'col-highlight)
 ;;(column-highlight-mode 1)
 
+;; show bookmarks at startup
+(setq inhibit-splash-screen t)
+(require 'bookmark)
+(bookmark-bmenu-list)
+(switch-to-buffer "*Bookmark List*")
