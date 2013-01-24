@@ -1,0 +1,25 @@
+;;;; Emacs Bookmark Format Version 1 ;;;;
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+((".emacs"
+ (filename . "~/local/svn/dotfiles/.emacs")
+ (front-context-string . ";; emacs 24 does")
+ (rear-context-string)
+ (position . 1))
+("schedule.org"
+ (filename . "~/Documents/schedule.org")
+ (front-context-string)
+ (rear-context-string)
+ (position . 1))
+("Ok.java"
+ (filename . "~/local/svn/ali-camelbell-switch-alisession/camelbell_1/web/home/src/java/com/alibaba/china/camelbell/web/home/module/screen/Ok.java")
+ (front-context-string . "/*\n * Copyright ")
+ (rear-context-string)
+ (position . 1))
+("blindreader"
+ (filename . "~/local/svn/blind/src/blind/reader.clj")
+ (front-context-string . "  \"Checks whethe")
+ (rear-context-string . "number-literal?\n")
+ (position . 5036))
+)
