@@ -44,3 +44,5 @@ fi
 . ~/local/svn/dotfiles/.functions
 . ~/local/svn/dotfiles/.ps1
 . ~/local/svn/dotfiles/.exports
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
