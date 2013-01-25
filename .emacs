@@ -29,7 +29,6 @@
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/erc-hl-nicks"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/powerline"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/undo-tree"))
-;;(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/emacs-color-theme-solarized"))
 
 ; hook
 (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
