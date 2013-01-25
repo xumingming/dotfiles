@@ -32,7 +32,6 @@
 
 ; hook
 (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
-;;(global-linum-mode)
 
 ;;; This was installed by package-install.el.
 ;;; This provides support for the package system and
@@ -70,9 +69,6 @@
             (let (font-lock-mode)
               (clojure-mode-font-lock-setup))))
 
-;; change the "Mark Set" command to use Ctrl+x M
-(define-key global-map "\C-xm" 'set-mark-command)
-
 ;; put the backup file in seperate folder
 (setq
    backup-by-copying t      ; don't clobber symlinks
@@ -89,10 +85,6 @@
 (autoload 'window-number-meta-mode "window-number" "..." t)
 (window-number-mode 1)
 (window-number-meta-mode 1)
-
-;; enable winner-mode
-(when (fboundp 'winner-mode)
-      (winner-mode 1))
 
 ;; disable the line-wrap character
 ;; http://emacswiki.org/emacs/LineWrap
