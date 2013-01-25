@@ -28,6 +28,7 @@
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/weibo.emacs"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/erc-hl-nicks"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/powerline"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/undo-tree"))
 ;;(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/emacs-color-theme-solarized"))
 
 ; hook
@@ -255,3 +256,14 @@ Display the results in a hyperlinked *compilation* buffer."
        (list (region-beginning) (region-end))
      (progn
        (list (line-beginning-position) (line-beginning-position 2)) ) ) ))
+
+;; enable electric-pair-mode by default
+(electric-pair-mode)
+
+;; undo-tree
+(require 'undo-tree)
+(global-undo-tree-mode 1)
+(defalias 'redo 'undo-tree)
+(global-set-key (kbd "C-z") 'undo)
+(global-set-key (kbd "C-S-z") 'redo)
+
