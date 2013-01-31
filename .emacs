@@ -123,7 +123,10 @@
       '("~/.emacs.d/snippets/clojure-mode"))
 
 ;; set font size
-(set-default-font "Monaco-14")
+(if (string= system-type "darwin")
+  (set-default-font "Monaco-14")
+  (set-default-font "Ubuntu Mono-13"))
+
 
 ;; ====  kibit related config BEGIN ====
 ;; Teach compile the syntax of the kibit output
