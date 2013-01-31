@@ -14,8 +14,7 @@ setup_link() {
     fi
 }
 
-setup_link ".lein/profiles.clj"
+setup_link ".bashrc"
 setup_link ".emacs"
 setup_link ".emacs.d"
-
-
+setup_link ".lein/profiles.clj"
