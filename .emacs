@@ -261,3 +261,6 @@ Display the results in a hyperlinked *compilation* buffer."
 (global-set-key (kbd "C-z") 'undo)
 (global-set-key (kbd "C-S-z") 'redo)
 
+;; bind C-o to imenu for clojure/java mode
+(global-set-key (kbd "C-o") 'imenu)
+

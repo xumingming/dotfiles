@@ -2,7 +2,12 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-((".emacs"
+(("clojail-core"
+ (filename . "~/local/svn/clojail/src/clojail/core.clj")
+ (front-context-string . "(ns clojail.core")
+ (rear-context-string)
+ (position . 1))
+(".emacs"
  (filename . "~/local/svn/dotfiles/.emacs")
  (front-context-string . ";; emacs 24 does")
  (rear-context-string)
