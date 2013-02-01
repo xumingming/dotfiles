@@ -23,15 +23,16 @@
             '(euc-cn . euc-cn))
 (setq-default pathname-coding-system 'utf-8)
 
-
+;; setup load-path
 (add-to-list 'load-path (expand-file-name "~/.emacs.d"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/weibo.emacs"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/erc-hl-nicks"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/powerline"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/undo-tree"))
 
-; hook
-(add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
+
+
 
 ;;; This was installed by package-install.el.
 ;;; This provides support for the package system and
@@ -44,30 +45,32 @@
   (package-initialize))
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 
-;; for emacs23
-;;(require 'color-theme)
-;;(color-theme-euphoria)
-
-;; for emacs24
+;; color-theme
 (load-theme 'misterioso)
 
-
+;; auto-complete
 (require 'auto-complete-config)
 (ac-config-default)
-
-(require 'ac-slime)
-(add-hook 'slime-mode-hook 'set-up-slime-ac)
-(add-hook 'slime-repl-mode-hook 'set-up-slime-ac)
-(add-hook 'clojure-mode-hook (lambda () (paredit-mode +1)))
 (eval-after-load "auto-complete" '(add-to-list 'ac-modes 'slime-repl-mode))
-(add-hook 'slime-mode-hook 'set-up-slime-ac)
+
+
+;; hooks
+;; enable rainbow
+(add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
+;; enable paredit
+(add-hook 'clojure-mode-hook (lambda () (paredit-mode +1)))
+
+;;(require 'ac-slime)
+;;(add-hook 'slime-mode-hook 'set-up-slime-ac)
+;;(add-hook 'slime-repl-mode-hook 'set-up-slime-ac)
+;;(add-hook 'slime-mode-hook 'set-up-slime-ac)
 
 ;; slime-repl syntax highlight
-(add-hook 'slime-repl-mode-hook
-          (defun clojure-mode-slime-font-lock ()
-            (require 'clojure-mode)
-            (let (font-lock-mode)
-              (clojure-mode-font-lock-setup))))
+;;(add-hook 'slime-repl-mode-hook
+;;          (defun clojure-mode-slime-font-lock ()
+;;            (require 'clojure-mode)
+;;            (let (font-lock-mode)
+;;              (clojure-mode-font-lock-setup))))
 
 ;; put the backup file in seperate folder
 (setq
@@ -270,3 +273,7 @@ Display the results in a hyperlinked *compilation* buffer."
 ;; auto-join channels
 (setq erc-autojoin-channels-alist
       '(("freenode.net" "#emacs" "#clojure")))
+
+
+;; refheap
+(require 'refheap)
