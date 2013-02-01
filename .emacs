@@ -264,3 +264,9 @@ Display the results in a hyperlinked *compilation* buffer."
 ;; bind C-o to imenu for clojure/java mode
 (global-set-key (kbd "C-o") 'imenu)
 
+;; erc config
+;; auto connect to freenode.net
+(erc :server "irc.freenode.net" :port 6667 :nick "xumingmingv")
+;; auto-join channels
+(setq erc-autojoin-channels-alist
+      '(("freenode.net" "#emacs" "#clojure")))
