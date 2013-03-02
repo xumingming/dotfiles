@@ -269,10 +269,10 @@ Display the results in a hyperlinked *compilation* buffer."
 
 ;; erc config
 ;; auto connect to freenode.net
-(erc :server "irc.freenode.net" :port 6667 :nick "xumingmingv")
+;;(erc :server "irc.freenode.net" :port 6667 :nick "xumingmingv")
 ;; auto-join channels
-(setq erc-autojoin-channels-alist
-      '(("freenode.net" "#emacs" "#clojure")))
+;;(setq erc-autojoin-channels-alist
+;;      '(("freenode.net" "#emacs" "#clojure")))
 
 
 ;; refheap
