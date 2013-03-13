@@ -25,3 +25,4 @@ export PATH=$PATH:$ZK_HOME/bin:$BOOST_HOME
 export CLASSPATH=$CLASSPATH:~/local/svn/clj.debug/src/
 export DISPLAY=:0.0
 export MAIN_HOST=10.16.24.39
+export PAGER="most -s"
