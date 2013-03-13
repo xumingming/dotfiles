@@ -19,4 +19,6 @@ setup_link ".emacs"
 setup_link ".emacs.d"
 setup_link ".lein/profiles.clj"
 setup_link ".ssh/config"
+setup_link ".tmux.conf"
+
 
