@@ -24,7 +24,7 @@ hosts() {
 }
 
 ssh_to_main() {
-    ssh james@$MAIN_HOST
+    ssh james@10.16.24.46
 }
 alias stm=ssh_to_main
 
