@@ -277,3 +277,9 @@ Display the results in a hyperlinked *compilation* buffer."
 
 ;; refheap
 (require 'refheap)
+
+
+;; for ritz
+(add-hook 'nrepl-interaction-mode-hook 'my-nrepl-mode-setup)
+(defun my-nrepl-mode-setup ()
+  (require 'nrepl-ritz))
