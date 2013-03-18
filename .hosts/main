@@ -73,7 +73,8 @@
 #gonglue
 10.20.172.37    gonglue-test.china.alibaba.com #18002
 #laputa
-10.20.172.41    laputa-test.china.alibaba.com indetail.china.alibaba.com detail.china.alibaba.com detailpreview.china.alibaba.com #53100
+#10.20.172.14    laputa-test.china.alibaba.com indetail.china.alibaba.com detail.china.alibaba.com detail-test.china.alibaba.com detailpreview.china.alibaba.com #53100
+10.20.141.58 laputa-test.china.alibaba.com indetail.china.alibaba.com detail.china.alibaba.com detail-test.china.alibaba.com detailpreview.china.alibaba.com #53100
 #themis
 10.20.141.160 themis-test.china.alibaba.com #6100
 #aop_app
@@ -138,7 +139,7 @@
 10.20.172.42    info-test.china.alibaba.com bops-test.info.china.alibaba.com
 10.20.172.37    open-test.info.china.alibaba.com
 #exodus2
-10.20.172.72    china.alibaba.com exodus2.china.alibaba.com upload.china.alibaba.com redirect.china.alibaba.com #2100
+10.20.141.57    china.alibaba.com exodus2.china.alibaba.com upload.china.alibaba.com redirect.china.alibaba.com #2100
 10.20.172.2 partner-test.china.alibaba.com #54100
 10.20.141.87    gene-test.china.alibaba.com spu-test.china.alibaba.com #
 10.20.141.54   xtool-test.alibaba-inc.com #
@@ -148,9 +149,9 @@
 #athena
 10.20.141.166   test.athena.china.alibaba.com
 #10.20.141.158 test.athena.china.alibaba.com
-#10.16.24.39 test.athena.china.alibaba.com
+#10.16.24.46 test.athena.china.alibaba.com
 
-#10.16.24.39 test.athena.china.alibaba.com
+#10.16.24.46 test.athena.china.alibaba.com
 #vaspool
 10.20.141.52    vas-test.china.alibaba.com #24100
 #vasbops
@@ -159,15 +160,17 @@
 #tpbops
 10.20.141.164   tpbops-test.b2b.alibaba-inc.com #65100
 #trading
-10.16.24.39    trading-test.china.alibaba.com #9100
+10.16.24.46    trading-test.china.alibaba.com #9100
 #10.20.172.42   trading-test.china.alibaba.com #9100
 #cambell
 10.20.172.45    e56-test.china.alibaba.com    tradeconfig-test.china.alibaba.com #57106
-#10.16.24.39    e56-test.china.alibaba.com    tradeconfig-test.china.alibaba.com #57100
+#10.16.24.46    e56-test.china.alibaba.com    tradeconfig-test.china.alibaba.com #57100
 #tradebops
 10.20.172.32    tradebops-test.alibaba-inc.com #32100
 #luna
-10.16.24.39    luna-test.china.alibaba.com #37100
+10.16.24.46    luna-test.china.alibaba.com #37100
+#10.16.24.7 luna-test.china.alibaba.com
+
 10.20.141.102   bizmail.china.alibaba.com
 #cnlogin
 10.20.172.7 loginchina-test.alibaba.com   pass.pass-test.alibaba.com b2bsync.daily.taobao.net  # http 3100 https 3300
@@ -284,11 +287,11 @@
 10.20.159.85    offercobar-perf.china.alibaba.com       #8066
 10.20.159.71    partnercobar-perf.china.alibaba.com     #8066
 
-10.20.172.12 xsptest65.cn.alibaba.com zwjwpjiaoyi0003.cn.alibaba.com
+10.20.172.12 lhxsell.vip.china.alibaba.com shop1361434508078.cn.alibaba.com xinbawutest67.cn.alibaba.com xsptest65.cn.alibaba.com zwjwpjiaoyi0003.cn.alibaba.com
 #10.20.172.45 purchase-test.china.alibaba.com
-10.16.24.39  purchase-test.china.alibaba.com
+10.16.24.46  purchase-test.china.alibaba.com
 #10.20.141.2  purchase-test.china.alibaba.com
-10.16.24.39 order.china.alibaba.com
+10.16.24.46 order.china.alibaba.com
 
 10.232.16.30 diamondserver.tbsite.net
 10.232.16.30 commonconfig.config-host.taobao.com
