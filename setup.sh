@@ -4,7 +4,7 @@
 # Setup the specified soft link
 setup_link() {
     path=$1
-    from_path=~/local/svn/dotfiles/$path
+    from_path=~/local/self/dotfiles/$path
     to_path=~/$path
     if [ ! -d $to_path -a ! -f $to_path ]; then
         /bin/ln -s $from_path $to_path

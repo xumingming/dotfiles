@@ -283,3 +283,9 @@ Display the results in a hyperlinked *compilation* buffer."
 (add-hook 'nrepl-interaction-mode-hook 'my-nrepl-mode-setup)
 (defun my-nrepl-mode-setup ()
   (require 'nrepl-ritz))
+
+;; map C-x C-b to ido-switch-buffer
+(global-set-key (kbd "C-x C-b") 'ido-switch-buffer)
+
+;; map C-x C-g to magit-status
+(global-set-key (kbd "C-x C-g") 'magit-status)

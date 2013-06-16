@@ -24,4 +24,3 @@ export BOOST_HOME=~/local/svn/boost
 export PATH=$PATH:$ZK_HOME/bin:$BOOST_HOME
 export CLASSPATH=$CLASSPATH:~/local/svn/clj.debug/src/
 export DISPLAY=:0.0
-export PAGER="most -s"
