@@ -41,8 +41,8 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
-. ~/local/svn/dotfiles/.functions
-. ~/local/svn/dotfiles/.ps1
-. ~/local/svn/dotfiles/.exports
+. ~/local/self/dotfiles/.functions
+. ~/local/self/dotfiles/.ps1
+. ~/local/self/dotfiles/.exports
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
