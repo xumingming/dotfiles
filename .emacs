@@ -289,3 +289,6 @@ Display the results in a hyperlinked *compilation* buffer."
 
 ;; map C-x C-g to magit-status
 (global-set-key (kbd "C-x C-g") 'magit-status)
+
+;; enable html-mode when open *.vm files
+(add-to-list 'auto-mode-alist '("\\.vm$" . html-mode))
