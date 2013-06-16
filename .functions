@@ -6,7 +6,7 @@ femacs() {
 }
 
 switch-m2-settings() {
-  cp ~/local/svn/dotfiles/.m2settings/settings-$1.xml ~/.m2/settings.xml
+  cp ~/local/self/dotfiles/.m2settings/settings-$1.xml ~/.m2/settings.xml
 }
 
 jkill() {
