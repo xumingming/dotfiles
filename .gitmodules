@@ -1,0 +1,3 @@
+[submodule ".emacs.d/vendor/nrepl.el"]
+	path = .emacs.d/vendor/nrepl.el
+	url = https://github.com/kingtim/nrepl.el.git
