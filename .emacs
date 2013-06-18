@@ -30,6 +30,7 @@
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/erc-hl-nicks"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/powerline"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/undo-tree"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/nrepl.el"))
 
 
 
