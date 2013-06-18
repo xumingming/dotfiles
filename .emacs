@@ -279,12 +279,6 @@ Display the results in a hyperlinked *compilation* buffer."
 ;; refheap
 (require 'refheap)
 
-
-;; for ritz
-(add-hook 'nrepl-interaction-mode-hook 'my-nrepl-mode-setup)
-(defun my-nrepl-mode-setup ()
-  (require 'nrepl-ritz))
-
 ;; map C-x C-b to ido-switch-buffer
 (global-set-key (kbd "C-x C-b") 'ido-switch-buffer)
 
@@ -293,3 +287,5 @@ Display the results in a hyperlinked *compilation* buffer."
 
 ;; enable html-mode when open *.vm files
 (add-to-list 'auto-mode-alist '("\\.vm$" . html-mode))
+
+(global-hl-line-mode)
