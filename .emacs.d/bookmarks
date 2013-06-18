@@ -8,7 +8,7 @@
  (rear-context-string)
  (position . 1))
 (".emacs"
- (filename . "~/local/svn/dotfiles/.emacs")
+ (filename . "~/local/self/dotfiles/.emacs")
  (front-context-string . ";; emacs 24 does")
  (rear-context-string)
  (position . 1))
