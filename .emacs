@@ -289,3 +289,7 @@ Display the results in a hyperlinked *compilation* buffer."
 (add-to-list 'auto-mode-alist '("\\.vm$" . html-mode))
 
 (global-hl-line-mode)
+
+;; window manager keys
+;; C-x r w <register-name> : save current window configuration into the register
+;; C-x r j <register-name> : restore the window configuration from the register
