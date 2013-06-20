@@ -129,6 +129,7 @@
 ;; set font size
 (if (string= system-type "darwin")
   (set-default-font "Monaco-14")
+  (set-default-face "default")
   (set-default-font "Ubuntu Mono-13"))
 
 
@@ -266,7 +267,7 @@ Display the results in a hyperlinked *compilation* buffer."
 (global-set-key (kbd "C-S-z") 'redo)
 
 ;; bind C-o to imenu for clojure/java mode
-(global-set-key (kbd "C-o") 'imenu)
+(global-set-key (kbd "M-o") 'imenu)
 
 ;; erc config
 ;; auto connect to freenode.net
