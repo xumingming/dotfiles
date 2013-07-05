@@ -289,7 +289,7 @@ Display the results in a hyperlinked *compilation* buffer."
 ;; enable html-mode when open *.vm files
 (add-to-list 'auto-mode-alist '("\\.vm$" . html-mode))
 
-(global-hl-line-mode)
+;; (global-hl-line-mode)
 
 ;; window manager keys
 ;; C-x r w <register-name> : save current window configuration into the register
