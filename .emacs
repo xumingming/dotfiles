@@ -47,7 +47,7 @@
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 
 ;; color-theme
-(load-theme 'misterioso)
+(load-theme 'wombat)
 
 ;; auto-complete
 (require 'auto-complete-config)
