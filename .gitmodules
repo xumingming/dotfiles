@@ -1,3 +1,6 @@
 [submodule ".emacs.d/vendor/nrepl.el"]
 	path = .emacs.d/vendor/nrepl.el
 	url = https://github.com/kingtim/nrepl.el.git
+[submodule ".emacs.d/vendor/projectile"]
+	path = .emacs.d/vendor/projectile
+	url = https://github.com/bbatsov/projectile.git
