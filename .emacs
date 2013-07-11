@@ -304,3 +304,5 @@ Display the results in a hyperlinked *compilation* buffer."
 (require 'projectile)
 (projectile-global-mode)
 
+;; hide toolbar
+(tool-bar-mode -1)
