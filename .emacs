@@ -31,6 +31,7 @@
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/powerline"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/undo-tree"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/nrepl.el"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/projectile"))
 
 
 
@@ -297,3 +298,9 @@ Display the results in a hyperlinked *compilation* buffer."
 
 ;; bound pop-tag-mark to M-,
 (global-set-key (kbd "M-,") 'pop-tag-mark)
+
+
+;; enable projectile globally
+(require 'projectile)
+(projectile-global-mode)
+
