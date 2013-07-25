@@ -32,7 +32,7 @@
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/undo-tree"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/nrepl.el"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/projectile"))
-
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/hy-mode"))
 
 
 
@@ -48,7 +48,9 @@
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 
 ;; color-theme
-(load-theme 'wombat)
+;;(load-theme 'wombat)
+;;(load-theme 'tsdh-dark)
+(load-theme 'misterioso)
 
 ;; auto-complete
 (require 'auto-complete-config)
@@ -61,6 +63,7 @@
 (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
 ;; enable paredit
 (add-hook 'clojure-mode-hook (lambda () (paredit-mode +1)))
+(add-hook 'hy-mode-hook (lambda () (paredit-mode +1)))
 
 ;;(require 'ac-slime)
 ;;(add-hook 'slime-mode-hook 'set-up-slime-ac)
@@ -306,3 +309,6 @@ Display the results in a hyperlinked *compilation* buffer."
 
 ;; hide toolbar
 (tool-bar-mode -1)
+
+;; hy-mode
+(require 'hy-mode)

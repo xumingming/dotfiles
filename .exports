@@ -15,12 +15,18 @@ if [ -d $HOME/bin ]; then
 fi
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
-export PATH=$PATH:/opt/local/bin
+
 export JAVA_HOME=/usr/alibaba/java
 export JAVA_OPTS="-Dfile.encoding=utf-8"
 
 export ZK_HOME=/usr/local/zookeeper
 export BOOST_HOME=~/local/svn/boost
-export PATH=$PATH:$ZK_HOME/bin:$BOOST_HOME
 export CLASSPATH=$CLASSPATH:~/local/svn/clj.debug/src/
 export DISPLAY=:0.0
+export ORACLE_HOME=/usr/alibaba/oracle
+export JBOSS_HOME=/usr/alibaba/alipay-jboss
+export CLOJURESCRIPT_HOME=$HOME/local/self/clojurescript
+export ANTX_HOME=/usr/alibaba/antx
+export CLOUDENGINE_HOME=/usr/alibaba/cloudengine-3.1.7
+
+export PATH=$PATH:/opt/local/bin:$ZK_HOME/bin:$BOOST_HOME:$CLOJURESCRIPT_HOME/bin:$ANTX_HOME/bin

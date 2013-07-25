@@ -15,6 +15,7 @@ setup_link() {
 }
 
 setup_link ".bashrc"
+setup_link ".zshrc"
 setup_link ".emacs"
 setup_link ".emacs.d"
 setup_link ".lein/profiles.clj"

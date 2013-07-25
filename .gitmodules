@@ -4,3 +4,6 @@
 [submodule ".emacs.d/vendor/projectile"]
 	path = .emacs.d/vendor/projectile
 	url = https://github.com/bbatsov/projectile.git
+[submodule ".emacs.d/vendor/hy-mode"]
+	path = .emacs.d/vendor/hy-mode
+	url = https://github.com/hylang/hy-mode.git
