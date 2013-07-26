@@ -50,7 +50,9 @@
 ;; color-theme
 ;;(load-theme 'wombat)
 ;;(load-theme 'tsdh-dark)
-(load-theme 'misterioso)
+;;(load-theme 'misterioso)
+(load-theme 'tsdh-light)
+(load-theme 'dichromacy)
 
 ;; auto-complete
 (require 'auto-complete-config)
