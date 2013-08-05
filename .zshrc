@@ -44,5 +44,5 @@ plugins=(git svn autojump)
 
 source $ZSH/oh-my-zsh.sh
 
-. ~/local/self/dotfiles/.functions
-. ~/local/self/dotfiles/.exports
+source ~/local/self/dotfiles/.functions
+source ~/local/self/dotfiles/.exports
