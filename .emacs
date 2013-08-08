@@ -26,6 +26,7 @@
 ;; setup load-path
 (add-to-list 'load-path (expand-file-name "~/.emacs.d"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/go-autocomplete.el"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/weibo.emacs"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/erc-hl-nicks"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/powerline"))
@@ -33,7 +34,6 @@
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/nrepl.el"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/projectile"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/hy-mode"))
-
 
 
 ;;; This was installed by package-install.el.
@@ -48,11 +48,11 @@
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 
 ;; color-theme
-;;(load-theme 'wombat)
+(load-theme 'wombat)
 ;;(load-theme 'tsdh-dark)
 ;;(load-theme 'misterioso)
-(load-theme 'tsdh-light)
-(load-theme 'dichromacy)
+;;(load-theme 'tsdh-light)
+;;(load-theme 'dichromacy)
 
 ;; auto-complete
 (require 'auto-complete-config)
@@ -66,6 +66,7 @@
 ;; enable paredit
 (add-hook 'clojure-mode-hook (lambda () (paredit-mode +1)))
 (add-hook 'hy-mode-hook (lambda () (paredit-mode +1)))
+(add-hook 'go-mode-hook (lambda () (paredit-mode +1)))
 
 ;;(require 'ac-slime)
 ;;(add-hook 'slime-mode-hook 'set-up-slime-ac)
@@ -118,7 +119,7 @@
 ;;(add-hook 'before-save-hook (lambda () (delete-trailing-whitespace)))
 
 ;; spaces instead of tabs
-(setq-default indent-tabs-mode nil)
+;;(setq-default indent-tabs-mode nil)
 
 ;; if there is a tab, make it size of 4 spaces
 (setq-default tab-width 4)
@@ -271,6 +272,7 @@ Display the results in a hyperlinked *compilation* buffer."
 (defalias 'redo 'undo-tree)
 (global-set-key (kbd "C-z") 'undo)
 (global-set-key (kbd "C-S-z") 'redo)
+(global-set-key (kbd "TAB") 'auto-complete)
 
 ;; bind C-o to imenu for clojure/java mode
 (global-set-key (kbd "M-o") 'imenu)
@@ -314,3 +316,16 @@ Display the results in a hyperlinked *compilation* buffer."
 
 ;; hy-mode
 (require 'hy-mode)
+
+;; golang's autocompletion
+(require 'go-autocomplete)
+
+;; set PATH
+(setenv "GOPATH" "/Users/xumingmingv/local/self/go")
+
+(setenv "PATH"
+  (concat
+   (getenv "GOPATH") "/bin:"
+   (getenv "PATH")
+  )
+)
