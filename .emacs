@@ -129,9 +129,11 @@
 (add-to-list 'load-path
               "~/.emacs.d/vendor/yasnippet")
 (require 'yasnippet)
-;;(yas-global-mode 1)
+(yas-global-mode 1)
 (setq yas-snippet-dirs
-      '("~/.emacs.d/snippets/clojure-mode"))
+  '("/Users/xumingmingv/local/self/dotfiles/.emacs.d/snippets/clojure-mode"
+    "/Users/xumingmingv/local/self/dotfiles/.emacs.d/snippets/go-mode"
+    ))
 
 ;; set font size
 (if (string= system-type "darwin")
@@ -272,7 +274,8 @@ Display the results in a hyperlinked *compilation* buffer."
 (defalias 'redo 'undo-tree)
 (global-set-key (kbd "C-z") 'undo)
 (global-set-key (kbd "C-S-z") 'redo)
-(global-set-key (kbd "TAB") 'auto-complete)
+(global-set-key (kbd "M-/") 'auto-complete)
+(global-set-key (kbd "TAB") 'yas-expand)
 
 ;; bind C-o to imenu for clojure/java mode
 (global-set-key (kbd "M-o") 'imenu)
