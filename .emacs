@@ -322,6 +322,8 @@ Display the results in a hyperlinked *compilation* buffer."
 
 ;; golang's autocompletion
 (require 'go-autocomplete)
+;; format go code before save
+(add-hook 'before-save-hook 'gofmt-before-save)
 
 ;; set PATH
 (setenv "GOPATH" "/Users/xumingmingv/local/self/go")
