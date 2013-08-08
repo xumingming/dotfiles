@@ -28,5 +28,5 @@ export JBOSS_HOME=/usr/alibaba/alipay-jboss
 export CLOJURESCRIPT_HOME=$HOME/local/self/clojurescript
 export ANTX_HOME=/usr/alibaba/antx
 export CLOUDENGINE_HOME=/usr/alibaba/cloudengine-3.1.7
-
-export PATH=$PATH:/opt/local/bin:$ZK_HOME/bin:$BOOST_HOME:$CLOJURESCRIPT_HOME/bin:$ANTX_HOME/bin
+export GOPATH=$HOME/local/self/go
+export PATH=$PATH:/opt/local/bin:$ZK_HOME/bin:$BOOST_HOME:$CLOJURESCRIPT_HOME/bin:$ANTX_HOME/bin:$GOPATH/bin
