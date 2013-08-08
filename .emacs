@@ -34,6 +34,7 @@
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/nrepl.el"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/projectile"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/hy-mode"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/go-mode.el"))
 
 
 ;;; This was installed by package-install.el.
@@ -322,6 +323,7 @@ Display the results in a hyperlinked *compilation* buffer."
 
 ;; golang's autocompletion
 (require 'go-autocomplete)
+(require 'go-mode)
 ;; format go code before save
 (add-hook 'before-save-hook 'gofmt-before-save)
 
