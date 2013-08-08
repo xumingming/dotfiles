@@ -2,7 +2,12 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("core.clj"
+(("main.go"
+ (filename . "~/local/self/go/src/hello/main.go")
+ (front-context-string . "package main\n\nim")
+ (rear-context-string)
+ (position . 1))
+("core.clj"
  (filename . "~/local/self/stm/src/stm/core.clj")
  (front-context-string . "(ns stm.core)\n\n;")
  (rear-context-string)
