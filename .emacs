@@ -106,6 +106,9 @@
 (ido-mode t)
 (setq ido-enable-flex-matching t) ; fuzzy matching is a must have
 (setq ido-enable-last-directory-history nil) ; forget latest selected directory names
+(require 'flx-ido)
+(flx-ido-mode 1)
+(setq ido-use-faces nil)
 
 ;; Dont show startup screen
 (setq inhibit-startup-message t)
@@ -314,6 +317,10 @@ Display the results in a hyperlinked *compilation* buffer."
 ;; enable projectile globally
 (require 'projectile)
 (projectile-global-mode)
+;; use native indexing method -- to enable .projectile ignore files
+(setq projectile-use-native-indexing t)
+;; enable projectile caching
+(setq projectile-enable-caching t)
 
 ;; hide toolbar
 (tool-bar-mode -1)
@@ -329,6 +336,7 @@ Display the results in a hyperlinked *compilation* buffer."
 
 ;; set PATH
 (setenv "GOPATH" "/Users/xumingmingv/local/self/go")
+(setenv "JAVA_HOME" "/usr/alibaba/java")
 
 (setenv "PATH"
   (concat
