@@ -109,6 +109,7 @@
 (require 'flx-ido)
 (flx-ido-mode 1)
 (setq ido-use-faces nil)
+(setq flx-ido-threshhold 10000)
 
 ;; Dont show startup screen
 (setq inhibit-startup-message t)
