@@ -2,7 +2,12 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("main.go"
+(("pom.xml"
+ (filename . "~/local/alipay/knowledge/adc/pom.xml")
+ (front-context-string . "<?xml version=\"1")
+ (rear-context-string)
+ (position . 1))
+("main.go"
  (filename . "~/local/self/go/src/hello/main.go")
  (front-context-string . "package main\n\nim")
  (rear-context-string)
