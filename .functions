@@ -49,7 +49,7 @@ tcp_status_v() {
 }
 
 alipay_svn_list() {
-    svn st | sed 's/^M//g;s/^A  +//g;s/^A//g;s/^D//g;' | grep -v WebSofaStarter | grep -v sofa-test-config | grep -v AdcSessionFilter | awk 'BEGIN {stat = "" } {stat = stat  $0;} END {print stat}'
+    svn st | sed 's/^M//g;s/^A  +//g;s/^A//g;s/^D//g;' | grep -v WebSofaStarter | grep -v sofa-test-config | grep -v AdcSessionFilter | grep -v MyGotoneConstants | grep -v projectile | grep -v 'adc-db.xml' | awk 'BEGIN {stat = "" } {stat = stat  $0;} END {print stat}'
 }
 
 . ~/local/self/dotfiles/.functions-storm
