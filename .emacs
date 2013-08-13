@@ -35,6 +35,7 @@
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/projectile"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/hy-mode"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/go-mode.el"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/emacs-eclim"))
 
 
 ;;; This was installed by package-install.el.
@@ -345,3 +346,16 @@ Display the results in a hyperlinked *compilation* buffer."
    (getenv "PATH")
   )
 )
+
+;; emacs-eclim
+(require 'eclim)
+(global-eclim-mode)
+(setq eclim-executable "/usr/local/eclipse-kepler/eclim")
+(require 'ac-emacs-eclim-source)
+(ac-emacs-eclim-config)
+(add-to-list 'eclim--file-coding-system-mapping '("chinese-gbk-unix" . "GBK"))
+(require 'company)
+(require 'company-emacs-eclim)
+(company-emacs-eclim-setup)
+(global-company-mode t)
+(global-set-key (kbd "M-/") 'eclim-complete)
