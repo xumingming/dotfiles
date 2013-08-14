@@ -281,7 +281,7 @@ Display the results in a hyperlinked *compilation* buffer."
 (global-set-key (kbd "C-z") 'undo)
 (global-set-key (kbd "C-S-z") 'redo)
 (global-set-key (kbd "M-/") 'auto-complete)
-(global-set-key (kbd "TAB") 'yas-expand)
+;;(global-set-key (kbd "TAB") 'yas-expand)
 
 ;; bind C-o to imenu for clojure/java mode
 (global-set-key (kbd "M-o") 'imenu)
@@ -359,3 +359,9 @@ Display the results in a hyperlinked *compilation* buffer."
 (company-emacs-eclim-setup)
 (global-company-mode t)
 (global-set-key (kbd "M-/") 'eclim-complete)
+
+;; smart-tab
+(require 'smart-tab)
+(global-smart-tab-mode 1)
+(add-to-list 'hippie-expand-try-functions-list 'yas/hippie-try-expand) ;put yasnippet in hippie-expansion list
+(setq smart-tab-using-hippie-expand t)
