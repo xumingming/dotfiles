@@ -354,6 +354,7 @@ Display the results in a hyperlinked *compilation* buffer."
 (require 'ac-emacs-eclim-source)
 (ac-emacs-eclim-config)
 (add-to-list 'eclim--file-coding-system-mapping '("chinese-gbk-unix" . "GBK"))
+(add-to-list 'eclim--file-coding-system-mapping '("iso-latin-1-dos" . "GBK"))
 (require 'company)
 (require 'company-emacs-eclim)
 (company-emacs-eclim-setup)
@@ -371,5 +372,3 @@ Display the results in a hyperlinked *compilation* buffer."
 (add-hook 'emacs-lisp-mode-hook (lambda () (paredit-mode +1)))
 ;;(add-hook 'emacs-lisp-mode-hook (lambda () (lisp-interaction-mode)))
 
-;; tell eclim the encoding mapping
-(add-to-list 'eclim--file-coding-system-mapping '("iso-latin-1-dos" . "GBK"))
