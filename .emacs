@@ -1,5 +1,5 @@
-;; emacs 24 does not have this function
-;; so we define it ourself
+ ;;  emacs 24 does not have this function
+;3q/wr; so we define it ourself
 (defun plist-to-alist (the-plist)
   (defun get-tuple-from-plist (the-plist)
     (when the-plist
@@ -50,7 +50,7 @@
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 
 ;; color-theme
-(load-theme 'wombat)
+;;(load-theme 'wombat)
 ;;(load-theme 'tsdh-dark)
 ;;(load-theme 'misterioso)
 ;;(load-theme 'tsdh-light)
@@ -143,7 +143,7 @@
 
 ;; set font size
 (if (string= system-type "darwin")
-  (set-default-font "Monaco-14")
+	(set-default-font "Monaco-14")
   (set-default-face "default")
   (set-default-font "Ubuntu Mono-13"))
 
@@ -365,3 +365,11 @@ Display the results in a hyperlinked *compilation* buffer."
 (global-smart-tab-mode 1)
 (add-to-list 'hippie-expand-try-functions-list 'yas/hippie-try-expand) ;put yasnippet in hippie-expansion list
 (setq smart-tab-using-hippie-expand t)
+
+
+;; emacs lisp
+(add-hook 'emacs-lisp-mode-hook (lambda () (paredit-mode +1)))
+;;(add-hook 'emacs-lisp-mode-hook (lambda () (lisp-interaction-mode)))
+
+;; tell eclim the encoding mapping
+(add-to-list 'eclim--file-coding-system-mapping '("iso-latin-1-dos" . "GBK"))
