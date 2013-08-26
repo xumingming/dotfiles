@@ -7,12 +7,6 @@ export HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
 export HISTCONTROL=ignoreboth
 
 export SVN_EDITOR=vim
-# Add the ~/bin directory to the path.  This allows you to install simple
-# binaries by simply moving them into ~/bin.
-if [ -d $HOME/bin ]; then
-	PATH="$HOME/bin:$PATH"
-	export PATH
-fi
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 
@@ -40,4 +34,9 @@ export HADOOP_OPTS="-Djava.security.krb5.realm=OX.AC.UK -Djava.security.krb5.kdc
 export YARN_OPTS="$YARN_OPTS -Djava.security.krb5.realm=OX.AC.UK -Djava.security.krb5.kdc=kdc0.ox.ac.uk:kdc1.ox.ac.uk"
 
 # at last, the PATH
-export PATH=$PATH:/opt/local/bin:$ZK_HOME/bin:$BOOST_HOME:$CLOJURESCRIPT_HOME/bin:$ANTX_HOME/bin:$GOPATH/bin
+export PATH=$PATH:/opt/local/bin:$ZK_HOME/bin:$BOOST_HOME:$CLOJURESCRIPT_HOME/bin:$ANTX_HOME/bin:$GOPATH/bin:$JAVA_HOME/bin
+# Add the ~/bin directory to the path.  This allows you to install simple
+# binaries by simply moving them into ~/bin.
+if [ -d $HOME/bin ]; then
+	export PATH="$HOME/bin:$PATH"
+fi
