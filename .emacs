@@ -36,7 +36,10 @@
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/hy-mode"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/go-mode.el"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/emacs-eclim"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/solarized.el"))
 
+;; specify custom theme load path
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 
 ;;; This was installed by package-install.el.
 ;;; This provides support for the package system and
@@ -55,6 +58,8 @@
 ;;(load-theme 'misterioso)
 ;;(load-theme 'tsdh-light)
 ;;(load-theme 'dichromacy)
+;;(load-theme 'solarized-dark)
+(load-theme 'zenburn)
 
 ;; auto-complete
 (require 'auto-complete-config)
@@ -214,16 +219,16 @@ Display the results in a hyperlinked *compilation* buffer."
 (setq tags-file-name "~/local/svn/dotfiles/TAGS")
 ;; ==== TAG END   ====
 (custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
- )
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes (quote ("d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "dd4db38519d2ad7eb9e2f30bc03fba61a7af49a185edfd44e020aa5345e3dca7" default))))
 (custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  )
 
 ;; enable linum-mode
