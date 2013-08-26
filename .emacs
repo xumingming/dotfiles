@@ -1,4 +1,4 @@
- ;;  emacs 24 does not have this function
+;;  emacs 24 does not have this function
 ;3q/wr; so we define it ourself
 (defun plist-to-alist (the-plist)
   (defun get-tuple-from-plist (the-plist)
@@ -149,7 +149,6 @@
 ;; set font size
 (if (string= system-type "darwin")
 	(set-default-font "Monaco-14")
-  (set-default-face "default")
   (set-default-font "Ubuntu Mono-13"))
 
 
