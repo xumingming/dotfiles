@@ -376,3 +376,5 @@ Display the results in a hyperlinked *compilation* buffer."
 (add-hook 'emacs-lisp-mode-hook (lambda () (paredit-mode +1)))
 ;;(add-hook 'emacs-lisp-mode-hook (lambda () (lisp-interaction-mode)))
 
+;; require tramp to sudo edit file in emacs
+(require 'tramp)
