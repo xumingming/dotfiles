@@ -2,7 +2,12 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("eclim-java.el"
+(("async.clj"
+ (filename . "~/local/self/core.async/src/main/clojure/clojure/core/async.clj")
+ (front-context-string . ";;   Copyright (")
+ (rear-context-string)
+ (position . 1))
+("eclim-java.el"
  (filename . "~/local/self/dotfiles/.emacs.d/vendor/emacs-eclim/eclim-java.el")
  (front-context-string . ";; eclim-java.el")
  (rear-context-string)
