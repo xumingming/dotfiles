@@ -189,6 +189,9 @@ Display the results in a hyperlinked *compilation* buffer."
   'nrepl-turn-on-eldoc-mode)
 ;; dont popup error buffer
 (setq nrepl-popup-stacktraces nil)
+;; change 'back' key to M-[
+(define-key nrepl-interaction-mode-map (kbd "M-[") 'nrepl-jump-back)
+
 ;;
 ;;(add-to-list 'same-window-buffer-names "*nrepl*")
 ;; ==== nrepl END   ====
@@ -378,3 +381,7 @@ Display the results in a hyperlinked *compilation* buffer."
 
 ;; require tramp to sudo edit file in emacs
 (require 'tramp)
+
+;; add google-this
+(require 'google-this)
+(google-this-mode 1)
