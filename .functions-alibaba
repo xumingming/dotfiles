@@ -1,9 +1,5 @@
 #!/bin/bash
 
-ssh_to_main() {
-    ssh james@10.16.24.46
-}
-
 sofa-project() {
     mvn org.apache.maven.plugins:maven-archetype-plugin:2.0-alpha-5:generate -DarchetypeCatalog=http://mvn.dev.alipay.net:8081/artifactory/content/repositories/Alipay-Releases/com/alipay/sofa/archetype/archetypes/1.0.0/archetypes-1.0.0.xml
 
@@ -21,5 +17,8 @@ sofa-run() {
   bash /home/admin/adccore-run/bin/jbossctl.sh start
 }
 
-alias stm=ssh_to_main
+ssh-alipay() {
+	ssh mingming.xumm@shterm.alipay.net
+}
+alias stm=ssh-alipay
 
