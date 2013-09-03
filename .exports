@@ -26,7 +26,7 @@ export GOPATH=$HOME/local/self/go
 export HIVE_HOME=/usr/local/hive
 
 # at last, the PATH
-export PATH=$PATH:/opt/local/bin:$ZK_HOME/bin:$BOOST_HOME:$CLOJURESCRIPT_HOME/bin:$ANTX_HOME/bin:$GOPATH/bin:$JAVA_HOME/bin:/usr/local/hadoop/bin
+export PATH=$PATH:/opt/local/bin:$ZK_HOME/bin:$BOOST_HOME:$CLOJURESCRIPT_HOME/bin:$ANTX_HOME/bin:$GOPATH/bin:$JAVA_HOME/bin:/usr/local/hadoop/bin:$HIVE_HOME/bin
 # Add the ~/bin directory to the path.  This allows you to install simple
 # binaries by simply moving them into ~/bin.
 if [ -d $HOME/bin ]; then
