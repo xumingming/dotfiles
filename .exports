@@ -23,18 +23,10 @@ export CLOJURESCRIPT_HOME=$HOME/local/self/clojurescript
 export ANTX_HOME=/usr/alibaba/antx
 export CLOUDENGINE_HOME=/usr/alibaba/cloudengine-3.1.7
 export GOPATH=$HOME/local/self/go
-# hadoop related
-export HADOOP_HDFS_HOME=/usr/local/hadoop-2.0.5-alpha
-export HADOOP_COMMON_HOME=$HADOOP_HDFS_HOME
-export HADOOP_MAPRED_HOME=$HADOOP_HDFS_HOME
-export HADOOP_YARN_HOME=$HADOOP_HDFS_HOME
-export HADOOP_CONF_DIR=$HADOOP_HDFS_HOME/etc/hadoop
-export YARN_CONF_DIR=$HADOOP_CONF_DIR
-export HADOOP_OPTS="-Djava.security.krb5.realm=OX.AC.UK -Djava.security.krb5.kdc=kdc0.ox.ac.uk:kdc1.ox.ac.uk"
-export YARN_OPTS="$YARN_OPTS -Djava.security.krb5.realm=OX.AC.UK -Djava.security.krb5.kdc=kdc0.ox.ac.uk:kdc1.ox.ac.uk"
+export HIVE_HOME=/usr/local/hive
 
 # at last, the PATH
-export PATH=$PATH:/opt/local/bin:$ZK_HOME/bin:$BOOST_HOME:$CLOJURESCRIPT_HOME/bin:$ANTX_HOME/bin:$GOPATH/bin:$JAVA_HOME/bin
+export PATH=$PATH:/opt/local/bin:$ZK_HOME/bin:$BOOST_HOME:$CLOJURESCRIPT_HOME/bin:$ANTX_HOME/bin:$GOPATH/bin:$JAVA_HOME/bin:/usr/local/hadoop/bin
 # Add the ~/bin directory to the path.  This allows you to install simple
 # binaries by simply moving them into ~/bin.
 if [ -d $HOME/bin ]; then
