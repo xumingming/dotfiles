@@ -18,8 +18,14 @@ setup_link ".bashrc"
 setup_link ".zshrc"
 setup_link ".emacs"
 setup_link ".emacs.d"
+
+mkdir -vp ~/.lein
 setup_link ".lein/profiles.clj"
+
 setup_link ".ssh/config"
 setup_link ".tmux.conf"
+
+mkdir -vp ~/.subversion
+setup_link ".subversion/config"
 
 
