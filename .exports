@@ -24,6 +24,7 @@ export ANTX_HOME=/usr/alibaba/antx
 export CLOUDENGINE_HOME=/usr/alibaba/cloudengine-3.1.7
 export GOPATH=$HOME/local/self/go
 export HIVE_HOME=/usr/local/hive
+export CATALINA_HOME=/usr/local/tomcat
 
 # at last, the PATH
 export PATH=$PATH:/opt/local/bin:$ZK_HOME/bin:$BOOST_HOME:$CLOJURESCRIPT_HOME/bin:$ANTX_HOME/bin:$GOPATH/bin:$JAVA_HOME/bin:/usr/local/hadoop/bin:$HIVE_HOME/bin
