@@ -46,3 +46,21 @@ source $ZSH/oh-my-zsh.sh
 
 source ~/local/self/dotfiles/.functions
 source ~/local/self/dotfiles/.exports
+
+export HIVE_HOME=/usr/local/hive-alipay
+export HIVE_CONF_DIR=/usr/local/hive-alipay-conf
+export HADOOP_HOME=/usr/local/hadoop-alipay
+export HADOOP_CONF_DIR=/usr/local/hadoop-alipay-conf
+export JAVA_HOME=/usr/local/java
+export HADOOP_LOG_DIR=/var/hadoop-alipay/logs
+export CLASSPATH=.:$JAVA_HOME/lib:$JAVA_HOME/jre/lib:$CLASSPATH
+export HADOOP_HEAPSIZE=64
+export HADOOP_NAMENODE_OPTS="-Dcom.sun.management.jmxremote $HADOOP_NAMENODE_OPTS"
+export HADOOP_SECONDARYNAMENODE_OPTS="-Dcom.sun.management.jmxremote $HADOOP_SECONDARYNAMENODE_OPTS"
+export HADOOP_DATANODE_OPTS="-Dcom.sun.management.jmxremote $HADOOP_DATANODE_OPTS"
+export HADOOP_BALANCER_OPTS="-Dcom.sun.management.jmxremote $HADOOP_BALANCER_OPTS"
+export HADOOP_JOBTRACKER_OPTS="-Dcom.sun.management.jmxremote $HADOOP_JOBTRACKER_OPTS"
+export HADOOP_SSH_OPTS="-o ConnectTimeout=3  -o StrictHostKeyChecking=no -o SendEnv=HADOOP_CONF_DIR"
+export CLASSPATH=$HADOOP_CONF_DIR:$ZOOCFGDIR:$CLASSPATH
+#export HADOOP_CLASSPATH=$HADOOP_CLASSPATH:./:$ZOOKEEPER_HOME/*:$ZOOKEEPER_HOME/lib/*:$HBASE_HOME/lib/*:$HBASE_HOME/*:$HBASE_CONF_DIR
+export PATH=$HADOOP_HOME/bin/:$PATH
