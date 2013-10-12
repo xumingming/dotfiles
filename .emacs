@@ -55,7 +55,8 @@
 ;; color-theme
 ;;(load-theme 'wombat)
 ;;(load-theme 'tsdh-dark)
-(load-theme 'misterioso)
+;;(load-theme 'misterioso)
+(load-theme 'solarized-dark t)
 ;;(load-theme 'tsdh-light)
 ;;(load-theme 'dichromacy)
 ;;(load-theme 'solarized-dark)
