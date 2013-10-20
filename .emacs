@@ -37,6 +37,7 @@
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/go-mode.el"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/emacs-eclim"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/solarized.el"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/rainbow-delimiters.el"))
 
 ;; specify custom theme load path
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
@@ -70,7 +71,7 @@
 
 ;; hooks
 ;; enable rainbow
-(add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 ;; enable paredit
 (add-hook 'clojure-mode-hook (lambda () (paredit-mode +1)))
 (add-hook 'hy-mode-hook (lambda () (paredit-mode +1)))
@@ -190,6 +191,12 @@ Display the results in a hyperlinked *compilation* buffer."
   'nrepl-turn-on-eldoc-mode)
 ;; dont popup error buffer
 (setq nrepl-popup-stacktraces nil)
+;; hide special buffers
+(setq nrepl-hide-special-buffers t)
+;; auto-select error buffer when displayed
+(setq nrepl-auto-select-error-buffer t)
+;; show port on buffer name
+(setq nrepl-buffer-name-show-port t)
 ;; change 'back' key to M-[
 (define-key nrepl-interaction-mode-map (kbd "M-[") 'nrepl-jump-back)
 
@@ -386,3 +393,4 @@ Display the results in a hyperlinked *compilation* buffer."
 ;; add google-this
 (require 'google-this)
 (google-this-mode 1)
+
