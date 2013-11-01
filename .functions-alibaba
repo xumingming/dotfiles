@@ -22,3 +22,4 @@ ssh-alipay() {
 }
 alias stm=ssh-alipay
 
+. ~/local/self/dotfiles/hiveservice.sh
