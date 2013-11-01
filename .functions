@@ -56,7 +56,7 @@ redepoly-hiveservice() {
 	$CATALINA_HOME/bin/shutdown.sh
 	jps | grep Bootstrap | cut -d' ' -f1 | xargs kill -9
 	rm -rf $CATALINA_HOME/webapps/HiveService*
-	cd ~/local/alipay/data-factory-refactor/hiveservice
+	cd ~/local/alipay/hiveservice-bug/hiveservice
 	mvn clean install -Dmaven.test.skip=true
 	cp target/HiveService.war $CATALINA_HOME/webapps
 	$CATALINA_HOME/bin/catalina.sh jpda start
