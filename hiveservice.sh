@@ -98,13 +98,60 @@ get_threshold() {
 	done
 }
 
+test_sql_one() {
+	ip=$1
+	userName=$2
+    sql="select++*+from+xumm1+limit+100"
+    echo "jobId returned from" $ip ":"
+    curl "http://$ip:$port/HiveService/monitor.htm?action=testSql&sql="$sql"&userName="$userName
+	echo "\n"
+}
+
+test_sql() {
+	for ip in $server_ips
+	do
+		test_sql_one $ip
+	done
+}
+
+get_msg_cnt_one_quite() {
+	ip=$1
+	curl "http://$ip:$port/HiveService/monitor.htm?action=getCnt" 2>/dev/null
+}
+
+get_msg_cnt_one() {
+	ip=$1
+    echo "message count of " $ip ":"
+    curl "http://$ip:$port/HiveService/monitor.htm?action=getCnt"
+	echo "\n"
+}
+
 get_msg_cnt() {
 	for ip in $server_ips
 	do
-		echo "message count of " $ip ":"
-        curl "http://$ip:$port/HiveService/monitor.htm?action=getCnt"
-		echo "\n"
+		get_msg_cnt_one $ip
 	done
+}
+
+
+loop_get_msg_cnt() {
+	for ip in $server_ips
+	do
+		printf $ip"\t"
+	done
+	printf "\n"
+
+    while [ 1 ]
+    do
+		for ip in $server_ips
+		do
+			cnt=`get_msg_cnt_one_quite $ip`
+			printf $cnt"\t\t"
+		done
+		printf "\n"
+
+        sleep 1
+    done
 }
 
 get_max_msg_cnt() {
