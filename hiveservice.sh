@@ -98,10 +98,18 @@ get_threshold() {
 	done
 }
 
+simple_sql="select++*+from+xumm1+limit+100"
+complex_sql="select+*+from+REL_LOG_TRACKER+where+dt%3D20131029+and+hour%3E%3D10+and++query+like+'%254AA49E0460028BE6B521929661889EF62D3ED9E53B5B0EDE%25'+limit+10%0A"
 test_sql_one() {
 	ip=$1
 	userName=$2
-    sql="select++*+from+xumm1+limit+100"
+	if [ -z $3 ]; then
+		sql=$simple_sql
+	else
+		sql=$3
+	fi
+
+	echo "sql is: " $sql
     echo "jobId returned from" $ip ":"
     curl "http://$ip:$port/HiveService/monitor.htm?action=testSql&sql="$sql"&userName="$userName
 	echo "\n"
@@ -156,4 +164,19 @@ loop_get_msg_cnt() {
 
 get_max_msg_cnt() {
 	grep  'size:' /home/adc/apache-tomcat-6.0.35/bin/logs/file.log.2013-10-31.log\  | grep -v '结束时间' | cut -d':' -f4,5| sed 's/开始时间：/:/g;s/---->size//g' | cut -d':' -f3 | sort -n | uniq | tail -n 1
+}
+
+benchmark_one() {
+	ip=$1
+	cnt=$2
+    i=0
+	while [ 1 ]
+	do
+		if [ "$i" -lt $cnt ]; then
+     		i=`expr $i + 1`
+			test_sql_one $ip mingming.xumm $complex_sql
+		else
+			break
+		fi
+	done
 }
