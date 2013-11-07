@@ -55,6 +55,15 @@ def get_stat(ip, stats):
     url = "http://%s:%s/HiveService/monitor.htm?action=getStat&stats=%s" % (ip, port, stats)
     return read_url_content(url)
 
+def get_running_tasks(ip):
+    tasks_str = get_stat(ip, ["runningTasks"])
+    tasks = []
+    if len(tasks_str) > 0:
+        tasks = tasks_str.split(",")
+
+    return tasks
+    
+
 simple_sql="select++*+from+auto_test+limit+100"
 complex_sql="select+*+from+REL_LOG_TRACKER+where+dt%3D20131029+and+hour%3E%3D10+and++query+like+'%254AA49E0460028BE6B521929661889EF62D3ED9E53B5B0EDE%25'+limit+10%0A"
 def test_sql(ip, sql, username):
@@ -72,7 +81,7 @@ def benchmark(ip, sql, username, num):
 
     print "sql: ", sql, ", username:", username
     for i in range(0, num):
-        test_sql(ip, sql, username)
+        print test_sql(ip, sql, username)
 
 def multi_do(fn, params):
     for ip in get_server_ips():
@@ -207,9 +216,29 @@ def get_server_ips():
     elif env == "prod":
         return prod_server_ips
 
+def help():
+    print "python hs.py get_detail_message_count [ip]                    --- print the detailed message count"
+    print "python hs.py get_message_count_threshold [ip]                 --- print message count threshold"
+    print "python hs.py set_message_count_threshold <threshold> [ip]     --- set message count threshold"
+    print "python hs.py get_whitelist [ip]                               --- print the whitelist"
+    print "python hs.py set_whitelist <whitelist> [ip]                   --- set the whitelist"
+    print "python hs.py get_blacklist [ip]                               --- get the blacklist"
+    print "python hs.py set_blacklist <blacklist> [ip]                   --- set the blacklist"
+    print "python hs.py get_running_task_count_threshold [ip]            --- get running task count threshold"
+    print "python hs.py set_running_task_count_threshold <threshold>[ip] --- get running task count threshold"
+    print "python hs.py get_send_log_thread_count [ip]                   --- print send log thread count"
+    print "python hs.py get_stat <stat_names> [ip]                       --- get various stat by names"
+    print "python hs.py tasks [ip]                                       --- print the running tasks"
+    print "python hs.py loop_stat [stat_names] [format]                  --- continiously print the system stat"
+    print "python hs.py put_offline <ip>                                 --- put a machine offline"
+    print "python hs.py put_online <ip> <message_count_threshold>        --- put a machine online"
+    print "python hs.py benchmark <sql> <username> <times> <ip>          --- do a benchmark"
+
 if __name__ == "__main__":
     action=sys.argv[1]
 
+    if action == "help":
+        help()
     if action == "get_detail_message_count":
         if len(sys.argv) < 3:
             multi_do(get_detail_message_count, None)
@@ -286,6 +315,14 @@ if __name__ == "__main__":
             ip=sys.argv[2]
             resp = get_send_log_thread_count(ip)
             print resp
+    elif action == "tasks":
+        ip=sys.argv[2]
+        tasks = get_running_tasks(ip)
+        if not tasks:
+            print "No running tasks."
+        for task in tasks:
+            print task
+            
     elif action == "get_stat":
         stats = sys.argv[2].split(",")
         if len(sys.argv) < 4:
