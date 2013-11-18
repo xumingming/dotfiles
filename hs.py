@@ -4,11 +4,38 @@ import sys
 from time import sleep
 from os.path import expanduser
 
+def read_file_content(path):
+    file = open(path, 'r')
+    ret = file.read().strip()
+    file.close()
+    
+    return ret
+
+def read_url_content(url):
+    try:
+        resp = urllib2.urlopen(url).read()
+        return resp
+    except urllib2.HTTPError:
+        return "ERROR"
+ 
+def get_env():
+    return read_file_content(expanduser("~") + '/.hsconfig/env').strip()
+
+def get_port():
+    return int(read_file_content(expanduser("~") + '/.hsconfig/port').strip())
+
+def get_server_ips():
+    env = get_env()
+    if env == "test":
+        return test_server_ips
+    elif env == "prod":
+        return prod_server_ips
+
 #test_server_ips = ["localhost"]
 test_server_ips = ["localhost", "10.209.125.24", "10.209.22.186"]
 prod_server_ips=["10.227.16.78", "10.227.16.79", "10.227.16.80", "10.227.14.22", "10.227.10.164", "10.227.10.138", "10.227.10.141"]
-server_ips=test_server_ips
-port=8080
+port=get_port()
+server_ips=get_server_ips()
 
 def get_detail_message_count(ip):
     url = "http://%s:%s/HiveService/monitor.htm?action=getDetailMessageCount" % (ip, port)
@@ -189,33 +216,6 @@ def loop_get_stat(stat_names,format):
         sleep(1)
         i += 1
 
-def read_file_content(path):
-    file = open(path, 'r')
-    ret = file.read().strip()
-    file.close()
-    
-    return ret
-
-def read_url_content(url):
-    try:
-        resp = urllib2.urlopen(url).read()
-        return resp
-    except urllib2.HTTPError:
-        return "ERROR"
- 
-def get_env():
-    return read_file_content(expanduser("~") + '/.hsconfig/env').strip()
-
-def get_port():
-    return int(read_file_content(expanduser("~") + '/.hsconfig/port').strip())
-
-def get_server_ips():
-    env = get_env()
-    if env == "test":
-        return test_server_ips
-    elif env == "prod":
-        return prod_server_ips
-
 def help():
     print "python hs.py get_detail_message_count [ip]                    --- print the detailed message count"
     print "python hs.py get_message_count_threshold [ip]                 --- print message count threshold"
@@ -233,6 +233,7 @@ def help():
     print "python hs.py put_offline <ip>                                 --- put a machine offline"
     print "python hs.py put_online <ip> <message_count_threshold>        --- put a machine online"
     print "python hs.py benchmark <sql> <username> <times> <ip>          --- do a benchmark"
+    print "python hs.py test <ip>                                        --- a basic test"
 
 if __name__ == "__main__":
     action=sys.argv[1]
@@ -355,6 +356,18 @@ if __name__ == "__main__":
             multi_do(benchmark, [sql, username, int(num)])
         else:
             ip = sys.argv[5]
+            benchmark(ip, sql, username, int(num))
+    elif action == "test":
+        sql = "select+*+from+table_for_auto_test+limit+10"
+        username = "nanjie.hu"
+        if get_env() == "prod":
+            username = "mingming.xumm"
+        num = 1
+
+        if len(sys.argv) < 3:
+            multi_do(benchmark, [sql, username, int(num)])
+        else:
+            ip = sys.argv[2]
             benchmark(ip, sql, username, int(num))
 
 
