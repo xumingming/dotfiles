@@ -1,6 +1,7 @@
 #!/usr/bin/python
 import urllib2
 import sys
+import re
 from time import sleep
 from os.path import expanduser
 
@@ -30,6 +31,17 @@ def get_server_ips():
         return test_server_ips
     elif env == "prod":
         return prod_server_ips
+
+def get_real_ip(ip):
+    if re.search("^([0-9]+[.]){3}[0-9]+$", ip):
+        return ip
+    else:
+        for server_ip in server_ips:
+            if server_ip.find(ip) >= 0:
+                print " --- using ip: %s ---\n" % (server_ip)
+                return server_ip
+
+        return ""
 
 #test_server_ips = ["localhost"]
 test_server_ips = ["localhost", "10.209.125.24", "10.209.22.186"]
@@ -234,6 +246,7 @@ def help():
     print "python hs.py put_online <ip> <message_count_threshold>        --- put a machine online"
     print "python hs.py benchmark <sql> <username> <times> <ip>          --- do a benchmark"
     print "python hs.py test <ip>                                        --- a basic test"
+    print "python hs.py servers                                          --- list the server ips"
 
 if __name__ == "__main__":
     action=sys.argv[1]
@@ -244,14 +257,14 @@ if __name__ == "__main__":
         if len(sys.argv) < 3:
             multi_do(get_detail_message_count, None)
         else:
-            ip=sys.argv[2]
+            ip=get_real_ip(sys.argv[2])
             resp = get_detail_message_count(ip)
             print resp
     elif action == "get_message_count_threshold":
         if len(sys.argv) < 3:
             multi_do(get_message_count_threshold, None)
         else:
-            ip=sys.argv[2]
+            ip=get_real_ip(sys.argv[2])
             resp = get_message_count_threshold(ip)
             print resp
         
@@ -260,14 +273,14 @@ if __name__ == "__main__":
         if len(sys.argv) < 4:
             multi_do(set_message_count_threshold, [message_count_threshold])
         else:
-            ip=sys.argv[3]
+            ip=get_real_ip(sys.argv[3])
             resp = set_message_count_threshold(ip, message_count_threshold)
             print resp
     elif action == "get_whitelist":
         if len(sys.argv) < 3:
             multi_do(get_whitelist, None)
         else:
-            ip=sys.argv[2]
+            ip=get_real_ip(sys.argv[2])
             resp = get_whitelist(ip)
             print resp
     elif action == "set_whitelist":
@@ -275,7 +288,7 @@ if __name__ == "__main__":
             whitelist=sys.argv[2]
             multi_do(set_whitelist, [whitelist])
         else:
-            ip=sys.argv[2]
+            ip=get_real_ip(sys.argv[2])
             whitelist=sys.argv[3]
             resp = set_whitelist(ip, whitelist)
             print resp
@@ -283,7 +296,7 @@ if __name__ == "__main__":
         if len(sys.argv) < 3:
             multi_do(get_blacklist, None)
         else:
-            ip=sys.argv[2]
+            ip=get_real_ip(sys.argv[2])
             resp = get_blacklist(ip)
             print resp
     elif action == "set_blacklist":
@@ -298,7 +311,7 @@ if __name__ == "__main__":
         if len(sys.argv) < 3:
             multi_do(get_running_task_count_threshold, None)
         else:
-            ip=sys.argv[2]
+            ip=get_real_ip(sys.argv[2])
             resp = get_running_task_count_threshold(ip)
             print resp
     elif action == "set_running_task_count_threshold":
@@ -306,18 +319,18 @@ if __name__ == "__main__":
         if len(sys.argv) < 4:
             multi_do(set_running_task_count_threshold, [running_task_count_threshold])
         else:
-            ip=sys.argv[3]
+            ip=get_real_ip(sys.argv[3])
             resp = set_running_task_count_threshold(ip, running_task_count_threshold)
             print resp
     elif action == "get_send_log_thread_count":
         if len(sys.argv) < 3:
             multi_do(get_send_log_thread_count, None)
         else:
-            ip=sys.argv[2]
+            ip=get_real_ip(sys.argv[2])
             resp = get_send_log_thread_count(ip)
             print resp
     elif action == "tasks":
-        ip=sys.argv[2]
+        ip=get_real_ip(sys.argv[2])
         tasks = get_running_tasks(ip)
         if not tasks:
             print "No running tasks."
@@ -329,7 +342,7 @@ if __name__ == "__main__":
         if len(sys.argv) < 4:
             multi_do(get_stat, [stats])
         else:
-            ip=sys.argv[3]
+            ip=get_real_ip(sys.argv[3])
             resp = get_stat(ip, stats)
             print resp
     elif action == "loop_stat":
@@ -341,10 +354,10 @@ if __name__ == "__main__":
             format = sys.argv[3]
         loop_get_stat(stat_names, format)
     elif action == "put_offline":
-        ip = sys.argv[2]
+        ip = get_real_ip(sys.argv[2])
         put_offline(ip)
     elif action == "put_online":
-        ip = sys.argv[2]
+        ip = get_real_ip(sys.argv[2])
         message_count_threshold=sys.argv[3]
         put_online(ip, message_count_threshold)
     elif action == "benchmark":
@@ -355,7 +368,7 @@ if __name__ == "__main__":
         if len(sys.argv) < 6:
             multi_do(benchmark, [sql, username, int(num)])
         else:
-            ip = sys.argv[5]
+            ip = get_real_ip(sys.argv[5])
             benchmark(ip, sql, username, int(num))
     elif action == "test":
         sql = "select+*+from+table_for_auto_test+limit+10"
@@ -367,7 +380,10 @@ if __name__ == "__main__":
         if len(sys.argv) < 3:
             multi_do(benchmark, [sql, username, int(num)])
         else:
-            ip = sys.argv[2]
+            ip = get_real_ip(sys.argv[2])
             benchmark(ip, sql, username, int(num))
+    elif action == "servers":
+        for ip in server_ips:
+            print ip
 
 
