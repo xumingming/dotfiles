@@ -246,9 +246,12 @@ def help():
     print "hs.py test <ip>                                               --- a basic test"
     print "hs.py servers                                                 --- list the server ips"
 
-if __name__ == "__main__":
-    action=sys.argv[1]
+def main():
+    if len(sys.argv) == 1:
+        help()
+        return
 
+    action=sys.argv[1]
     if action == "help":
         help()
     if action in ["detail_message_count", "dmc"]:
@@ -382,3 +385,6 @@ if __name__ == "__main__":
         for ip in server_ips:
             print ip
 
+
+if __name__ == "__main__":
+    main()
