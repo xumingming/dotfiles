@@ -227,46 +227,45 @@ def loop_get_stat(stat_names,format):
         i += 1
 
 def help():
-    print "hs.py get_detail_message_count [ip]                    --- print the detailed message count"
-    print "hs.py get_message_count_threshold [ip]                 --- print message count threshold"
-    print "hs.py set_message_count_threshold <threshold> [ip]     --- set message count threshold"
-    print "hs.py get_whitelist [ip]                               --- print the whitelist"
-    print "hs.py set_whitelist <whitelist> [ip]                   --- set the whitelist"
-    print "hs.py get_blacklist [ip]                               --- get the blacklist"
-    print "hs.py set_blacklist <blacklist> [ip]                   --- set the blacklist"
-    print "hs.py get_running_task_count_threshold [ip]            --- get running task count threshold"
-    print "hs.py set_running_task_count_threshold <threshold>[ip] --- get running task count threshold"
-    print "hs.py get_send_log_thread_count [ip]                   --- print send log thread count"
-    print "hs.py get_stat <stat_names> [ip]                       --- get various stat by names"
-    print "hs.py tasks [ip]                                       --- print the running tasks"
-    print "hs.py loop_stat [stat_names] [format]                  --- continiously print the system stat"
-    print "hs.py put_offline <ip>                                 --- put a machine offline"
-    print "hs.py put_online <ip> <message_count_threshold>        --- put a machine online"
-    print "hs.py benchmark <sql> <username> <times> <ip>          --- do a benchmark"
-    print "hs.py test <ip>                                        --- a basic test"
-    print "hs.py servers                                          --- list the server ips"
+    print "hs.py detail_message_count/dmc [ip]                           --- print the detailed message count"
+    print "hs.py get_message_count_threshold/gmct [ip]                   --- print message count threshold"
+    print "hs.py set_message_count_threshold/smct <threshold> [ip]       --- set message count threshold"
+    print "hs.py get_whitelist/gw [ip]                                   --- print the whitelist"
+    print "hs.py set_whitelist/sw <whitelist> [ip]                       --- set the whitelist"
+    print "hs.py get_blacklist/gb [ip]                                   --- get the blacklist"
+    print "hs.py set_blacklist/sb <blacklist> [ip]                       --- set the blacklist"
+    print "hs.py get_running_task_count_threshold/grtct [ip]             --- get running task count threshold"
+    print "hs.py set_running_task_count_threshold/srtct <threshold> [ip] --- get running task count threshold"
+    print "hs.py get_send_log_thread_count/gsltc [ip]                    --- print send log thread count"
+    print "hs.py stat <stat_names> [ip]                                  --- get various stat by names"
+    print "hs.py tasks [ip]                                              --- print the running tasks"
+    print "hs.py monitor [stat_names] [format]                           --- continiously print the system stat"
+    print "hs.py put_offline <ip>                                        --- put a machine offline"
+    print "hs.py put_online <ip> <message_count_threshold>               --- put a machine online"
+    print "hs.py benchmark <sql> <username> <times> <ip>                 --- do a benchmark"
+    print "hs.py test <ip>                                               --- a basic test"
+    print "hs.py servers                                                 --- list the server ips"
 
 if __name__ == "__main__":
     action=sys.argv[1]
 
     if action == "help":
         help()
-    if action == "get_detail_message_count":
+    if action in ["detail_message_count", "dmc"]:
         if len(sys.argv) < 3:
             multi_do(get_detail_message_count, None)
         else:
             ip=get_real_ip(sys.argv[2])
             resp = get_detail_message_count(ip)
             print resp
-    elif action == "get_message_count_threshold":
+    elif action in ["get_message_count_threshold", "gmct"]:
         if len(sys.argv) < 3:
             multi_do(get_message_count_threshold, None)
         else:
             ip=get_real_ip(sys.argv[2])
             resp = get_message_count_threshold(ip)
             print resp
-        
-    elif action == "set_message_count_threshold":
+    elif action in ["set_message_count_threshold", "smct"]:
         message_count_threshold=sys.argv[2]
         if len(sys.argv) < 4:
             multi_do(set_message_count_threshold, [message_count_threshold])
@@ -274,14 +273,14 @@ if __name__ == "__main__":
             ip=get_real_ip(sys.argv[3])
             resp = set_message_count_threshold(ip, message_count_threshold)
             print resp
-    elif action == "get_whitelist":
+    elif action in ["get_whitelist", "gw"]:
         if len(sys.argv) < 3:
             multi_do(get_whitelist, None)
         else:
             ip=get_real_ip(sys.argv[2])
             resp = get_whitelist(ip)
             print resp
-    elif action == "set_whitelist":
+    elif action in ["set_whitelist", "sw"]:
         if len(sys.argv) < 4:
             whitelist=sys.argv[2]
             multi_do(set_whitelist, [whitelist])
@@ -290,14 +289,14 @@ if __name__ == "__main__":
             whitelist=sys.argv[3]
             resp = set_whitelist(ip, whitelist)
             print resp
-    elif action == "get_blacklist":
+    elif action in ["get_blacklist", "gb"]:
         if len(sys.argv) < 3:
             multi_do(get_blacklist, None)
         else:
             ip=get_real_ip(sys.argv[2])
             resp = get_blacklist(ip)
             print resp
-    elif action == "set_blacklist":
+    elif action in ["set_blacklist", "sb"]:
         blacklist=sys.argv[2]
         if len(sys.argv) < 4:
             multi_do(set_blacklist, [blacklist])
@@ -305,14 +304,14 @@ if __name__ == "__main__":
             ip=sys.argv[3]
             resp = set_blacklist(ip, blacklist)
             print resp
-    elif action == "get_running_task_count_threshold":
+    elif action in ["get_running_task_count_threshold", "grtct"]:
         if len(sys.argv) < 3:
             multi_do(get_running_task_count_threshold, None)
         else:
             ip=get_real_ip(sys.argv[2])
             resp = get_running_task_count_threshold(ip)
             print resp
-    elif action == "set_running_task_count_threshold":
+    elif action in ["set_running_task_count_threshold", "srtct"]:
         running_task_count_threshold=sys.argv[2]
         if len(sys.argv) < 4:
             multi_do(set_running_task_count_threshold, [running_task_count_threshold])
@@ -320,7 +319,7 @@ if __name__ == "__main__":
             ip=get_real_ip(sys.argv[3])
             resp = set_running_task_count_threshold(ip, running_task_count_threshold)
             print resp
-    elif action == "get_send_log_thread_count":
+    elif action in ["get_send_log_thread_count", "gsltc"]:
         if len(sys.argv) < 3:
             multi_do(get_send_log_thread_count, None)
         else:
@@ -334,8 +333,7 @@ if __name__ == "__main__":
             ip=get_real_ip(sys.argv[2])
             resp = get_running_tasks(ip)
             print resp
-
-    elif action == "get_stat":
+    elif action == "stat":
         stats = sys.argv[2].split(",")
         if len(sys.argv) < 4:
             multi_do(get_stat, [stats])
@@ -343,7 +341,7 @@ if __name__ == "__main__":
             ip=get_real_ip(sys.argv[3])
             resp = get_stat(ip, stats)
             print resp
-    elif action == "loop_stat":
+    elif action == "monitor":
         stat_names = None
         if len(sys.argv) > 2:
             stat_names = sys.argv[2].split(",")
@@ -383,5 +381,4 @@ if __name__ == "__main__":
     elif action == "servers":
         for ip in server_ips:
             print ip
-
 
