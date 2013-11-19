@@ -101,7 +101,6 @@ def get_running_tasks(ip):
         tasks = tasks_str.split(",")
 
     return tasks
-    
 
 simple_sql="select++*+from+auto_test+limit+100"
 complex_sql="select+*+from+REL_LOG_TRACKER+where+dt%3D20131029+and+hour%3E%3D10+and++query+like+'%254AA49E0460028BE6B521929661889EF62D3ED9E53B5B0EDE%25'+limit+10%0A"
@@ -329,13 +328,13 @@ if __name__ == "__main__":
             resp = get_send_log_thread_count(ip)
             print resp
     elif action == "tasks":
-        ip=get_real_ip(sys.argv[2])
-        tasks = get_running_tasks(ip)
-        if not tasks:
-            print "No running tasks."
-        for task in tasks:
-            print task
-            
+        if len(sys.argv) < 3:
+            multi_do(get_running_tasks, None)
+        else:
+            ip=get_real_ip(sys.argv[2])
+            resp = get_running_tasks(ip)
+            print resp
+
     elif action == "get_stat":
         stats = sys.argv[2].split(",")
         if len(sys.argv) < 4:
