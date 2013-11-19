@@ -150,7 +150,6 @@ def put_online(target_ip, message_count_threshold):
             pass
 
         new_blacklist = orig_blacklist
-        print "new: ", new_blacklist
         new_blacklist = ",".join(new_blacklist)
         if ip != target_ip:
             target_blacklist = new_blacklist
@@ -229,24 +228,24 @@ def loop_get_stat(stat_names,format):
         i += 1
 
 def help():
-    print "python hs.py get_detail_message_count [ip]                    --- print the detailed message count"
-    print "python hs.py get_message_count_threshold [ip]                 --- print message count threshold"
-    print "python hs.py set_message_count_threshold <threshold> [ip]     --- set message count threshold"
-    print "python hs.py get_whitelist [ip]                               --- print the whitelist"
-    print "python hs.py set_whitelist <whitelist> [ip]                   --- set the whitelist"
-    print "python hs.py get_blacklist [ip]                               --- get the blacklist"
-    print "python hs.py set_blacklist <blacklist> [ip]                   --- set the blacklist"
-    print "python hs.py get_running_task_count_threshold [ip]            --- get running task count threshold"
-    print "python hs.py set_running_task_count_threshold <threshold>[ip] --- get running task count threshold"
-    print "python hs.py get_send_log_thread_count [ip]                   --- print send log thread count"
-    print "python hs.py get_stat <stat_names> [ip]                       --- get various stat by names"
-    print "python hs.py tasks [ip]                                       --- print the running tasks"
-    print "python hs.py loop_stat [stat_names] [format]                  --- continiously print the system stat"
-    print "python hs.py put_offline <ip>                                 --- put a machine offline"
-    print "python hs.py put_online <ip> <message_count_threshold>        --- put a machine online"
-    print "python hs.py benchmark <sql> <username> <times> <ip>          --- do a benchmark"
-    print "python hs.py test <ip>                                        --- a basic test"
-    print "python hs.py servers                                          --- list the server ips"
+    print "hs.py get_detail_message_count [ip]                    --- print the detailed message count"
+    print "hs.py get_message_count_threshold [ip]                 --- print message count threshold"
+    print "hs.py set_message_count_threshold <threshold> [ip]     --- set message count threshold"
+    print "hs.py get_whitelist [ip]                               --- print the whitelist"
+    print "hs.py set_whitelist <whitelist> [ip]                   --- set the whitelist"
+    print "hs.py get_blacklist [ip]                               --- get the blacklist"
+    print "hs.py set_blacklist <blacklist> [ip]                   --- set the blacklist"
+    print "hs.py get_running_task_count_threshold [ip]            --- get running task count threshold"
+    print "hs.py set_running_task_count_threshold <threshold>[ip] --- get running task count threshold"
+    print "hs.py get_send_log_thread_count [ip]                   --- print send log thread count"
+    print "hs.py get_stat <stat_names> [ip]                       --- get various stat by names"
+    print "hs.py tasks [ip]                                       --- print the running tasks"
+    print "hs.py loop_stat [stat_names] [format]                  --- continiously print the system stat"
+    print "hs.py put_offline <ip>                                 --- put a machine offline"
+    print "hs.py put_online <ip> <message_count_threshold>        --- put a machine online"
+    print "hs.py benchmark <sql> <username> <times> <ip>          --- do a benchmark"
+    print "hs.py test <ip>                                        --- a basic test"
+    print "hs.py servers                                          --- list the server ips"
 
 if __name__ == "__main__":
     action=sys.argv[1]
