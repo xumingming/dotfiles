@@ -26,17 +26,15 @@ def get_port():
     return int(read_file_content(expanduser("~") + '/.hsconfig/port').strip())
 
 def get_server_ips():
-    env = get_env()
-    if env == "test":
-        return test_server_ips
-    elif env == "prod":
-        return prod_server_ips
-
+    server_ips = read_file_content(expanduser("~") + '/.hsconfig/servers').strip()
+    server_ips = server_ips.split(",")
+    return server_ips
+    
 def get_real_ip(ip):
     if re.search("^([0-9]+[.]){3}[0-9]+$", ip):
         return ip
     else:
-        for server_ip in server_ips:
+        for server_ip in get_server_ips():
             if server_ip.find(ip) >= 0:
                 print " --- using ip: %s ---\n" % (server_ip)
                 return server_ip
@@ -102,8 +100,7 @@ def get_running_tasks(ip):
 
     return tasks
 
-simple_sql="select++*+from+auto_test+limit+100"
-complex_sql="select+*+from+REL_LOG_TRACKER+where+dt%3D20131029+and+hour%3E%3D10+and++query+like+'%254AA49E0460028BE6B521929661889EF62D3ED9E53B5B0EDE%25'+limit+10%0A"
+simple_sql="select++*+from+table_for_auto_test+a+join+table_for_auto_test+b+limit+500"
 def test_sql(ip, sql, username):
     if not username:
         username = "mingming.xumm"
@@ -382,7 +379,7 @@ def main():
             ip = get_real_ip(sys.argv[2])
             benchmark(ip, sql, username, int(num))
     elif action == "servers":
-        for ip in server_ips:
+        for ip in get_server_ips():
             print ip
 
 
