@@ -78,6 +78,38 @@ def set_blacklist(ip, blacklist):
     url = "http://%s:%s/HiveService/monitor.htm?action=setBlacklist&blacklist=%s" % (ip, port, blacklist)
     return read_url_content(url)
 
+
+def add_blackip(ip, black_ip):
+    orig_blacklist = get_blacklist(ip)
+    if not orig_blacklist:
+        orig_blacklist = []
+    else:
+        orig_blacklist = orig_blacklist.split(",")
+    try:
+        orig_blacklist.remove(black_ip)
+    except ValueError:
+        pass
+
+    new_blacklist = orig_blacklist + [black_ip]
+    new_blacklist = ",".join(new_blacklist)
+    resp = set_blacklist(ip, new_blacklist)
+    return resp
+
+def remove_blackip(ip, target_ip):
+    orig_blacklist = get_blacklist(ip)
+    if not orig_blacklist:
+        orig_blacklist = []
+    else:
+        orig_blacklist = orig_blacklist.split(",")
+    try:
+        orig_blacklist.remove(target_ip)
+    except ValueError:
+        pass
+    new_blacklist = orig_blacklist
+    new_blacklist = ",".join(new_blacklist)
+    resp = set_blacklist(ip, new_blacklist)
+    return new_blacklist, resp
+
 def get_blacklist(ip):
     url = "http://%s:%s/HiveService/monitor.htm?action=getBlacklist" % (ip, port)
     return read_url_content(url)
@@ -126,6 +158,7 @@ def multi_do(fn, params):
         resp = apply(fn, new_params)
         print "%s: %s" % (ip, resp)
 
+
 def put_online(target_ip, message_count_threshold):
     print "[before]Blacklist of the cluster:"
     multi_do(get_blacklist, None)
@@ -133,22 +166,10 @@ def put_online(target_ip, message_count_threshold):
     print "Remove %s from blacklist in the cluster" % (target_ip)
     target_blacklist = ""
     for ip in get_server_ips():
-        orig_blacklist = get_blacklist(ip)
-        if not orig_blacklist:
-            orig_blacklist = []
-        else:
-            orig_blacklist = orig_blacklist.split(",")
+        new_blacklist, resp = remove_blackip(ip, target_ip)
 
-        try:
-            orig_blacklist.remove(target_ip)
-        except ValueError:
-            pass
-
-        new_blacklist = orig_blacklist
-        new_blacklist = ",".join(new_blacklist)
         if ip != target_ip:
             target_blacklist = new_blacklist
-        resp = set_blacklist(ip, new_blacklist)
         print "%s: %s" % (ip, resp)
 
     print "[after]Blacklist of the cluster:"
@@ -167,21 +188,7 @@ def put_offline(target_ip):
 
     print "Add %s to blacklist in the cluster" % (target_ip)
     for ip in get_server_ips():
-        orig_blacklist = get_blacklist(ip)
-        if not orig_blacklist:
-            orig_blacklist = []
-        else:
-            orig_blacklist = orig_blacklist.split(",")
-            
-        try:
-            orig_blacklist.remove(target_ip)
-        except ValueError:
-            pass
-
-        new_blacklist = orig_blacklist + [target_ip]
-        print "new: ", new_blacklist
-        new_blacklist = ",".join(new_blacklist)
-        resp = set_blacklist(ip, new_blacklist)
+        resp = add_blackip(ip, target_ip)
         print "%s: %s" % (ip, resp)
 
     print "[after]Blacklist of the cluster:"
@@ -230,6 +237,8 @@ def help():
     print "hs.py set_whitelist/sw <whitelist> [ip]                       --- set the whitelist"
     print "hs.py get_blacklist/gb [ip]                                   --- get the blacklist"
     print "hs.py set_blacklist/sb <blacklist> [ip]                       --- set the blacklist"
+    print "hs.py add_blackip/ab black_ip [ip]                            --- add an ip to blacklist"
+    print "hs.py remove_blackip/rb black_ip [ip]                         --- remove an ip from blacklist"
     print "hs.py get_running_task_count_threshold/grtct [ip]             --- get running task count threshold"
     print "hs.py set_running_task_count_threshold/srtct <threshold> [ip] --- get running task count threshold"
     print "hs.py get_send_log_thread_count/gsltc [ip]                    --- print send log thread count"
@@ -302,6 +311,22 @@ def main():
         else:
             ip=sys.argv[3]
             resp = set_blacklist(ip, blacklist)
+            print resp
+    elif action in ["add_blackip", "ab"]:
+        black_ip=sys.argv[2]
+        if len(sys.argv) < 4:
+            multi_do(add_blackip, [black_ip])
+        else:
+            ip=sys.argv[3]
+            resp = add_blackip(ip, black_ip)
+            print resp
+    elif action in ["remove_blackip", "rb"]:
+        black_ip=sys.argv[2]
+        if len(sys.argv) < 4:
+            multi_do(remove_blackip, [black_ip])
+        else:
+            ip=sys.argv[3]
+            resp = remove_blackip(ip, black_ip)
             print resp
     elif action in ["get_running_task_count_threshold", "grtct"]:
         if len(sys.argv) < 3:
