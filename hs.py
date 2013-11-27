@@ -18,6 +18,8 @@ def read_url_content(url):
         return resp
     except urllib2.HTTPError:
         return "ERROR"
+    except urllib2.URLError:
+        return "ERROR"
  
 def get_env():
     return read_file_content(expanduser("~") + '/.hsconfig/env').strip()
@@ -100,7 +102,7 @@ def get_running_tasks(ip):
 
     return tasks
 
-simple_sql="select++*+from+table_for_auto_test+a+join+table_for_auto_test+b+limit+500"
+simple_sql="select++count(*)+from+table_for_auto_test+limit+500"
 def test_sql(ip, sql, username):
     if not username:
         username = "mingming.xumm"
@@ -367,7 +369,7 @@ def main():
             ip = get_real_ip(sys.argv[5])
             benchmark(ip, sql, username, int(num))
     elif action == "test":
-        sql = "select+*+from+table_for_auto_test+limit+10"
+        sql = "select+*+from+table_for_auto_test+limit+5"
         username = "nanjie.hu"
         if get_env() == "prod":
             username = "mingming.xumm"
