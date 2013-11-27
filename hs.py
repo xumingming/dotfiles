@@ -43,9 +43,6 @@ def get_real_ip(ip):
 
         return ""
 
-#test_server_ips = ["localhost"]
-test_server_ips = ["localhost", "10.209.125.24", "10.209.22.186"]
-prod_server_ips=["10.227.16.78", "10.227.16.79", "10.227.16.80", "10.227.14.22", "10.227.10.164", "10.227.10.138", "10.227.10.141"]
 port=get_port()
 server_ips=get_server_ips()
 
