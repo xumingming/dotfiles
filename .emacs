@@ -26,18 +26,19 @@
 ;; setup load-path
 (add-to-list 'load-path (expand-file-name "~/.emacs.d"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor"))
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/go-autocomplete.el"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/weibo.emacs"))
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/erc-hl-nicks"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/powerline"))
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/undo-tree"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/nrepl.el"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/projectile"))
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/hy-mode"))
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/go-mode.el"))
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/emacs-eclim"))
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/solarized.el"))
+
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/rainbow-delimiters.el"))
+;;(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/undo-tree"))
+;;(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/go-autocomplete.el"))
+;;(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/hy-mode"))
+;;(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/go-mode.el"))
+;;(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/emacs-eclim"))
+;;(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/solarized.el"))
+
 
 ;; specify custom theme load path
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
@@ -52,16 +53,6 @@
      (expand-file-name "~/.emacs.d/package.el"))
   (package-initialize))
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
-
-;; color-theme
-;;(load-theme 'wombat)
-;;(load-theme 'tsdh-dark)
-;;(load-theme 'misterioso)
-(load-theme 'solarized-dark t)
-;;(load-theme 'tsdh-light)
-;;(load-theme 'dichromacy)
-;;(load-theme 'solarized-dark)
-;;(load-theme 'zenburn)
 
 ;; auto-complete
 (require 'auto-complete-config)
@@ -214,13 +205,6 @@ Display the results in a hyperlinked *compilation* buffer."
      ))
 ;; ==== markdown END   ====
 
-;; ==== workgroup BEGIN ====
-;;(require 'workgroups)
-;;(setq wg-prefix-key (kbd "C-c w"))
-;;(workgroups-mode 1)
-;;(wg-load "~/.emacs.d/workgroups")
-;; ==== workgroup END   ====
-
 ;; ==== weibo BEGIN ====
 (require 'weibo)
 ;; ==== weibo END   ====
@@ -250,16 +234,13 @@ Display the results in a hyperlinked *compilation* buffer."
       mac-command-modifier 'meta
       mac-option-modifier 'none)
 
-;; ERC hightlight nicks
-(require 'erc-hl-nicks)
-
 ;; powerline
 (require 'powerline)
 (powerline-default)
 
 ;; column highlight
-;;(require 'col-highlight)
-;;(column-highlight-mode 1)
+(require 'col-highlight)
+(column-highlight-mode 1)
 
 ;; show bookmarks at startup
 (setq inhibit-splash-screen t)
@@ -290,9 +271,9 @@ Display the results in a hyperlinked *compilation* buffer."
 (electric-pair-mode)
 
 ;; undo-tree
-(require 'undo-tree)
-(global-undo-tree-mode 1)
-(defalias 'redo 'undo-tree)
+;;(require 'undo-tree)
+;;(global-undo-tree-mode 1)
+;;(defalias 'redo 'undo-tree)
 (global-set-key (kbd "C-z") 'undo)
 (global-set-key (kbd "C-S-z") 'redo)
 (global-set-key (kbd "M-/") 'auto-complete)
@@ -300,14 +281,6 @@ Display the results in a hyperlinked *compilation* buffer."
 
 ;; bind C-o to imenu for clojure/java mode
 (global-set-key (kbd "M-o") 'imenu)
-
-;; erc config
-;; auto connect to freenode.net
-;;(erc :server "irc.freenode.net" :port 6667 :nick "xumingmingv")
-;; auto-join channels
-;;(setq erc-autojoin-channels-alist
-;;      '(("freenode.net" "#emacs" "#clojure")))
-
 
 ;; refheap
 (require 'refheap)
@@ -342,40 +315,6 @@ Display the results in a hyperlinked *compilation* buffer."
 ;; hide toolbar
 (tool-bar-mode -1)
 
-;; hy-mode
-(require 'hy-mode)
-
-;; golang's autocompletion
-(require 'go-autocomplete)
-(require 'go-mode)
-;; format go code before save
-(add-hook 'before-save-hook 'gofmt-before-save)
-
-;; set PATH
-(setenv "GOPATH" "/Users/xumingmingv/local/self/go")
-(setenv "JAVA_HOME" "/usr/alibaba/java")
-
-(setenv "PATH"
-  (concat
-   (getenv "GOPATH") "/bin:"
-   (getenv "PATH")
-  )
-)
-
-;; emacs-eclim
-(require 'eclim)
-(global-eclim-mode)
-(setq eclim-executable "/usr/local/eclipse-kepler/eclim")
-(require 'ac-emacs-eclim-source)
-(ac-emacs-eclim-config)
-(add-to-list 'eclim--file-coding-system-mapping '("chinese-gbk-unix" . "GBK"))
-(add-to-list 'eclim--file-coding-system-mapping '("iso-latin-1-dos" . "GBK"))
-(require 'company)
-(require 'company-emacs-eclim)
-(company-emacs-eclim-setup)
-(global-company-mode t)
-(global-set-key (kbd "M-/") 'eclim-complete)
-
 ;; smart-tab
 (require 'smart-tab)
 (global-smart-tab-mode 1)
@@ -389,10 +328,6 @@ Display the results in a hyperlinked *compilation* buffer."
 
 ;; require tramp to sudo edit file in emacs
 (require 'tramp)
-
-;; add google-this
-(require 'google-this)
-(google-this-mode 1)
 
 ;; shift-tab to un-indent
 (global-set-key (kbd "<S-tab>") 'un-indent-by-removing-4-spaces)

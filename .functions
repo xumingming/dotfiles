@@ -6,7 +6,7 @@ femacs() {
 }
 
 switch-m2-settings() {
-  cp ~/local/self/dotfiles/.m2settings/settings-$1.xml ~/.m2/settings.xml
+  cp ~/backup/.m2settings/settings-$1.xml ~/.m2/settings.xml
 }
 
 jkill() {
@@ -52,15 +52,30 @@ alipay_svn_list() {
     svn st | sed 's/^M//g;s/^A  +//g;s/^A//g;s/^D//g;' | grep -v WebSofaStarter | grep -v sofa-test-config | grep -v AdcSessionFilter | grep -v MyGotoneConstants | grep -v projectile | grep -v 'adc-db.xml' | awk 'BEGIN {stat = "" } {stat = stat  $0;} END {print stat}'
 }
 
-redepoly-hiveservice() {
+start_lein_server() {
+    lein repl :headless :port 23456 &> /dev/null &
+}
+
+clojure() {
+    grench repl :connect 23456
+}
+
+redepoly-hiveservice() {    
 	$CATALINA_HOME/bin/shutdown.sh
 	jps | grep Bootstrap | cut -d' ' -f1 | xargs kill -9
 	rm -rf $CATALINA_HOME/webapps/HiveService*
-	cd ~/local/alipay/hiveservice-bug/hiveservice
-	mvn clean install -Dmaven.test.skip=true
+	mvn clean resources:resources install -Dmaven.test.skip=true -P test
 	cp target/HiveService.war $CATALINA_HOME/webapps
 	$CATALINA_HOME/bin/catalina.sh jpda start
+    tail -f /usr/local/tomcat/logs/catalina.out
+}
+
+copy-hs-conf() {
+    cp -rf ~/Documents/Alipay/HiveServiceConf/* .
+}
+
+copy-adc-conf() {
+    cp -rf ~/Documents/Alipay/AdcConf/* .
 }
 
 . ~/local/self/dotfiles/.functions-storm
-. ~/local/self/dotfiles/.functions-alibaba
