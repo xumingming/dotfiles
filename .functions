@@ -70,6 +70,11 @@ redepoly-hiveservice() {
     tail -f /usr/local/tomcat/logs/catalina.out
 }
 
+rebuild-hiveservice() {    
+	mvn clean resources:resources install -Dmaven.test.skip=true -P test
+    scp target/HiveService.war root@hive-test:/tmp
+}
+
 copy-hs-conf() {
     cp -rf ~/Documents/Alipay/HiveServiceConf/* .
 }

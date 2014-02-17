@@ -40,5 +40,5 @@ fi
 . ~/local/self/dotfiles/.functions
 . ~/local/self/dotfiles/.ps1
 . ~/local/self/dotfiles/.exports
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+
+export PATH=$PATH:$ZK_HOME/bin:$JAVA_HOME/bin:/usr/local/hadoop/bin:$HIVE_HOME/bin:$STORM_HOME/bin:$ODPS_CMD_HOME/bin
