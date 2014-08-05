@@ -1,9 +1,9 @@
-;; -*- emacs-lisp -*- <13/09/11 22:37:27 /Users/xumingmingv/.emacs.d/tramp>
+;; -*- emacs-lisp -*- <14/05/07 18:53:46 /Users/xumingmingv/.emacs.d/tramp>
 ;; Tramp connection history.  Don't change this file.
 ;; You can delete it, forcing Tramp to reapply the checks.
 
 ((["sudo" "root" "localhost" nil nil]
-  ("uname" "Darwin 12.4.0")
+  ("uname" "Darwin 13.1.0")
   ("test" "test")
   ("remote-path"
    ("/usr/bin" "/bin" "/usr/sbin" "/sbin" "/usr/local/bin" "/usr/local/sbin" "/opt/local/bin"))
@@ -15,7 +15,9 @@
   ("readlink" nil)
   ("stat" nil)
   ("id" "/usr/bin/id")
-  ("gid-integer" 20)
+  ("gid-integer" 0)
   ("file-exists" "test -e")
   ("uid-integer" 0)
-  ("~root" "/var/root")))
+  ("ls" "/bin/ls")
+  ("~root" "/var/root")
+  ("ls-dired" nil)))

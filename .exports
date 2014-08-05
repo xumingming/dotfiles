@@ -31,8 +31,9 @@ export DOTFILES_HOME=/Users/xumingmingv/local/self/dotfiles
 export BTRACE_HOME=/usr/local/btrace
 export JMETER_HOME=/usr/local/jmeter
 export ODPS_CMD_HOME=/Users/xumingmingv/local/self/odpscmd
+export ODPS_CLI_HOME=/Users/xumingmingv/local/self/odps-cli
 # at last, the PATH
-export PATH=$PATH:/opt/local/bin:$ZK_HOME/bin:$BOOST_HOME:$CLOJURESCRIPT_HOME/bin:$ANTX_HOME/bin:$GOPATH/bin:$JAVA_HOME/bin:/usr/local/hadoop/bin:$HIVE_HOME/bin:$STORM_HOME/bin:$DOTFILES_HOME/:$BTRACE_HOME/bin:$JMETER_HOME/bin:$ODPS_CMD_HOME/bin
+export PATH=$PATH:/opt/local/bin:$ZK_HOME/bin:$BOOST_HOME:$CLOJURESCRIPT_HOME/bin:$ANTX_HOME/bin:$GOPATH/bin:$JAVA_HOME/bin:/usr/local/hadoop/bin:$HIVE_HOME/bin:$STORM_HOME/bin:$DOTFILES_HOME/:$BTRACE_HOME/bin:$JMETER_HOME/bin:$ODPS_CMD_HOME/bin:$ODPS_CLI_HOME/bin
 # Add the ~/bin directory to the path.  This allows you to install simple
 # binaries by simply moving them into ~/bin.
 if [ -d $HOME/bin ]; then

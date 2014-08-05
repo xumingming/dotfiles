@@ -24,13 +24,11 @@
 (setq-default pathname-coding-system 'utf-8)
 
 ;; setup load-path
-(add-to-list 'load-path (expand-file-name "~/.emacs.d"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/weibo.emacs"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/powerline"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/nrepl.el"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/projectile"))
-
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/rainbow-delimiters.el"))
 ;;(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/undo-tree"))
 ;;(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/go-autocomplete.el"))
@@ -42,6 +40,10 @@
 
 ;; specify custom theme load path
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+(load-theme 'solarized-dark t)
+;;(load-theme 'solarized-light t)
+;;(load-theme 'zenburn t)
+;;(load-theme 'adwaita t)
 
 ;;; This was installed by package-install.el.
 ;;; This provides support for the package system and
@@ -123,7 +125,7 @@
 ;;(add-hook 'before-save-hook (lambda () (delete-trailing-whitespace)))
 
 ;; spaces instead of tabs
-;;(setq-default indent-tabs-mode nil)
+(setq-default indent-tabs-mode nil)
 
 ;; if there is a tab, make it size of 4 spaces
 (setq-default tab-width 4)
@@ -141,8 +143,13 @@
 
 ;; set font size
 (if (string= system-type "darwin")
-	(set-default-font "Monaco-14")
-  (set-default-font "Ubuntu Mono-13"))
+	(set-default-font "WenQuanYi Zen Hei Mono-14")
+  (set-default-font "WenQuanYi Zen Hei Mono-14"))
+;; set chinese font
+(set-fontset-font t 'han (font-spec :name "WenQuanYi Zen Hei Mono-14"))
+
+;; replace string
+;; (global-set-key (kbd "C-x C-r") 'replace-string)
 
 
 ;; ====  kibit related config BEGIN ====
@@ -240,7 +247,7 @@ Display the results in a hyperlinked *compilation* buffer."
 
 ;; column highlight
 (require 'col-highlight)
-(column-highlight-mode 1)
+(column-highlight-mode 0)
 
 ;; show bookmarks at startup
 (setq inhibit-splash-screen t)
@@ -285,8 +292,14 @@ Display the results in a hyperlinked *compilation* buffer."
 ;; refheap
 (require 'refheap)
 
+;; buffer related things
+;;(defalias 'list-buffers 'ido-switch-buffer)
+(defalias 'list-buffers 'grizzl)
+
 ;; map C-x C-b to ido-switch-buffer
 (global-set-key (kbd "C-x C-b") 'ido-switch-buffer)
+;; map C-x C-b to ido-switch-buffer
+;;(global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ;; map C-x C-g to magit-status
 (global-set-key (kbd "C-x C-g") 'magit-status)
@@ -305,12 +318,13 @@ Display the results in a hyperlinked *compilation* buffer."
 
 
 ;; enable projectile globally
-(require 'projectile)
+;;(require 'projectile)
 (projectile-global-mode)
 ;; use native indexing method -- to enable .projectile ignore files
 (setq projectile-use-native-indexing t)
 ;; enable projectile caching
 (setq projectile-enable-caching t)
+(setq projectile-completion-system 'grizzl)
 
 ;; hide toolbar
 (tool-bar-mode -1)
