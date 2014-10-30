@@ -26,10 +26,6 @@
 
 ;; setup load-path
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor"))
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/powerline"))
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/projectile"))
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/rainbow-delimiters.el"))
-
 
 (require 'package)
 (add-to-list 'package-archives
@@ -90,10 +86,6 @@
 ;;(defalias 'list-buffers 'ido-switch-buffer)
 (defalias 'list-buffers 'grizzl)
 
-
-;; hooks
-;; enable rainbow
-(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 ;; enable paredit
 (add-hook 'clojure-mode-hook (lambda () (paredit-mode +1)))
 (add-hook 'go-mode-hook (lambda () (paredit-mode +1)))
@@ -177,18 +169,11 @@
  '(ergoemacs-theme "standard")
  '(ergoemacs-theme-options nil)
  '(ergoemacs-use-menus t)
- '(initial-scratch-message
-   #(";; This buffer is for notes you don't want to save, and for Lisp evaluation.
-;; If you want to create a file, visit that file with ^O,
-;; then enter the text in that file's own buffer." 131 133
-                                                       (face ergoemacs-pretty-key)))
- '(org-CUA-compatible t)
- '(org-special-ctrl-a/e t)
- '(org-support-shift-select t)
- '(recentf-menu-before "Close")
+ '(initial-scratch-message nil)
+ '(org-CUA-compatible nil)
+ '(recentf-menu-before nil)
  '(recentf-mode t)
- '(scroll-error-top-bottom t)
- '(set-mark-command-repeat-pop t))
+ '(shift-select-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
