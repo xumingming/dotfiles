@@ -48,6 +48,9 @@ source ~/local/self/dotfiles/.functions
 source ~/local/self/dotfiles/.exports
 
 export JAVA_HOME=/usr/local/java
-export CLASSPATH=.:$JAVA_HOME/lib:$JAVA_HOME/jre/lib:$CLASSPATH
+export CLASSPATH=.:$JAVA_HOME/lib:$JAVA_HOME/jre/lib:/usr/local/lib/antlr-4.3-complete.jar:$CLASSPATH
 export CLOUDENGINE_HOME=/usr/local/cloudengine
-export PATH=$HADOOP_HOME/bin/:/Users/xumingmingv/Desktop/ssh/:/usr/local/groovy/bin:$PATH:
+export PATH=$HADOOP_HOME/bin/:/Users/xumingmingv/Desktop/ssh/:/usr/local/groovy/bin:/Users/xumingmingv/bin:$PATH
+
+alias antlr4='java -jar /usr/local/lib/antlr-4.3-complete.jar'
+alias grun='java org.antlr.v4.runtime.misc.TestRig'
