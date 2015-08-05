@@ -197,7 +197,6 @@
 (setenv "GOPATH" "/Users/xumingmingv/local/self/go")
 (setq exec-path (split-string (getenv "PATH") ":"))
 
-(load-file "$GOPATH/src/code.google.com/p/go.tools/cmd/oracle/oracle.el")
 (defun xumingmingv-go-mode-hook ()
   "Modify keymaps used by `go-mode'."
   (local-set-key (kbd "M-.") 'godef-jump)
