@@ -6,7 +6,7 @@ ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
-
+#ZSH_THEME="frisk"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
@@ -50,7 +50,36 @@ source ~/local/self/dotfiles/.exports
 export JAVA_HOME=/usr/local/java
 export CLASSPATH=.:$JAVA_HOME/lib:$JAVA_HOME/jre/lib:/usr/local/lib/antlr-4.3-complete.jar:$CLASSPATH
 export CLOUDENGINE_HOME=/usr/local/cloudengine
-export PATH=$HADOOP_HOME/bin/:/Users/xumingmingv/Desktop/ssh/:/usr/local/groovy/bin:/Users/xumingmingv/bin:$PATH
+export GOROOT=/usr/local/Cellar/go/1.3/libexec
+export BTRACE_HOME=/usr/local/btrace
+export GROOVY_HOME=/usr/local/opt/groovy/libexec
+export KIBOU_HOME=/Users/xumingmingv/local/alipay/kibou
+export NODE_PATH=/usr/local/lib/node_modules
+export PATH=$HADOOP_HOME/bin/:/Users/xumingmingv/Desktop/ssh/:/Users/xumingmingv/bin:$BTRACE_HOME/bin:$KIBOU_HOME/bin:$KIBOU_HOME/bin/sofa:$PATH
 
 alias antlr4='java -jar /usr/local/lib/antlr-4.3-complete.jar'
 alias grun='java org.antlr.v4.runtime.misc.TestRig'
+#export PROMPT="%{$fg[blue]%}%/%{$reset_color%} $(git_prompt_info)$(bzr_prompt_info)%{$fg[white]%}%{$reset_color%} %{$fg[white]%}
+#%{$reset_color%}%{$fg_bold[black]%}>%{$reset_color%}"
+alias dms='/usr/bin/python /Users/xumingmingv/local/alipay/dms/dms-tools/dms.py'
+alias yash='sudo ~/local/self/yash/yash.py'
+alias yashpub='~/markdown/scripts/yashpub.sh ~/local/alipay/dpc $1'
+# The function
+cd() {
+	builtin cd $@
+	if [ "$?" = "0" ]; then
+		case $PWD in
+			~/local/alipay/* )
+				echo "alipay"
+				git config --local user.name "护城"
+				git config --local user.email "mingming.xumm@alibaba-inc.com"
+				;;
+			~/local/self/*  )
+				echo "self"
+				;;
+		esac
+
+		echo "Git UserName: $(git config --get user.name)"
+		echo "Git Email: $(git config --get user.email)"				
+	fi
+}

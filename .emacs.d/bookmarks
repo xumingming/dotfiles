@@ -1,0 +1,10 @@
+;;;; Emacs Bookmark Format Version 1 ;;;;
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("json_test.go"
+ (filename . "~/local/self/go/src/github.com/xumingming/gojson/json_test.go")
+ (front-context-string . "air()\n\n	if name ")
+ (rear-context-string . "ue = lexer.readP")
+ (position . 1910))
+)

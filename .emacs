@@ -1,3 +1,6 @@
+;; turn on debug
+;;(setq debug-on-error t)
+
 ;; emacs 24 does not have this function
 ;; so we define it ourself
 (defun plist-to-alist (the-plist)
@@ -26,6 +29,7 @@
 
 ;; setup load-path
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor"))
+(add-to-list 'load-path (expand-file-name "/usr/local/bin"))
 
 (require 'package)
 (add-to-list 'package-archives
@@ -34,7 +38,15 @@
 
 ;; specify custom theme load path
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
-(load-theme 'solarized-dark t)
+(add-to-list 'custom-theme-load-path "~/.emacs.d/elpa/darcula-theme-20141022.652/")
+;;(load-theme 'solarized-dark t)
+;;(load-theme 'solarized-light t)
+;;(load-theme 'light-blue)
+;;(load-theme 'misterioso)
+;;(load-theme 'leuven)
+;;(load-theme 'wheatgrass)
+(load-theme 'darcula t)
+;;(load-theme 'deeper-blue)
 
 ;; global settings
 ;; customize the initial scratch message
@@ -49,14 +61,14 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 ;; Highlight matching parentsis
 (show-paren-mode t)
-;; spaces instead of tabs
-(setq-default indent-tabs-mode nil)
-;; if there is a tab, make it size of 4 spaces
-(setq-default tab-width 4)
+
 ;; set font
-(set-default-font "WenQuanYi Zen Hei Mono-14")
+
+;;(set-default-font "Monaco-15")
 ;; set chinese font
+(set-default-font "WenQuanYi Zen Hei Mono-14")
 (set-fontset-font t 'han (font-spec :name "WenQuanYi Zen Hei Mono-14"))
+
 ;; enable linum-mode
 (global-linum-mode)
 ;;; set command key as meta
@@ -83,26 +95,15 @@
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
 ;; buffer related things
-;;(defalias 'list-buffers 'ido-switch-buffer)
-(defalias 'list-buffers 'grizzl)
+
+;;(defalias 'list-buffers 'grizzl)
 
 ;; enable paredit
 (add-hook 'clojure-mode-hook (lambda () (paredit-mode +1)))
-(add-hook 'go-mode-hook (lambda () (paredit-mode +1)))
 
 ;; disable the line-wrap character
 ;; http://emacswiki.org/emacs/LineWrap
 (set-display-table-slot standard-display-table 'wrap ?\ )
-
-;; ido mode
-(ido-mode t)
-(setq ido-enable-flex-matching t) ; fuzzy matching is a must have
-(setq ido-enable-last-directory-history nil) ; forget latest selected directory names
-(require 'flx-ido)
-(flx-ido-mode 1)
-(setq ido-use-faces nil)
-(setq flx-ido-threshhold 10000)
-(setq ido-everywhere t)
 
 ;; set the dir for yasnippet
 (add-to-list 'load-path
@@ -125,7 +126,7 @@
 
 ;; enable projectile globally
 (require 'projectile)
-;;(projectile-global-mode)
+(projectile-global-mode)
 ;; use native indexing method -- to enable .projectile ignore files
 (setq projectile-use-native-indexing t)
 ;; enable projectile caching
@@ -146,11 +147,6 @@
 (add-hook 'emacs-lisp-mode-hook (lambda () (paredit-mode +1)))
 ;;(add-hook 'emacs-lisp-mode-hook (lambda () (lisp-interaction-mode)))
 
-;; set eshell PATH
-(setenv "PATH" 
-        (concat 
-         "/usr/local/hadoop/bin/:/Users/xumingmingv/Desktop/ssh/:/usr/local/groovy/bin:/Users/xumingmingv/bin:/Users/xumingmingv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/opt/local/bin:/usr/local/zookeeper/bin:/Users/xumingmingv/local/svn/boost:/Users/xumingmingv/local/self/clojurescript/bin:/usr/alibaba/antx/bin:/Users/xumingmingv/local/self/go/bin:/usr/local/java/bin:/usr/local/hadoop/bin:/usr/local/hive/bin:/usr/local/storm/bin:/Users/xumingmingv/local/self/dotfiles/:/usr/local/btrace/bin:/usr/local/jmeter/bin:/Users/xumingmingv/local/self/odpscmd/bin:/Users/xumingmingv/local/self/odps-cli/bin" ":"
-         (getenv "PATH")))
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -158,21 +154,14 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "dd4db38519d2ad7eb9e2f30bc03fba61a7af49a185edfd44e020aa5345e3dca7" default)))
+	("18e89f93cbaaac214202142d910582354d36639f21f32b04718ca6425dbc82a2" "d4814f7fae129a9d1339c375f0236620a7e725d32f868cf88417f59b7078bf7f" "941bc214a26ed295e68bbeaadcd279475a3d6df06ae36b0b2872319d58b855f7" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "dd4db38519d2ad7eb9e2f30bc03fba61a7af49a185edfd44e020aa5345e3dca7" default)))
  '(delete-selection-mode t)
- '(ergoemacs-ctl-c-or-ctl-x-delay 0.2)
- '(ergoemacs-handle-ctl-c-or-ctl-x (quote both))
- '(ergoemacs-ini-mode t)
- '(ergoemacs-keyboard-layout "us")
- '(ergoemacs-mode nil)
- '(ergoemacs-smart-paste nil)
- '(ergoemacs-theme "standard")
- '(ergoemacs-theme-options nil)
- '(ergoemacs-use-menus t)
  '(initial-scratch-message nil)
  '(org-CUA-compatible nil)
  '(recentf-menu-before nil)
  '(recentf-mode t)
+ '(scroll-error-top-bottom nil)
+ '(set-mark-command-repeat-pop nil)
  '(shift-select-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -180,3 +169,112 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+
+;; auto-complete related settings
+(require 'auto-complete)
+(require 'auto-complete-config)
+(global-auto-complete-mode)
+
+;; go related settings
+(require 'go-autocomplete)
+(require 'lazy-set-key) ;; init-golang depends on this
+(require 'init-golang)
+;;(add-hook 'go-mode-hook (lambda () (auto-complete-mode +1)))
+;;(require 'go-mode)
+
+(setenv "GOROOT" "/usr/local/Cellar/go/1.3/libexec")
+(setenv "PATH" 
+        (concat 
+		 "/bin"
+		 ":/sbin"		 
+		 ":/usr/bin"
+		 ":/usr/sbin"		 
+		 ":/usr/local/bin"
+		 ":" (getenv "GOROOT") "/bin"
+		 ":/Users/xumingmingv/local/self/go/bin"
+		 ":" (getenv "PATH")))
+(setenv "GOPATH" "/Users/xumingmingv/local/self/go")
+(setq exec-path (split-string (getenv "PATH") ":"))
+
+(load-file "$GOPATH/src/code.google.com/p/go.tools/cmd/oracle/oracle.el")
+(defun xumingmingv-go-mode-hook ()
+  "Modify keymaps used by `go-mode'."
+  (local-set-key (kbd "M-.") 'godef-jump)
+  (local-set-key (kbd "C-c C-d") 'godoc-at-point)  
+  (add-hook 'before-save-hook #'gofmt-before-save)
+  ;; enable auto-complete
+  (auto-complete-mode +1)
+  ; Use goimports instead of go-fmt
+  (setq gofmt-command "goimports")  
+  ; Customize compile command to run go build
+  (if (not (string-match "go" compile-command))
+      (set (make-local-variable 'compile-command)
+           "go build -v && go test -v && go vet"))
+  (go-oracle-mode)
+  )
+
+(add-hook 'go-mode-hook 'xumingmingv-go-mode-hook)
+
+
+;; undo redo
+(require 'undo-tree)
+(global-undo-tree-mode 1)
+(defalias 'redo 'undo-tree-redo)
+(global-set-key (kbd "C-z") 'undo)
+(global-set-key (kbd "C-S-z") 'redo)
+
+;; window-number mode
+(require 'window-number)
+(window-number-mode 1)
+(window-number-meta-mode 1)
+
+;; spaces instead of tabs
+(setq indent-tabs-mode nil)
+;; if there is a tab, make it size of 4 spaces
+(setq tab-width 4)
+(setq default-tab-width 4)
+(cua-selection-mode 1)
+
+;; helm related
+;; (require 'helm-config)
+;; (global-set-key (kbd "M-x") 'helm-M-x)
+;; (global-set-key (kbd "C-x C-f") 'helm-find-files)
+;; (global-set-key (kbd "M-y") 'helm-show-kill-ring)
+;; (global-set-key (kbd "C-x C-b") 'helm-mini)
+;; (setq helm-M-x-fuzzy-match t
+;; 	  helm-buffers-fuzzy-match t
+;;   	  helm-imenu-fuzzy-match t
+;; 	  helm-recentf-fuzzy-match t)
+
+;; ido mode
+(ido-mode t)
+(setq ido-enable-flex-matching t) ; fuzzy matching is a must have
+(setq ido-enable-last-directory-history nil) ; forget latest selected directory names
+(require 'flx-ido)
+(flx-ido-mode 1)
+(setq ido-use-faces nil)
+(setq flx-ido-threshhold 10000)
+(setq ido-everywhere t)
+
+
+;; ido-ubiquitous-mode
+(ido-ubiquitous-mode t)
+
+;; vertical ido mode
+(require 'ido-vertical-mode)
+(ido-vertical-mode 1)
+(global-set-key (kbd "C-x C-b") 'ido-switch-buffer)
+
+(defalias 'list-buffers 'ido-switch-buffer)
+
+(defun align-repeat (start end regexp)
+    "Repeat alignment with respect to 
+     the given regular expression."
+    (interactive "r\nsAlign regexp: ")
+    (align-regexp start end 
+        (concat "\\(\\s-*\\)" regexp) 1 1 t))
+
+(defun align-table (start end)
+  (interactive "r")
+  (align-repeat start end "|"))
