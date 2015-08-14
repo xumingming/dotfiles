@@ -4,3 +4,5 @@ archive-contents
 auto-save-list
 /.emacs.d/projectile.cache
 /.emacs.d/url/cookies
+/.emacs.d/recentf
+/.emacs.d/projectile-bookmarks.eld
