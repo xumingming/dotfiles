@@ -44,10 +44,10 @@ plugins=(git svn autojump)
 
 source $ZSH/oh-my-zsh.sh
 
-source ~/local/self/dotfiles/.functions
+#source ~/local/self/dotfiles/.functions
 source ~/local/self/dotfiles/.exports
 
-export JAVA_HOME=/usr/local/java
+export JAVA_HOME=$(/usr/libexec/java_home)
 export CLASSPATH=.:$JAVA_HOME/lib:$JAVA_HOME/jre/lib:/usr/local/lib/antlr-4.3-complete.jar:$CLASSPATH
 export CLOUDENGINE_HOME=/usr/local/cloudengine
 export GOROOT=/usr/local/Cellar/go/1.3/libexec
@@ -61,6 +61,7 @@ alias antlr4='java -jar /usr/local/lib/antlr-4.3-complete.jar'
 alias grun='java org.antlr.v4.runtime.misc.TestRig'
 #export PROMPT="%{$fg[blue]%}%/%{$reset_color%} $(git_prompt_info)$(bzr_prompt_info)%{$fg[white]%}%{$reset_color%} %{$fg[white]%}
 #%{$reset_color%}%{$fg_bold[black]%}>%{$reset_color%}"
+alias scheduler='/Users/xumingmingv/local/self/pyscheduler/scheduler.py -s'
 alias dms='/usr/bin/python /Users/xumingmingv/local/alipay/dms/dms-tools/dms.py'
 alias yash='sudo ~/local/self/yash/yash.py'
 alias yashpub='~/markdown/scripts/yashpub.sh ~/local/alipay/dpc $1'
@@ -70,9 +71,11 @@ cd() {
 	if [ "$?" = "0" ]; then
 		case $PWD in
 			~/local/alipay/* )
-				echo "alipay"
-				git config --local user.name "护城"
-				git config --local user.email "mingming.xumm@alibaba-inc.com"
+                if [ -z .git ]; then
+				    echo "alipay"
+				    git config --local user.name "护城"
+				    git config --local user.email "mingming.xumm@alibaba-inc.com"
+                fi
 				;;
 			~/local/self/*  )
 				echo "self"
