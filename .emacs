@@ -228,12 +228,11 @@
 (window-number-mode 1)
 (window-number-meta-mode 1)
 
-;; spaces instead of tabs
-(setq indent-tabs-mode nil)
-;; if there is a tab, make it size of 4 spaces
-(setq tab-width 4)
-(setq default-tab-width 4)
-(cua-selection-mode 1)
+(add-hook 'after-change-major-mode-hook 
+          '(lambda () 
+             (setq-default indent-tabs-mode nil)
+             (setq c-basic-indent 4)
+             (setq tab-width 4)))
 
 ;; helm related
 ;; (require 'helm-config)
@@ -276,4 +275,5 @@
 
 (defun align-table (start end)
   (interactive "r")
+;;  (replace-string "	" "" start end)
   (align-repeat start end "|"))
