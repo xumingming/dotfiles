@@ -38,24 +38,24 @@
 
 ;; specify custom theme load path
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
-(add-to-list 'custom-theme-load-path "~/.emacs.d/elpa/darcula-theme-20141022.652/")
-;;(load-theme 'solarized-dark t)
+;;(add-to-list 'custom-theme-load-path "~/.emacs.d/elpa/darcula-theme-20141022.652/")
+(load-theme 'solarized-dark t)
 ;;(load-theme 'solarized-light t)
 ;;(load-theme 'light-blue)
 ;;(load-theme 'misterioso)
 ;;(load-theme 'leuven)
 ;;(load-theme 'wheatgrass)
-(load-theme 'darcula t)
+;;(load-theme 'darcula t)
 ;;(load-theme 'deeper-blue)
 
 ;; global settings
 ;; customize the initial scratch message
-(setq initial-scratch-message ";; Xiao Ming, Have a good dayÔºÅ")
+(setq initial-scratch-message ";; Xiao Ming, Have a good day£°")
 ;; inhibit startup message
 (setq inhibit-startup-message t)
 ;; always follow symlinks without asking
 (setq vc-follow-symlinks t)
-;; display "lambda" as ‚ÄúŒª"
+;; display "lambda" as °∞¶À"
 (global-prettify-symbols-mode 1)
 ;; "y or n" instead of "yes or no"
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -66,7 +66,7 @@
 
 ;;(set-default-font "Monaco-15")
 ;; set chinese font
-(set-default-font "WenQuanYi Zen Hei Mono-14")
+(set-default-font "WenQuanYi Zen Hei Mono-16")
 (set-fontset-font t 'han (font-spec :name "WenQuanYi Zen Hei Mono-14"))
 
 ;; enable linum-mode
@@ -277,3 +277,12 @@
   (interactive "r")
 ;;  (replace-string "	" "" start end)
   (align-repeat start end "|"))
+
+
+(defun clean-whitespace-region (start end)
+  "Untabifies, removes trailing whitespace, and re-indents the region"
+  (interactive "r")
+  (save-excursion
+    (untabify start end)
+    (c-indent-region start end)
+    (replace-regexp "[  ]+$" "" nil start end))) ;

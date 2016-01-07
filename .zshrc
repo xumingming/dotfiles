@@ -69,20 +69,137 @@ alias yashpub='~/markdown/scripts/yashpub.sh ~/local/alipay/dpc $1'
 cd() {
 	builtin cd $@
 	if [ "$?" = "0" ]; then
-		case $PWD in
-			~/local/alipay/* )
-                if [ -z .git ]; then
-				    echo "alipay"
-				    git config --local user.name "护城"
-				    git config --local user.email "mingming.xumm@alibaba-inc.com"
-                fi
-				;;
-			~/local/self/*  )
-				echo "self"
-				;;
-		esac
+        if [[ $PWD == /Users/xumingmingv/local/alipay/* ]] ; then
+            if [ -n .git ]; then
+				echo "alipay"
+				git config --local user.name "护城"
+				git config --local user.email "mingming.xumm@alibaba-inc.com"
+            fi
+        fi
+        
+        if [[ $PWD == /Users/xumingmingv/local/self/* ]] ; then
+			echo "self"
+        fi
 
 		echo "Git UserName: $(git config --get user.name)"
 		echo "Git Email: $(git config --get user.email)"				
 	fi
 }
+export PATH="/Users/xumingmingv/sofa:$PATH"
+export SOFA_HOME="/Users/xumingmingv/sofa"
+
+export CONFOPS_HOME=/Users/xumingmingv/local/alipay/confops
+export PATH=$CONFOPS_HOME:$PATH
+
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export CONFOPS_HOME=/Users/xumingmingv/confops
+export PATH=/Users/xumingmingv/confops:$PATH
+export CONFOPS_HOME=/Users/xumingmingv/confops
+export PATH=/Users/xumingmingv/confops:$PATH

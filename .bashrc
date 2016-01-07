@@ -42,3 +42,5 @@ fi
 . ~/local/self/dotfiles/.exports
 
 export PATH=$PATH:$ZK_HOME/bin:$JAVA_HOME/bin:/usr/local/hadoop/bin:$HIVE_HOME/bin:$STORM_HOME/bin:$ODPS_CMD_HOME/bin
+export PATH="/Users/xumingmingv/sofa:$PATH"
+export SOFA_HOME="/Users/xumingmingv/sofa"
