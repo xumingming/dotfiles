@@ -234,17 +234,6 @@
              (setq c-basic-indent 4)
              (setq tab-width 4)))
 
-;; helm related
-;; (require 'helm-config)
-;; (global-set-key (kbd "M-x") 'helm-M-x)
-;; (global-set-key (kbd "C-x C-f") 'helm-find-files)
-;; (global-set-key (kbd "M-y") 'helm-show-kill-ring)
-;; (global-set-key (kbd "C-x C-b") 'helm-mini)
-;; (setq helm-M-x-fuzzy-match t
-;; 	  helm-buffers-fuzzy-match t
-;;   	  helm-imenu-fuzzy-match t
-;; 	  helm-recentf-fuzzy-match t)
-
 ;; ido mode
 (ido-mode t)
 (setq ido-enable-flex-matching t) ; fuzzy matching is a must have
@@ -285,4 +274,22 @@
   (save-excursion
     (untabify start end)
     (c-indent-region start end)
-    (replace-regexp "[  ]+$" "" nil start end))) ;
+    (replace-regexp "[  ]+$" "" nil start end)))
+
+
+(defun surround-brackets ()
+  "Surround current region with brackets"
+  (interactive)
+  (when (use-region-p)
+    (save-excursion
+      (let ((beg (region-beginning))
+            (end (region-end)))
+        (goto-char end)
+        (insert "]")
+        (goto-char beg)
+        (insert "[")))))
+
+
+
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
