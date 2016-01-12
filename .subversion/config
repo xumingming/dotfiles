@@ -117,7 +117,7 @@
 ### Set interactive-conflicts to 'no' to disable interactive
 ### conflict resolution prompting.  It defaults to 'yes'.
 # interactive-conflicts = no
-global-ignores = *.iml *.ipr *.iws *.log target .mule .idea WebSofaStarter.java GpHiveService.java
+global-ignores = *.iml *.ipr *.iws *.log target .mule .idea .DStore
 
 ### Section for configuring automatic properties.
 [auto-props]
