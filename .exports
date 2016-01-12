@@ -10,7 +10,7 @@ export SVN_EDITOR=vim
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 
-export JAVA_HOME=/usr/local/java
+export JAVA_HOME=`/usr/libexec/java_home`
 export JAVA_OPTS="-Dfile.encoding=utf-8"
 
 export ZK_HOME=/usr/local/zookeeper
