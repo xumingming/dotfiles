@@ -290,6 +290,9 @@
         (insert "[")))))
 
 
-
+;; web-mode
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
+
+;; white-space cleanup
+(global-whitespace-cleanup-mode)
