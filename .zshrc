@@ -203,3 +203,5 @@ export CONFOPS_HOME=/Users/xumingmingv/confops
 export PATH=/Users/xumingmingv/confops:$PATH
 export CONFOPS_HOME=/Users/xumingmingv/confops
 export PATH=/Users/xumingmingv/confops:$PATH
+fpath=(/Users/xumingmingv/sofa/resources/completion $fpath)
+autoload -U compinit && compinit -u
