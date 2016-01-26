@@ -2,9 +2,19 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("json_test.go"
- (filename . "~/local/self/go/src/github.com/xumingming/gojson/json_test.go")
- (front-context-string . "air()\n\n	if name ")
- (rear-context-string . "ue = lexer.readP")
- (position . 1910))
+(("2016-01-11_2016-01-15.md"
+ (filename . "~/worknotes/weeklyreport/2016-01-11_2016-01-15.md")
+ (front-context-string . "\n* 参加全栈工程师培训\n\n##")
+ (rear-context-string . " 安装脚本\n\n### Misc\n")
+ (position . 96))
+(".emacs"
+ (filename . "~/local/self/dotfiles/.emacs")
+ (front-context-string . ";; turn on debug")
+ (rear-context-string)
+ (position . 1))
+("cli-notes.md"
+ (filename . "~/worknotes/cli-notes.md")
+ (front-context-string . "# 一些常用命令\n\n## mem")
+ (rear-context-string)
+ (position . 1))
 )

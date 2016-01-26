@@ -203,3 +203,6 @@ export CONFOPS_HOME=/Users/xumingmingv/confops
 export PATH=/Users/xumingmingv/confops:$PATH
 export CONFOPS_HOME=/Users/xumingmingv/confops
 export PATH=/Users/xumingmingv/confops:$PATH
+export PATH="/Users/xumingmingv/AliDrive/software/sofa:$PATH"
+fpath=(/Users/xumingmingv/AliDrive/software/sofa/resources/completion $fpath)
+autoload -U compinit && compinit -u
