@@ -1,0 +1,4 @@
+
+In end of data:
+dash-pkg.el:2:1:Warning: the function `define-package' is not known to be
+    defined.

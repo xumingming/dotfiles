@@ -2,11 +2,12 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("2016-01-11_2016-01-15.md"
- (filename . "~/worknotes/weeklyreport/2016-01-11_2016-01-15.md")
- (front-context-string . "\n* 参加全栈工程师培训\n\n##")
- (rear-context-string . " 安装脚本\n\n### Misc\n")
- (position . 96))
+(("2016-02-01_2016-02-05.md"
+ (filename . "~/worknotes/weeklyreport/2016-02-01_2016-02-05.md")
+ (front-context-string . "\n\n### 文档编写\n\n* 跟踪")
+ (rear-context-string . "ODO]\n* 服务检测 [俊贤]")
+ (position . 476)
+ (annotation . ""))
 (".emacs"
  (filename . "~/local/self/dotfiles/.emacs")
  (front-context-string . ";; turn on debug")
@@ -16,5 +17,6 @@
  (filename . "~/worknotes/cli-notes.md")
  (front-context-string . "# 一些常用命令\n\n## mem")
  (rear-context-string)
- (position . 1))
+ (position . 1)
+ (annotation . "\nthis is a very good tutorial"))
 )

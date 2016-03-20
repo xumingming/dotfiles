@@ -46,8 +46,6 @@ source $ZSH/oh-my-zsh.sh
 
 #source ~/local/self/dotfiles/.functions
 source ~/local/self/dotfiles/.exports
-
-export JAVA_HOME=$(/usr/libexec/java_home)
 export CLASSPATH=.:$JAVA_HOME/lib:$JAVA_HOME/jre/lib:/usr/local/lib/antlr-4.3-complete.jar:$CLASSPATH
 export CLOUDENGINE_HOME=/usr/local/cloudengine
 export GOROOT=/usr/local/Cellar/go/1.3/libexec
@@ -100,3 +98,5 @@ export PATH=/Users/xumingmingv/confops:$PATH
 export PATH="/Users/xumingmingv/AliDrive/software/sofa:$PATH"
 fpath=(/Users/xumingmingv/AliDrive/software/sofa/resources/completion $fpath)
 autoload -U compinit && compinit -u
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
