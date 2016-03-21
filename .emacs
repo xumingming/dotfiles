@@ -39,8 +39,8 @@
 ;; specify custom theme load path
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 ;;(add-to-list 'custom-theme-load-path "~/.emacs.d/elpa/darcula-theme-20141022.652/")
-(load-theme 'solarized-dark t)
-;;(load-theme 'solarized-light t)
+;;(load-theme 'solarized-dark t)
+(load-theme 'solarized-light t)
 ;;(load-theme 'light-blue)
 ;;(load-theme 'misterioso)
 ;;(load-theme 'leuven)
@@ -246,14 +246,14 @@
 
 
 ;; ido-ubiquitous-mode
-(ido-ubiquitous-mode t)
+;;(ido-ubiquitous-mode t)
 
 ;; vertical ido mode
 (require 'ido-vertical-mode)
 (ido-vertical-mode 1)
 (global-set-key (kbd "C-x C-b") 'ido-switch-buffer)
 
-(defalias 'list-buffers 'ido-switch-buffer)
+;;(defalias 'list-buffers 'ido-switch-buffer)
 
 (defun align-repeat (start end regexp)
     "Repeat alignment with respect to 

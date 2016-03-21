@@ -3,9 +3,9 @@
 ;;; Code:
 (add-to-list 'load-path (or (file-name-directory #$) (car load-path)))
 
-;;;### (autoloads nil "ido-vertical-mode" "ido-vertical-mode.el"
-;;;;;;  (22252 65181 0 0))
-;;; Generated autoloads from ido-vertical-mode.el
+;;;### (autoloads nil "ido-vertical-mode" "../../../../../../.emacs.d/elpa/ido-vertical-mode-20151003.1833/ido-vertical-mode.el"
+;;;;;;  "054db2bd6e6db54a99ddb426dec18cdd")
+;;; Generated autoloads from ../../../../../../.emacs.d/elpa/ido-vertical-mode-20151003.1833/ido-vertical-mode.el
 
 (defvar ido-vertical-mode nil "\
 Non-nil if Ido-Vertical mode is enabled.
@@ -20,6 +20,12 @@ or call the function `ido-vertical-mode'.")
 Makes ido-mode display vertically.
 
 \(fn &optional ARG)" t nil)
+
+;;;***
+
+;;;### (autoloads nil nil ("../../../../../../.emacs.d/elpa/ido-vertical-mode-20151003.1833/ido-vertical-mode-autoloads.el"
+;;;;;;  "../../../../../../.emacs.d/elpa/ido-vertical-mode-20151003.1833/ido-vertical-mode.el")
+;;;;;;  (22255 56743 382236 0))
 
 ;;;***
 
