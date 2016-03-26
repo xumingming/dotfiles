@@ -1,0 +1,4 @@
+ls
+cd 百度云同步盘/
+ls
+ssh localhost

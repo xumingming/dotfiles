@@ -41,6 +41,7 @@
 ;;(add-to-list 'custom-theme-load-path "~/.emacs.d/elpa/darcula-theme-20141022.652/")
 ;;(load-theme 'solarized-dark t)
 (load-theme 'solarized-light t)
+;;(abyss-theme)
 ;;(load-theme 'light-blue)
 ;;(load-theme 'misterioso)
 ;;(load-theme 'leuven)
@@ -154,8 +155,27 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-	("18e89f93cbaaac214202142d910582354d36639f21f32b04718ca6425dbc82a2" "d4814f7fae129a9d1339c375f0236620a7e725d32f868cf88417f59b7078bf7f" "941bc214a26ed295e68bbeaadcd279475a3d6df06ae36b0b2872319d58b855f7" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "dd4db38519d2ad7eb9e2f30bc03fba61a7af49a185edfd44e020aa5345e3dca7" default)))
+    ("c697b65591ba1fdda42fae093563867a95046466285459bd4e686dc95a819310" "40c66989886b3f05b0c4f80952f128c6c4600f85b1f0996caa1fa1479e20c082" "18e89f93cbaaac214202142d910582354d36639f21f32b04718ca6425dbc82a2" "d4814f7fae129a9d1339c375f0236620a7e725d32f868cf88417f59b7078bf7f" "941bc214a26ed295e68bbeaadcd279475a3d6df06ae36b0b2872319d58b855f7" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "dd4db38519d2ad7eb9e2f30bc03fba61a7af49a185edfd44e020aa5345e3dca7" default)))
  '(delete-selection-mode t)
+ '(ensime-sem-high-faces
+   (quote
+    ((var :foreground "#9876aa" :underline
+          (:style wave :color "yellow"))
+     (val :foreground "#9876aa")
+     (varField :slant italic)
+     (valField :foreground "#9876aa" :slant italic)
+     (functionCall :foreground "#a9b7c6")
+     (implicitConversion :underline
+                         (:color "#808080"))
+     (implicitParams :underline
+                     (:color "#808080"))
+     (operator :foreground "#cc7832")
+     (param :foreground "#a9b7c6")
+     (class :foreground "#4e807d")
+     (trait :foreground "#4e807d" :slant italic)
+     (object :foreground "#6897bb" :slant italic)
+     (package :foreground "#cc7832")
+     (deprecated :strike-through "#a9b7c6"))))
  '(initial-scratch-message nil)
  '(org-CUA-compatible nil)
  '(recentf-menu-before nil)
@@ -234,6 +254,14 @@
              (setq c-basic-indent 4)
              (setq tab-width 4)))
 
+;; handle tabs
+(setq-default tab-width 4)
+(setq-default indent-tabs-mode nil)
+(setq c-basic-indent 4)
+(setq tab-width 4)
+(setq default-tab-width 4)
+
+
 ;; ido mode
 (ido-mode t)
 (setq ido-enable-flex-matching t) ; fuzzy matching is a must have
@@ -296,3 +324,23 @@
 
 ;; white-space cleanup
 (global-whitespace-cleanup-mode)
+
+;; helm
+(require 'helm-config)
+(global-set-key (kbd "M-x") 'helm-M-x)
+(helm-mode 1)
+(global-set-key (kbd "C-x C-b") 'helm-buffers-list)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
+
+;; eyebrowse
+(eyebrowse-mode t)
+
+;; recentf
+(require 'recentf)
+(recentf-mode 1)
+(setq recentf-max-menu-items 25)
+(global-set-key "\C-x\ \C-r" 'recentf-open-files)
+
+
+;; all-ext
+(require 'all-ext)

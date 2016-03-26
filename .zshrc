@@ -47,7 +47,7 @@ source $ZSH/oh-my-zsh.sh
 #source ~/local/self/dotfiles/.functions
 source ~/local/self/dotfiles/.exports
 export CLASSPATH=.:$JAVA_HOME/lib:$JAVA_HOME/jre/lib:/usr/local/lib/antlr-4.3-complete.jar:$CLASSPATH
-export CLOUDENGINE_HOME=/usr/local/cloudengine
+#export CLOUDENGINE_HOME=/usr/local/cloudengine
 export GOROOT=/usr/local/Cellar/go/1.3/libexec
 export BTRACE_HOME=/usr/local/btrace
 export GROOVY_HOME=/usr/local/opt/groovy/libexec
