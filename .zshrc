@@ -60,3 +60,6 @@ fpath=($HOME/AliDrive/software/sofa/resources/completion $fpath)
 autoload -U compinit && compinit -u
 export OPS_HOME=$HOME/ops
 export PATH=$HOME/ops:$PATH
+
+
+fpath=(~/.zsh $fpath)

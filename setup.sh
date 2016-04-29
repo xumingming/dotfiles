@@ -8,7 +8,7 @@ setup_link() {
     to_path=~/$path
     if [ ! -d $to_path -a ! -f $to_path ]; then
         /bin/ln -s $from_path $to_path
-        echo "Copy $from_path to $to_path"
+        echo "Link $from_path to $to_path"
     else
         echo "WARNNING: $to_path already exists, so will not copy."
     fi
@@ -27,5 +27,10 @@ setup_link ".tmux.conf"
 
 mkdir -vp ~/.subversion
 setup_link ".subversion/config"
+
+setup_link ".git-completion.zsh"
+
+mkdir -vp ~/.zsh
+setup_link ".zsh/_git"
 
 
