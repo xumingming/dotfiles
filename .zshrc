@@ -46,7 +46,6 @@ source $ZSH/oh-my-zsh.sh
 
 #source ~/local/self/dotfiles/.functions
 source ~/local/self/dotfiles/.exports
-export CLASSPATH=.:$JAVA_HOME/lib:$JAVA_HOME/jre/lib:/usr/local/lib/antlr-4.3-complete.jar:$CLASSPATH
 #export CLOUDENGINE_HOME=/usr/local/cloudengine
 export GOROOT=/usr/local/Cellar/go/1.3/libexec
 export BTRACE_HOME=/usr/local/btrace
@@ -55,8 +54,6 @@ export KIBOU_HOME=/Users/xumingmingv/local/alipay/kibou
 export NODE_PATH=/usr/local/lib/node_modules
 export PATH=$HADOOP_HOME/bin/:/Users/xumingmingv/Desktop/ssh/:/Users/xumingmingv/bin:$BTRACE_HOME/bin:$KIBOU_HOME/bin:$KIBOU_HOME/bin/sofa:$PATH
 
-alias antlr4='java -jar /usr/local/lib/antlr-4.3-complete.jar'
-alias grun='java org.antlr.v4.runtime.misc.TestRig'
 #export PROMPT="%{$fg[blue]%}%/%{$reset_color%} $(git_prompt_info)$(bzr_prompt_info)%{$fg[white]%}%{$reset_color%} %{$fg[white]%}
 #%{$reset_color%}%{$fg_bold[black]%}>%{$reset_color%}"
 alias scheduler='/Users/xumingmingv/local/self/pyscheduler/scheduler.py -s'
@@ -89,14 +86,29 @@ export SOFA_HOME="/Users/xumingmingv/sofa"
 export CONFOPS_HOME=/Users/xumingmingv/local/alipay/confops
 export PATH=$CONFOPS_HOME:$PATH
 
-export OPS_HOME=/Users/xumingmingv/ops
-export PATH=/Users/xumingmingv/ops:$PATH
-export CONFOPS_HOME=/Users/xumingmingv/confops
-export PATH=/Users/xumingmingv/confops:$PATH
-export CONFOPS_HOME=/Users/xumingmingv/confops
-export PATH=/Users/xumingmingv/confops:$PATH
 export PATH="/Users/xumingmingv/AliDrive/software/sofa:$PATH"
 fpath=(/Users/xumingmingv/AliDrive/software/sofa/resources/completion $fpath)
 autoload -U compinit && compinit -u
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export PATH=/usr/local/bin:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
 export OPS_HOME=/Users/xumingmingv/ops
 export PATH=/Users/xumingmingv/ops:$PATH
