@@ -57,4 +57,3 @@ clojure() {
 }
 
 . ~/local/self/dotfiles/.functions-storm
-. ~/Documents/Alipay/scripts/functions.sh
