@@ -44,71 +44,19 @@ plugins=(git svn autojump)
 
 source $ZSH/oh-my-zsh.sh
 
-#source ~/local/self/dotfiles/.functions
 source ~/local/self/dotfiles/.exports
-#export CLOUDENGINE_HOME=/usr/local/cloudengine
 export GOROOT=/usr/local/Cellar/go/1.3/libexec
 export BTRACE_HOME=/usr/local/btrace
 export GROOVY_HOME=/usr/local/opt/groovy/libexec
-export KIBOU_HOME=/Users/xumingmingv/local/alipay/kibou
 export NODE_PATH=/usr/local/lib/node_modules
-export PATH=$HADOOP_HOME/bin/:/Users/xumingmingv/Desktop/ssh/:/Users/xumingmingv/bin:$BTRACE_HOME/bin:$KIBOU_HOME/bin:$KIBOU_HOME/bin/sofa:$PATH
-
-#export PROMPT="%{$fg[blue]%}%/%{$reset_color%} $(git_prompt_info)$(bzr_prompt_info)%{$fg[white]%}%{$reset_color%} %{$fg[white]%}
-#%{$reset_color%}%{$fg_bold[black]%}>%{$reset_color%}"
-alias scheduler='/Users/xumingmingv/local/self/pyscheduler/scheduler.py -s'
-alias dms='/usr/bin/python /Users/xumingmingv/local/alipay/dms/dms-tools/dms.py'
+export PATH=$HOME/bin:$BTRACE_HOME/bin:$PATH
 alias yash='sudo ~/local/self/yash/yash.py'
-alias yashpub='~/markdown/scripts/yashpub.sh ~/local/alipay/dpc $1'
 # The function
-cd() {
-	builtin cd $@
-	if [ "$?" = "0" ]; then
-        if [[ $PWD == /Users/xumingmingv/local/alipay/* ]] ; then
-            if [ -n .git ]; then
-				echo "alipay"
-				git config --local user.name "护城"
-				git config --local user.email "mingming.xumm@alibaba-inc.com"
-            fi
-        fi
-        
-        if [[ $PWD == /Users/xumingmingv/local/self/* ]] ; then
-			echo "self"
-        fi
+export PATH="$HOME/sofa:$PATH"
+export SOFA_HOME="$HOME/sofa"
 
-		echo "Git UserName: $(git config --get user.name)"
-		echo "Git Email: $(git config --get user.email)"				
-	fi
-}
-export PATH="/Users/xumingmingv/sofa:$PATH"
-export SOFA_HOME="/Users/xumingmingv/sofa"
-
-export CONFOPS_HOME=/Users/xumingmingv/local/alipay/confops
-export PATH=$CONFOPS_HOME:$PATH
-
-export PATH="/Users/xumingmingv/AliDrive/software/sofa:$PATH"
-fpath=(/Users/xumingmingv/AliDrive/software/sofa/resources/completion $fpath)
+export PATH="$HOME/AliDrive/software/sofa:$PATH"
+fpath=($HOME/AliDrive/software/sofa/resources/completion $fpath)
 autoload -U compinit && compinit -u
-export OPS_HOME=/Users/xumingmingv/ops
-export PATH=/Users/xumingmingv/ops:$PATH
-export PATH=/usr/local/bin:$PATH
-export OPS_HOME=/Users/xumingmingv/ops
-export PATH=/Users/xumingmingv/ops:$PATH
-export OPS_HOME=/Users/xumingmingv/ops
-export PATH=/Users/xumingmingv/ops:$PATH
-export OPS_HOME=/Users/xumingmingv/ops
-export PATH=/Users/xumingmingv/ops:$PATH
-export OPS_HOME=/Users/xumingmingv/ops
-export PATH=/Users/xumingmingv/ops:$PATH
-export OPS_HOME=/Users/xumingmingv/ops
-export PATH=/Users/xumingmingv/ops:$PATH
-export OPS_HOME=/Users/xumingmingv/ops
-export PATH=/Users/xumingmingv/ops:$PATH
-export OPS_HOME=/Users/xumingmingv/ops
-export PATH=/Users/xumingmingv/ops:$PATH
-export OPS_HOME=/Users/xumingmingv/ops
-export PATH=/Users/xumingmingv/ops:$PATH
-export OPS_HOME=/Users/xumingmingv/ops
-export PATH=/Users/xumingmingv/ops:$PATH
-export OPS_HOME=/Users/xumingmingv/ops
-export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=$HOME/ops
+export PATH=$HOME/ops:$PATH
