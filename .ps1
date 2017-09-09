@@ -1,6 +1,7 @@
+# Soure: https://github.com/xumingming/dotfiles/blob/master/.ps1
 # Display ps1 with colorful pwd and git status
 # Acording to Jimmyxu .bashrc
-# Modified by Ranmocy
+# Modified by Ranmocy and Ashish Tibrewal
 # --
 alias __git_ps1="git branch 2>/dev/null | grep '*' | sed 's/* \(.*\)/(\1)/'"
 
@@ -32,7 +33,13 @@ function __repo () {
         else
             repo=$vcs
         fi
-        echo -n "($repo)"
+        local status=$(git status --porcelain 2> /dev/null)
+        if [[ "$status" != "" ]]; then
+            git_dirty='*'
+        else
+            git_dirty=''
+        fi
+        echo -n "($repo$git_dirty)"
     fi
     return 0
 }
