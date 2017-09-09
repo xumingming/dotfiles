@@ -3,7 +3,7 @@
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
 (("emacs.md"
- (filename . "~/worknotes/emacs.md")
+ (filename . "~/local/self/dotfiles/.emacs")
  (front-context-string)
  (rear-context-string . "w\n跳转到windows配置: ")
  (position . 68))

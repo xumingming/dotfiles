@@ -11,7 +11,7 @@ export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 
 #export JAVA_HOME=`/usr/libexec/java_home`
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home
 export JAVA_OPTS="-Dfile.encoding=utf-8"
 
 export ZK_HOME=$HOME/AliDrive/software/zookeeper
@@ -27,8 +27,12 @@ export ODPS_CLI_HOME=$HOME/local/self/odps-cli
 export DOCKER_HOST=tcp://192.168.59.103:2376
 export DOCKER_CERT_PATH=$HOME/.boot2docker/certs/boot2docker-vm
 export DOCKER_TLS_VERIFY=1
+export CNP_HOME=/Users/xumingmingv/local/alipay/cnp2
+export MAVEN_OPTS="-Xmx1024M"
+export DATAX_HOME=/Users/xumingmingv/local/alipay/datax3
+export DATAX_SRC_HOME=/Users/xumingmingv/local/alipay/datax_origin
 # at last, the PATH
-export PATH=$PATH:/opt/local/bin:$ZK_HOME/bin:$BOOST_HOME:$CLOJURESCRIPT_HOME/bin:$ANTX_HOME/bin:$GOPATH/bin:$JAVA_HOME/bin:/usr/local/hadoop/bin:$HIVE_HOME/bin:$STORM_HOME/bin:$DOTFILES_HOME/:$BTRACE_HOME/bin:$JMETER_HOME/bin:$ODPS_CMD_HOME/bin:$ODPS_CLI_HOME/bin:$HOME/AliDrive/software/sofasdk
+export PATH=$PATH:/opt/local/bin:$ZK_HOME/bin:$BOOST_HOME:$CLOJURESCRIPT_HOME/bin:$ANTX_HOME/bin:$GOPATH/bin:$JAVA_HOME/bin:/usr/local/hadoop/bin:$HIVE_HOME/bin:$STORM_HOME/bin:$DOTFILES_HOME/:$BTRACE_HOME/bin:$JMETER_HOME/bin:$ODPS_CMD_HOME/bin:$ODPS_CLI_HOME/bin:$HOME/AliDrive/software/sofasdk:/usr/local/bin
 
 # antlr related config
 export CLASSPATH=".:/usr/local/lib/antlr-4.5.3-complete.jar:$CLASSPATH"

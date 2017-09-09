@@ -2,3 +2,17 @@ ls
 cd 百度云同步盘/
 ls
 ssh localhost
+ls
+pwd
+ls
+ls
+cd ..
+ls
+cd xumingmingv/
+ls
+cd worknotes/
+yash
+echo $PATH
+. ~/.zshrc
+ls
+yash

@@ -14,6 +14,17 @@
       (setq the-plist (cddr the-plist)))
   alist))
 
+(defun align-repeat (start end regexp)
+    "Repeat alignment with respect to 
+     the given regular expression."
+    (interactive "r\nsAlign regexp: ")
+    (align-regexp start end 
+        (concat "\\(\\s-*\\)" regexp) 1 1 t))
+
+(defun align-table (start end)
+  (interactive "r")
+;;  (replace-string "	" "" start end)
+  (align-repeat start end "|"))
 
 ;; encoding settings
 (set-language-environment 'utf-8)
@@ -38,22 +49,9 @@
 
 ;; specify custom theme load path
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
-;;(add-to-list 'custom-theme-load-path "~/.emacs.d/elpa/darcula-theme-20141022.652/")
-;;(load-theme 'solarized-dark t)
-(load-theme 'solarized-light t)
-;;(abyss-theme)
-;;(load-theme 'light-blue)
-;;(load-theme 'misterioso)
-;;(load-theme 'leuven)
-;;(load-theme 'wheatgrass)
 ;;(load-theme 'darcula t)
-;;(load-theme 'deeper-blue)
+(load-theme 'adwaita t)
 
-;; global settings
-;; customize the initial scratch message
-(setq initial-scratch-message ";; Xiao Ming, Have a good day£¡")
-;; inhibit startup message
-(setq inhibit-startup-message t)
 ;; always follow symlinks without asking
 (setq vc-follow-symlinks t)
 ;; display "lambda" as ¡°¦Ë"
@@ -97,33 +95,13 @@
       `((".*" ,temporary-file-directory t)))
 ;; buffer related things
 
-;;(defalias 'list-buffers 'grizzl)
-
-;; enable paredit
-(add-hook 'clojure-mode-hook (lambda () (paredit-mode +1)))
-
 ;; disable the line-wrap character
 ;; http://emacswiki.org/emacs/LineWrap
 (set-display-table-slot standard-display-table 'wrap ?\ )
 
-;; set the dir for yasnippet
-(add-to-list 'load-path
-              "~/.emacs.d/vendor/yasnippet")
-(require 'yasnippet)
-(yas-global-mode 1)
-
-;; ==== markdown BEGIN ====
+;; markdown
 (add-to-list 'auto-mode-alist '("\\.markdown$" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
-;; ==== markdown END   ====
-
-
-;; map C-x C-g to magit-status
-;;(global-set-key (kbd "C-x C-g") 'magit-status)
-
-;; enable html-mode when open *.vm files
-(add-to-list 'auto-mode-alist '("\\.vm$" . html-mode))
-
 
 ;; enable projectile globally
 (require 'projectile)
@@ -137,16 +115,74 @@
 ;; hide toolbar
 (tool-bar-mode -1)
 
+;; emacs lisp
+(add-hook 'emacs-lisp-mode-hook (lambda () (paredit-mode +1)))
+
+;;
+;; recentf
+(require 'recentf)
+(recentf-mode 1)
+(setq recentf-max-menu-items 25)
+(global-set-key "\C-x\ \C-r" 'recentf-open-files)
+
+
+;; ido mode
+(ido-mode t)
+(setq ido-enable-flex-matching t) ; fuzzy matching is a must have
+(setq ido-enable-last-directory-history nil) ; forget latest selected directory names
+(require 'flx-ido)
+(flx-ido-mode 1)
+(setq ido-use-faces nil)
+(setq flx-ido-threshhold 10000)
+(setq ido-everywhere t)
+;; ido-ubiquitous-mode
+(ido-ubiquitous-mode t)
+;; vertical ido mode
+(require 'ido-vertical-mode)
+
+;; define some colors
+(setq ido-use-faces t)
+(set-face-attribute 'ido-vertical-first-match-face nil
+                    :background nil
+                    :foreground "orange")
+(set-face-attribute 'ido-vertical-only-match-face nil
+                    :background nil
+                    :foreground nil)
+(set-face-attribute 'ido-vertical-match-face nil
+                    :foreground nil)
+(ido-vertical-mode 1)
+
+;; use C-n & C-p rather than C-s & C-r
+(setq ido-vertical-define-keys 'C-n-and-C-p-only)
+;; use C-X C-b to switch buffer
+(global-set-key (kbd "C-x C-b") 'ido-switch-buffer)
+
+;; dashboard
+(require 'dashboard)
+(dashboard-setup-startup-hook)
+
+;; company-mode
+(add-hook 'after-init-hook 'global-company-mode)
+
+
+;; smex
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+;; This is your old M-x.
+(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+
+
 ;; smart-tab
 (require 'smart-tab)
 (global-smart-tab-mode 1)
-(add-to-list 'hippie-expand-try-functions-list 'yas/hippie-try-expand) ;put yasnippet in hippie-expansion list
 (setq smart-tab-using-hippie-expand t)
 
+;; windmove
+(windmove-default-keybindings 'meta)
 
-;; emacs lisp
-(add-hook 'emacs-lisp-mode-hook (lambda () (paredit-mode +1)))
-;;(add-hook 'emacs-lisp-mode-hook (lambda () (lisp-interaction-mode)))
+;; winner-mode
+(when (fboundp 'winner-mode)
+  (winner-mode 1))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -160,15 +196,15 @@
  '(ensime-sem-high-faces
    (quote
     ((var :foreground "#9876aa" :underline
-          (:style wave :color "yellow"))
+	  (:style wave :color "yellow"))
      (val :foreground "#9876aa")
      (varField :slant italic)
      (valField :foreground "#9876aa" :slant italic)
      (functionCall :foreground "#a9b7c6")
      (implicitConversion :underline
-                         (:color "#808080"))
+			 (:color "#808080"))
      (implicitParams :underline
-                     (:color "#808080"))
+		     (:color "#808080"))
      (operator :foreground "#cc7832")
      (param :foreground "#a9b7c6")
      (class :foreground "#4e807d")
@@ -177,176 +213,19 @@
      (package :foreground "#cc7832")
      (deprecated :strike-through "#a9b7c6"))))
  '(initial-scratch-message nil)
- '(org-CUA-compatible nil)
+ '(org-replace-disputed-keys nil)
+ '(package-selected-packages
+   (quote
+    (smex browse-kill-ring dashboard yaml-mode workgroups window-number windata whitespace-cleanup-mode web-mode tidy tabbar ssh rainbow-delimiters python-mode projectile phi-rectangle paredit multi-term markdown-mode+ magit lex less-css-mode ioccur idomenu ido-yes-or-no ido-vertical-mode ido-ubiquitous ido-select-window highline highlight-parentheses helm grizzl go-autocomplete git-rebase-mode git-commit-mode flx-ido eyebrowse etags-table elscreen editorconfig dsvn dired+ desktop darcula-theme company column-marker color-theme col-highlight bison-mode all-ext 2048-game)))
  '(recentf-menu-before nil)
  '(recentf-mode t)
  '(scroll-error-top-bottom nil)
  '(set-mark-command-repeat-pop nil)
- '(shift-select-mode nil))
+ '(shift-select-mode nil)
+ '(truncate-partial-width-windows nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-
-
-;; auto-complete related settings
-(require 'auto-complete)
-(require 'auto-complete-config)
-(global-auto-complete-mode)
-
-;; go related settings
-(require 'go-autocomplete)
-(require 'lazy-set-key) ;; init-golang depends on this
-(require 'init-golang)
-;;(add-hook 'go-mode-hook (lambda () (auto-complete-mode +1)))
-;;(require 'go-mode)
-
-(setenv "GOROOT" "/usr/local/Cellar/go/1.3/libexec")
-(setenv "PATH" 
-        (concat 
-		 "/bin"
-		 ":/sbin"		 
-		 ":/usr/bin"
-		 ":/usr/sbin"		 
-		 ":/usr/local/bin"
-		 ":" (getenv "GOROOT") "/bin"
-		 ":/Users/xumingmingv/local/self/go/bin"
-		 ":" (getenv "PATH")))
-(setenv "GOPATH" "/Users/xumingmingv/local/self/go")
-(setq exec-path (split-string (getenv "PATH") ":"))
-
-(defun xumingmingv-go-mode-hook ()
-  "Modify keymaps used by `go-mode'."
-  (local-set-key (kbd "M-.") 'godef-jump)
-  (local-set-key (kbd "C-c C-d") 'godoc-at-point)  
-  (add-hook 'before-save-hook #'gofmt-before-save)
-  ;; enable auto-complete
-  (auto-complete-mode +1)
-  ; Use goimports instead of go-fmt
-  (setq gofmt-command "goimports")  
-  ; Customize compile command to run go build
-  (if (not (string-match "go" compile-command))
-      (set (make-local-variable 'compile-command)
-           "go build -v && go test -v && go vet"))
-  (go-oracle-mode)
-  )
-
-(add-hook 'go-mode-hook 'xumingmingv-go-mode-hook)
-
-
-;; undo redo
-(require 'undo-tree)
-(global-undo-tree-mode 1)
-(defalias 'redo 'undo-tree-redo)
-(global-set-key (kbd "C-z") 'undo)
-(global-set-key (kbd "C-S-z") 'redo)
-
-;; window-number mode
-(require 'window-number)
-(window-number-mode 1)
-(window-number-meta-mode 1)
-
-(add-hook 'after-change-major-mode-hook 
-          '(lambda () 
-             (setq-default indent-tabs-mode nil)
-             (setq c-basic-indent 4)
-             (setq tab-width 4)))
-
-;; handle tabs
-(setq-default tab-width 4)
-(setq-default indent-tabs-mode nil)
-(setq c-basic-indent 4)
-(setq tab-width 4)
-(setq default-tab-width 4)
-
-
-;; ido mode
-(ido-mode t)
-(setq ido-enable-flex-matching t) ; fuzzy matching is a must have
-(setq ido-enable-last-directory-history nil) ; forget latest selected directory names
-(require 'flx-ido)
-(flx-ido-mode 1)
-(setq ido-use-faces nil)
-(setq flx-ido-threshhold 10000)
-(setq ido-everywhere t)
-
-
-;; ido-ubiquitous-mode
-;;(ido-ubiquitous-mode t)
-
-;; vertical ido mode
-(require 'ido-vertical-mode)
-(ido-vertical-mode 1)
-(global-set-key (kbd "C-x C-b") 'ido-switch-buffer)
-
-;;(defalias 'list-buffers 'ido-switch-buffer)
-
-(defun align-repeat (start end regexp)
-    "Repeat alignment with respect to 
-     the given regular expression."
-    (interactive "r\nsAlign regexp: ")
-    (align-regexp start end 
-        (concat "\\(\\s-*\\)" regexp) 1 1 t))
-
-(defun align-table (start end)
-  (interactive "r")
-;;  (replace-string "	" "" start end)
-  (align-repeat start end "|"))
-
-
-(defun clean-whitespace-region (start end)
-  "Untabifies, removes trailing whitespace, and re-indents the region"
-  (interactive "r")
-  (save-excursion
-    (untabify start end)
-    (c-indent-region start end)
-    (replace-regexp "[  ]+$" "" nil start end)))
-
-
-(defun surround-brackets ()
-  "Surround current region with brackets"
-  (interactive)
-  (when (use-region-p)
-    (save-excursion
-      (let ((beg (region-beginning))
-            (end (region-end)))
-        (goto-char end)
-        (insert "]")
-        (goto-char beg)
-        (insert "[")))))
-
-
-;; web-mode
-(require 'web-mode)
-(add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
-
-;; white-space cleanup
-(global-whitespace-cleanup-mode)
-
-;; helm
-(require 'helm-config)
-(global-set-key (kbd "M-x") 'helm-M-x)
-(helm-mode 1)
-(global-set-key (kbd "C-x C-b") 'helm-buffers-list)
-(global-set-key (kbd "C-x C-f") 'helm-find-files)
-
-;; eyebrowse
-(eyebrowse-mode t)
-
-;; recentf
-(require 'recentf)
-(recentf-mode 1)
-(setq recentf-max-menu-items 25)
-(global-set-key "\C-x\ \C-r" 'recentf-open-files)
-
-
-;; all-ext
-(require 'all-ext)
-
-
-;; display date and time in status bar
-(setq display-time-day-and-date t
-      display-time-24hr-format t)
-(display-time)

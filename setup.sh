@@ -28,9 +28,6 @@ setup_link ".tmux.conf"
 mkdir -vp ~/.subversion
 setup_link ".subversion/config"
 
-setup_link ".git-completion.zsh"
-
 mkdir -vp ~/.zsh
-setup_link ".zsh/_git"
 
 

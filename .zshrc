@@ -49,7 +49,7 @@ export GOROOT=/usr/local/Cellar/go/1.3/libexec
 export BTRACE_HOME=/usr/local/btrace
 export GROOVY_HOME=/usr/local/opt/groovy/libexec
 export NODE_PATH=/usr/local/lib/node_modules
-export PATH=$HOME/bin:$BTRACE_HOME/bin:$PATH
+export PATH=$HOME/bin:$BTRACE_HOME/bin:$PATH:/usr/texbin
 alias yash='sudo ~/local/self/yash/yash.py'
 # The function
 export PATH="$HOME/sofa:$PATH"
@@ -60,3 +60,24 @@ fpath=($HOME/AliDrive/software/sofa/resources/completion $fpath)
 autoload -U compinit && compinit -u
 export OPS_HOME=$HOME/ops
 export PATH=$HOME/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+export OPS_HOME=/Users/xumingmingv/ops
+export PATH=/Users/xumingmingv/ops:$PATH
+
+# The next line updates PATH for the Google Cloud SDK.
+source '/Users/xumingmingv/local/alipay/google-cloud-sdk/path.zsh.inc'
+
+# The next line enables shell command completion for gcloud.
+source '/Users/xumingmingv/local/alipay/google-cloud-sdk/completion.zsh.inc'
+export PATH="/Users/xumingmingv/sofa:$PATH"
+fpath=(/Users/xumingmingv/sofa/resources/completion $fpath)
+autoload -U compinit && compinit -u
