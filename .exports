@@ -1,46 +1,23 @@
 #!/bin/bash
 
-# don't put duplicate lines in the history. See bash(1) for more options
-# don't overwrite GNU Midnight Commander's setting of `ignorespace'.
+# Don't put duplicate lines in the history. See bash(1) for more options.
+# Don't overwrite GNU Midnight Commander's setting of `ignorespace'.
 export HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
 # ... or force ignoredups and ignorespace
 export HISTCONTROL=ignoreboth
 
-export SVN_EDITOR=vim
+export EDITOR=vim
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 
 #export JAVA_HOME=`/usr/libexec/java_home`
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home
 export JAVA_OPTS="-Dfile.encoding=utf-8"
 
-export ZK_HOME=$HOME/AliDrive/software/zookeeper
 export DISPLAY=:0.0
-export GOPATH=$HOME/local/self/go
-export CATALINA_HOME=/usr/local/tomcat
-export STORM_HOME=/usr/local/storm
-export DOTFILES_HOME=$HOME/local/self/dotfiles
-export BTRACE_HOME=/usr/local/btrace
-export JMETER_HOME=/usr/local/jmeter
-export ODPS_CMD_HOME=$HOME/local/self/odpscmd
-export ODPS_CLI_HOME=$HOME/local/self/odps-cli
-export DOCKER_HOST=tcp://192.168.59.103:2376
-export DOCKER_CERT_PATH=$HOME/.boot2docker/certs/boot2docker-vm
-export DOCKER_TLS_VERIFY=1
-export CNP_HOME=/Users/xumingmingv/local/alipay/cnp2
 export MAVEN_OPTS="-Xmx1024M"
-export DATAX_HOME=/Users/xumingmingv/local/alipay/datax3
-export DATAX_SRC_HOME=/Users/xumingmingv/local/alipay/datax_origin
-# at last, the PATH
-export PATH=$PATH:/opt/local/bin:$ZK_HOME/bin:$BOOST_HOME:$CLOJURESCRIPT_HOME/bin:$ANTX_HOME/bin:$GOPATH/bin:$JAVA_HOME/bin:/usr/local/hadoop/bin:$HIVE_HOME/bin:$STORM_HOME/bin:$DOTFILES_HOME/:$BTRACE_HOME/bin:$JMETER_HOME/bin:$ODPS_CMD_HOME/bin:$ODPS_CLI_HOME/bin:$HOME/AliDrive/software/sofasdk:/usr/local/bin
 
-# antlr related config
-export CLASSPATH=".:/usr/local/lib/antlr-4.5.3-complete.jar:$CLASSPATH"
-alias antlr4='java -jar /usr/local/lib/antlr-4.5.3-complete.jar'
-alias grun='java org.antlr.v4.gui.TestRig'
-
-# Add the ~/bin directory to the path.  This allows you to install simple
-# binaries by simply moving them into ~/bin.
-if [ -d $HOME/bin ]; then
-	export PATH="$HOME/bin:$PATH"
+# Add the ~/Bin directory to the path.  This allows you to install simple
+# binaries by simply moving them into ~/Bin.
+if [ -d $HOME/Bin ]; then
+	export PATH="$HOME/Bin:$PATH"
 fi

@@ -1,16 +1,7 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 
-# If not running interactively, don't do anything
+# If not running interactively, don't do anything.
 [ -z "$PS1" ] && return
-
-# append to the history file, don't overwrite it
-#shopt -s histappend
-
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
-#shopt -s checkwinsize
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -18,7 +9,7 @@
 # set the prompt
 PS1='\w\$ '
 
-# enable color support of ls and also add handy aliases
+# Enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     eval "`dircolors -b`"
     alias ls='ls --color=auto'
@@ -37,12 +28,8 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
-. ~/local/self/dotfiles/.functions
-. ~/local/self/dotfiles/.ps1
-. ~/local/self/dotfiles/.exports
+. ~/.functions
+. ~/.ps1
+. ~/.exports
 
-export PATH=$PATH:$ZK_HOME/bin:$JAVA_HOME/bin:/usr/local/hadoop/bin:$HIVE_HOME/bin:$STORM_HOME/bin:$ODPS_CMD_HOME/bin
-export PATH="/Users/xumingmingv/sofa:$PATH"
-export SOFA_HOME="/Users/xumingmingv/sofa"
-export PATH="/Users/xumingmingv/AliDrive/software/sofa:$PATH"
-source /Users/xumingmingv/AliDrive/software/sofa/resources/completion/bash_autocomplete
+export PATH=$JAVA_HOME/bin:$PATH

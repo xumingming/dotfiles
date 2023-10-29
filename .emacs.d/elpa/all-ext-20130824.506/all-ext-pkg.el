@@ -1,1 +1,0 @@
-(define-package "all-ext" "20130824.506" "Extension of M-x all" '((all "1.0")) :url "http://www.emacswiki.org/emacs/download/all-ext.el" :keywords '("all" "search" "replace" "anything" "helm" "occur"))

@@ -1,6 +1,0 @@
-[submodule ".emacs.d/vendor/nrepl.el"]
-	path = .emacs.d/vendor/nrepl.el
-	url = https://github.com/kingtim/nrepl.el.git
-[submodule ".emacs.d/vendor/hy-mode"]
-	path = .emacs.d/vendor/hy-mode
-	url = https://github.com/hylang/hy-mode.git
