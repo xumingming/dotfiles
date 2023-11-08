@@ -1,5 +1,73 @@
 #!/bin/bash
 
+# =========== BASE ==========
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+WHITE='\033[1;37m'
+NC='\033[0m' # No Color
+
+echo_error() {
+    echo -e ${YELLOW}"$@"${NC}
+}
+
+echo_success() {
+    echo -e ${GREEN}"$@"${NC}
+}
+
+echo_important() {
+    echo -e ${WHITE}"$@"${NC}
+}
+
+# =========== COMMON ==========
+
+notify() {
+    content=$1
+    title=$2
+
+    if [ "$title" = "" ]; then
+        title="Have a nice day :)"
+    fi
+
+    if [[ "$OSTYPE" == "darwin"* ]]; then
+        osascript -e "display notification \"$content\" with title \"$title\""
+    fi
+}
+
+echo_and_notify() {
+    echo $1
+    notify $1
+}
+
+alert() {
+    content=$1
+    title=$2
+
+    if [ "$title" = "" ]; then
+        title="Have a nice day!"
+    fi
+
+    if [[ "$OSTYPE" == "darwin"* ]]; then
+        osascript -e "display alert \"$title\" message \"$content\""
+    fi
+}
+
+compile_code() {
+    echo " ===== current pwd: `pwd` ===== "
+    echo " JAVA => ${JAVA_HOME}"
+    pwd=`pwd`
+    proj_name=`basename $pwd`
+    mvn clean install -DskipTests  -T 8
+
+    if [ $? -eq 0 ];then
+        notify "Compile $proj_name successfully:)" "Compilation"
+    else
+        alert "Compile $proj_name failed!" "Compilation"
+    fi
+}
+
+## TCP
 tcp_status() {
   netstat -n | awk '/^tcp/ {++state[$NF]} END {for(key in state) print key,"\t",state[key]}'
 }
